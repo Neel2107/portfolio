@@ -1,0 +1,52 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background-color: #13131ad1;
+    // z-index: 1000;
+
+
+    .left-logo {
+        margin: 1rem 3rem;
+        cursor: pointer;
+        width: max-content;
+    }
+
+    .right-nav {
+
+        margin: 1rem 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center; // align the items vertically to center
+
+
+        ul {
+
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            list-style-type: none; // remove the default bullet points
+        }
+
+        li {
+            margin: 0rem 1rem;// add some spacing between the items
+        }
+
+        a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+           
+
+
+        }
+
+    }
+}

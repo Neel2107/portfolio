@@ -1,4 +1,5 @@
 .mainContainer {
+
     align-items: center;
     background-color: linear-gradient(180deg, #13131a 0, #182848);
     display: flex;
@@ -7,19 +8,24 @@
     min-height: 100vh;
     padding: 5% 15%;
     width: 100%;
-    position: fixed;
+    // position: fixed;
     // background-color: #182848;
-    z-index: 10;
+    
 
 
-
-    .left-links {
-        left: 3%;
+    .gifContainer{
+        z-index: 10;
     }
 
-    .left-links,
-    .right-link {
 
+    .leftLinks {
+        left: 3%;
+        z-index: 10;
+    }
+
+    .leftLinks,
+    .rightLink {
+        z-index: 10;
         bottom: 0;
         display: flex;
         flex-direction: column;
@@ -42,7 +48,7 @@
             transition: .4s;
         }
 
-        .vertical-line {
+        .verticalLink {
             background-color: #89bbfe;
             margin-left: 50%;
             height: 90px;
@@ -54,7 +60,7 @@
         }
     }
 
-    .right-link {
+    .rightLink {
         right: 3%;
         z-index: 10;
         // display: flex;
@@ -82,6 +88,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        z-index: 10;
 
         .title {
             letter-spacing: 2px;
@@ -139,4 +146,6 @@
         width: 27rem;
     }
 
+
+    
 }

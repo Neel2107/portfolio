@@ -1,3 +1,4 @@
+import AboutMeSection from "./components/AboutMeSection/AboutMeSection";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -21,6 +22,7 @@ function App() {
          <div id="blob"></div>
       <Navbar />
       <MainContainer/>
+      <AboutMeSection/>
    
     </div>
   );

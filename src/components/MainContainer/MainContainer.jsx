@@ -3,8 +3,9 @@ import React from 'react'
 import "./MainContainer.scss"
 const MainContainer = () => {
   return (
+    <>
     <div className='mainContainer' id='Home'>
-      <div className='left-links'>
+      <div className='leftLinks'>
         <a href="">
           <img className='icons' src="./github.png" alt="" />
         </a>
@@ -18,13 +19,13 @@ const MainContainer = () => {
           <img className='icons' src="./linkdin.png" alt="" />
         </a>
    
-        <div className='vertical-line'></div>
+        <div className='verticalLink'></div>
       </div>
-      <div className='right-link'>
+      <div className='rightLink'>
         <a href="/">
          <span className='email'> neelpatel805804@gmail.com</span>
         </a>
-        <div className='vertical-line'></div>
+        <div className='verticalLink'></div>
       </div>
       <div className='nameContainer'>
       <span className='title'>
@@ -45,6 +46,9 @@ const MainContainer = () => {
         <img className='main-img' src="./coder.gif" alt="" />
       </div>
     </div>
+   
+
+    </>
   )
 }
 

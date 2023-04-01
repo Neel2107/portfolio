@@ -3,10 +3,10 @@ import "./Navbar.scss";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="left-logo">
+      <div className="leftLogo">
         <img src="./vite.svg" alt="" />
       </div>
-      <div className="right-nav">
+      <div className="rightNav">
         <ul>
           <li>
             <a href="">
@@ -18,7 +18,7 @@ const Navbar = () => {
           <li>
             <a href="">
             <span href="/">02.</span>
-            <span href="/">Skiils</span>
+            <span href="/">Skills</span>
             </a>
         
           </li>

@@ -5,18 +5,18 @@
     position: fixed;
     top: 0;
     left: 0;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     background-color: #13131ad1;
-    z-index: 1000;
+    z-index: 50;
 
 
-    .left-logo {
+    .leftLogo {
         margin: 1rem 3rem;
         cursor: pointer;
         width: max-content;
     }
 
-    .right-nav {
+    .rightNav {
 
         margin: 1rem 1rem;
         display: flex;

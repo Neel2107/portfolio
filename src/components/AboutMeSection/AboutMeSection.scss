@@ -1,0 +1,85 @@
+.aboutMeSection {
+    align-items: center;
+    display: flex;
+    height:max-content;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 5% 15%;
+
+    .aboutContainer {
+
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .titleContainer {
+            align-items: center;
+            display: flex;
+            padding-bottom: 30px;
+            width: 100%;
+
+            .tabNames {
+                color: #fed;
+                font-size: 30px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+
+
+                span {
+                    color: #89bbfe;
+                    font-size: 23px;
+                    margin-right: 10px;
+
+                }
+            }
+
+            .titleHrLine {
+                height: 0.5px;
+                width: 30%;
+                background-color: #003b5d;
+            }
+
+        }
+
+
+        .aboutII{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 30px;
+
+
+
+            .aboutInfo{
+                    align-items: center;
+                    font-size: 32px;
+                    font-weight: 600;
+                    margin: auto 20px auto auto;
+                    text-align: right;
+                    width: 100%;
+                    width: max-content;
+
+                    span{
+                        color: rgb(137, 187, 254);
+                    }
+            }
+      
+      .aboutDisplay{
+        border-left: 5px solid #cacaca;
+        color: silver;
+        font-size: 18px;
+        line-height: 30px;
+        padding-left: 20px;
+        width: 100%;
+      }
+        }
+
+
+    }
+
+
+}

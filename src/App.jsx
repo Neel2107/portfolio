@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import AboutMeSection from "./components/AboutMeSection/AboutMeSection";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Navbar from "./components/Navbar/Navbar";
@@ -9,14 +9,22 @@ import ProjectContainer from "./components/projectContainer/ProjectContainer";
 import "./index.scss";
 
 function App() {
-  useEffect(() => {
-    const blob = document.getElementById("blob");
+  const blobRef = useRef(null);
 
-    window.onpointermove = (event) => {
+  useEffect(() => {
+    const blob = blobRef.current;
+
+    const handlePointerMove = (event) => {
       const { clientX, clientY } = event;
 
       blob.style.left = `${clientX}px`;
       blob.style.top = `${clientY + window.pageYOffset}px`;
+    };
+
+    window.addEventListener("pointermove", handlePointerMove);
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
     };
   }, []);
 
@@ -44,7 +52,7 @@ function App() {
         </a>
         <div className='verticalLink'></div>
       </div>
-     <div id="blob"></div>
+      <div id="blob" ref={blobRef}></div>
 <div id="blur"> 
 
       <Navbar />

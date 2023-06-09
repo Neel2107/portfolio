@@ -2,12 +2,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     backdrop-filter: blur(10px);
     background-color: #13131ad1;
-    z-index: 50;
+    z-index: 500;
 
 
     .leftLogo {

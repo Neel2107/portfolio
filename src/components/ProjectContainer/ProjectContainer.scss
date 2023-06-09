@@ -1,0 +1,144 @@
+.projectContainer {
+    // background-color: rgba(0, 255, 255, 0.157);
+    height: max-content;
+    min-height: 100vh;
+    padding: 5% 17% ;
+    width: 100%;
+
+
+    .titleContainer {
+        align-items: center;
+        display: flex;
+        padding-bottom: 30px;
+        width: 100%;
+
+        .tabNames {
+            color: #fed;
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-right: 10px;
+            align-items: center;
+            display: flex;
+
+        }
+
+        .titleHrLine {
+            background-color: #003b5d;
+            height: 0.5px;
+            width: 30%;
+        }
+
+
+
+    }
+
+    .displayProjects {
+        display: flex;
+        height: max-content;
+        margin-bottom: 30px;
+        padding: 20px;
+        width: 100%;
+
+
+        .projectImageContainer {
+            border-radius: 5px;
+            height: max-content;
+            background-color: #89bcfe7e;
+
+
+            .projectImage {
+                mix-blend-mode: soft-light;
+                object-fit: cover;
+                width: 550px;
+            }
+
+           
+        }
+
+        .projectDetails {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap-reverse;
+            height: 100%;
+            padding: 20px 0;
+            text-align: right;
+            width: 100%;
+
+            span{
+                color: #89bbfe;
+                font-size: 16px;
+                font-weight: 550;
+                height: max-content;
+                padding-top: 10px;
+            }
+
+            h4{
+                color: #fed;
+                font-size: 26px;
+                height: 40px;
+                margin-bottom: 20px;
+                padding: 5px 0;
+            }
+
+
+            .projectDesc{
+                background-color: #182848;
+                border-radius: 5px;
+                box-shadow: 0 4px 10px rgba(73, 73, 73, 0.686);
+                height: max-content;
+                padding: 20px;
+                width: 115%;
+             
+                p{
+                    color: #c8c8c8;
+                    font-size: 16px;
+                    text-align: right;
+
+                }
+            }
+
+
+
+            .techContainer{
+                margin-top: 10px;
+                padding: 5px 0;
+                width: 100%;
+                height: max-content;
+                align-items: right;
+
+                span{
+                    color: hsla(0, 0%, 51%, .803);
+                    margin: 0 5px;
+                }
+                span:hover{
+                    color: white;
+                    
+                }
+           
+            }
+        
+            .iconsContainer{
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 10px;
+                padding: 5px 0;
+                width: 100%;
+
+                a{
+                    height: auto;
+                    width: auto;
+                }
+
+                .socialIcons{
+                    cursor: pointer;
+                    height: 24px;
+                    margin: 0 7px;
+                    width: 24px;
+                }
+            }
+        
+        }
+    }
+
+}

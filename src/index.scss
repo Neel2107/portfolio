@@ -1,0 +1,136 @@
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+
+
+}
+
+ body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+   
+}
+/* 
+.App{
+    position: relative;
+} */
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.2;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+
+#blob {
+    background-color: white;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+   
+   
+    
+  }
+  
+  #blur {
+
+    width: 100%;
+    position: absolute;
+    z-index:2;
+    backdrop-filter: blur(12vmax);
+
+    
+  
+  
+  }
+
+  .leftLinks {
+    left: 3%;
+    z-index: 10;
+}
+
+.leftLinks,
+.rightLink {
+    z-index: 10;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    position: fixed;
+
+
+    .icons {
+        height: 30px;
+        object-fit: cover;
+        padding: 5px;
+        width: 30px;
+    }
+
+    .icons:hover {
+        background-color: transparent;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px #0bf;
+        scale: 1.2;
+        transition: .4s;
+    }
+
+    .verticalLink {
+        background-color: #89bbfe;
+        margin-left: 50%;
+        height: 90px;
+        width: 2px;
+    }
+
+    a {
+        margin-bottom: 12px;
+    }
+}
+
+.rightLink {
+    right: 3%;
+    
+
+    z-index: 15;
+    // display: flex;
+    // flex-direction: column;
+    -moz-box-align: center;
+    // align-items: center;
+    position: fixed;
+    padding: 0 5px;
+
+
+    .email {
+
+        font-size: 14px;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+        margin-left: 5%;
+        padding: 10px;
+        writing-mode: vertical-rl;
+
+    }
+}
+  

@@ -1,0 +1,85 @@
+.skillsSection {
+  align-items: center;
+  display: flex;
+  height: max-content;
+  width: 100vw;
+  padding: 25% 8% 5%;
+  width: 100%;
+  justify-content: center;
+  min-height: 100vh;
+
+
+
+
+  .scContainer {
+    width: 100%;
+  padding-left: 10%;
+
+
+    .titleContainer {
+      align-items: center;
+      display: flex;
+      padding-bottom: 30px;
+      width: 100%;
+
+
+
+      .tabNames {
+        color: #fed;
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-right: 10px;
+        align-items: center;
+        display: flex;
+        
+        span {
+          color: #89bbfe;
+          font-size: 23px;
+          margin-right: 10px;
+        }
+      }
+
+      .titleHrLine {
+        background-color: #003b5d;
+        height: 1px;
+        width: 30%;
+      }
+
+    }
+
+
+    .skillCard {
+      align-items: center;
+      background-color: #1d222d;
+      border-radius: 10px;
+      display: flex;
+      font-size: 18px;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 15px;
+      width: 80%;
+
+      .skillName {
+        min-width: 13%;
+      }
+
+
+
+      .indicatorContainer {
+        padding: 0 12%;
+        width: 80%;
+
+        .indicator {
+          border-radius: 5px;
+          height: 10px;
+          width: 100%;
+          background-color: #313131;
+        }
+
+      }
+    }
+
+  }
+
+}

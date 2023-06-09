@@ -1,0 +1,64 @@
+.otherNoteworthyProjects {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    text-align: center;
+    width: 100%;
+
+
+    h1 {
+        font-size: 30px;
+
+    }
+
+    .cardContainer {
+        display: grid;
+        
+        height: max-content;
+        justify-content: center;
+        margin-top: 6%;
+        margin-left: 3%;
+        text-align: left;
+        width: 100%;
+        grid-template-areas: ". . .";
+        grid-template-columns: repeat(3, 20%);
+        grid-template-rows: repeat(2, 300px);
+
+    }
+
+    #card {
+        background-color: #182848;
+        border-radius: 33px;
+        height: 80%;
+        padding: 15px;
+        width: 80%;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .cardIcons {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: max-content;
+
+    }
+
+    .cardIcon {
+        height: 45px;
+        object-fit: cover;
+        width: 34px;
+    }
+
+    .linkIcon {
+        cursor: pointer;
+        height: 24px;
+        margin: 0 7px;
+        width: 24px;
+    }
+
+}

@@ -10,6 +10,7 @@
     width: 100%;
     // position: fixed;
     // background-color: #182848;
+    z-index: 100;
     
 
 
@@ -18,70 +19,6 @@
     }
 
 
-    .leftLinks {
-        left: 3%;
-        z-index: 10;
-    }
-
-    .leftLinks,
-    .rightLink {
-        z-index: 10;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        padding: 0 5px;
-        position: fixed;
-
-
-        .icons {
-            height: 30px;
-            object-fit: cover;
-            padding: 5px;
-            width: 30px;
-        }
-
-        .icons:hover {
-            background-color: transparent;
-            border-radius: 5px;
-            box-shadow: 1px 1px 10px #0bf;
-            scale: 1.2;
-            transition: .4s;
-        }
-
-        .verticalLink {
-            background-color: #89bbfe;
-            margin-left: 50%;
-            height: 90px;
-            width: 2px;
-        }
-
-        a {
-            margin-bottom: 12px;
-        }
-    }
-
-    .rightLink {
-        right: 3%;
-        z-index: 10;
-        // display: flex;
-        // flex-direction: column;
-        -moz-box-align: center;
-        // align-items: center;
-        position: fixed;
-        padding: 0 5px;
-
-
-        .email {
-
-            font-size: 14px;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-            margin-left: 5%;
-            padding: 10px;
-            writing-mode: vertical-rl;
-
-        }
-    }
 
 
     .nameContainer {

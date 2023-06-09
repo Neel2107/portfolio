@@ -3,6 +3,8 @@ import React from "react";
 import  './AboutMeSection.scss';
 const AboutMeSection = () => {
   return (
+    <>
+  
     <div className="aboutMeSection">
       <div className="aboutContainer">
         <div className="titleContainer">
@@ -23,6 +25,8 @@ const AboutMeSection = () => {
         </div>
       </div>
     </div>
+ 
+    </>
   );
 };
 

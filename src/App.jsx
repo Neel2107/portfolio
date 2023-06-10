@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar/Navbar";
 import OtherProjects from "./components/OtherProjects/OtherProjects";
 import SkillsSection from "./components/SkillsSection/SkillsSection";
 import ProjectContainer from "./components/projectContainer/ProjectContainer";
-
 import "./index.scss";
 import EducationSection from "./components/EducationSection/EducationSection";
 import ContactSection from "./components/ContactSection/ContactSection";

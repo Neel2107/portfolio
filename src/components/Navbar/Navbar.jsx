@@ -3,8 +3,9 @@ import "./Navbar.scss";
 const Navbar = () => {
   return (
     <div className="navbar">
+      
       <div className="leftLogo">
-        <img src="./vite.svg" alt="" />
+       <p className="leftLogo">Nova</p>
       </div>
       <div className="rightNav">
         <ul>

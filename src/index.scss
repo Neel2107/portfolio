@@ -18,10 +18,6 @@
     overflow-x: hidden; 
    
 }
-/* 
-.App{
-    position: relative;
-} */
 
 @keyframes rotate {
     from {
@@ -60,7 +56,7 @@
   #blur {
 
     width: 100%;
-    position: absolute;
+   
     z-index:2;
     backdrop-filter: blur(12vmax);
 
@@ -101,7 +97,7 @@
 
     .verticalLink {
         background-color: #89bbfe;
-        margin-left: 50%;
+        margin-left: calc(50% - 1px); 
         height: 90px;
         width: 2px;
     }
@@ -164,3 +160,26 @@
   ::-webkit-scrollbar-thumb:vertical {
       height: 50px;
   }
+
+
+
+  //////////////////////////// default blob and blur
+  /// 
+  
+  #blob {
+    background-color: white;
+    height: 25vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+  }
+  
+
+  
+

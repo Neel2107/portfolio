@@ -1,5 +1,5 @@
 .contactSection{
-    border: 2px solid lime;
+    // border: 2px solid lime;
     align-items: center;
    
     display: flex;
@@ -40,7 +40,7 @@
             .platformContainer{
                 color: hsla(0,0%,78%,.68);
                 font-size: 1.8rem;
-                margin: 3% 0;
+              
                 max-width: 50%;
                 padding: 2% 0;
                 text-align: center;
@@ -70,7 +70,7 @@
                 border: 1px solid #89bbfe;
                 border-radius: 10px;
                 color: hsla(0,0%,78%,.68);
-                font-size: 1.4rem;
+                font-size: 14px;
                 margin-top: 20px;
                 padding: 15px 50px;
                 text-align: center;
@@ -90,8 +90,8 @@
             }
 
             .developer{
-               
-                font-size: 24px;
+                font-family: 'Satisfy', cursive;
+                font-size: 40px;
                 margin-top: 1%;
             }
         }

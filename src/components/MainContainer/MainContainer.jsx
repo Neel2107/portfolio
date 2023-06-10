@@ -17,7 +17,7 @@ const MainContainer = () => {
       </span>
       <span className='subtitle'>I'm a self taught web developer</span>
       <p className='personal-info'>
-        Software enginner who specialises in producing top-notch digital experiences. Right now i'm focusing on creating responsive websites.
+        Software engineer  who specialises in producing top-notch digital experiences. Right now i'm focusing on creating responsive websites.
       </p>
 
     <a href="/" className='view-work'>Look at my work!</a>

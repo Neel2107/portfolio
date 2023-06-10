@@ -1,0 +1,38 @@
+.EducationSection{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid lime;
+    
+    
+
+.titleContainer{
+    display: flex ;
+    align-items: center;
+    padding-bottom: 30px;
+    width: 100%;
+
+
+    .titleName{
+        color: #fed;
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-right: 10px;
+        align-items: center;
+        display: flex;
+    
+    
+        span{
+            color: #89bbfe;
+            font-size: 23px;
+            margin-right: 10px;
+        }
+    }
+
+}
+
+
+
+
+}

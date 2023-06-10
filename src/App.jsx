@@ -7,6 +7,7 @@ import SkillsSection from "./components/SkillsSection/SkillsSection";
 import ProjectContainer from "./components/projectContainer/ProjectContainer";
 
 import "./index.scss";
+import EducationSection from "./components/EducationSection/EducationSection";
 
 function App() {
   const blobRef = useRef(null);
@@ -66,6 +67,7 @@ function App() {
       <OtherProjects />
 
       <SkillsSection />
+      <EducationSection/>
       </div>
     </div>
   );

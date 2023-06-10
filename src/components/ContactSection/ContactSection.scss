@@ -1,0 +1,99 @@
+.contactSection{
+    border: 2px solid lime;
+    align-items: center;
+   
+    display: flex;
+    height: -webkit-max-content;
+    height: max-content;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 5% 15%;
+    width: 100%;
+
+    .contactsContainer{
+        display: flex;
+        width: 100%;
+
+
+        .contactDetailContainer{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+
+            .GIT{
+                color: #89bbfe;
+                font-size: 48px;
+                font-weight: 600;
+            }
+
+            .desc{
+                color: hsla(0,0%,78%,.68);
+                font-size: 18px;
+                margin: 3% 0;
+                max-width: 50%;
+                padding: 2% 0;
+                text-align: center;
+            }
+
+            .platformContainer{
+                color: hsla(0,0%,78%,.68);
+                font-size: 1.8rem;
+                margin: 3% 0;
+                max-width: 50%;
+                padding: 2% 0;
+                text-align: center;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 2% 0;
+                width: 50%;
+
+
+                .platformTab{
+                    background-color: #0e1f34;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    mix-blend-mode: overlay;
+                    padding: 22px;
+
+
+                    .platformIconImage{
+                        height: 40px;
+                        object-fit: contain;
+                        width: 40px;    
+                    }
+                }
+            }
+            .contactBtn{
+                border: 1px solid #89bbfe;
+                border-radius: 10px;
+                color: hsla(0,0%,78%,.68);
+                font-size: 1.4rem;
+                margin-top: 20px;
+                padding: 15px 50px;
+                text-align: center;
+                text-decoration: none;
+                width: -webkit-max-content;
+                width: max-content
+            }
+
+            .devBy{
+                align-self: flex-end;
+                bottom: 0;
+                color: #fed;
+                cursor: pointer;
+                font-size: 14px;
+                letter-spacing: 2px;
+                margin: 7% auto auto;
+            }
+
+            .developer{
+               
+                font-size: 24px;
+                margin-top: 1%;
+            }
+        }
+    }
+}

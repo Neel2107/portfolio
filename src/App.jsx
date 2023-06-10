@@ -8,6 +8,7 @@ import ProjectContainer from "./components/projectContainer/ProjectContainer";
 
 import "./index.scss";
 import EducationSection from "./components/EducationSection/EducationSection";
+import ContactSection from "./components/ContactSection/ContactSection";
 
 function App() {
   const blobRef = useRef(null);
@@ -68,6 +69,7 @@ function App() {
 
       <SkillsSection />
       <EducationSection/>
+      <ContactSection/>
       </div>
     </div>
   );

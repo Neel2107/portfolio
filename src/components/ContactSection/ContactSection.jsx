@@ -1,6 +1,9 @@
 import React from 'react'
 import "./ContactSection.scss"
 const ContactSection = () => {
+    const handleButtonCLick = () =>{
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
  
     const linkdin={
         border: '2px solid rgb(46, 166, 86)',
@@ -12,8 +15,18 @@ const ContactSection = () => {
         boxShadow: 'rgba(255, 180, 0, 0.51) 1px 5px 40px',
     }
     
+    const instagarm = {
+        border: '2px solid rgba(219, 54, 205, 0.882)',
+        boxShadow:' rgba(219, 54, 205, 0.882) 1px 5px 40px'
+    }
+
+    const twitter={
+        border: '2px solid rgba(0, 128, 255, 0.51)',
+        boxShadow:' rgba(0, 128, 255, 0.51) 1px 5px 40px'
+    }
+
   return (
-    <div className='contactSection'>
+    <div className='contactSection'id='contact'>
         <div className="contactsContainer">
             <div className="contactDetailContainer">
             
@@ -31,12 +44,12 @@ const ContactSection = () => {
             <img className='platformIconImage' src="./github.png" alt="" />
         </div>
     </a>
-    <a href=""><div className="platformTab">
+    <a href=""><div className="platformTab" style={instagarm}>
             <img className='platformIconImage' src="./instagram.png" alt="" />
         </div>
         </a>
     <a href="">
-    <div className="platformTab">
+    <div className="platformTab" style={twitter}>
             <img className='platformIconImage' src="./twitter.png" alt="" />
         </div>
     </a>
@@ -46,6 +59,21 @@ const ContactSection = () => {
 <span className="developer">Nova</span>
             </div>
         </div>
+        <button  onClick={handleButtonCLick}>
+    <div class="text">
+        <span>Back</span>
+        <span>to</span>
+        <span>top</span>
+    </div>
+    <div class="clone">
+        <span>Back</span>
+        <span>to</span>
+        <span>top</span>
+    </div>
+    <svg width="20px" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
+</button>
     </div>
   )
 }

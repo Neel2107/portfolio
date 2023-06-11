@@ -2,8 +2,8 @@ import React from 'react'
 import "./EducationSection.scss";
 const EducationSection = () => {
   return (
-    <div className='EducationWrapper'> 
-        <div  className='EducationSection'>
+    <div className='EducationWrapper' id='education' > 
+        <div  className='EducationSection' >
         <div className='titleContainer'>
             <span className='titleName'>
                 <span>04.</span>

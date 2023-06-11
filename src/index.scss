@@ -135,7 +135,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #0e1f34; 
+    background: #13131a7a; 
   }
    
   /* Handle */
@@ -174,8 +174,8 @@
     left: 50%;
     top: 50%;
     translate: -50% -50%;
-    border-radius: 50%;
-    background: linear-gradient(to right, aquamarine, mediumpurple);
+    border-radius: 70%;
+    background: linear-gradient(to right, rgb(127, 204, 255), mediumpurple);
     animation: rotate 20s infinite;
     opacity: 0.8;
   }

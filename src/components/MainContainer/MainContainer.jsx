@@ -9,7 +9,7 @@ const MainContainer = () => {
     
       <div className='nameContainer'>
       <span className='title'>
-        <span>Hello, </span>
+        <span style={{fontSize:'20px'}}>Hello, </span>
         My name is
       </span>
       <span className='name'>

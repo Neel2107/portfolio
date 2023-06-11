@@ -5,7 +5,7 @@ const AboutMeSection = () => {
   return (
     <>
   
-    <div className="aboutMeSection">
+    <div className="aboutMeSection" id="about">
       <div className="aboutContainer">
         <div className="titleContainer">
           <span className="tabNames">

@@ -8,6 +8,7 @@
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(10px);
     background-color: #13131ae3;
+    background-image: linear-gradient(#13131ae3, rgba(0, 0, 0, 0.474));
     z-index: 1000 !important; 
 
 
@@ -20,6 +21,9 @@
         width: max-content;
         font-family: 'Satisfy', cursive;
         font-size: 30px;
+        a{
+            text-decoration: none;
+        }
     }
 
     .rightNav {

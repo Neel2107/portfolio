@@ -1,18 +1,24 @@
 import React from "react";
 import "./ProjectContainer.scss";
+import anim from "./../../touch.js"
+import { useEffect } from "react";
+
 const ProjectContainer = () => {
+  useEffect(() =>{
+    anim();
+  },[anim])
   return (
     <>
       <div className="projectContainer" id="project">
-        <div className="titleContainer">
-          <span className="tabNames">
+        <div className="titleContainer hidden show">
+          <span className="tabNames ">
             <span>02.</span>
             Some things I've Built
           </span>
-          <div className="titleHrLine"></div>
+          <div className="titleHrLine "></div>
         </div>
-        <div className="displayProjects">
-          <div className="projectImageContainer">
+        <div className="displayProjects hidden show">
+          <div className="projectImageContainer ">
             <img className="projectImage" src="./11.jpg" alt="" />
           </div>
           <div className="projectDetails">
@@ -43,7 +49,7 @@ const ProjectContainer = () => {
           </div>
         </div>
 
-        <div className="displayProjects">
+        <div className="displayProjects hidden show">
           <div
             className="projectDetails"
             style={{ textAlign: "left", flexWrap: "wrap" }}
@@ -78,7 +84,7 @@ const ProjectContainer = () => {
           </div>
         </div>
 
-        <div className="displayProjects">
+        <div className="displayProjects hidden show">
           <div className="projectImageContainer">
             <img className="projectImage" src="./11.jpg" alt="" />
           </div>

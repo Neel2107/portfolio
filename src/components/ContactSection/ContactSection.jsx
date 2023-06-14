@@ -30,10 +30,10 @@ const ContactSection = () => {
         <div className="contactsContainer">
             <div className="contactDetailContainer">
             
-<span>05. What's Next?</span>
-<span className='GIT'>Get In Touch</span>
-<p className="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum modi laboriosam atque in. Ullam maxime sed provident, in distinctio aut deleniti! Iure voluptas necessitatibus </p>
-<div className="platformContainer">
+<span className='hidden show'>05. What's Next?</span>
+<span className='GIT hidden show'>Get In Touch</span>
+<p className="desc hidden show">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum modi laboriosam atque in. Ullam maxime sed provident, in distinctio aut deleniti! Iure voluptas necessitatibus </p>
+<div className="platformContainer hidden show">
     <a href="">
         <div className="platformTab" style={linkdin}>
             <img className='platformIconImage' src="./linkdin.png" alt="" />
@@ -54,9 +54,9 @@ const ContactSection = () => {
         </div>
     </a>
 </div>
-<a href="#" className="contactBtn">Say Hello!</a>
-<span className="devBy">Developed by</span>
-<span className="developer">Nova</span>
+<a href="#" className="contactBtn hidden show">Say Hello!</a>
+<span className="devBy hidden show">Developed by</span>
+<span className="developer hidden show">Nova</span>
             </div>
         </div>
         <button  onClick={handleButtonCLick}>

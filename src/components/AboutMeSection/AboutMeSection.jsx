@@ -1,20 +1,23 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import anim from "./../../touch"
 import  './AboutMeSection.scss';
 const AboutMeSection = () => {
+  useEffect(() =>{
+    anim();
+  },[anim])
   return (
     <>
   
     <div className="aboutMeSection" id="about">
       <div className="aboutContainer">
-        <div className="titleContainer">
+        <div className="titleContainer hidden show">
           <span className="tabNames">
             <span>01.</span>
             About me
           </span>
           <div className="titleHrLine"></div>
         </div>
-        <div className="aboutII">
+        <div className="aboutII hidden show">
             <span className="aboutInfo">
                 <span>Bonjour </span>
                     it's  Neel Patel and I enjoy creating things that live on the internet.

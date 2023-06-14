@@ -4,15 +4,15 @@ const EducationSection = () => {
   return (
     <div className='EducationWrapper' id='education' > 
         <div  className='EducationSection' >
-        <div className='titleContainer'>
+        <div className='titleContainer hidden show'>
             <span className='titleName' >
                 <span>04.</span>
                     Education
             </span>
-            <div className='titleHrLine'></div>
+            <div className='titleHrLine hidden show'></div>
         </div>
-        <div className='educationSection'>
-            <div className='upperTab'>
+        <div className='educationSection hidden show'>
+            <div className='upperTab '>
                 <h4 className='years'>2019 - 2023</h4>
                 <p className='course'>Bachelor of Engineering</p>
             </div>
@@ -25,7 +25,7 @@ const EducationSection = () => {
             <span className='cgpa'>CGPA - 8.29</span>
             </div>
         </div>
-        <div className='educationSection'>
+        <div className='educationSection hidden show'>
             <div className='upperTab'>
                 <h4 className='years'>2018 - 2019</h4>
                 <p className='course'>Higher Secondary</p>
@@ -40,7 +40,7 @@ const EducationSection = () => {
             </div>
         </div>
 
-        <div className='educationSection'>
+        <div className='educationSection hidden show'>
             <div className='upperTab'>
                 <h4 className='years'>2016 - 2017</h4>
                 <p className='course'>Secondary</p>
@@ -56,7 +56,7 @@ const EducationSection = () => {
         </div>
       
         </div>
-        <img className='gifImg  ' src="./Logo.webp" alt="" />
+        <img className='gifImg hidden show ' src="./Logo.webp" alt="" />
     </div>
     
   )

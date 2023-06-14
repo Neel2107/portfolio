@@ -21,6 +21,23 @@
    
 }
 
+.hidden {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    opacity: 0;
+    -webkit-transform: translateY(60%);
+    transform: translateY(60%);
+    transition: all .8s;
+}
+  
+.show {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
 @keyframes rotate {
     from {
         rotate: 0deg;
@@ -51,6 +68,8 @@
     opacity: 0.8;
     z-index: -1;
     backdrop-filter: blur(12vmax);
+    left: -9999px; /* Set initial position outside the viewport */
+    top: -9999px;
 
    
    

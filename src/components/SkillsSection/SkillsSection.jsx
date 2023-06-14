@@ -5,7 +5,7 @@ const SkillsSection = () => {
   return (
     <div className='skillsSection' id="skills">
         <div className="scContainer">
-            <div className="titleContainer">
+            <div className="titleContainer hidden show">
                 <span className="tabNames">
                     <span>03.</span>
                     Technologies I've worked with
@@ -13,7 +13,7 @@ const SkillsSection = () => {
                 <div className="titleHrLine"></div>
             </div>
            
-            <div className="skillCard">
+            <div className="skillCard hidden show">
                 <div className="skillName">
                 <span>React Js</span>
                 </div>
@@ -30,7 +30,7 @@ const SkillsSection = () => {
                
             </div>
             
-            <div className="skillCard">
+            <div className="skillCard hidden show">
                 <div className="skillName">
                 <span>Javascript</span>
                 </div>
@@ -47,7 +47,7 @@ const SkillsSection = () => {
                
             </div>
             
-            <div className="skillCard">
+            <div className="skillCard hidden show">
                 <div className="skillName">
                 <span>Node Js</span>
                 </div>
@@ -64,7 +64,7 @@ const SkillsSection = () => {
                
             </div>
             
-            <div className="skillCard">
+            <div className="skillCard hidden show">
                 <div className="skillName">
                 <span>Tailwind CSS</span>
                 </div>
@@ -83,7 +83,7 @@ const SkillsSection = () => {
             
             
           
-            <div className="skillCard">
+            <div className="skillCard hidden show">
                 <div className="skillName">
                 <span>Github</span>
                 </div>

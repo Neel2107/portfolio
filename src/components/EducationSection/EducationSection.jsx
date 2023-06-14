@@ -5,7 +5,7 @@ const EducationSection = () => {
     <div className='EducationWrapper' id='education' > 
         <div  className='EducationSection' >
         <div className='titleContainer'>
-            <span className='titleName'>
+            <span className='titleName' >
                 <span>04.</span>
                     Education
             </span>
@@ -56,7 +56,7 @@ const EducationSection = () => {
         </div>
       
         </div>
-        <img className='gifImg  ' src="./education.gif" alt="" />
+        <img className='gifImg  ' src="./Logo.webp" alt="" />
     </div>
     
   )

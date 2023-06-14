@@ -4,61 +4,137 @@
     margin-top: 10%;
     text-align: center;
     width: 100%;
+    align-items: center;
+
 
 
     h1 {
-        font-size: 30px;
+        font-size: 1.875em;
 
     }
 
     .cardContainer {
+        grid-gap: 15px;
         display: grid;
-        
-        height: max-content;
-        justify-content: center;
-        margin-top: 6%;
-       
-        text-align: left;
-        width: 100%;
+        gap: 30px;
         grid-template-areas: ". . .";
-        grid-template-columns: repeat(3, 27%);
+        grid-template-columns: repeat(3, 32%);
         grid-template-rows: repeat(2, 300px);
-
-    }
-
-    #card {
-        background-color: #182848;
-        border-radius: 33px;
-        height: 80%;
-        padding: 15px;
-        width: 80%;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
+        height: -webkit-max-content;
         height: max-content;
+        justify-content: space-around;
+        margin-top: 6%;
+        text-align: left;
+        width:80%;
+       
+
+
+
+    
+
+
+        .cardContainer:nth-child(2) {
+            transition-delay: .2s;
+        }
+
+        #card {
+            background-color: #182848;
+            border-radius: 5px;
+            height: 100%;
+            padding: 15px;
+            width: 80%;
+
+
+           
+
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                height: max-content;
+                background-color: transparent;
+                margin-top: 10px;
+                width: auto;
+
+
+                .upperPart {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: row;
+                    height: -webkit-max-content;
+                    height: max-content;
+
+                    .cardIcon {
+                        align-items: center;
+                        display: flex;
+                        flex-direction: row;
+                        height: 45px;
+                        object-fit: cover;
+                        width: 34px;
+                        height: max-content;
+
+                    }
+                }
+
+
+                .cardDetailContainer {
+                    display: flex;
+                    flex-direction: column;
+                    height: -webkit-max-content;
+                    height: max-content;
+                    height: 100%;
+                    padding-top: 10px;
+                }
+
+                .projectName {
+                    color: #fff;
+                    cursor: pointer;
+                    font-size: 1.25em;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    margin: 10px 0;
+                    text-decoration: none;
+                }
+
+                .projectDesc {
+                    color: hsla(0, 0%, 100%, .545);
+                    font-size: 1em;
+                    font-weight: 500;
+                    min-height: 120px;
+                    overflow: hidden;
+                    overflow-y: auto;
+                    scroll-behavior: smooth;
+                    text-align: left;
+                }
+
+                .techContainer {
+                    display: block;
+                    text-align: left;
+                    overflow: hidden;
+                    width: 100%;
+                    height: -webkit-max-content;
+                    height: max-content;
+
+
+
+                    .techUsed {
+                        color: hsla(0, 0%, 100%, .345);
+                        font-size: 0.875em;
+                        font-weight: 550;
+                        padding: 4px;
+                    }
+                }
+            }
+        }
+
+
+        
+
+        .linkIcon {
+            cursor: pointer;
+            height: 24px;
+            margin: 0 7px;
+            width: 24px;
+        }
     }
-
-    .cardIcons {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        height: max-content;
-
-    }
-
-    .cardIcon {
-        height: 45px;
-        object-fit: cover;
-        width: 34px;
-    }
-
-    .linkIcon {
-        cursor: pointer;
-        height: 24px;
-        margin: 0 7px;
-        width: 24px;
-    }
-
 }

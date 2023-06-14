@@ -1,3 +1,5 @@
+
+
 * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
@@ -42,10 +44,13 @@
     left: 50%;
     top: 50%;
     translate: -50% -50%;
-    border-radius: 50%;
-    background: linear-gradient(to right, aquamarine, mediumpurple);
-    animation: rotate 20s infinite;
+    border-radius: 70%;
+    background: linear-gradient(to right,#f08dff,#088cd9);
+    // animation: Home_rotate__99GkW 20s linear infinite;
+    animation: rotate 10s linear infinite;
     opacity: 0.8;
+    z-index: -1;
+    backdrop-filter: blur(12vmax);
 
    
    
@@ -67,7 +72,13 @@
 
   .leftLinks {
     left: 3%;
-    z-index: 10;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    position: fixed;
+  
+  
 }
 
 .leftLinks,
@@ -111,7 +122,6 @@
     right: 3%;
     
 
-    z-index: 15;
     // display: flex;
     // flex-direction: column;
     -moz-box-align: center;
@@ -122,7 +132,7 @@
 
     .email {
 
-        font-size: 14px;
+        font-size: 0.875em;
         letter-spacing: 3px;
         margin-bottom: 12px;
         margin-left: 5%;
@@ -163,23 +173,4 @@
 
 
 
-  //////////////////////////// default blob and blur
-  /// 
   
-  #blob {
-    background-color: white;
-    height: 25vmax;
-    aspect-ratio: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    border-radius: 70%;
-    background: linear-gradient(to right, rgb(127, 204, 255), mediumpurple);
-    animation: rotate 20s infinite;
-    opacity: 0.8;
-  }
-  
-
-  
-

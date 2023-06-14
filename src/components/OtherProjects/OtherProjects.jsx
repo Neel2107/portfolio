@@ -7,7 +7,7 @@ const OtherProjects = () => {
       <div className="cardContainer">
       <div id="card" className="">
           <div className="container">
-            <div className="cardIcons">
+            <div className="upperPart">
               <a href="/">
                 <img className="cardIcon" src="./projectLink.png" alt="" />
               </a>
@@ -24,7 +24,7 @@ const OtherProjects = () => {
                 </a>
               </div>
             </div>
-            <div className="cardDetails">
+            <div className="cardDetailContainer">
               <a href="/" className="projectName">
                 Pomodoro
               </a>
@@ -39,9 +39,9 @@ const OtherProjects = () => {
             </div>
           </div>
         </div>
-        <div id="card" className="">
+      <div id="card" className="">
           <div className="container">
-            <div className="cardIcons">
+            <div className="upperPart">
               <a href="/">
                 <img className="cardIcon" src="./projectLink.png" alt="" />
               </a>
@@ -58,7 +58,7 @@ const OtherProjects = () => {
                 </a>
               </div>
             </div>
-            <div className="cardDetails">
+            <div className="cardDetailContainer">
               <a href="/" className="projectName">
                 Pomodoro
               </a>
@@ -73,9 +73,9 @@ const OtherProjects = () => {
             </div>
           </div>
         </div>
-        <div id="card" className="">
+      <div id="card" className="">
           <div className="container">
-            <div className="cardIcons">
+            <div className="upperPart">
               <a href="/">
                 <img className="cardIcon" src="./projectLink.png" alt="" />
               </a>
@@ -92,7 +92,7 @@ const OtherProjects = () => {
                 </a>
               </div>
             </div>
-            <div className="cardDetails">
+            <div className="cardDetailContainer">
               <a href="/" className="projectName">
                 Pomodoro
               </a>
@@ -107,9 +107,9 @@ const OtherProjects = () => {
             </div>
           </div>
         </div>
-        <div id="card" className="">
+      <div id="card" className="">
           <div className="container">
-            <div className="cardIcons">
+            <div className="upperPart">
               <a href="/">
                 <img className="cardIcon" src="./projectLink.png" alt="" />
               </a>
@@ -126,7 +126,7 @@ const OtherProjects = () => {
                 </a>
               </div>
             </div>
-            <div className="cardDetails">
+            <div className="cardDetailContainer">
               <a href="/" className="projectName">
                 Pomodoro
               </a>
@@ -141,9 +141,9 @@ const OtherProjects = () => {
             </div>
           </div>
         </div>
-        <div id="card" className="">
+      <div id="card" className="">
           <div className="container">
-            <div className="cardIcons">
+            <div className="upperPart">
               <a href="/">
                 <img className="cardIcon" src="./projectLink.png" alt="" />
               </a>
@@ -160,7 +160,7 @@ const OtherProjects = () => {
                 </a>
               </div>
             </div>
-            <div className="cardDetails">
+            <div className="cardDetailContainer">
               <a href="/" className="projectName">
                 Pomodoro
               </a>
@@ -175,9 +175,9 @@ const OtherProjects = () => {
             </div>
           </div>
         </div>
-        <div id="card" className="">
+      <div id="card" className="">
           <div className="container">
-            <div className="cardIcons">
+            <div className="upperPart">
               <a href="/">
                 <img className="cardIcon" src="./projectLink.png" alt="" />
               </a>
@@ -194,7 +194,7 @@ const OtherProjects = () => {
                 </a>
               </div>
             </div>
-            <div className="cardDetails">
+            <div className="cardDetailContainer">
               <a href="/" className="projectName">
                 Pomodoro
               </a>
@@ -209,6 +209,7 @@ const OtherProjects = () => {
             </div>
           </div>
         </div>
+       
 
         
 

@@ -3,10 +3,8 @@
     align-items: center;
     background-color: linear-gradient(180deg, #13131a 0, #182848);
     display: flex;
-    justify-content: center;
-    height: max-content;
-    min-height: 100vh;
-    padding: 5% 15%;
+  
+    padding: 10% 15%;
     width: 100%;
   margin: auto 0%;
     z-index: 100;
@@ -29,7 +27,7 @@
         .title {
             letter-spacing: 2px;
             color: #89bbfe;
-            font-size: 16px;
+            font-size: 1em;
         }
 
         .name {
@@ -50,7 +48,7 @@
 
         .personal-info {
             color: hsla(0, 0, 78%, .68);
-            font-size: 18px;
+            font-size: 1.125em;
             line-height: 25px;
             margin-top: 30px;
             max-width: 550px;
@@ -65,7 +63,7 @@
             cursor: pointer;
             display: flex;
             flex-direction: row;
-            font-size: 18px;
+            font-size: 1.125em;
             justify-content: space-around;
             margin-top: 50px;
             padding: 15px 30px;

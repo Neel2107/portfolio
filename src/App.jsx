@@ -24,6 +24,9 @@ function App() {
 
     window.addEventListener("pointermove", handlePointerMove);
 
+    // Scroll to the top when component mounts
+    window.scrollTo(0, 0);
+
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
     };
@@ -31,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='leftLinks'>
+      <div className='leftLinks animate__animated animate__fadeIn animate__delay-2s'>
         <a href="">
           <img className='icons' src="./github.png" alt="" />
         </a>
@@ -47,16 +50,19 @@ function App() {
    
         <div className='verticalLink'></div>
       </div>
-      <div className='rightLink'>
+      <div className='rightLink  animate__animated animate__fadeIn animate__delay-2s   '>
         <a href="/">
          <span className='email'> neelpatel805804@gmail.com</span>
         </a>
         <div className='verticalLink'></div>
       </div>
-      <div id="blob" ref={blobRef}></div>
+      <div id="blur"> 
+      <Navbar />
+      </div>
+      <div id="blob"  ref={blobRef}></div>
 <div id="blur"> 
 
-      <Navbar />
+     
 
       <MainContainer />
 

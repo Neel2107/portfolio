@@ -1,198 +1,224 @@
-.contactSection{
-    // border: 2px solid lime;
-    align-items: center;
-   position: relative;
+.contactSection {
+  // border: 2px solid lime;
+  align-items: center;
+  position: relative;
+  display: flex;
+  height: -webkit-max-content;
+  height: max-content;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 5% 15%;
+  width: 100%;
+
+
+  .contactsContainer {
     display: flex;
-    height: -webkit-max-content;
-    height: max-content;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 5% 15%;
     width: 100%;
 
 
-    .contactsContainer{
+    .contactDetailContainer {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+
+      .GIT {
+        color: #89bbfe;
+        font-size: 3em;
+        font-weight: 600;
+      }
+
+      .desc {
+        color: hsla(0, 0%, 78%, .68);
+        font-size: 1.125em;
+        margin: 3% 0;
+        max-width: 50%;
+        padding: 2% 0;
+        text-align: center;
+      }
+
+      .platformContainer {
+        color: hsla(0, 0%, 78%, .68);
+        font-size: 1.8rem;
+
+        max-width: 50%;
+        padding: 2% 0;
+        text-align: center;
         display: flex;
-        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2% 0;
+        width: 50%;
+
+  
+        .platformTab:hover {
+          scale: 1.1;
+          transition: .4s;
+        } 
 
 
-        .contactDetailContainer{
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
+        .platformTab {
+          background-color: #0e1f34;
+          border-radius: 10px;
+          cursor: pointer;
+          mix-blend-mode: overlay;
+          padding: 22px;
+          transition: scale 0.4s ease;
+        
 
-
-            .GIT{
-                color: #89bbfe;
-                font-size: 3em;
-                font-weight: 600;
-            }
-
-            .desc{
-                color: hsla(0,0%,78%,.68);
-                font-size: 1.125em;
-                margin: 3% 0;
-                max-width: 50%;
-                padding: 2% 0;
-                text-align: center;
-            }
-
-            .platformContainer{
-                color: hsla(0,0%,78%,.68);
-                font-size: 1.8rem;
-              
-                max-width: 50%;
-                padding: 2% 0;
-                text-align: center;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 2% 0;
-                width: 50%;
-
-
-                .platformTab{
-                    background-color: #0e1f34;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    mix-blend-mode: overlay;
-                    padding: 22px;
-
-
-                    .platformIconImage{
-                        height: 40px;
-                        object-fit: contain;
-                        width: 40px;    
-                    }
-                }
-            }
-            .contactBtn{
-                border: 1px solid #89bbfe;
-                border-radius: 10px;
-                color: hsla(0,0%,78%,.68);
-                font-size: 0.875em;
-                margin-top: 20px;
-                padding: 15px 50px;
-                text-align: center;
-                text-decoration: none;
-                width: -webkit-max-content;
-                width: max-content
-            }
-
-            .devBy{
-                align-self: flex-end;
-                bottom: 0;
-                color: #fed;
-                cursor: pointer;
-                font-size: 0.875em;
-                letter-spacing: 2px;
-                margin: 7% auto auto;
-            }
-
-            .developer{
-                font-family: 'Satisfy', cursive;
-                font-size: 2em;
-                margin-top: 1%;
-            }
+          .platformIconImage {
+            height: 40px;
+            object-fit: contain;
+            width: 40px;
+          }
         }
-   
-   
-   
+
+       
+        .platformTab:hover {
+          scale: 1.1;
+          // transition: .4s; 
+        }
+      }
+
+      .contactBtn {
+        border: 1px solid #89bbfe;
+        border-radius: 10px;
+        color: hsla(0, 0%, 78%, .68);
+        font-size: 0.875em;
+        margin-top: 20px;
+        padding: 15px 50px;
+        text-align: center;
+        text-decoration: none;
+        width: -webkit-max-content;
+        width: max-content
+      }
+      .contactBtn:hover{
+        background-color: rgba(0, 255, 255, 0.1);
+        
+        box-shadow: 0 5px 20px 3px #89bcfe43;
+        color: #fff;
+        transition: .3s;
+    
+      }
+
+      .devBy {
+        align-self: flex-end;
+        bottom: 0;
+        color: #fed;
+        cursor: pointer;
+        font-size: 0.875em;
+        letter-spacing: 2px;
+        margin: 7% auto auto;
+      }
+
+      .developer {
+        font-family: 'Satisfy', cursive;
+        font-size: 2em;
+        margin-top: 1%;
+      }
     }
 
 
 
-    button {
-        width: 140px;
-        height: 56px;
-        overflow: hidden;
-        border: none;
-        color: #fff;
-        background: none;
-        position: absolute;
-        padding-bottom: 2em;
-        bottom: 5%;
-        right: 10%;
-        cursor: pointer;
-      
-      }
-      
-      button > div,button > svg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-      }
-      
-      button:before {
-        content: "";
-        position: absolute;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        background: currentColor;
-        transition: transform 0.25s ease-out;
-      }
-      
-      button:hover:before {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-      
-      button .clone > *,button .text > * {
-        opacity: 1;
-        font-size: 1.3rem;
-        transition: 0.2s;
-        margin-left: 4px;
-      }
-      
-      button .clone > * {
-        transform: translateY(60px);
-      }
-      
-      button:hover .clone > * {
-        opacity: 1;
-        transform: translateY(0px);
-        transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-      }
-      
-      button:hover .text > * {
-        opacity: 1;
-        transform: translateY(-60px);
-        transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-      }
-      
-      button:hover .clone > :nth-child(1) {
-        transition-delay: 0.15s;
-      }
-      
-      button:hover .clone > :nth-child(2) {
-        transition-delay: 0.2s;
-      }
-      
-      button:hover .clone > :nth-child(3) {
-        transition-delay: 0.25s;
-      }
-      
-      button:hover .clone > :nth-child(4) {
-        transition-delay: 0.3s;
-      }
-      /* icon style and hover */
-      button svg {
-        width: 20px;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%) rotate(-50deg);
-        transition: 0.2s ease-out;
-      }
-      
-      button:hover svg {
-        transform: translateY(-50%) rotate(-90deg)  translateY(4px);;
-      }
+  }
+
+
+
+  button {
+    width: 140px;
+    height: 56px;
+    overflow: hidden;
+    border: none;
+    color: #fff;
+    background: none;
+    position: absolute;
+    padding-bottom: 2em;
+    bottom: 5%;
+    right: 10%;
+    cursor: pointer;
+
+  }
+
+  button>div,
+  button>svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  button:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: currentColor;
+    transition: transform 0.25s ease-out;
+  }
+
+  button:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  button .clone>*,
+  button .text>* {
+    opacity: 1;
+    font-size: 1.3rem;
+    transition: 0.2s;
+    margin-left: 4px;
+  }
+
+  button .clone>* {
+    transform: translateY(60px);
+  }
+
+  button:hover .clone>* {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  }
+
+  button:hover .text>* {
+    opacity: 1;
+    transform: translateY(-60px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  }
+
+  button:hover .clone> :nth-child(1) {
+    transition-delay: 0.15s;
+  }
+
+  button:hover .clone> :nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  button:hover .clone> :nth-child(3) {
+    transition-delay: 0.25s;
+  }
+
+  button:hover .clone> :nth-child(4) {
+    transition-delay: 0.3s;
+  }
+
+  /* icon style and hover */
+  button svg {
+    width: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-50deg);
+    transition: 0.2s ease-out;
+  }
+
+  button:hover svg {
+    transform: translateY(-50%) rotate(-90deg) translateY(4px);
+    ;
+  }
 
 
 }

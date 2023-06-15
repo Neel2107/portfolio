@@ -10,11 +10,17 @@ import EducationSection from "./components/EducationSection/EducationSection";
 import ContactSection from "./components/ContactSection/ContactSection";
 
 function App() {
+
   const blobRef = useRef(null);
+
+
+  
 
   useEffect(() => {
     const blob = blobRef.current;
-
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
     const handlePointerMove = (event) => {
       const { clientX, clientY } = event;
 
@@ -34,6 +40,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <div className="leftLinks animate__animated animate__fadeIn animate__delay-2s">
         <a className="leftLinksIcons" href="https://github.com/Neel2107">
           <svg

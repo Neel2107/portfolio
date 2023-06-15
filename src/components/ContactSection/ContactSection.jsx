@@ -32,7 +32,7 @@ const ContactSection = () => {
             
 <span className='hidden show'>05. What's Next?</span>
 <span className='GIT hidden show'>Get In Touch</span>
-<p className="desc hidden show">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum modi laboriosam atque in. Ullam maxime sed provident, in distinctio aut deleniti! Iure voluptas necessitatibus </p>
+<p className="desc hidden show">Although I am currently new to the sector, based on my projects and talents, I would like to gain some industrial experience. I am delighted to begin a new chapter as a developer for the company.</p>
 <div className="platformContainer hidden show">
     <a href="https://www.linkedin.com/in/neelpatel2107/">
         <div className="platformTab" style={linkdin}>

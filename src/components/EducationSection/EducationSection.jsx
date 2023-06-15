@@ -35,7 +35,7 @@ const EducationSection = () => {
             <div className='hrLine'></div>
             <div className='lowerTab'>
 
-            <span className='institute'>AB School</span>
+            <span className='institute'>A B School</span>
             <span className='cgpa'>Percentage - 63.69%</span>
             </div>
         </div>
@@ -50,7 +50,7 @@ const EducationSection = () => {
             <div className='hrLine'></div>
             <div className='lowerTab'>
             
-            <span className='institute'>AB School</span>
+            <span className='institute'>A B School</span>
             <span className='cgpa'>Percentage - 85.16%</span>
             </div>
         </div>

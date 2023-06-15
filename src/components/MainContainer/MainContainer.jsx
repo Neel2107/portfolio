@@ -20,10 +20,10 @@ const MainContainer = () => {
         Software engineer  who specialises in producing top-notch digital experiences. Right now i'm focusing on creating responsive websites.
       </p>
 
-    <a href="/" className='view-work animate__animated animate__fadeIn' style={{ animationDelay: "1.5s"}}>Look at my work!</a>
+    <a href="#project" className='viewWork animate__animated animate__fadeIn' style={{ animationDelay: "1.5s"}}>Look at my work!</a>
       </div>
       <div className='gifContainer animate__animated animate__fadeIn ' style={{ animationDelay: "1.7s"}}>
-        <img className='main-img' src="./coder.gif" alt="" />
+        <img className='main-img' src="./education.gif" alt="" />
       </div>
     </div>
    

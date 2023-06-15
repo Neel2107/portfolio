@@ -1,5 +1,5 @@
 .navbar {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(7px);
     background-color: #0d0d10b2;
     // background-image: linear-gradient(#13131ae3, rgba(0, 0, 0, 0.474));
     display: flex;
@@ -7,13 +7,13 @@
     justify-content: space-between;
     // padding: 20px 40px;
     width: 100%;
-    position:sticky;
+    position: sticky;
     top: 0;
     left: 0;
     -webkit-backdrop-filter: blur(10px);
-    z-index: 1000 !important; 
+    z-index: 1000 !important;
 
-    
+
 
 
     .leftLogo {
@@ -23,12 +23,13 @@
         font-family: 'Satisfy', cursive;
         font-size: 32px;
         text-decoration: none;
-        a{
+
+        a {
             text-decoration: none;
         }
 
 
-           
+
 
     }
 
@@ -50,7 +51,7 @@
         }
 
         li {
-            margin: 0rem 1rem;// add some spacing between the items
+            margin: 0rem 1rem; // add some spacing between the items
 
         }
 
@@ -60,21 +61,44 @@
             text-decoration: none;
 
             font-size: 0.875em;
-           
+
+            .about:hover {
+                color: rgb(137, 187, 254);
+            }
+
+            .projects:hover {
+
+                color: rgb(137, 187, 254);
+            }
+
+            .skills:hover {
+                color: rgb(137, 187, 254);
+            }
+
+            .education:hover {
+                color: rgb(137, 187, 254);
+            }
+
+
+            .contact:hover {
+                color: rgb(137, 187, 254);
+            }
 
 
         }
 
-   
-   
-   
+
+
+
+
+
     }
 
 
 
 
 
-    .animate__animated.animate__backInDown{
+    .animate__animated.animate__backInDown {
         --animate-delay: 5s;
     }
 }

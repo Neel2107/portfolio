@@ -34,21 +34,21 @@ const ContactSection = () => {
 <span className='GIT hidden show'>Get In Touch</span>
 <p className="desc hidden show">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum modi laboriosam atque in. Ullam maxime sed provident, in distinctio aut deleniti! Iure voluptas necessitatibus </p>
 <div className="platformContainer hidden show">
-    <a href="">
+    <a href="https://www.linkedin.com/in/neelpatel2107/">
         <div className="platformTab" style={linkdin}>
             <img className='platformIconImage' src="./linkdin.png" alt="" />
         </div>
     </a>
-    <a href="">
+    <a href="https://github.com/Neel2107">
     <div className="platformTab" style={github}>
             <img className='platformIconImage' src="./github.png" alt="" />
         </div>
     </a>
-    <a href=""><div className="platformTab" style={instagarm}>
+    <a href="https://www.instagram.com/21_neeel/"><div className="platformTab" style={instagarm}>
             <img className='platformIconImage' src="./instagram.png" alt="" />
         </div>
         </a>
-    <a href="">
+    <a href="https://twitter.com/notneeel">
     <div className="platformTab" style={twitter}>
             <img className='platformIconImage' src="./twitter.png" alt="" />
         </div>
@@ -73,7 +73,9 @@ const ContactSection = () => {
     <svg width="20px" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
     </svg>
+    
 </button>
+
     </div>
   )
 }

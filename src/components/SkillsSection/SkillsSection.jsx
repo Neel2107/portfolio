@@ -53,7 +53,7 @@ const SkillsSection = () => {
                 </div>
                 <div className="indicatorContainer">
                     <div className="indicator">
-                        <div className='animate__animated animate__slideInLeft'  style={{width:"5w0%", height:"10px", backgroundColor:"rgb(25, 197, 25)", borderRadius:"5px", zIndex:"100"}}></div>
+                        <div className='animate__animated animate__slideInLeft'  style={{width:"50%", height:"10px", backgroundColor:"rgb(25, 197, 25)", borderRadius:"5px", zIndex:"100"}}></div>
                     </div>
                 </div>
                 <span className="scoreContainer">

@@ -55,7 +55,7 @@
             text-align: left;
         }
 
-        .view-work {
+        .viewWork {
             background-color: transparent;
             border: 1px solid #89bbfe;
             border-radius: 10px;
@@ -69,6 +69,12 @@
             padding: 15px 30px;
             text-decoration: none;
             width: max-content;
+        }
+
+        .viewWork:hover{
+            background-color:  rgba(137, 188, 254, 0.1);
+            opacity: 0.1;
+            color: #FFF;
         }
     }
 

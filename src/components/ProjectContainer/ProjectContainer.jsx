@@ -19,7 +19,7 @@ const ProjectContainer = () => {
         </div>
         <div className="displayProjects hidden show">
           <div className="projectImageContainer ">
-            <img className="projectImage" src="./11.jpg" alt="" />
+            <img className="projectImage" src="./Nike-Store.png" alt="" />
           </div>
           <div className="projectDetails">
             <span>Featured Project</span>
@@ -39,10 +39,10 @@ const ProjectContainer = () => {
               <span>Strapi</span>
             </div>
             <div className="iconsContainer">
-              <a href="/">
+              <a href="https://github.com/Neel2107/Shoe-Store">
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
-              <a href="/">
+              <a href="https://shoe-store-mocha.vercel.app/">
                 <img className="socialIcons" src="/projectLink.png" alt="" />
               </a>
             </div>

@@ -1,5 +1,3 @@
-
-
 * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
@@ -11,14 +9,14 @@
 
 }
 
- body {
+body {
     background-color: black;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; 
-   
+    overflow-x: hidden;
+
 }
 
 .hidden {
@@ -29,7 +27,7 @@
     transform: translateY(60%);
     transition: all .8s;
 }
-  
+
 .show {
     -webkit-filter: blur(0);
     filter: blur(0);
@@ -62,42 +60,65 @@
     top: 50%;
     translate: -50% -50%;
     border-radius: 70%;
-    background: linear-gradient(to right,#f08dff,#088cd9);
+    background: linear-gradient(to right, #f08dff, #088cd9);
     // animation: Home_rotate__99GkW 20s linear infinite;
     animation: rotate 10s linear infinite;
     opacity: 0.8;
     z-index: -1;
     backdrop-filter: blur(12vmax);
-    left: -9999px; /* Set initial position outside the viewport */
+    left: -9999px;
+    /* Set initial position outside the viewport */
     top: -9999px;
 
-   
-   
-   
-    
-  }
-  
-  #blur {
+
+
+
+
+}
+
+#blur {
 
     width: 100%;
-   
-    z-index:2;
+
+    z-index: 2;
     backdrop-filter: blur(12vmax);
 
-    
-  
-  
-  }
 
-  .leftLinks {
+
+
+}
+
+.leftLinks {
     left: 3%;
     bottom: 0;
     display: flex;
     flex-direction: column;
     padding: 0 5px;
     position: fixed;
+
   
-  
+
+ .leftLinksIcons{
+    transition: transform 0.25s;
+ }
+
+    .leftLinksIcons:hover {
+
+        transform: translateY(-3px);
+      
+        // transition: 0.25s;
+          
+ .pathHover{
+    stroke:  #00FFFF;
+    transition-timing-function:  all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+ }
+    }
+
+ 
+
+
+
+
 }
 
 .leftLinks,
@@ -117,17 +138,17 @@
         width: 30px;
     }
 
-    .icons:hover {
-        background-color: transparent;
-        border-radius: 5px;
-        box-shadow: 1px 1px 10px #0bf;
-        scale: 1.2;
-        transition: .4s;
-    }
+    // .icons:hover {
+    //     background-color: transparent;
+    //     border-radius: 5px;
+    //     box-shadow: 1px 1px 10px #0bf;
+    //     scale: 1.2;
+    //     transition: .4s;
+    // }
 
     .verticalLink {
         background-color: #89bbfe;
-        margin-left: calc(50% - 1px); 
+        margin-left: calc(50% - 1px);
         height: 90px;
         width: 2px;
     }
@@ -139,7 +160,7 @@
 
 .rightLink {
     right: 3%;
-    
+
 
     // display: flex;
     // flex-direction: column;
@@ -148,6 +169,12 @@
     position: fixed;
     padding: 0 5px;
 
+
+    // .myEmail:hover {
+    //    
+    //     transition: 0.4s;
+    //     color: #00FFFF;
+    // }
 
     .email {
 
@@ -159,37 +186,49 @@
         writing-mode: vertical-rl;
 
     }
+
+    .email:hover {
+        color: #00FFFF;
+        transform: translateY(-3px);
+        transition: 0.25s;
+    }
+
+
 }
-  
+
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #13131a7a; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #89bbfe; 
+    background: #13131a7a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #89bbfe;
     width: 24px;
-  
+
     border: 5px solid #89bbfe;
     border-radius: 15px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #89bbfe; 
-  }
-  
-  ::-webkit-scrollbar {
-      width: 10px;
-      height: 50%;
-  }
-  
-  ::-webkit-scrollbar-thumb:vertical {
-      height: 50px;
-  }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #89bbfe;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 50%;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+}
 
 
 
-  
+.firstBlur {
+    position: fixed;
+    backdrop-filter: blur(5px) !important;
+
+}

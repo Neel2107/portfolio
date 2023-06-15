@@ -1,140 +1,143 @@
-
-
-
-.EducationWrapper{
+.EducationWrapper {
     display: flex;
     flex-direction: row;
 
-padding: 10% 15%;
+    padding: 10% 17%;
 
-.EducationSection{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    // border: 2px solid lime;
-    
-    
-
-.titleContainer{
-    display: flex ;
-    align-items: center;
-    padding-bottom: 30px;
-    width: 100%;
-
-
-
-    
-    .titleHrLine{
-        background-color: #003b5d;;
-        height: 1px;
-        width: 30%;
-    }
-
-    .titleName{
-        color: #fed;
-        font-size: 1.875em;
-        font-weight: 600;
-        letter-spacing: 2px;
-        margin-right: 10px;
-        align-items: center;
+    .EducationSection {
         display: flex;
-    
-    
-        span{
-            color: #89bbfe;
-            font-size: 1.438em;
-            margin-right: 10px;
-        }
-
-    }
-
-}
-
-
-
-.educationSection{
-    font-size: 1.25em;
-    margin-top: 20px;
-    padding-left: 20px;
-    text-align: left;
-    width: 100%;
-
-    .upperTab{
-        display: flex;
-        width: 100%;
-        flex-direction: row;
-        margin-bottom: 10px;
-
-        .years{
-            border-right: 2px solid #fff;
-            color: #fed;
-            margin: 0;
-            padding-right: 10px;
-            width: max-content;
-            }
-
-            .course{
-                color: #89bbfe;
-                padding-left: 10px;
-                width: max-content;
-            }
-    }
-    .hrLine{
-        background: linear-gradient(90deg,#cacaca71 0,transparent 90%);
-        height: 1px;
-        width: 100%;
-    }
-    .lowerTab{
         flex-direction: column;
-        font-size: 1em;
-        line-height: 2.5rem;
-        padding: 15px;
-        display: flex;
-        width: 100%; 
-        
-       .department{
-        color: rgb(186, 230, 255);
-        font-size: 0.938em;
-       } 
-        .institute{
-            color: hsla(0,0%,78%,.68);
-            font-size: 1em;
+        width: 100%;
+        // border: 2px solid lime;
+
+
+
+        .titleContainer {
+            display: flex;
+            align-items: center;
+            padding-bottom: 30px;
+            width: 100%;
+
+
+
+
+            .titleHrLine {
+                background-color: #003b5d;
+                ;
+                height: 1px;
+                width: 30%;
+            }
+
+            .titleName {
+                color: #fed;
+                font-size: 1.875em;
+                font-weight: 600;
+                letter-spacing: 2px;
+                margin-right: 10px;
+                align-items: center;
+                display: flex;
+
+
+                span {
+                    color: #89bbfe;
+                    font-size: 1.438em;
+                    margin-right: 10px;
+                }
+
+            }
+
         }
-        .cgpa{
-            
-            color: rgb(255, 238, 221);
-            font-size: 17px;
+
+
+
+        .educationSection {
+            font-size: 1.25em;
+            margin-top: 20px;
+            padding-left: 20px;
+            text-align: left;
+            width: 100%;
+
+            .upperTab {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                margin-bottom: 10px;
+
+                .years {
+                    border-right: 2px solid #fff;
+                    color: #fed;
+                    margin: 0;
+                    padding-right: 10px;
+                    width: max-content;
+                }
+
+                .course {
+                    color: #89bbfe;
+                    padding-left: 10px;
+                    width: max-content;
+                }
+            }
+
+            .hrLine {
+                background: linear-gradient(90deg, #cacaca71 0, transparent 90%);
+                height: 1px;
+                width: 100%;
+            }
+
+            .lowerTab {
+                flex-direction: column;
+                font-size: 1em;
+                line-height: 2.5rem;
+                padding: 15px;
+                display: flex;
+                width: 100%;
+
+                .department {
+                    color: rgb(186, 230, 255);
+                    font-size: 0.938em;
+                }
+
+                .institute {
+                    color: hsla(0, 0%, 78%, .68);
+                    font-size: 1em;
+                }
+
+                .cgpa {
+
+                    color: rgb(255, 238, 221);
+                    font-size: 17px;
+                }
+            }
         }
+
+
+
     }
-}
+
+    .gifImg {
+        // height: 50px;
+
+        // width: 50px;
+        // z-index: 10;    
+        // object-fit: cover;
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
 
 
 
-}
-.gifImg{
-    // height: 50px;
+        /////////////////////////for new logo/////////
+        /// 
+        /// 
 
-    // width: 50px;
-    // z-index: 10;    
-    // object-fit: cover;
-    object-fit: contain;
-   max-width: 100%;
-   max-height: 100%;
-   width: auto;
-   height: auto;
-
-
-
-   /////////////////////////for new logo/////////
-   /// 
-   /// 
- 
-   position: relative!important;
-   max-width: clamp(400px,45%,500px);
-   height: 60%;
-   object-fit: cover;
-   object-position: center 20%;
-   transform: scaleX(-1);
-}
+        position: relative !important;
+        max-width: clamp(400px, 45%, 500px);
+        height: 60%;
+        object-fit: cover;
+        object-position: center 20%;
+        transform: scaleX(-1);
+    }
 
 }

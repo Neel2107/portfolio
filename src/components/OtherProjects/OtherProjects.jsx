@@ -26,15 +26,14 @@ const OtherProjects = () => {
             </div>
             <div className="cardDetailContainer">
               <a href="/" className="projectName">
-                Pomodoro
+                Pomo-Time
               </a>
               <p className="projectDesc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-                iusto? Necessitatibus incidunt est consectetur delectus.
+              Pomo-Time is a web app that helps increase productivity using the Pomodoro Technique with customizable timers and progress tracking.
               </p>
               <div className="techContainer">
-                <div className="techUsed">Next JS</div>
-                <div className="techUsed">React JS</div>
+                <div className="techUsed">ReactJS</div>
+                <div className="techUsed">CSS</div>
               </div>
             </div>
           </div>
@@ -107,111 +106,7 @@ const OtherProjects = () => {
             </div>
           </div>
         </div>
-      <div id="card" className="">
-          <div className="container">
-            <div className="upperPart">
-              <a href="/">
-                <img className="cardIcon" src="./projectLink.png" alt="" />
-              </a>
-              <div
-                style={{
-                  width: "100%",
-                  alignItems: "flex-end",
-                  display: "flex",
-                  flexDirection: "row-reverse",
-                }}
-              >
-                <a href="/">
-                  <img className="linkIcon" src="./projectLink.png" alt="" />
-                </a>
-              </div>
-            </div>
-            <div className="cardDetailContainer">
-              <a href="/" className="projectName">
-                Pomodoro
-              </a>
-              <p className="projectDesc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-                iusto? Necessitatibus incidunt est consectetur delectus.
-              </p>
-              <div className="techContainer">
-                <div className="techUsed">Next JS</div>
-                <div className="techUsed">React JS</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <div id="card" className="">
-          <div className="container">
-            <div className="upperPart">
-              <a href="/">
-                <img className="cardIcon" src="./projectLink.png" alt="" />
-              </a>
-              <div
-                style={{
-                  width: "100%",
-                  alignItems: "flex-end",
-                  display: "flex",
-                  flexDirection: "row-reverse",
-                }}
-              >
-                <a href="/">
-                  <img className="linkIcon" src="./projectLink.png" alt="" />
-                </a>
-              </div>
-            </div>
-            <div className="cardDetailContainer">
-              <a href="/" className="projectName">
-                Pomodoro
-              </a>
-              <p className="projectDesc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-                iusto? Necessitatibus incidunt est consectetur delectus.
-              </p>
-              <div className="techContainer">
-                <div className="techUsed">Next JS</div>
-                <div className="techUsed">React JS</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <div id="card" className="">
-          <div className="container">
-            <div className="upperPart">
-              <a href="/">
-                <img className="cardIcon" src="./projectLink.png" alt="" />
-              </a>
-              <div
-                style={{
-                  width: "100%",
-                  alignItems: "flex-end",
-                  display: "flex",
-                  flexDirection: "row-reverse",
-                }}
-              >
-                <a href="/">
-                  <img className="linkIcon" src="./projectLink.png" alt="" />
-                </a>
-              </div>
-            </div>
-            <div className="cardDetailContainer">
-              <a href="/" className="projectName">
-                Pomodoro
-              </a>
-              <p className="projectDesc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-                iusto? Necessitatibus incidunt est consectetur delectus.
-              </p>
-              <div className="techContainer">
-                <div className="techUsed">Next JS</div>
-                <div className="techUsed">React JS</div>
-              </div>
-            </div>
-          </div>
-        </div>
-       
-
-        
+   
 
       </div>
     </div>

@@ -46,35 +46,35 @@ const handleContactClick = ()=>{
         <ul>
           <li className="animate__animated animate__backInDown " style={{animationDelay: "50ms"}}>
           <a  href="#about" onClick={handleAboutClick}>
-            <span href="#about">01.</span>
+            <span  className="nums" href="#about">01.</span>
             <span className="about" href="/">About</span>
             </a>
         
           </li>
           <li className="animate__animated animate__backInDown" style={{animationDelay: "100ms"}} >
             <a  href="#project" onClick={handleProjectsClick}>
-            <span href="/">02.</span>
+            <span className="nums" href="/">02.</span>
             <span className="projects" href="/">Projects</span>
             </a>
         
           </li>
           <li className="animate__animated animate__backInDown"  style={{animationDelay: "150ms"}}>
             <a  href="#skills" onClick={handleSkillsClick}>
-            <span href="/">03.</span>
+            <span  className="nums" href="/">03.</span>
             <span className="skills" href="/">Skills</span>
             </a>
         
           </li>
           <li className="animate__animated animate__backInDown" style={{animationDelay: "200ms"}}>
             <a  href="#education"  onClick={handleEducationSection}>
-            <span href="/">04.</span>
+            <span  className="nums" href="/">04.</span>
             <span className="education" href="/">Education</span>
             </a>
         
           </li>
           <li className="animate__animated animate__backInDown" style={{animationDelay: "250ms"}}>
             <a  href="#contact" onClick={handleContactClick}>
-            <span href="/">05.</span>
+            <span  className="nums" href="/">05.</span>
             <span className="contact" href="/">Contact</span>
             </a>
         

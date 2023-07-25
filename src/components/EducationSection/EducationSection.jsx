@@ -22,7 +22,7 @@ const EducationSection = () => {
             <div className='lowerTab'>
             <span className='department' >Computer Engineering</span>
             <span className='institute'>Government Engineering College, Dahod</span>
-            <span className='cgpa'>CGPA - 8.29</span>
+            <span className='cgpa'>CGPA - 8.39</span>
             </div>
         </div>
         <div className='educationSection hidden show'>
@@ -56,7 +56,7 @@ const EducationSection = () => {
         </div>
       
         </div>
-        <img className='gifImg hidden show ' src="./Logo.webp" alt="" />
+        <img className='gifImg hidden show animate__animated animate__delay-2s '  src="./Logo.webp" alt="" />
     </div>
     
   )

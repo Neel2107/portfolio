@@ -71,45 +71,41 @@ const ProjectContainer = () => {
               className="iconsContainer"
               style={{ justifyContent: "flex-start" }}
             >
-              <a href="/">
+              <a href="https://github.com/Neel2107/bank-app">
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
-              <a href="/">
+              <a href="https://bank-app-coral.vercel.app/">
                 <img className="socialIcons" src="/projectLink.png" alt="" />
               </a>
             </div>
           </div>
           <div className="projectImageContainer">
-            <img className="projectImage" src="./11.jpg" alt="" />
+            <img className="projectImage" src="./bank-app.png" alt="" />
           </div>
         </div>
 
         <div className="displayProjects hidden show">
           <div className="projectImageContainer">
-            <img className="projectImage" src="./11.jpg" alt="" />
+            <img className="projectImage" src="./Pink-Sneaker.png" alt="" />
           </div>
           <div className="projectDetails">
             <span>Featured Project</span>
-            <h4>Nike Shoe Store</h4>
+            <h4>Sneaker Webpage Design</h4>
             <div className="projectDesc">
               <p>
                 {" "}
-                Created and deployed a fully functional shoe store website on
-                Vercel, enabling users to explore and purchase a wide range of
-                products.{" "}
+                I created a minimal and elegant-looking UI design in Photoshop.{" "}
               </p>
             </div>
             <div className="techContainer">
-              <span>Next JS</span>
-              <span>Node JS</span>
-              <span>Tailwind CSS</span>
-              <span>Strapi</span>
+              <span>Adobe Photoshop</span>
+             
             </div>
             <div className="iconsContainer">
-              <a href="/">
+              <a href="https://github.com/Neel2107/UI-Design">
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
-              <a href="/">
+              <a href="https://neel2107.github.io/UI-Design/ui.html">
                 <img className="socialIcons" src="/projectLink.png" alt="" />
               </a>
             </div>

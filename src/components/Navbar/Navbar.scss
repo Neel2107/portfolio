@@ -17,7 +17,7 @@
 
 
 
-   
+
     .leftLogo {
         margin: 0.5rem 1.5rem;
         cursor: pointer;
@@ -83,12 +83,12 @@
 
 
             .contact:hover {
-                color: rgb(137, 187, 254);
+                color: #89bbfe;
             }
 
 
 
-            .nums{
+            .nums {
                 color: #89bbfe;
             }
         }
@@ -106,5 +106,49 @@
 
     .animate__animated.animate__backInDown {
         --animate-delay: 5s;
+    }
+
+    .pyramid {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+    }
+    .toggleBtn{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 770px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        height: -webkit-max-content;
+        height: max-content;
+        padding: 15px;
+        position: sticky;
+        top: 0;
+        width: 100%;
+
+        .leftLogo{
+            margin: 0;
+            font-size: 30px;
+            // margin-left: 5px;
+        }
+
+        .toggleBtn {
+            background-color: transparent;
+            border: 0;
+            display: block;
+        }
+        .rightNav{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .navbar {
+        width: 100vw;
     }
 }

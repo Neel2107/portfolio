@@ -43,7 +43,7 @@ const ProjectContainer = () => {
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
               <a href="https://shoe-store-mocha.vercel.app/">
-                <img className="socialIcons" src="/projectLink.png" alt="" />
+                <img  className="socialIcons links" src="/link.png" alt="" />
               </a>
             </div>
           </div>
@@ -75,7 +75,7 @@ const ProjectContainer = () => {
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
               <a href="https://bank-app-coral.vercel.app/">
-                <img className="socialIcons" src="/projectLink.png" alt="" />
+                <img className="socialIcons links" src="/link.png" alt="" />
               </a>
             </div>
           </div>
@@ -106,7 +106,7 @@ const ProjectContainer = () => {
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
               <a href="https://neel2107.github.io/UI-Design/ui.html">
-                <img className="socialIcons" src="/projectLink.png" alt="" />
+                <img className="socialIcons links " src="/link.png" alt="" />
               </a>
             </div>
           </div>

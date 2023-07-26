@@ -81,7 +81,7 @@ const SkillsSection = () => {
                
             </div>
             
-            <div className="skillCard hidden show">
+            {/* <div className="skillCard hidden show">
                 <div className="skillName">
                 <span>Node Js</span>
                 </div>
@@ -97,7 +97,7 @@ const SkillsSection = () => {
                  
                
             </div>
-            
+             */}
             <div className="skillCard hidden show">
                 <div className="skillName">
                 <span>Tailwind CSS</span>
@@ -154,15 +154,15 @@ const SkillsSection = () => {
             
             <div className="skillCard hidden show">
                 <div className="skillName">
-                <span>Figma</span>
+                <span>Bootstrap 5</span>
                 </div>
                 <div className="indicatorContainer">
                     <div className="indicator">
-                        <div  className='animate__animated animate__slideInLeft' style={{width:"60%", height:"10px", backgroundColor:"RGB(0, 255, 255)", borderRadius:"5px", zIndex:"100"}}></div>
+                        <div  className='animate__animated animate__slideInLeft' style={{width:"70%", height:"10px", backgroundColor:"RGB(0, 255, 255)", borderRadius:"5px", zIndex:"100"}}></div>
                     </div>
                 </div>
                 <span className="scoreContainer">
-                    6/10
+                    7/10
                 </span>
                     
                  

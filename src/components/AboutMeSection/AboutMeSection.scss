@@ -85,3 +85,17 @@
 
 
 }
+
+
+@media screen and (max-width: 770px) {
+    .aboutMeSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 90vh;
+        padding: 8%;
+
+        
+    }
+    
+}

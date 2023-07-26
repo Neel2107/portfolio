@@ -84,6 +84,9 @@ const handleContactClick = ()=>{
          
         </ul>
       </div>
+      <button className="toggleBtn animate__animated animate__backInDown">
+        <img className="pyramid" src="./pyramid.png" alt="" />
+      </button>
     </div>
   );
 };

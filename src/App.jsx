@@ -4,10 +4,11 @@ import MainContainer from "./components/MainContainer/MainContainer";
 import Navbar from "./components/Navbar/Navbar";
 import OtherProjects from "./components/OtherProjects/OtherProjects";
 import SkillsSection from "./components/SkillsSection/SkillsSection";
-import ProjectContainer from "./components/projectContainer/ProjectContainer";
+// import ProjectContainer from "./components/projectContainer/ProjectContainer";
 import "./index.scss";
 import EducationSection from "./components/EducationSection/EducationSection";
 import ContactSection from "./components/ContactSection/ContactSection";
+import ProjectContainer from './components/ProjectContainer/ProjectContainer';
 
 function App() {
 
@@ -129,7 +130,8 @@ function App() {
 
         <AboutMeSection />
 
-        <ProjectContainer />
+        {/* <ProjectContainer /> */}
+        <ProjectContainer/>
 
         <OtherProjects />
 

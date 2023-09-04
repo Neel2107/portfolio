@@ -9,6 +9,9 @@ const AboutMeSection = () => {
     <>
   
     <div className="aboutMeSection" id="about">
+      <div className="smallAboutContainer">
+
+      </div>
       <div className="aboutContainer">
         <div className="titleContainer hidden show">
           <span className="tabNames">

@@ -88,15 +88,15 @@ const OtherProjects = () => {
             </div>
             <div className="cardDetailContainer">
               <a href="/" className="projectName">
-                Coming soon..
+              Crypto-Exchange
+
               </a>
               <p className="projectDesc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-                iusto? Necessitatibus incidunt est consectetur delectus.
+              Crypto Exchange is a basic, user-friendly platform offering a straightforward way for users to exchange various cryptocurrencies.
               </p>
               <div className="techContainer">
-                <div className="techUsed">Next JS</div>
                 <div className="techUsed">React JS</div>
+                <div className="techUsed">CSS</div>
               </div>
             </div>
           </div>

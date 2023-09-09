@@ -52,11 +52,11 @@
         padding: 2% 0;
         width: 50%;
 
-  
+
         .platformTab:hover {
           scale: 1.1;
           transition: .4s;
-        } 
+        }
 
 
         .platformTab {
@@ -66,7 +66,7 @@
           mix-blend-mode: overlay;
           padding: 22px;
           transition: scale 0.4s ease;
-        
+
 
           .platformIconImage {
             height: 40px;
@@ -75,7 +75,7 @@
           }
         }
 
-       
+
         .platformTab:hover {
           scale: 1.1;
           // transition: .4s; 
@@ -94,13 +94,14 @@
         width: -webkit-max-content;
         width: max-content
       }
-      .contactBtn:hover{
+
+      .contactBtn:hover {
         background-color: rgba(0, 255, 255, 0.1);
-        
+
         box-shadow: 0 5px 20px 3px #89bcfe43;
         color: #fff;
         transition: .3s;
-    
+
       }
 
       .devBy {
@@ -226,24 +227,92 @@
 
 
 
-@media screen and (max-width: 770px) { 
+@media screen and (max-width: 770px) {
 
 
-  .contactSection{
+  .contactSection {
     padding: 5% 3%;
     // display: flex;
     // align-items: center;
 
-    
 
-    .desc{
+
+    .desc {
       max-width: 80%;
+      font-size: 0.5rem;
+      // background-color: red;
     }
 
 
-  
+
   }
 
+
+
+
+}
+
+@media screen and (max-width: 770px) {
+
+  .contactSection {
+
+    display: flex;
+    justify-content: center;
+
+
+
+    .contactsContainer {
+
+
+
+      .contactDetailContainer {
+
+
+        .GIT {
+          font-size: 2rem;
+        }
+
+        .desc {
+          max-width: 75%;
+          font-size: 0.8rem;
+        }
+
+        .platformContainer {
+          max-width: 100%;
+          width: 75%;
+
+          .platformTab {
+            padding: 5px 10px;
+
+
+
+            .icons {
+              height: 1.5rem;
+              width: 1.5rem;
+            }
+          }
+        }
+
+        .contactBtn{
+          padding: 12px 25px;
+        }
+
+        .devBy{
+margin: 75% auto auto;
+        font-size: 0.7rem;
+        }
+        .developer{
+          font-size: 1.2rem;
+
+        }
+      }
+
+    }
+
+    .backToTop {
+      display: none;
+    }
+  }
 
 
 

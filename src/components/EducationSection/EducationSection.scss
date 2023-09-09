@@ -141,3 +141,64 @@
     }
 
 }
+
+@media screen and (max-width:770px) {
+    .EducationWrapper{
+        padding: 10% 10%;
+        .EducationSection{
+            
+          
+            .titleContainer{
+                
+                .titleName{
+                font-size: 1.3rem;
+                span{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+.educationSection{
+
+    .upperTab{
+        .years{
+font-size: 0.9rem;
+        }
+        .course{
+font-size: 0.9rem;
+        }
+    }
+    .lowerTab{
+        .department{
+            font-size: 0.9rem;
+
+
+        }
+
+        .institute{
+            font-size: 0.9rem;
+
+        }
+
+        .cgpa{
+            font-size: 0.9rem;
+
+        }
+    }
+}
+
+    }
+
+
+
+
+
+
+
+
+
+.gifImg{
+    display: none ;
+}
+    }
+}

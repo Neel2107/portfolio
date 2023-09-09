@@ -165,8 +165,7 @@
 
             .tabNames {
                 font-size: 1rem;
-                // font-weight: 400;
-                // letter-spacing:0.01rem;
+           
 
 
             }
@@ -179,7 +178,32 @@
             }
         }
 
+        .displayProjects{
+            width: 80vw;
+            padding: 0;
+            display: block;
+        
+            .projectImageContainer{
+                width: 80vw;
+        
+        
+                .projectImage{
+                    width: 80vw;
+                }
+            }
 
+.projectDetails{
+h4{
+    font-size: 1.5rem;
+    // margin-bottom: 2rem;
+}
+    .projectDesc{
+        width: 100%;
+    }
+}
+
+
+        }
     }
 
 

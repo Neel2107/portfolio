@@ -144,3 +144,22 @@
         }
     }
 }
+
+@media screen and (max-width: 770px) {
+
+.otherNoteworthyProjects{
+
+
+    
+      .otherTitle{
+    font-size: 1.5rem;
+      }
+
+
+      .cardContainer{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+      }
+}
+}

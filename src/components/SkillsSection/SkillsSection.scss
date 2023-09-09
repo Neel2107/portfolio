@@ -12,7 +12,7 @@
 
   .scContainer {
     width: 100%;
-  // padding-left: 10%;
+    // padding-left: 10%;
 
 
     .titleContainer {
@@ -31,7 +31,7 @@
         margin-right: 10px;
         align-items: center;
         display: flex;
-        
+
         span {
           color: #89bbfe;
           font-size: 1.438em;
@@ -40,7 +40,8 @@
       }
 
       .titleHrLine {
-        background-color: w#003b5d;;
+        background-color: w#003b5d;
+        ;
         height: 1px;
         width: 30%;
       }
@@ -67,6 +68,7 @@
       -webkit-backdrop-filter: blur(16px) saturate(180%);
       background-color: rgba(17, 25, 40, 0.75);
       border-radius: 12px;
+
       // border: 1px solid rgba(255, 255, 255, 0.125);
       .skillName {
         min-width: 13%;
@@ -90,4 +92,52 @@
 
   }
 
+}
+
+@media screen and (max-width: 770px) {
+
+
+  .skillsSection {
+    padding: 5% 10%;
+
+    .scContainer {
+
+
+      .titleContainer {
+
+        .tabNames {
+          font-size: 1rem;
+          font-weight: normal;
+
+          span {
+            font-size: 1.3rem;
+          }
+
+        }
+
+        .titleHrLine {}
+      }
+
+
+      .skillCard {
+        // padding: 10px;
+        justify-content: space-between;
+
+        .skillName {
+          line-height: 0.8rem;
+
+          span {
+            font-size: 0.7rem;
+          }
+        }
+.indicatorContainer{
+  padding: 0 5%;
+}
+        .scoreContainer {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+  }
 }

@@ -39,7 +39,7 @@ const ProjectContainer = () => {
               <span>Strapi</span>
             </div>
             <div className="iconsContainer">
-              <a href="https://github.com/Neel2107/Shoe-Store">
+              <a href="https://github.com/Neel2107/Shoe-StoreP:\React JS\Portfolio\Neel\portfolio\src\components\ProjectContainer\ProjectContainer.scss">
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
               <a href="https://shoe-store-mocha.vercel.app/">

@@ -1,5 +1,4 @@
 .projectContainer {
-    // background-color: rgba(0, 255, 255, 0.157);
     height: max-content;
     min-height: 100vh;
     padding: 5% 17%;
@@ -8,7 +7,8 @@
 
 
     .titleContainer {
-        align-items: center;
+      // background-color: rgba(0, 255, 255, 0.157);
+      align-items: center;
         display: flex;
         padding-bottom: 30px;
         width: 100%;

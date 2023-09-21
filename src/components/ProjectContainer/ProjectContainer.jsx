@@ -19,7 +19,7 @@ const ProjectContainer = () => {
         </div>
         <div className="displayProjects hidden show">
           <div className="projectImageContainer ">
-            <img className="projectImage" src="./Nike-Store.png" alt="" />
+            <img className="projectImage" src="./1.png" alt="" />
           </div>
           <div className="projectDetails">
             <span>Featured Project</span>
@@ -39,7 +39,7 @@ const ProjectContainer = () => {
               <span>Strapi</span>
             </div>
             <div className="iconsContainer">
-              <a href="https://github.com/Neel2107/Shoe-StoreP:\React JS\Portfolio\Neel\portfolio\src\components\ProjectContainer\ProjectContainer.scss">
+              <a href="https://github.com/Neel2107/Shoe-Store">
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
               <a href="https://shoe-store-mocha.vercel.app/">
@@ -80,32 +80,35 @@ const ProjectContainer = () => {
             </div>
           </div>
           <div className="projectImageContainer">
-            <img className="projectImage" src="./bank-app.png" alt="" />
+            <img className="projectImage" src="./2.png" alt="" />
           </div>
         </div>
 
         <div className="displayProjects hidden show">
           <div className="projectImageContainer">
-            <img className="projectImage" src="./Pink-Sneaker.png" alt="" />
+            <img className="projectImage" src="./4.png" alt="" />
           </div>
           <div className="projectDetails">
             <span>Featured Project</span>
-            <h4>Sneaker Webpage Design</h4>
+            <h4>Admin Dashboard</h4>
             <div className="projectDesc">
               <p>
                 {" "}
-                I created a minimal and elegant-looking UI design in Photoshop.{" "}
+                Developed a fully functional React JS admin dashboard application with CRUD functionality and interactive charts using Recharts.{" "}
               </p>
             </div>
             <div className="techContainer">
-              <span>Adobe Photoshop</span>
+              <span>React JS</span>
+              <span>Node JS</span>
+              <span>SCSS</span>
+              <span>MUI</span>
              
             </div>
             <div className="iconsContainer">
-              <a href="https://github.com/Neel2107/UI-Design">
+              <a href="https://github.com/Neel2107/Admin-Dashboard">
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
-              <a href="https://neel2107.github.io/UI-Design/ui.html">
+              <a href="https://admin-dashboard-neel2107.vercel.app/">
                 <img className="socialIcons links " src="/link.png" alt="" />
               </a>
             </div>

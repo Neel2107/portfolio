@@ -100,7 +100,8 @@
 
         .aboutContainer {
             max-width: 100vw;
-            padding: 0 10%;
+            padding: 10% 10%;
+            // background-color: rgba(0, 217, 255, 0.267);
             // display: n;
 
 
@@ -124,12 +125,13 @@
 
 
                     .aboutInfo {
-                        font-size: 1rem;
+                        font-size: 1.2rem;
                         text-align: left;
-                        width: 300px;
+                        width: 400px;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         font-weight: 400;
+                        margin: 0;
 
 
 

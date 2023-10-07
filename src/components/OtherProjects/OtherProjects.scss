@@ -128,11 +128,12 @@
                 }
             }
         }
-        #card:hover{
+
+        #card:hover {
             box-shadow: 0 0 20px 4px #89bcfe84;
             transition: 0.2s;
         }
-        
+
 
 
 
@@ -146,20 +147,24 @@
 }
 
 @media screen and (max-width: 770px) {
+    .otherNoteworthyProjects {
+        .otherTitle {
+            font-size: 1.5rem;
+        }
 
-.otherNoteworthyProjects{
+        #cardContainerRes {
+            display: flex;
+            flex-direction: column;
+            // grid-template-columns: repeat(2, 200px);
+            // grid-template-rows: repeat(2, 10);
+            // // align-items: flex-start;
 
-
-    
-      .otherTitle{
-    font-size: 1.5rem;
-      }
-
-
-      .cardContainer{
-        display: flex;
-        flex-direction: column;
-        width: 80vw;
-      }
-}
+            #card {
+                width: 50%;
+                /* Each card should take up 100% of the grid cell */
+                margin: 0 auto;
+                /* Center the card within the grid cell */
+            }
+        }
+    }
 }

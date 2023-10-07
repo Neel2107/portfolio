@@ -53,7 +53,7 @@ function App() {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             className="  icons"
           >
             <title>GitHub</title>
@@ -69,7 +69,7 @@ function App() {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             class=" icons "
           >
             <title>Instagram</title>
@@ -87,7 +87,7 @@ function App() {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             class="icons"
           >
             <title>Twitter</title>
@@ -103,7 +103,7 @@ function App() {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             class="icons"
           >
             <title>LinkedIn</title>

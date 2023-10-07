@@ -23,6 +23,8 @@ body {
     @include sm {
         #blob {
             display: none;
+
+
         }
     }
 
@@ -30,6 +32,53 @@ body {
         #blob {
             display: none;
         }
+
+
+        .otherNoteworthyProjects{
+
+
+            #card{
+width: 50%;
+            }
+        }
+
+.contactSection{
+    // background-color: rgba(0, 255, 98, 0.2);
+    padding: 10% 10%;
+
+  
+
+}
+
+.aboutMeSection{
+    margin-top: 0;
+    margin-bottom: 10%;
+}
+
+
+.mainContainer{
+   .nameContainer{
+    margin-top: 10%;
+   }
+}
+
+        .projectContainer {
+
+            .displayProjects {
+
+                .projectImageContainer {
+
+                    width: max-content;
+
+
+                }
+
+            }
+
+        }
+
+
+
     }
 
     @include lg {
@@ -49,7 +98,8 @@ body {
         .rightLink {
             display: none;
         }
-// mainContainer START ////////////////////////////////////////////////////
+
+        // mainContainer START ////////////////////////////////////////////////////
         .mainContainer {
             padding: 20% 10%;
 
@@ -85,16 +135,17 @@ body {
             }
 
         }
-// mainContainer END ////////////////////////////////////////////////////
 
-// aboutMeSection START ////////////////////////////////////////////////////
+        // mainContainer END ////////////////////////////////////////////////////
+
+        // aboutMeSection START ////////////////////////////////////////////////////
         .aboutMeSection {
 
 
             .aboutContainer {
 
                 width: 100vw;
-                padding: 10% 15%;
+                padding: 10% 10%;
 
                 .titleContainer {
 
@@ -131,10 +182,11 @@ body {
 
 
         }
-// aboutMeSection END ////////////////////////////////////////////////////
+
+        // aboutMeSection END ////////////////////////////////////////////////////
 
 
-// projectContainer START ////////////////////////////////////////////////////
+        // projectContainer START ////////////////////////////////////////////////////
 
         .projectContainer {
             width: 100vw;
@@ -166,13 +218,15 @@ body {
                     }
 
                 }
+
                 .projectDetails {
 
                     .projectDesc {
                         padding: 15px;
 
-                      
+
                     }
+
                     .techContainer {
 
                         span {
@@ -182,7 +236,7 @@ body {
 
                     .iconsContainer {
 
-                       .socialIcons {
+                        .socialIcons {
                             height: 20px;
                             width: 20px;
                         }
@@ -193,180 +247,164 @@ body {
             }
 
         }
-// projectContainer END ////////////////////////////////////////////////////
 
-.otherNoteworthyProjects {
-   padding: 5% 10%;
+        // projectContainer END ////////////////////////////////////////////////////
 
-
-    h1 {
-font-size: 1.5rem;
-    }
-
-    .cardContainer {
-      
-width: 100%;
+        .otherNoteworthyProjects {
+            padding: 5% 10%;
 
 
+            h1 {
+                font-size: 1.5rem;
+            }
 
+            .cardContainer {
+
+                width: 100%;
 
 
 
-        .cardContainer:nth-child(2) {
-        }
 
-        #card {
+
+
+                .cardContainer:nth-child(2) {}
+
+                #card {
+
+
+
+
+                    .container {
+
+
+                        .upperPart {
+
+
+                            .cardIcon {}
+                        }
+
+
+                        .cardDetailContainer {}
+
+                        .projectName {}
+
+                        .projectDesc {
+                            font-size: 0.875rem;
+                            font-weight: 300;
+                        }
+
+                        .techContainer {
+
+                            .techUsed {}
+                        }
+                    }
+                }
+
           
 
+                .linkIcon {}
+            }
+        }
+
+        .skillsSection {
+            padding: 5% 10%;
+
+            .scContainer {
+                .titleContainer {
+                    .tabNames {
+                        font-size: 1.2rem;
+
+                        span {
+                            color: #89bbfe;
+                            font-size: 1.438em;
+                            margin-right: 10px;
+                        }
+                    }
 
 
-            .container {
-    
+                }
 
-                .upperPart {
-                   
 
-                    .cardIcon {
-                       
+            }
+
+        }
+
+
+
+        .EducationWrapper {
+
+
+            padding: 10% 10%;
+
+            .EducationSection {
+
+
+
+                .titleContainer {
+
+
+
+                    .titleHrLine {}
+
+                    .titleName {
+                        font-size: 1.5rem;
+
+
+                        span {}
+
+                    }
+
+                }
+
+
+
+                .educationSection {
+
+
+                    .upperTab {
+                        .years {
+                            font-size: 1rem;
+                        }
+
+                        .course {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    .hrLine {}
+
+                    .lowerTab {
+                        .department {
+                            font-size: 0.9rem;
+
+
+                        }
+
+                        .institute {
+                            font-size: 0.9rem;
+
+                        }
+
+                        .cgpa {
+                            font-size: 0.9rem;
+
+                        }
+
                     }
                 }
 
 
-                .cardDetailContainer {
-                
-                }
-
-                .projectName {
-                  
-                }
-
-                .projectDesc {
-                 font-size: 0.875rem;
-                 font-weight: 300;
-                }
-
-                .techContainer {
-              
-                    .techUsed {
-                     
-                    }
-                }
-            }
-        }
-        #card:hover{
-          
-        }
-        
-        .linkIcon {
-         
-        }
-    }
-}
-
-.skillsSection {
- padding: 5% 10%;
-   
-    .scContainer {
-      .titleContainer {
-        .tabNames {
-      font-size: 1.2rem;
-  
-          span {
-            color: #89bbfe;
-            font-size: 1.438em;
-            margin-right: 10px;
-          }
-        }
-  
-      
-      }
-       
-  
-    }
-  
-  }
-
-
-
-  .EducationWrapper {
-  
-
-    padding: 10% 10%;
-
-    .EducationSection {
-       
-
-
-        .titleContainer {
-           
-
-
-            .titleHrLine {
-             
-            }
-
-            .titleName {
-              font-size: 1.5rem;
-
-
-                span {
-                 
-                }
 
             }
 
+            .gifImg {
+                margin-top: 10%;
+                max-width: clamp(300px, 45%, 300px);
+
+                height: 60%;
+            }
+
         }
-
-
-
-        .educationSection {
-           
-
-            .upperTab{
-                .years{
-        font-size: 1rem;
-                }
-                .course{
-        font-size: 1rem;
-                }
-            }
-
-            .hrLine {
-              
-            }
-
-            .lowerTab {
-                .department{
-                    font-size: 0.9rem;
-        
-        
-                }
-        
-                .institute{
-                    font-size: 0.9rem;
-        
-                }
-        
-                .cgpa{
-                    font-size: 0.9rem;
-        
-                }
-
-            }
-        }
-
-
-
-    }
-
-    .gifImg {
-       margin-top: 10%;
-        max-width: clamp(300px, 45%, 300px);
-
-        height: 60%;
-    }
-
-}
 
 
 

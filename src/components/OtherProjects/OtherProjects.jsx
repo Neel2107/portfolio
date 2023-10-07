@@ -4,7 +4,7 @@ const OtherProjects = () => {
   return (
     <div className="otherNoteworthyProjects">
       <h1 className="otherTitle">Other Noteworthy Projects</h1>
-      <div className="cardContainer">
+      <div id="cardContainerRes" className="cardContainer">
         <div id="card" className="">
           <div className="container">
             <div className="upperPart">
@@ -29,7 +29,7 @@ const OtherProjects = () => {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             className="linkIcon  icons"
           >
    
@@ -78,7 +78,7 @@ const OtherProjects = () => {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             className=" linkIcon icons"
           >
             {/* <title>GitHub</title> */}
@@ -126,7 +126,7 @@ const OtherProjects = () => {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             className=" linkIcon icons"
           >
             {/* <title>GitHub</title> */}
@@ -174,7 +174,7 @@ const OtherProjects = () => {
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             className=" linkIcon icons"
           >
             {/* <title>GitHub</title> */}

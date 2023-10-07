@@ -48,7 +48,7 @@ const ContactSection = () => {
                   stroke="currentColor"
                   stroke-width="1"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
                   class="icons platformIconImage"
                 >
                   <title>LinkedIn</title>
@@ -79,7 +79,7 @@ const ContactSection = () => {
                   stroke="currentColor"
                   stroke-width="1"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
                   className="  icons platformIconImage"
                 >
                   <path
@@ -100,7 +100,7 @@ const ContactSection = () => {
                   stroke="currentColor"
                   stroke-width="1"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
                   class="platformIconImage icons "
                 >
                   <title>Instagram</title>
@@ -132,7 +132,7 @@ const ContactSection = () => {
                   stroke="currentColor"
                   stroke-width="1"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
                   class="icons platformIconImage"
                 >
                   {/* <title>Twitter</title> */}
@@ -176,7 +176,7 @@ const ContactSection = () => {
         >
           <path
             stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
             d="M14 5l7 7m0 0l-7 7m7-7H3"
           ></path>
         </svg>

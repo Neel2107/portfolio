@@ -22,7 +22,7 @@ const AboutMeSection = () => {
         </div>
         <div className="mainAboutContainer">
         <div className="aboutII hidden show">
-            <span className="aboutInfo hidden show">
+            <span id="about-info" className="aboutInfo hidden show">
                 <span>Bonjour </span>
                     it's  Neel Patel and I enjoy creating things that live on the internet.
             </span>

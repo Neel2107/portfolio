@@ -19,6 +19,7 @@
 
 
     .leftLogo {
+        color: white;
         margin: 0.5rem 1.5rem;
         cursor: pointer;
         width: max-content;
@@ -83,6 +84,9 @@
 
 
             .contact:hover {
+                color: #89bbfe;
+            }
+            .resume:hover {
                 color: #89bbfe;
             }
 

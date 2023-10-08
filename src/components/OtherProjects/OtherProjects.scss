@@ -16,7 +16,7 @@
     .cardContainer {
         display: grid;
         grid-template-areas: ". . .";
-
+// background-color: red;
         grid-gap: 15px;
         gap: 30px;
         grid-template-columns: repeat(3, 32%);
@@ -153,14 +153,16 @@
         }
 
         #cardContainerRes {
-            display: flex;
-            flex-direction: column;
-            // grid-template-columns: repeat(2, 200px);
-            // grid-template-rows: repeat(2, 10);
-            // // align-items: flex-start;
-
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            grid-template-rows: 1fr 1fr; 
+            gap: 15px 15px; 
+            grid-template-areas: 
+              ". ."
+              ". .";
+            
             #card {
-                width: 50%;
+                width: 100%;
                 /* Each card should take up 100% of the grid cell */
                 margin: 0 auto;
                 /* Center the card within the grid cell */

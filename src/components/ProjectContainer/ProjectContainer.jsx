@@ -42,7 +42,7 @@ const ProjectContainer = () => {
               <a href="https://github.com/Neel2107/Shoe-Store">
                 <img src="./github.png" alt="" className="socialIcons" />
               </a>
-              <a href="https://shoe-store-mocha.vercel.app/">
+              <a href="https://shoe-store1.vercel.app/">
                 <img  className="socialIcons links" src="/link.png" alt="" />
               </a>
             </div>

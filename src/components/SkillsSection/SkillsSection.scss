@@ -60,6 +60,8 @@
       padding: 15px;
       width: 100%;
 
+      transition: all 500ms ease-in-out;
+
       ////////////////////////new changes in card///
 
 
@@ -88,6 +90,15 @@
         }
 
       }
+    }
+
+    .skillCard:hover{
+      box-shadow: 0px 12px 30px 0px #4a96c23a;
+      // margin-top: -0.5rem;
+      scale: 1.01;
+      // margin-left: 0.5rem;
+ 
+      transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
     }
 
   }

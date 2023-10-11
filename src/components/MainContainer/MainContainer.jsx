@@ -17,7 +17,7 @@ const MainContainer = () => {
       </span>
       <span className='subtitle animate__animated animate__fadeInUp ' style={{ animationDelay: "1.3s"}}>I'm a self taught web developer</span>
       <p className='personal-info animate__animated animate__fadeInUp ' style={{ animationDelay: "1.4s"}}>
-        Software engineer  who specialises in producing top-notch digital experiences. Right now i'm focusing on creating responsive websites.
+      I'm a design-minded, detail oriented software engineer passionate about combining beautiful code with beautiful design.
       </p>
 
     <a href="#project" className='viewWork animate__animated animate__fadeIn' style={{ animationDelay: "1.5s"}}>Look at my work!</a>

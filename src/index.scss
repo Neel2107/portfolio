@@ -214,7 +214,7 @@ width: 50%;
                 .projectImageContainer {
 
                     .projectImage {
-                        width: 400px;
+                        max-width: 400px;
                     }
 
                 }
@@ -262,31 +262,9 @@ width: 50%;
 
                 width: 100%;
 
-
-
-
-
-
-                .cardContainer:nth-child(2) {}
-
                 #card {
 
-
-
-
                     .container {
-
-
-                        .upperPart {
-
-
-                            .cardIcon {}
-                        }
-
-
-                        .cardDetailContainer {}
-
-                        .projectName {}
 
                         .projectDesc {
                             font-size: 0.875rem;
@@ -300,9 +278,7 @@ width: 50%;
                     }
                 }
 
-          
-
-                .linkIcon {}
+              
             }
         }
 
@@ -413,6 +389,23 @@ width: 50%;
 
     }
 
+
+    @include xs {
+        .mainContainer{
+            padding: 50% 10%;
+        }
+
+        #cardContainerRes{
+            display: grid; 
+            grid-template-columns: 1fr; 
+            grid-template-rows: 1fr 1fr 1fr; 
+            gap: 15px 0px; 
+            grid-template-areas: 
+              "."
+              "."
+              "."; 
+        }
+    }
 }
 
 .hidden {
@@ -473,14 +466,9 @@ width: 50%;
 }
 
 #blur {
-
-    width: 100%;
-
+    width: 100vw;
     z-index: 2;
     backdrop-filter: blur(12vmax);
-
-
-
 
 }
 

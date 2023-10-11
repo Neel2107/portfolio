@@ -43,20 +43,23 @@
 
 
         .projectImageContainer {
-            border-radius: 5px;
+            border-radius: 10px;
             height: max-content;
-            background-color: #89bcfe7e;
-
-
+            background-color:    rgba(7, 12, 20, 0.75);;
+            
+            
             .projectImage {
+                border-radius: 10px;
                 mix-blend-mode: soft-light;
                 object-fit: cover;
                 width: 550px;
+                transition: all 500ms ease-in-out;
                 
             }
 
             .projectImage:hover {
                 mix-blend-mode: normal;
+                transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
             }
 
 
@@ -89,9 +92,9 @@
 
 
             .projectDesc {
-                background-color: #182848;
+                background-color:  rgb(17, 25, 40);;
                 border-radius: 5px;
-                box-shadow: 0 4px 10px rgba(73, 73, 73, 0.686);
+                box-shadow: 0 5px 10px rgba(80, 80, 80, 0.411);
                 height: max-content;
                 padding: 20px;
                 width: 115%;

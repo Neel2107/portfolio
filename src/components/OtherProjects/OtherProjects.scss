@@ -1,3 +1,5 @@
+@import "../../responsive.scss";
+
 .otherNoteworthyProjects {
     display: flex;
     flex-direction: column;
@@ -7,7 +9,7 @@
     align-items: center;
 
 
-
+    // position: relative;
     h1 {
         font-size: 1.875em;
 
@@ -27,7 +29,7 @@
         margin-top: 6%;
         text-align: left;
         width: 60%;
-      
+
 
 
 
@@ -39,16 +41,46 @@
         }
 
         #card {
-            background-color: #182848;
-            border-radius: 5px;
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+
+            transition: all 500ms ease-in-out;
             height: 100%;
             padding: 15px;
             margin: 0 auto;
             width: 100%;
             flex-grow: 1;
 
+            .link-box {
+
+                display: flex;
+                justify-content: center;
+
+                align-items: center;
+                margin: 0.2rem;
 
 
+                .new-github {
+                    filter: invert(100%)
+                }
+
+                .linkIcon {
+                    cursor: pointer;
+                    height: 50px;
+                    margin: 0 7px;
+                    width: 50px;
+
+                    .pathHover {
+                        height: 24px;
+                        width: 24px;
+                    }
+
+                }
+
+            }
 
             .container {
                 display: flex;
@@ -65,6 +97,7 @@
                     flex-direction: row;
                     height: -webkit-max-content;
                     height: max-content;
+
 
                     .cardIcon {
                         align-items: center;
@@ -130,43 +163,104 @@
         }
 
         #card:hover {
-            box-shadow: 0 0 20px 4px #89bcfe84;
-            transition: 0.2s;
+            box-shadow: 0px 12px 30px 0px #4a96c23a;
+            margin-top: -0.5rem;
+            transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+
+
+
+            .link-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0.2rem;
+
+
+                .new-github {
+                    filter: invert(100%) drop-shadow(1px 1px 1px #FFD700) 
+                    drop-shadow(0 0 10px #FFD700)
+                    ;
+                }
+
+                .linkIcon {
+                    cursor: pointer;
+                    height: 50px;
+                    margin: 0 7px;
+                    width: 50px;
+
+                    .pathHover {
+                        height: 24px;
+                        width: 24px;
+                    }
+
+                }
+
+            }
         }
 
-
-
-
-        .linkIcon {
-            cursor: pointer;
-            height: 24px;
-            margin: 0 7px;
-            width: 24px;
-        }
     }
 }
 
-@media screen and (max-width: 770px) {
+
+
+
+
+
+@media screen and (min-width: 450px) and (max-width: 770px) {
     .otherNoteworthyProjects {
         .otherTitle {
             font-size: 1.5rem;
         }
 
         #cardContainerRes {
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            grid-template-rows: 1fr 1fr; 
-            gap: 15px 15px; 
-            grid-template-areas: 
-              ". ."
-              ". .";
-            
+            // width: 80vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px 15px;
+            grid-template-areas:
+                ". ."
+                ". .";
+
             #card {
                 width: 100%;
-               
+
                 margin: 0 auto;
-              
+
             }
         }
+    }
+}
+
+
+@include xs {
+
+
+    #cardContainerRes {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 15px 0px;
+        grid-template-areas:
+            "."
+            "."
+            ".";
+    }
+}
+
+@include sm {
+
+
+    #cardContainerRes {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 15px 0px;
+        grid-template-areas:
+            "."
+            "."
+            ".";
     }
 }

@@ -1,3 +1,5 @@
+@import "../../responsive.scss";
+
 .contactSection {
   // border: 2px solid lime;
   align-items: center;
@@ -92,15 +94,18 @@
         text-align: center;
         text-decoration: none;
         width: -webkit-max-content;
-        width: max-content
+        width: max-content;
+        transition: all 500ms ease-in-out;
       }
 
       .contactBtn:hover {
         background-color: rgba(0, 255, 255, 0.1);
 
         box-shadow: 0 5px 20px 3px #89bcfe43;
-        color: #fff;
         transition: .3s;
+        color: #fff;
+        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+
 
       }
 
@@ -252,7 +257,7 @@
 
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (min-width: 450px) and (max-width: 770px) {
 
   .contactSection {
 
@@ -316,6 +321,70 @@
     }
   }
 
+
+
+}
+
+
+@include sm{
+
+  .contactSection {
+
+    display: flex;
+    justify-content: center;
+
+    .contactsContainer {
+
+      .contactDetailContainer {
+
+
+        .GIT {
+          font-size: 2rem;
+        }
+
+        .desc {
+          max-width: 75%;
+          font-size: 0.8rem;
+        }
+
+        .platformContainer {
+          max-width: 100%;
+          width: 75%;
+
+          .platformTab {
+            padding: 5px 5px;
+
+
+
+            .icons {
+              height: 1rem;
+              width: 1rem;
+            }
+          }
+        }
+
+        .contactBtn {
+          padding: 12px 25px;
+        }
+
+        .devBy {
+          // margin: 55% auto auto;
+          margin-top: 20% !important;
+          font-size: 0.7rem;
+        }
+
+        .developer {
+          font-size: 1.2rem;
+
+        }
+      }
+
+    }
+
+    .backToTop {
+      display: none;
+    }
+  }
 
 
 }

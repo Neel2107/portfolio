@@ -23,6 +23,7 @@ const ContactSection = () => {
   const twitter = {
     border: "2px solid rgba(0, 128, 255, 0.51)",
     boxShadow: " rgba(0, 128, 255, 0.51) 1px 5px 40px",
+   
   };
 
   return (

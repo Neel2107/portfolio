@@ -332,8 +332,10 @@
 
     display: flex;
     justify-content: center;
+   
 
     .contactsContainer {
+      margin-top: 35%;
 
       .contactDetailContainer {
 
@@ -352,7 +354,10 @@
           width: 75%;
 
           .platformTab {
-            padding: 5px 5px;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.5rem;
+            
 
 
 
@@ -369,7 +374,9 @@
 
         .devBy {
           // margin: 55% auto auto;
-          margin-top: 20% !important;
+          margin-top: 60% ;
+          // position: absolute;
+
           font-size: 0.7rem;
         }
 
@@ -383,6 +390,8 @@
 
     .backToTop {
       display: none;
+      // bottom: 5%;
+      // margin: 0 auto;
     }
   }
 

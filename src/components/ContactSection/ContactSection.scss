@@ -260,7 +260,7 @@
 @media screen and (min-width: 450px) and (max-width: 770px) {
 
   .contactSection {
-
+// padding: 0;
     display: flex;
     justify-content: center;
 
@@ -329,7 +329,7 @@
 @include sm{
 
   .contactSection {
-
+// padding: 0;
     display: flex;
     justify-content: center;
    
@@ -396,4 +396,75 @@
   }
 
 
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1024px ){
+
+  .contactSection {
+
+    display: flex;
+    justify-content: center;
+   
+
+    .contactsContainer {
+      // margin-top: 35%;
+
+      .contactDetailContainer {
+
+
+        .GIT {
+          font-size: 2rem;
+        }
+
+        .desc {
+          max-width: 75%;
+          font-size: 0.8rem;
+        }
+
+        .platformContainer {
+          max-width: 100%;
+          width: 75%;
+
+          .platformTab {
+            display: flex;
+            align-items: center;
+            // padding: 0.5rem 0.5rem;
+            
+
+
+
+            .icons {
+              height: 1.75rem;
+              width: 1.75rem;
+            }
+          }
+        }
+
+        .contactBtn {
+          padding: 12px 25px;
+        }
+
+        .devBy {
+          // margin: 55% auto auto;
+          // margin-top: 60% ;
+          // position: absolute;
+
+          font-size: 0.7rem;
+        }
+
+        .developer {
+          font-size: 1.2rem;
+
+        }
+      }
+
+    }
+
+    .backToTop {
+      display: none;
+      // bottom: 5%;
+      // margin: 0 auto;
+    }
+  }
 }

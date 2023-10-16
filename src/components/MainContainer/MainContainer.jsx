@@ -15,7 +15,7 @@ const MainContainer = () => {
       <span className='name  animate__animated animate__fadeInUp ' style={{ animationDelay: "1.2s"}}>
         Neel Patel
       </span>
-      <span className='subtitle animate__animated animate__fadeInUp ' style={{ animationDelay: "1.3s"}}>I'm a self taught web developer</span>
+      <span className='subtitle animate__animated animate__fadeInUp ' style={{ animationDelay: "1.3s"}}>I'm a web developer</span>
       <p className='personal-info animate__animated animate__fadeInUp ' style={{ animationDelay: "1.4s"}}>
       I'm a design-minded, detail oriented software engineer passionate about combining beautiful code with beautiful design.
       </p>

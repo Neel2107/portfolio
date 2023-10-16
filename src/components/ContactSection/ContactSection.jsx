@@ -15,7 +15,7 @@ const ContactSection = () => {
     boxShadow: "rgba(255, 180, 0, 0.51) 1px 5px 40px",
   };
 
-  const instagarm = {
+  const instagram = {
     border: "2px solid rgba(219, 54, 205, 0.882)",
     boxShadow: " rgba(219, 54, 205, 0.882) 1px 5px 40px",
   };
@@ -91,7 +91,7 @@ const ContactSection = () => {
               </div>
             </a>
             <a href="https://www.instagram.com/21_neeel/">
-              <div className="platformTab" style={instagarm}>
+              <div className="platformTab" style={instagram}>
                 {/* <img className='platformIconImage' src="./instagram.png" alt="" /> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

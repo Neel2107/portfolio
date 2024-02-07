@@ -151,7 +151,7 @@ const ContactSection = () => {
           >
             Say Hello!
           </a>
-          <span className="devBy hidden show">Developed by</span>
+          <span className="devBy hidden show">Made with  <span>❤️</span> by</span>
           <span className="developer hidden show">Nova</span>
         </div>
       </div>

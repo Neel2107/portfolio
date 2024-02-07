@@ -8,7 +8,7 @@ const AboutMeSection = () => {
   return (
     <>
   
-    <div className="aboutMeSection" id="about">
+    <div className="aboutMeSection " id="about">
       <div className="smallAboutContainer">
 
       </div>

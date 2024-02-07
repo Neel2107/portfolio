@@ -15,9 +15,9 @@ function App() {
   useEffect(() => {
     const blob = blobRef.current;
     setTimeout(() => {
-      // setIsLoading(false);
     }, 2000);
     const handlePointerMove = (event) => {
+
       const { clientX, clientY } = event;
 
       blob.style.left = `${clientX}px`;
@@ -25,8 +25,6 @@ function App() {
     };
 
     window.addEventListener("pointermove", handlePointerMove);
-
-    // Scroll to the top when component mounts
     window.scrollTo(0, 0);
 
     return () => {
@@ -158,7 +156,7 @@ function App() {
 
         <AboutMeSection />
 
-        {/* <ProjectContainer /> */}
+     
         <ProjectContainer />
 
         <OtherProjects />

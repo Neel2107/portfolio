@@ -7,6 +7,21 @@
   justify-content: center;
   min-height: 100vh;
 
+  // Define keyframes for the spin animation
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1080deg); // 360 degrees * 4
+  }
+}
+
+// Apply the animation on hover to elements with the react-spin class
+.react-spin:hover {
+  animation: spin 1s ease-in-out forwards; // Adjust the duration and timing function as needed
+}
+
 
 
 

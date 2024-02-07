@@ -120,7 +120,7 @@ const OtherProjects = () => {
         <div id="card" className="hidden show">
           <div className="container">
             <div className="upperPart">
-              <a href="https://github.com/Neel2107/UI-Design">
+              <a href="https://image-gallery-neel2107.vercel.app/">
                 <img className="cardIcon" src="./folder.svg" alt="" />
               </a>
               <div
@@ -132,22 +132,22 @@ const OtherProjects = () => {
                 }}
               >
                 <a
-  className="link-box"                  href="https://github.com/Neel2107/UI-Design">
+  className="link-box" href="https://image-gallery-neel2107.vercel.app/">
                   {/* <img className="linkIcon" src="./link.png" alt="" /> */}
                   <img className="new-github" src="newGithub.png" alt="" />
                 </a>
               </div>
             </div>
             <div className="cardDetailContainer">
-              <a href="https://github.com/Neel2107/UI-Design" className="projectName">
-              UI Design
+              <a href="https://image-gallery-neel2107.vercel.app/" className="projectName">
+              Image Gallery
               </a>
               <p className="projectDesc">
-              Designed a modern, user-friendly, and visually appealing UI for a sneaker website, using cutting-edge design trends and best practices.
-
+              Created an intuitive image gallery website utilizing the Unsplash API, enabling users to easily search and discover high-quality images.
 </p>
               <div className="techContainer">
-                <div className="techUsed">Adobe Photoshop</div>
+                <div className="techUsed">React JS</div>
+                <div className="techUsed">Unsplash API</div>
               </div>
             </div>
           </div>
@@ -183,6 +183,41 @@ const OtherProjects = () => {
               <div className="techContainer">
                 <div className="techUsed">React JS</div>
                 <div className="techUsed">API</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="card" className="hidden show">
+          <div className="container">
+            <div className="upperPart">
+              <a href="https://tirupur-homes.vercel.app/">
+                <img className="cardIcon" src="./folder.svg" alt="" />
+              </a>
+              <div
+                style={{
+                  width: "100%",
+                  alignItems: "flex-end",
+                  display: "flex",
+                  flexDirection: "row-reverse",
+                }}
+              >
+                <a  className="link-box"  
+                href="https://tirupur-homes.vercel.app/">
+                  {/* <img className="linkIcon" src="./link.png" alt="" /> */}
+                  <img className="new-github" src="newGithub.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <div className="cardDetailContainer">
+              <a href="https://tirupur-homes.vercel.app/" className="projectName">
+            Tirupur Homes
+              </a>
+              <p className="projectDesc">
+              Crafted a captivating and responsive landing page using HTML, CSS, and JavaScript for a client in the real estate industry, providing an engaging user experience and seamless navigation.
+</p>
+              <div className="techContainer">
+                <div className="techUsed">HTML</div>
+                <div className="techUsed">CSS</div>
               </div>
             </div>
           </div>

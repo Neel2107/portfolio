@@ -1,178 +1,95 @@
-import React from 'react'
-import "./SkillsSection.scss"
+import React from "react";
+import "./SkillsSection.scss";
 
 const SkillsSection = () => {
+  const skillsCardsData = [
+    {
+      name: "HTML",
+      icon: "/skillsLogos/html.svg",
+    },
+    {
+      name: "CSS",
+      icon: "/skillsLogos/css.svg",
+    },
+    {
+      name: "JavaScript",
+      icon: "/skillsLogos/javascript.svg",
+    },
+    {
+      name: "TypeScript",
+      icon: "/skillsLogos/typescript.svg",
+    },
+    {
+      name: "Next.JS",
+      icon: "/skillsLogos/nextjs.svg",
+    },
+    {
+      name: "React",
+      icon: "/skillsLogos/react.svg",
+    },
+    {
+      name: "React Native",
+      icon: "/skillsLogos/react.svg",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "/skillsLogos/tailwindcss.svg",
+    },
+    {
+      name: "Charka UI",
+      icon: "/skillsLogos/chakraui.svg",
+    },
+    {
+      name: "Sass",
+      icon: "/skillsLogos/sass.svg",
+    },
+    {
+      name: "Bootstrap",
+      icon: "/skillsLogos/bootstrap.svg",
+    },
+    {
+      name: "Git",
+      icon: "/skillsLogos/git.svg",
+    },
+    {
+      name: "GitHub",
+      icon: "/skillsLogos/github.svg",
+    },
+   
+  ];
   return (
-    <div className='skillsSection' id="skills">
-        <div className="scContainer">
-            <div className="titleContainer hidden show">
-                <span className="tabNames">
-                    <span>03.</span>
-                    Technologies I've worked with
-                </span>
-                <div className="titleHrLine"></div>
-            </div>
-           
-            <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>HTML</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div className='animate__animated animate__slideInLeft' style={{width:"80%", height:"10px", backgroundColor:"rgb(25,132,197)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    8/10
-                </span>
-                    
-                 
-               
-            </div>
-
-            <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>CSS3/SCSS</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div className='animate__animated animate__slideInLeft' style={{width:"80%", height:"10px", backgroundColor:"rgb(209, 209, 209)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    8/10
-                </span>
-                    
-                 
-               
-            </div>
-            
-            <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>ReactJS</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div className='animate__animated animate__slideInLeft' style={{width:"70%", height:"10px", backgroundColor:"rgb(194, 197, 25)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    7/10
-                </span>
-                    
-                 
-               
-            </div>
-            
-            <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>Javascript</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div className='animate__animated animate__slideInLeft'  style={{width:"70%", height:"10px", backgroundColor:"rgb(197, 25, 25)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    7/10
-                </span>
-                    
-                 
-               
-            </div>
-            
-            {/* <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>Node Js</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div className='animate__animated animate__slideInLeft'  style={{width:"50%", height:"10px", backgroundColor:"rgb(25, 197, 25)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    5/10
-                </span>
-                    
-                 
-               
-            </div>
-             */}
-            <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>Tailwind CSS</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div className='animate__animated animate__slideInLeft'  style={{width:"70%", height:"10px", backgroundColor:"rgb(25,132,197)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    7/10
-                </span>
-                    
-                 
-               
-            </div>
-            
-            
-          
-            <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>Github</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div  className='animate__animated animate__slideInLeft' style={{width:"80%", height:"10px", backgroundColor:"RGB(255, 165, 0)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    8/10
-                </span>
-                    
-                 
-               
-            </div>
-            
-            <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>OOPS</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div  className='animate__animated animate__slideInLeft' style={{width:"60%", height:"10px", backgroundColor:" RGB(255, 110, 199)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    6/10
-                </span>
-                    
-                 
-               
-            </div>
-            
-            
-            <div className="skillCard hidden show">
-                <div className="skillName">
-                <span>Bootstrap 5</span>
-                </div>
-                <div className="indicatorContainer">
-                    <div className="indicator">
-                        <div  className='animate__animated animate__slideInLeft' style={{width:"70%", height:"10px", backgroundColor:"RGB(0, 255, 255)", borderRadius:"5px", zIndex:"100"}}></div>
-                    </div>
-                </div>
-                <span className="scoreContainer">
-                    7/10
-                </span>
-                    
-                 
-               
-            </div>
-            
-
+    <div className="skillsSection" id="skills">
+      <div className="scContainer">
+        <div className="titleContainer hidden show">
+          <span className="tabNames">
+            <span>03.</span>
+            Technologies I've worked with
+          </span>
+          <div className="titleHrLine"></div>
         </div>
-    </div>
-  )
-}
 
-export default SkillsSection
+        <div className="tw-grid tw-grid-cols-2 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4 tw-items-center tw-justify-center ">
+          {skillsCardsData.map((item, index) => {
+                  const isReactLogo = item.name === "React" || item.name === "React Native";
+
+            return (
+              <div key={index} className="tw-flex tw-flex-col tw-gap-2 tw-justify-between tw-items-center tw-h-[120px]  tw-p-2 ">
+                <img
+                  src={item.icon}
+                  height={75}
+                  width={75}
+                  alt="skill-icon"
+                  className={`tw-aspect-square ${isReactLogo ? "react-spin" : ""}`}
+                  />
+                <p>{item.name}</p>
+              </div>
+            );
+          })}
+        </div>
+        
+      </div>
+    </div>
+  );
+};
+
+export default SkillsSection;

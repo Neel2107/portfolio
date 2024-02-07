@@ -80,7 +80,7 @@ const handleContactClick = ()=>{
         
           </li>
           <li className="animate__animated animate__backInDown" style={{animationDelay: "300ms"}}>
-            <a  href="https://drive.google.com/file/d/1S2iv-YkieKr-SyqckDzozV9jQukujh5v/view?usp=sharing" onClick={handleContactClick}>
+            <a  href="https://drive.google.com/file/d/1QzKjHsrlKisq8ITQ1Umgg9s0MjxY2Q1y/view?usp=sharing" onClick={handleContactClick}>
             <span  className="nums" href="/">06.</span>
             <span className="resume" href="/">Resume</span>
             </a>

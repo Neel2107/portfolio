@@ -14,10 +14,8 @@ function App() {
 
   useEffect(() => {
     const blob = blobRef.current;
-    setTimeout(() => {
-    }, 2000);
+    setTimeout(() => {}, 2000);
     const handlePointerMove = (event) => {
-
       const { clientX, clientY } = event;
 
       blob.style.left = `${clientX}px`;
@@ -64,7 +62,7 @@ function App() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-             strokeWidth="2"
+            strokeWidth="2"
             stroke-linecap="round"
             strokeLinecap="round"
             class=" icons "
@@ -93,7 +91,7 @@ function App() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-             strokeWidth="2"
+            strokeWidth="2"
             stroke-linecap="round"
             strokeLinecap="round"
             class="icons"
@@ -115,7 +113,7 @@ function App() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-             strokeWidth="2"
+            strokeWidth="2"
             stroke-linecap="round"
             strokeLinecap="round"
             class="icons"
@@ -156,7 +154,6 @@ function App() {
 
         <AboutMeSection />
 
-     
         <ProjectContainer />
 
         <OtherProjects />

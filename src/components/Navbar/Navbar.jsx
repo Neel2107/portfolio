@@ -68,7 +68,7 @@ const handleContactClick = ()=>{
           <li className="animate__animated animate__backInDown" style={{animationDelay: "200ms"}}>
             <a  href="#education"  onClick={handleEducationSection}>
             <span  className="nums" href="/">04.</span>
-            <span className="education" href="/">Education</span>
+            <span className="education" href="/">Experience</span>
             </a>
         
           </li>

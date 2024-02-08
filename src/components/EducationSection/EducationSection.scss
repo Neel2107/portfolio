@@ -62,17 +62,19 @@
                 width: 100%;
                 flex-direction: row;
                 margin-bottom: 10px;
+                align-items: baseline;
 
                 .years {
-                    border-right: 2px solid #fff;
+                    border-right: 2px solid #9c9c9c;
                     color: #fed;
                     margin: 0;
                     padding-right: 10px;
                     width: max-content;
+                    font-size: 0.7em;
                 }
 
                 .course {
-                    color: #89bbfe;
+                    font-size: 0.85em;
                     padding-left: 10px;
                     width: max-content;
                 }
@@ -98,8 +100,11 @@
                 }
 
                 .institute {
+                    list-style: outside;
                     color: hsla(0, 0%, 78%, .68);
-                    font-size: 1em;
+                    font-size: 0.8em;
+                    width: 75%;
+                    line-height: 30px;
                 }
 
                 .cgpa {

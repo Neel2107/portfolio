@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AboutMeSection from "./components/AboutMeSection/AboutMeSection";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Navbar from "./components/Navbar/Navbar";
@@ -8,10 +8,13 @@ import EducationSection from "./components/EducationSection/EducationSection";
 import ContactSection from "./components/ContactSection/ContactSection";
 import ProjectContainer from "./components/ProjectContainer/ProjectContainer";
 import "./index.scss";
+import Sidebar from "./components/SidebarSection/Sidebar";
 
 function App() {
   const blobRef = useRef(null);
 
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   useEffect(() => {
     const blob = blobRef.current;
     setTimeout(() => {}, 2000);
@@ -30,8 +33,13 @@ function App() {
     };
   }, []);
 
+
+  const handleSidbar = () =>{
+    setIsSidebarOpen(!isSidebarOpen)
+  }
   return (
     <div className="App">
+      <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidbar}/>
       <div className="leftLinks animate__animated animate__fadeIn animate__delay-2s">
         <a className="leftLinksIcons" href="https://github.com/Neel2107">
           <svg
@@ -146,7 +154,7 @@ function App() {
         <div className="verticalLink"></div>
       </div>
       <div className="firstBlur" id="blur">
-        <Navbar />
+        <Navbar handleSidbar={handleSidbar} />
       </div>
       <div id="blob" ref={blobRef}></div>
       <div id="blur">

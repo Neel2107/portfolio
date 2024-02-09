@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.scss";
 
-const Navbar = () => {
+const Navbar = ({handleSidbar}) => {
 
   const handleAboutClick = () => {
     const aboutSection = document.getElementById("about");
@@ -91,7 +91,7 @@ const handleContactClick = ()=>{
          
         </ul>
       </div>
-      <button className="toggleBtn animate__animated animate__backInDown">
+      <button onClick={()=> handleSidbar()} className="toggleBtn animate__animated animate__backInDown">
         <img className="pyramid" src="./pyramid.png" alt="" />
       </button>
     </div>

@@ -24,7 +24,7 @@ const EducationSection = () => {
               <li className="institute">
                 {" "}
                 Build, style, and ship high-quality websites, mobile application
-                with Next.js, React, Tailwind CSS, Prisma, MongoDB, Firebase,
+                with Next.js, React, React Native, Tailwind CSS, Prisma, MongoDB, Firebase,
                 Chakra UI and Strapi.
               </li>
               <li className="institute">
@@ -34,8 +34,7 @@ const EducationSection = () => {
               </li>
               <li className="institute">
                 {" "}
-                Worked on a Android app development leveraging React Native
-                Expo, Tailwind CSS, displaying platform adaptability.
+                Worked on a Android app development leveraging React Native, Expo, Tailwind CSS, Supabase and PostgreSQL displaying platform adaptability.
               </li>
             </ul>
           </div>

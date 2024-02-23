@@ -55,6 +55,70 @@ const ProjectContainer = () => {
             style={{ textAlign: "left", flexWrap: "wrap" }}
           >
             <span>Featured Project</span>
+            <h4>Quick Bites</h4>
+            <div className="projectDesc">
+              <p style={{ textAlign: "left" }}>
+            Quick Bites is a web application built with React.js and Swiggy's API.
+              </p>
+            </div>
+            <div className="techContainer">
+              <span className="techName">React + Vite</span>
+              <span className="techName">Tailwind CSS</span>
+              <span className="techName">Swiggy API</span>
+            </div>
+            <div
+              className="iconsContainer"
+              style={{ justifyContent: "flex-start" }}
+            >
+              <a href="https://github.com/Neel2107/QuickBites">
+                <img src="./github.png" alt="" className="socialIcons " />
+              </a>
+              <a href="https://quick-bites-nova.vercel.app/">
+                <img className="socialIcons links" src="/link.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div className="projectImageContainer">
+            <img className="projectImage" src="./Quickbites.png" alt="" />
+          </div>
+        </div>
+
+        <div className="displayProjects hidden show">
+          <div className="projectImageContainer">
+            <img className="projectImage" src="./4.png" alt="" />
+          </div>
+          <div className="projectDetails">
+            <span>Featured Project</span>
+            <h4>Admin Dashboard</h4>
+            <div className="projectDesc">
+              <p>
+                {" "}
+                Developed a fully functional React JS admin dashboard application with CRUD functionality and interactive charts using Recharts.{" "}
+              </p>
+            </div>
+            <div className="techContainer">
+              <span>React</span>
+              <span>Node JS</span>
+              <span>SCSS</span>
+              <span>MUI</span>
+             
+            </div>
+            <div className="iconsContainer">
+              <a href="https://github.com/Neel2107/Admin-Dashboard">
+                <img src="./github.png" alt="" className="socialIcons" />
+              </a>
+              <a href="https://admin-dashboard-neel2107.vercel.app/">
+                <img className="socialIcons links " src="/link.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="displayProjects hidden show">
+          <div
+            className="projectDetails"
+            style={{ textAlign: "left", flexWrap: "wrap" }}
+          >
+            <span>Featured Project</span>
             <h4>Hoo bank</h4>
             <div className="projectDesc">
               <p style={{ textAlign: "left" }}>
@@ -63,7 +127,7 @@ const ProjectContainer = () => {
               </p>
             </div>
             <div className="techContainer">
-              <span className="techName">React JS</span>
+              <span className="techName">React</span>
               <span className="techName">JavaScript</span>
               <span className="techName">Tailwind CSS</span>
             </div>
@@ -83,38 +147,6 @@ const ProjectContainer = () => {
             <img className="projectImage" src="./2.png" alt="" />
           </div>
         </div>
-
-        <div className="displayProjects hidden show">
-          <div className="projectImageContainer">
-            <img className="projectImage" src="./4.png" alt="" />
-          </div>
-          <div className="projectDetails">
-            <span>Featured Project</span>
-            <h4>Admin Dashboard</h4>
-            <div className="projectDesc">
-              <p>
-                {" "}
-                Developed a fully functional React JS admin dashboard application with CRUD functionality and interactive charts using Recharts.{" "}
-              </p>
-            </div>
-            <div className="techContainer">
-              <span>React JS</span>
-              <span>Node JS</span>
-              <span>SCSS</span>
-              <span>MUI</span>
-             
-            </div>
-            <div className="iconsContainer">
-              <a href="https://github.com/Neel2107/Admin-Dashboard">
-                <img src="./github.png" alt="" className="socialIcons" />
-              </a>
-              <a href="https://admin-dashboard-neel2107.vercel.app/">
-                <img className="socialIcons links " src="/link.png" alt="" />
-              </a>
-            </div>
-          </div>
-        </div>
-
        
       </div>
     </>

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import "./OtherProjects.scss";
-import anim from "./../../touch.js"
+import anim from "./../../touch.js";
 const OtherProjects = () => {
-  useEffect(() =>{
+  useEffect(() => {
     anim();
-  },[anim])
+  }, [anim]);
   return (
     <div className="otherNoteworthyProjects">
       <h1 className="otherTitle">Other Noteworthy Projects</h1>
@@ -23,14 +23,19 @@ const OtherProjects = () => {
                   flexDirection: "row-reverse",
                 }}
               >
-                <a className="link-box"
-                 href="https://github.com/Neel2107/PomoTime">
+                <a
+                  className="link-box"
+                  href="https://github.com/Neel2107/PomoTime"
+                >
                   <img className="new-github" src="newGithub.png" alt="" />
                 </a>
               </div>
             </div>
             <div className="cardDetailContainer">
-              <a href="https://github.com/Neel2107/PomoTime" className="projectName">
+              <a
+                href="https://github.com/Neel2107/PomoTime"
+                className="projectName"
+              >
                 Pomo-Time
               </a>
               <p className="projectDesc">
@@ -48,8 +53,7 @@ const OtherProjects = () => {
         <div id="card" className="hidden show">
           <div className="container">
             <div className="upperPart">
-              <a  
-              href="https://github.com/Neel2107/Crypto-Exchange">
+              <a href="https://github.com/Neel2107/Crypto-Exchange">
                 <img className="cardIcon" src="./folder.svg" alt="" />
               </a>
               <div
@@ -60,19 +64,25 @@ const OtherProjects = () => {
                   flexDirection: "row-reverse",
                 }}
               >
-                <a className="link-box" 
-                 href="https://github.com/Neel2107/Crypto-Exchange">
-                <img className="new-github" src="newGithub.png" alt="" />            
-                 </a>
+                <a
+                  className="link-box"
+                  href="https://github.com/Neel2107/Crypto-Exchange"
+                >
+                  <img className="new-github" src="newGithub.png" alt="" />
+                </a>
               </div>
             </div>
             <div className="cardDetailContainer">
-              <a href="https://github.com/Neel2107/Crypto-Exchange" className="projectName">
-              Crypto-Exchange
-
+              <a
+                href="https://github.com/Neel2107/Crypto-Exchange"
+                className="projectName"
+              >
+                Crypto-Exchange
               </a>
               <p className="projectDesc">
-              Crypto Exchange is a basic, user-friendly platform offering a straightforward way for users to exchange various cryptocurrencies.
+                Crypto Exchange is a basic, user-friendly platform offering a
+                straightforward way for users to exchange various
+                cryptocurrencies.
               </p>
               <div className="techContainer">
                 <div className="techUsed">React JS</div>
@@ -95,20 +105,25 @@ const OtherProjects = () => {
                   flexDirection: "row-reverse",
                 }}
               >
-                <a  className="link-box" 
-                 href="https://github.com/Neel2107/NewsMonkey">
-
+                <a
+                  className="link-box"
+                  href="https://github.com/Neel2107/NewsMonkey"
+                >
                   {/* <img className="linkIcon" src="./link.png" alt="" /> */}
                   <img className="new-github" src="newGithub.png" alt="" />
                 </a>
               </div>
             </div>
             <div className="cardDetailContainer">
-              <a href="https://github.com/Neel2107/NewsMonkey" className="projectName">
-              NewsMonkey
+              <a
+                href="https://github.com/Neel2107/NewsMonkey"
+                className="projectName"
+              >
+                NewsMonkey
               </a>
               <p className="projectDesc">
-              Experience the latest news from diverse categories on our React-powered news website, fueled by the reliable NewsAPI. Stay informed and explore a world of information at your fingertips.
+                Experience the latest news from diverse categories on our
+                React-powered news website, fueled by the reliable NewsAPI.
               </p>
               <div className="techContainer">
                 <div className="techUsed">React JS</div>
@@ -132,19 +147,26 @@ const OtherProjects = () => {
                 }}
               >
                 <a
-  className="link-box" href="https://image-gallery-neel2107.vercel.app/">
+                  className="link-box"
+                  href="https://image-gallery-neel2107.vercel.app/"
+                >
                   {/* <img className="linkIcon" src="./link.png" alt="" /> */}
                   <img className="new-github" src="newGithub.png" alt="" />
                 </a>
               </div>
             </div>
             <div className="cardDetailContainer">
-              <a href="https://image-gallery-neel2107.vercel.app/" className="projectName">
-              Image Gallery
+              <a
+                href="https://image-gallery-neel2107.vercel.app/"
+                className="projectName"
+              >
+                Image Gallery
               </a>
               <p className="projectDesc">
-              Created an intuitive image gallery website utilizing the Unsplash API, enabling users to easily search and discover high-quality images.
-</p>
+                Created an intuitive image gallery website utilizing the
+                Unsplash API, enabling users to easily search and discover
+                high-quality images.
+              </p>
               <div className="techContainer">
                 <div className="techUsed">React JS</div>
                 <div className="techUsed">Unsplash API</div>
@@ -166,20 +188,27 @@ const OtherProjects = () => {
                   flexDirection: "row-reverse",
                 }}
               >
-                <a  className="link-box"  
-                href="https://github.com/Neel2107/JokeBox.git">
+                <a
+                  className="link-box"
+                  href="https://github.com/Neel2107/JokeBox.git"
+                >
                   {/* <img className="linkIcon" src="./link.png" alt="" /> */}
                   <img className="new-github" src="newGithub.png" alt="" />
                 </a>
               </div>
             </div>
             <div className="cardDetailContainer">
-              <a href="https://github.com/Neel2107/JokeBox.git" className="projectName">
-            JokeBox
+              <a
+                href="https://github.com/Neel2107/JokeBox.git"
+                className="projectName"
+              >
+                JokeBox
               </a>
               <p className="projectDesc">
-              Designed and developed an engaging web app featuring a sleek, modern interface, delivering a continuous stream of humor with a single click.
-</p>
+                Designed and developed an engaging web app featuring a sleek,
+                modern interface, delivering a continuous stream of humor with a
+                single click.
+              </p>
               <div className="techContainer">
                 <div className="techUsed">React JS</div>
                 <div className="techUsed">API</div>
@@ -201,20 +230,26 @@ const OtherProjects = () => {
                   flexDirection: "row-reverse",
                 }}
               >
-                <a  className="link-box"  
-                href="https://tirupur-homes.vercel.app/">
+                <a
+                  className="link-box"
+                  href="https://tirupur-homes.vercel.app/"
+                >
                   {/* <img className="linkIcon" src="./link.png" alt="" /> */}
                   <img className="new-github" src="newGithub.png" alt="" />
                 </a>
               </div>
             </div>
             <div className="cardDetailContainer">
-              <a href="https://tirupur-homes.vercel.app/" className="projectName">
-            Tirupur Homes
+              <a
+                href="https://tirupur-homes.vercel.app/"
+                className="projectName"
+              >
+                Tirupur Homes
               </a>
               <p className="projectDesc">
-              Crafted a captivating and responsive landing page using HTML, CSS, and JavaScript for a client in the real estate industry, providing an engaging user experience and seamless navigation.
-</p>
+                Crafted a captivating and responsive landing page using HTML,
+                CSS, and JavaScript for a client in the real estate industry.
+              </p>
               <div className="techContainer">
                 <div className="techUsed">HTML</div>
                 <div className="techUsed">CSS</div>

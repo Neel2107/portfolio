@@ -15,6 +15,7 @@ function App() {
 
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  //
   useEffect(() => {
     const blob = blobRef.current;
     setTimeout(() => {}, 2000);
@@ -32,7 +33,6 @@ function App() {
       window.removeEventListener("pointermove", handlePointerMove);
     };
   }, []);
-
 
   const handleSidbar = () =>{
     setIsSidebarOpen(!isSidebarOpen)

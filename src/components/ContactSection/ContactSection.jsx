@@ -23,7 +23,6 @@ const ContactSection = () => {
   const twitter = {
     border: "2px solid rgba(0, 128, 255, 0.51)",
     boxShadow: " rgba(0, 128, 255, 0.51) 1px 5px 40px",
-   
   };
 
   return (
@@ -34,8 +33,8 @@ const ContactSection = () => {
           <span className="GIT hidden show">Get In Touch</span>
           <p className="desc hidden show">
             Although I am currently new to the sector, based on my projects and
-            talents, I would like to gain some industrial experience. I am
-            delighted to begin a new chapter as a developer for the company.
+            Intership experiences. I am delighted to begin a new chapter as a developer for
+            the company.
           </p>
           <div className="platformContainer hidden show">
             <a href="https://www.linkedin.com/in/neelpatel2107/">
@@ -47,7 +46,7 @@ const ContactSection = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                   strokeWidth="1"
+                  strokeWidth="1"
                   stroke-linecap="round"
                   strokeLinecap="round"
                   class="icons platformIconImage"
@@ -78,7 +77,7 @@ const ContactSection = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                   strokeWidth="1"
+                  strokeWidth="1"
                   stroke-linecap="round"
                   strokeLinecap="round"
                   className="  icons platformIconImage"
@@ -99,7 +98,7 @@ const ContactSection = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                   strokeWidth="1"
+                  strokeWidth="1"
                   stroke-linecap="round"
                   strokeLinecap="round"
                   class="platformIconImage icons "
@@ -131,7 +130,7 @@ const ContactSection = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                   strokeWidth="1"
+                  strokeWidth="1"
                   stroke-linecap="round"
                   strokeLinecap="round"
                   class="icons platformIconImage"
@@ -151,7 +150,9 @@ const ContactSection = () => {
           >
             Say Hello!
           </a>
-          <span className="devBy hidden show">Made with  <span>❤️</span> by</span>
+          <span className="devBy hidden show">
+            Made with <span>❤️</span> by
+          </span>
           <span className="developer hidden show">Nova</span>
         </div>
       </div>
@@ -173,7 +174,7 @@ const ContactSection = () => {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-           strokeWidth="2"
+          strokeWidth="2"
         >
           <path
             stroke-linecap="round"

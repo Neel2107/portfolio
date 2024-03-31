@@ -47,6 +47,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }) => {
         })}
         <div onClick={handleSidbar} className="tw-absolute tw-right-4 tw-top-4">
           <img
+          loading="lazy"
             src="/sidebar/close-icon.svg"
             alt="close-btn"
             className="tw-w-5 tw-h-5 tw-cursor-pointer"

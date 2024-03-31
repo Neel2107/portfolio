@@ -28,6 +28,7 @@ const SkillsSection = () => {
                 style={{ animationDelay: animationDelay }} // Apply the delay
               >
                 <img
+                loading="lazy"
                   src={item.icon}
                   height={75}
                   width={75}

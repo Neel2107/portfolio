@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
@@ -36,33 +37,33 @@ body {
         }
 
 
-        .otherNoteworthyProjects{
+        .otherNoteworthyProjects {
 
 
-            #card{
-width: 50%;
+            #card {
+                width: 50%;
             }
         }
 
-.contactSection{
-    // background-color: rgba(0, 255, 98, 0.2);
-    padding: 10% 10%;
-
-  
-
-}
-
-.aboutMeSection{
-    margin-top: 0;
-    margin-bottom: 10%;
-}
+        .contactSection {
+            // background-color: rgba(0, 255, 98, 0.2);
+            padding: 10% 10%;
 
 
-.mainContainer{
-   .nameContainer{
-    margin-top: 10%;
-   }
-}
+
+        }
+
+        .aboutMeSection {
+            margin-top: 0;
+            margin-bottom: 10%;
+        }
+
+
+        .mainContainer {
+            .nameContainer {
+                margin-top: 10%;
+            }
+        }
 
         .projectContainer {
 
@@ -280,7 +281,7 @@ width: 50%;
                     }
                 }
 
-              
+
             }
         }
 
@@ -316,25 +317,14 @@ width: 50%;
 
             .EducationSection {
 
-
-
                 .titleContainer {
-
-
-
-                    .titleHrLine {}
 
                     .titleName {
                         font-size: 1.5rem;
 
-
-                        span {}
-
                     }
 
                 }
-
-
 
                 .educationSection {
 
@@ -349,23 +339,16 @@ width: 50%;
                         }
                     }
 
-                    .hrLine {}
 
                     .lowerTab {
                         .department {
                             font-size: 0.9rem;
-
-
                         }
-
                         .institute {
                             font-size: 0.9rem;
-
                         }
-
                         .cgpa {
                             font-size: 0.9rem;
-
                         }
 
                     }
@@ -393,19 +376,19 @@ width: 50%;
 
 
     @include xs {
-        .mainContainer{
+        .mainContainer {
             padding: 50% 10%;
         }
 
-        #cardContainerRes{
-            display: grid; 
-            grid-template-columns: 1fr; 
-            grid-template-rows: 1fr 1fr 1fr; 
-            gap: 15px 0px; 
-            grid-template-areas: 
-              "."
-              "."
-              "."; 
+        #cardContainerRes {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 15px 0px;
+            grid-template-areas:
+                "."
+                "."
+                ".";
         }
     }
 }

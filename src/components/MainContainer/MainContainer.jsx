@@ -23,7 +23,7 @@ const MainContainer = () => {
     <a href="#project" className='viewWork animate__animated animate__fadeIn' style={{ animationDelay: "1.5s"}}>Look at my work!</a>
       </div>
       <div className='gifContainer animate__animated animate__fadeIn ' style={{ animationDelay: "1.7s"}}>
-        <img className='main-img' src="./education.gif" alt="" />
+        <img  loading='lazy' className='main-img' src="./education.gif" alt="" />
       </div>
     </div>
    

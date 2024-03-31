@@ -92,7 +92,7 @@ const handleContactClick = ()=>{
         </ul>
       </div>
       <button onClick={()=> handleSidbar()} className="toggleBtn animate__animated animate__backInDown">
-        <img className="pyramid" src="./pyramid.png" alt="" />
+        <img loading="lazy" className="pyramid" src="./pyramid.png" alt="" />
       </button>
     </div>
   );

@@ -60,7 +60,7 @@ const OtherProjects = () => {
             <div className="container">
               <div className="upperPart">
                 <a href={project.link}>
-                  <img className="cardIcon" src={project.image} alt="" />
+                  <img loading="lazy" className="cardIcon" src={project.image} alt="" />
                 </a>
                 <div
                   style={{
@@ -71,7 +71,7 @@ const OtherProjects = () => {
                   }}
                 >
                   <a className="link-box" href={project.link}>
-                    <img className="new-github" src="newGithub.png" alt="" />
+                    <img loading="lazy" className="new-github" src="newGithub.png" alt="" />
                   </a>
                 </div>
               </div>

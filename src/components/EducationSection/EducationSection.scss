@@ -103,7 +103,7 @@
                     list-style: outside;
                     color: hsla(0, 0%, 78%, .68);
                     font-size: 0.8em;
-                    width: 75%;
+                    // width: 75%;
                     line-height: 30px;
                 }
 
@@ -125,11 +125,11 @@
         // width: 50px;
         // z-index: 10;    
         // object-fit: cover;
-        object-fit: contain;
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
+        // object-fit: contain;
+        // max-width: 100%;
+        // max-height: 100%;
+        // width: auto;
+        // height: auto;
 
 
 
@@ -137,73 +137,67 @@
         /// 
         /// 
 
-        position: relative !important;
+        // position: relative !important;
         max-width: clamp(400px, 45%, 500px);
-        height: 60%;
-        object-fit: cover;
-        object-position: center 20%;
-        transform: scaleX(-1);
+        // height: 60%;
+        // object-fit: cover;
+        // object-position: center 20%;
+        // transform: scaleX(-1);
     }
 
 }
 
 @media screen and (max-width:770px) {
-    .EducationWrapper{
+    .EducationWrapper {
         padding: 10% 10%;
-        .EducationSection{
-            
-          
-            .titleContainer{
-                
-                .titleName{
-                font-size: 1.3rem;
-                span{
+
+        .EducationSection {
+
+
+            .titleContainer {
+
+                .titleName {
                     font-size: 1.3rem;
+
+                    span {
+                        font-size: 1.3rem;
+                    }
                 }
             }
+
+            .educationSection {
+
+                .upperTab {
+                    .years {
+                        font-size: 0.9rem;
+                    }
+
+                    .course {
+                        font-size: 0.9rem;
+                    }
+                }
+
+                .lowerTab {
+                    .department {
+                        font-size: 0.9rem;
+
+
+                    }
+
+                    .institute {
+                        font-size: 0.9rem;
+
+                    }
+
+                    .cgpa {
+                        font-size: 0.9rem;
+
+                    }
+                }
+            }
+
         }
 
-.educationSection{
 
-    .upperTab{
-        .years{
-font-size: 0.9rem;
-        }
-        .course{
-font-size: 0.9rem;
-        }
-    }
-    .lowerTab{
-        .department{
-            font-size: 0.9rem;
-
-
-        }
-
-        .institute{
-            font-size: 0.9rem;
-
-        }
-
-        .cgpa{
-            font-size: 0.9rem;
-
-        }
-    }
-}
-
-    }
-
-
-
-
-
-
-
-
-
-.gifImg{
-    display: none ;
-}
     }
 }

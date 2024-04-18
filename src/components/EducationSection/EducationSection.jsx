@@ -4,7 +4,7 @@ import "./EducationSection.scss";
 const educationData = [
   {
     title: "Software Engineer Intern",
-    period: "NOV 2023 - PRESENT",
+    period: "NOV 2023 - APR 2024",
     organization: "Marketifyall",
     responsibilities: [
       "Built User Interface and REST APIs for various web and mobile apps single-handedly, from scratch.",

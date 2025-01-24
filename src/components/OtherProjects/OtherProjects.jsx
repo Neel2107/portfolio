@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import "./OtherProjects.scss";
 import anim from "./../../touch.js";
 const OtherProjects = () => {
-  useEffect(() => {
-    anim();
-  }, [anim]);
+
 
   const projectData = [
     {

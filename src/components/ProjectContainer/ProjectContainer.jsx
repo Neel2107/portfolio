@@ -4,9 +4,7 @@ import anim from "./../../touch.js";
 import { useEffect } from "react";
 
 const ProjectContainer = () => {
-    useEffect(() => {
-        anim();
-    }, [anim]);
+
     return (
         <>
             <div className="projectContainer" id="project">

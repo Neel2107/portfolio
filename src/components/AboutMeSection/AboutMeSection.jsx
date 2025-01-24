@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const AboutMeSection = () => {
   return (
@@ -12,19 +13,7 @@ const AboutMeSection = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="flex flex-col h-full md:p-0  py-[10%] w-full">
-        <motion.div
-          className="flex items-center pb-[30px] w-full md:pb-[30px]"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <span className="text-[#fed] md:text-[1.875em] text-base font-semibold tracking-[2px] mr-[10px] flex items-center">
-            <span className="text-[#89bbfe] text-[1.438em] mr-[10px]">01.</span>
-            About me
-          </span>
-          <div className="h-[0.5px] w-[30%] bg-[#003b5d]"></div>
-        </motion.div>
+        <SectionTitle number="01" title="About Me" />
 
         <div className="flex md:flex-row flex-col justify-center pt-[30px]">
           <motion.span

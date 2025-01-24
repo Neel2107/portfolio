@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import React from "react";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const ContactSection = () => {
   const socialLinks = [
@@ -43,32 +44,17 @@ const ContactSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          {/* Section Header */}
-          <motion.div
-            className="flex items-center pb-12 w-full"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-[#fed] text-2xl md:text-[1.875em] font-semibold tracking-[2px] mr-[10px] flex items-center">
-              <span className="text-[#89bbfe] text-2xl md:text-[1.438em] mr-[10px]">05.</span>
-              What's Next?
-            </h2>
-            <div className="h-[1px] bg-[#003b5d] flex-grow" />
-          </motion.div>
+          <SectionTitle number="05" title="What's Next?" />
 
           <div className="relative">
-            {/* Main content line */}
-            {/* <div className="absolute left-0 md:left-[50%] h-full w-[2px] bg-[#89bbfe]/20" /> */}
 
-            {/* Contact Info Section */}
             <motion.div
               className="relative flex flex-col md:flex-row gap-8 mb-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              {/* <div className="absolute left-[-9px] md:left-[50%] md:ml-[-9px] w-5 h-5 rounded-full bg-[#89bbfe] z-10" /> */}
+
 
               <div className="w-full md:w-[45%] pl-8 md:pl-16">
                 <motion.div

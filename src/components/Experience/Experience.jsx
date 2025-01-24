@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Building2, Calendar } from "lucide-react";
 import React from "react";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const experience = [
   {
@@ -55,19 +56,7 @@ const Experience = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <motion.div
-          className="flex items-center pb-[30px] w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-[#fed] md:text-[1.875em] text-[1.3rem] font-semibold tracking-[2px] mr-[10px] flex items-center">
-            <span className="text-[#89bbfe] md:text-[1.438em] text-[1.3rem] mr-[10px]">04.</span>
-            Experience
-          </h2>
-          <div className="h-[1px] bg-[#003b5d] w-[30%]" />
-        </motion.div>
+        <SectionTitle number="04" title="Experience" />
 
         <div className="relative">
           {/* Timeline line */}

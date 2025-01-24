@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { skillsCardsData } from "../../../public/skillsLogos/skillsCardsData";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const SkillsSection = () => {
   const container = {
@@ -21,19 +22,7 @@ const SkillsSection = () => {
   return (
     <div className="flex items-center justify-center min-h-screen w-full py-[5%]  px-4 md:px-[17%]  " id="skills">
       <div className="w-full">
-        <motion.div
-          className="flex items-center pb-[30px] w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-[#fed] md:text-[1.875em] text-base font-semibold tracking-[2px] mr-[10px] flex items-center">
-            <span className="text-[#89bbfe] md:text-[1.438em] text-lg mr-[10px]">03.</span>
-            My Stack
-          </h2>
-          <div className="h-[1px] bg-[#003b5d] w-[30%]" />
-        </motion.div>
+        <SectionTitle number="03" title="My Stack" />
 
         <motion.div
           className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-center"

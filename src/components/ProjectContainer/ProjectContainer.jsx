@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const ProjectContainer = () => {
     const projects = [
@@ -52,18 +53,7 @@ const ProjectContainer = () => {
     return (
         <div className="min-h-screen py-20 px-4 md:px-16 lg:px-24" id="project">
             <div className="max-w-7xl mx-auto">
-                <motion.div
-                    className="flex items-center gap-4 mb-16"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <h2 className="text-[#fed] text-2xl md:text-3xl font-bold whitespace-nowrap">
-                        <span className="text-[#89bbfe]">02.</span> Some things I've Built
-                    </h2>
-                    <div className="h-[1px] bg-[#003b5d] flex-grow" />
-                </motion.div>
+            <SectionTitle number="02" title="Some Things I've Built" />
 
                 <div className="space-y-32">
                     {projects.map((project, index) => (

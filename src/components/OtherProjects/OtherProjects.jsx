@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-import "./OtherProjects.scss";
-import anim from "./../../touch.js";
+import { motion } from "framer-motion";
+import { default as React, } from "react";
+
 const OtherProjects = () => {
-
-
   const projectData = [
     {
       title: "Task Tracker",
@@ -48,303 +46,99 @@ const OtherProjects = () => {
       image: "./folder.svg"
     },
   ];
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
-   
-    <div className="otherNoteworthyProjects">
-      <h1 className="otherTitle">Other Noteworthy Projects</h1>
-      <div id="cardContainerRes" className="cardContainer">
+    <div className="tw-flex tw-flex-col tw-mt-[10%] tw-text-center tw-w-full tw-items-center">
+      <motion.h1
+        className="tw-text-[1.875em] tw-mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        Other Noteworthy Projects
+      </motion.h1>
+
+      <motion.div
+        className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-8 tw-w-[90%] lg:tw-w-[60%] tw-mt-[6%]"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         {projectData.map((project, index) => (
-          <div key={index} id="card" className="hidden show">
-            <div className="container">
-              <div className="upperPart">
+          <motion.div
+            key={index}
+            variants={item}
+            className="tw-h-[300px] tw-backdrop-blur-xl tw-bg-[rgba(17,25,40,0.75)] tw-rounded-xl tw-border tw-border-white/[0.125] tw-p-4 tw-transition-all tw-duration-500 hover:-tw-translate-y-2 hover:tw-shadow-[0_12px_30px_0_rgba(74,150,194,0.23)]"
+          >
+            <div className="tw-flex tw-flex-col tw-h-full">
+              <div className="tw-flex tw-justify-between tw-items-center">
                 <a href={project.link}>
-                  <img loading="lazy" className="cardIcon" src={project.image} alt="" />
+                  <img
+                    loading="lazy"
+                    className="tw-w-[34px] tw-h-auto"
+                    src={project.image}
+                    alt={project.title}
+                  />
                 </a>
-                <div
-                  style={{
-                    width: "100%",
-                    alignItems: "flex-end",
-                    display: "flex",
-                    flexDirection: "row-reverse",
-                  }}
+                <a
+                  href={project.link}
+                  className="tw-group"
                 >
-                  <a className="link-box" href={project.link}>
-                    <img loading="lazy" className="new-github" src="newGithub.png" alt="" />
-                  </a>
-                </div>
+                  <motion.img
+                    loading="lazy"
+                    className="tw-w-6 tw-h-6 tw-invert tw-transition-all group-hover:tw-drop-shadow-[0_0_10px_#FFD700]"
+                    src="newGithub.png"
+                    alt="GitHub"
+                    whileHover={{ scale: 1.1 }}
+                  />
+                </a>
               </div>
-              <div className="cardDetailContainer">
-                <a href={project.link} className="projectName">
+
+              <div className="tw-flex tw-flex-col tw-h-full tw-pt-4">
+                <a
+                  href={project.link}
+                  className="tw-text-white tw-text-xl tw-font-semibold tw-tracking-wide tw-my-2.5 tw-no-underline hover:tw-text-[#89bbfe] tw-transition-colors tw-text-start"
+                >
                   {project.title}
                 </a>
-                <p className="projectDesc">{project.description}</p>
-                <div className="techContainer">
+                <p className="tw-text-white/[0.545] tw-text-base tw-font-medium tw-min-h-[120px] tw-overflow-y-auto tw-text-left">
+                  {project.description}
+                </p>
+                <div className="tw-flex tw-flex-wrap tw-gap-2 tw-mt-auto">
                   {project.tech.map((tech, i) => (
-                    <div key={i} className="techUsed">{tech}</div>
+                    <span
+                      key={i}
+                      className="tw-text-white/[0.345] tw-text-sm tw-font-medium tw-p-1"
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 export default OtherProjects;
 
-// old code
- // <div className="otherNoteworthyProjects">
-    //   <h1 className="otherTitle">Other Noteworthy Projects</h1>
-    //   <div id="cardContainerRes" className="cardContainer">
-    //     <div id="card" className=" hidden show">
-    //       <div className="container">
-    //         <div className="upperPart">
-    //           <a href="https://github.com/Neel2107/PomoTime">
-    //             <img className="cardIcon" src="./folder.svg" alt="" />
-    //           </a>
-    //           <div
-    //             style={{
-    //               width: "100%",
-    //               alignItems: "flex-end",
-    //               display: "flex",
-    //               flexDirection: "row-reverse",
-    //             }}
-    //           >
-    //             <a
-    //               className="link-box"
-    //               href="https://github.com/Neel2107/PomoTime"
-    //             >
-    //               <img className="new-github" src="newGithub.png" alt="" />
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div className="cardDetailContainer">
-    //           <a
-    //             href="https://github.com/Neel2107/PomoTime"
-    //             className="projectName"
-    //           >
-    //             Pomo-Time
-    //           </a>
-    //           <p className="projectDesc">
-    //             Pomo-Time is a web app that helps increase productivity using
-    //             the Pomodoro Technique with customizable timers and progress
-    //             tracking.
-    //           </p>
-    //           <div className="techContainer">
-    //             <div className="techUsed">ReactJS</div>
-    //             <div className="techUsed">CSS</div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div id="card" className="hidden show">
-    //       <div className="container">
-    //         <div className="upperPart">
-    //           <a href="https://github.com/Neel2107/Crypto-Exchange">
-    //             <img className="cardIcon" src="./folder.svg" alt="" />
-    //           </a>
-    //           <div
-    //             style={{
-    //               width: "100%",
-    //               alignItems: "flex-end",
-    //               display: "flex",
-    //               flexDirection: "row-reverse",
-    //             }}
-    //           >
-    //             <a
-    //               className="link-box"
-    //               href="https://github.com/Neel2107/Crypto-Exchange"
-    //             >
-    //               <img className="new-github" src="newGithub.png" alt="" />
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div className="cardDetailContainer">
-    //           <a
-    //             href="https://github.com/Neel2107/Crypto-Exchange"
-    //             className="projectName"
-    //           >
-    //             Crypto-Exchange
-    //           </a>
-    //           <p className="projectDesc">
-    //             Crypto Exchange is a basic, user-friendly platform offering a
-    //             straightforward way for users to exchange various
-    //             cryptocurrencies.
-    //           </p>
-    //           <div className="techContainer">
-    //             <div className="techUsed">React JS</div>
-    //             <div className="techUsed">CSS</div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div id="card" className="hidden show">
-    //       <div className="container">
-    //         <div className="upperPart">
-    //           <a href="https://github.com/Neel2107/NewsMonkey">
-    //             <img className="cardIcon" src="./folder.svg" alt="" />
-    //           </a>
-    //           <div
-    //             style={{
-    //               width: "100%",
-    //               alignItems: "flex-end",
-    //               display: "flex",
-    //               flexDirection: "row-reverse",
-    //             }}
-    //           >
-    //             <a
-    //               className="link-box"
-    //               href="https://github.com/Neel2107/NewsMonkey"
-    //             >
-    //               {/* <img className="linkIcon" src="./link.png" alt="" /> */}
-    //               <img className="new-github" src="newGithub.png" alt="" />
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div className="cardDetailContainer">
-    //           <a
-    //             href="https://github.com/Neel2107/NewsMonkey"
-    //             className="projectName"
-    //           >
-    //             NewsMonkey
-    //           </a>
-    //           <p className="projectDesc">
-    //             Experience the latest news from diverse categories on our
-    //             React-powered news website, fueled by the reliable NewsAPI.
-    //           </p>
-    //           <div className="techContainer">
-    //             <div className="techUsed">React JS</div>
-    //             <div className="techUsed">Bootstrap</div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div id="card" className="hidden show">
-    //       <div className="container">
-    //         <div className="upperPart">
-    //           <a href="https://image-gallery-neel2107.vercel.app/">
-    //             <img className="cardIcon" src="./folder.svg" alt="" />
-    //           </a>
-    //           <div
-    //             style={{
-    //               width: "100%",
-    //               alignItems: "flex-end",
-    //               display: "flex",
-    //               flexDirection: "row-reverse",
-    //             }}
-    //           >
-    //             <a
-    //               className="link-box"
-    //               href="https://image-gallery-neel2107.vercel.app/"
-    //             >
-    //               {/* <img className="linkIcon" src="./link.png" alt="" /> */}
-    //               <img className="new-github" src="newGithub.png" alt="" />
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div className="cardDetailContainer">
-    //           <a
-    //             href="https://image-gallery-neel2107.vercel.app/"
-    //             className="projectName"
-    //           >
-    //             Image Gallery
-    //           </a>
-    //           <p className="projectDesc">
-    //             Created an intuitive image gallery website utilizing the
-    //             Unsplash API, enabling users to easily search and discover
-    //             high-quality images.
-    //           </p>
-    //           <div className="techContainer">
-    //             <div className="techUsed">React JS</div>
-    //             <div className="techUsed">Unsplash API</div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div id="card" className="hidden show">
-    //       <div className="container">
-    //         <div className="upperPart">
-    //           <a href="https://github.com/Neel2107/JokeBox.git">
-    //             <img className="cardIcon" src="./folder.svg" alt="" />
-    //           </a>
-    //           <div
-    //             style={{
-    //               width: "100%",
-    //               alignItems: "flex-end",
-    //               display: "flex",
-    //               flexDirection: "row-reverse",
-    //             }}
-    //           >
-    //             <a
-    //               className="link-box"
-    //               href="https://github.com/Neel2107/JokeBox.git"
-    //             >
-    //               {/* <img className="linkIcon" src="./link.png" alt="" /> */}
-    //               <img className="new-github" src="newGithub.png" alt="" />
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div className="cardDetailContainer">
-    //           <a
-    //             href="https://github.com/Neel2107/JokeBox.git"
-    //             className="projectName"
-    //           >
-    //             JokeBox
-    //           </a>
-    //           <p className="projectDesc">
-    //             Designed and developed an engaging web app featuring a sleek,
-    //             modern interface, delivering a continuous stream of humor with a
-    //             single click.
-    //           </p>
-    //           <div className="techContainer">
-    //             <div className="techUsed">React JS</div>
-    //             <div className="techUsed">API</div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div id="card" className="hidden show">
-    //       <div className="container">
-    //         <div className="upperPart">
-    //           <a href="https://tirupur-homes.vercel.app/">
-    //             <img className="cardIcon" src="./folder.svg" alt="" />
-    //           </a>
-    //           <div
-    //             style={{
-    //               width: "100%",
-    //               alignItems: "flex-end",
-    //               display: "flex",
-    //               flexDirection: "row-reverse",
-    //             }}
-    //           >
-    //             <a
-    //               className="link-box"
-    //               href="https://tirupur-homes.vercel.app/"
-    //             >
-    //               {/* <img className="linkIcon" src="./link.png" alt="" /> */}
-    //               <img className="new-github" src="newGithub.png" alt="" />
-    //             </a>
-    //           </div>
-    //         </div>
-    //         <div className="cardDetailContainer">
-    //           <a
-    //             href="https://tirupur-homes.vercel.app/"
-    //             className="projectName"
-    //           >
-    //             Tirupur Homes
-    //           </a>
-    //           <p className="projectDesc">
-    //             Crafted a captivating and responsive landing page using HTML,
-    //             CSS, and JavaScript for a client in the real estate industry.
-    //           </p>
-    //           <div className="techContainer">
-    //             <div className="techUsed">HTML</div>
-    //             <div className="techUsed">CSS</div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>

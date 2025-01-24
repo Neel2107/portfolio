@@ -1,101 +1,103 @@
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useCallback } from "react";
 import "./Navbar.scss";
 
-const Navbar = ({handleSidbar}) => {
+const NAV_ITEMS = [
+  { id: "about", num: "01", text: "About" },
+  { id: "project", num: "02", text: "Projects" },
+  { id: "skills", num: "03", text: "Skills" },
+  { id: "education", num: "04", text: "Experience" },
+  { id: "contact", num: "05", text: "Contact" },
+];
 
-  const handleAboutClick = () => {
-    const aboutSection = document.getElementById("about");
-    const offsetTop = aboutSection.offsetTop;
-    window.scrollTo({ top: offsetTop, behavior: "smooth" });
-  };
-  const handleProjectsClick = () => {
-    const projctSection = document.getElementById("project");
-    const offsetTop = projctSection.offsetTop;
-    window.scrollTo({ top: offsetTop, behavior: "smooth" });
-  };
+const Navbar = ({ handleSidbar }) => {
+  const handleScroll = useCallback((id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const offsetTop = section.offsetTop;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    }
+  }, []);
 
-  const handlelogoCLick = () =>{
+  const handleLogoClick = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  const handleSkillsClick = () =>{
-    const skillsSection = document.getElementById("skills")
-    const offsetTop = skillsSection.offsetTop
-    window.scrollTo(({top: offsetTop, behavior:"smooth"}))
-  }
-
-  const handleEducationSection = () =>{
-    const educationSection = document.getElementById("education")
-    const offsetTop = educationSection.offsetTop
-    window.scrollTo({top: offsetTop, behavior: "smooth"})
-  }
-
-const handleContactClick = ()=>{
-  const contactSection =document.getElementById("contact")
-  const offsetTop = contactSection.offsetTop
-  window.scrollTo({top: offsetTop, behavior: "smooth"})
-}
+  }, []);
 
   return (
-    <div className="navbar animate__animated animate__fadeIn">
-      
-      <div className="leftLogo animate__animated animate__backInDown " id="logo" onClick={handlelogoCLick}>
-       <a href="#top" className="leftLogo">Nova</a>
-      </div>
+    <motion.div
+      className="navbar"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        className="leftLogo"
+        id="logo"
+        onClick={handleLogoClick}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", duration: 0.8 }}
+      >
+        <a href="#top" className="leftLogo">Nova</a>
+      </motion.div>
+
       <div className="rightNav">
         <ul>
-          <li className="animate__animated animate__backInDown " style={{animationDelay: "50ms"}}>
-          <a  href="#about" onClick={handleAboutClick}>
-            <span  className="nums" href="#about">01.</span>
-            <span className="about" href="/">About</span>
+          {NAV_ITEMS.map((item, index) => (
+            <motion.li
+              key={item.id}
+              className="nav-item"
+              initial={{ y: -100 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                duration: 0.8,
+                delay: index * 0.1
+              }}
+            >
+              <a href={`#${item.id}`} onClick={() => handleScroll(item.id)}>
+                <span className="nums">{item.num}.</span>
+                <span className={item.id}>{item.text}</span>
+              </a>
+            </motion.li>
+          ))}
+          <motion.li
+            className="nav-item"
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{
+              type: "spring",
+              duration: 0.8,
+              delay: NAV_ITEMS.length * 0.1
+            }}
+          >
+            <a
+              href="https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="nums">06.</span>
+              <span className="resume">Resume</span>
             </a>
-        
-          </li>
-          <li className="animate__animated animate__backInDown" style={{animationDelay: "100ms"}} >
-            <a  href="#project" onClick={handleProjectsClick}>
-            <span className="nums" href="/">02.</span>
-            <span className="projects" href="/">Projects</span>
-            </a>
-        
-          </li>
-          <li className="animate__animated animate__backInDown"  style={{animationDelay: "150ms"}}>
-            <a  href="#skills" onClick={handleSkillsClick}>
-            <span  className="nums" href="/">03.</span>
-            <span className="skills" href="/">Skills</span>
-            </a>
-        
-          </li>
-          <li className="animate__animated animate__backInDown" style={{animationDelay: "200ms"}}>
-            <a  href="#education"  onClick={handleEducationSection}>
-            <span  className="nums" href="/">04.</span>
-            <span className="education" href="/">Experience</span>
-            </a>
-        
-          </li>
-          <li className="animate__animated animate__backInDown" style={{animationDelay: "250ms"}}>
-            <a  href="#contact" onClick={handleContactClick}>
-            <span  className="nums" href="/">05.</span>
-            <span className="contact" href="/">Contact</span>
-            </a>
-        
-          </li>
-          <li className="animate__animated animate__backInDown" style={{animationDelay: "300ms"}}>
-            <a  href="https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link" onClick={handleContactClick}>
-            <span  className="nums" href="/">06.</span>
-            <span className="resume" href="/">Resume</span>
-            </a>
-        
-          </li>
-        
-        
-         
+          </motion.li>
         </ul>
       </div>
-      <button onClick={()=> handleSidbar()} className="toggleBtn animate__animated animate__backInDown">
+
+      <motion.button
+        onClick={handleSidbar}
+        className="toggleBtn"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{
+          type: "spring",
+          duration: 0.8,
+          delay: (NAV_ITEMS.length + 1) * 0.1
+        }}
+      >
         <img loading="lazy" className="pyramid" src="./pyramid.png" alt="" />
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

@@ -1,3 +1,4 @@
+import { ChevronDown, X } from "lucide-react";
 import React from "react";
 
 const Sidebar = ({ isSidebarOpen, handleSidbar }) => {
@@ -46,12 +47,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }) => {
           );
         })}
         <div onClick={handleSidbar} className="absolute right-4 top-4">
-          <img
-            loading="lazy"
-            src="/sidebar/close-icon.svg"
-            alt="close-btn"
-            className="w-5 h-5 cursor-pointer"
-          />
+        <X className="w-6 h-6 text-[#89bbfe]" />
         </div>
       </div>
     </div>

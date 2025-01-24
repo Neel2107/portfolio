@@ -1,5 +1,4 @@
 import React, { Suspense, useState } from "react";
-import BlobEffect from "./components/BlobEffect/BlobEffect";
 import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/SidebarSection/Sidebar";

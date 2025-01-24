@@ -1,5 +1,6 @@
 import React, { Suspense, useState } from "react";
 import BlobEffect from "./components/BlobEffect/BlobEffect";
+import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/SidebarSection/Sidebar";
 import "./index.css";
@@ -26,7 +27,11 @@ function App() {
       <Navbar handleSidbar={handleSidebar} />
       <BlobEffect />
       <div className="tw-backdrop-blur-[200px]">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={
+          <div className="tw-flex tw-items-center tw-justify-center tw-min-h-screen">
+            <Loader />
+          </div>
+        }>
           <MainContainer />
           <AboutMeSection />
           <ProjectContainer />

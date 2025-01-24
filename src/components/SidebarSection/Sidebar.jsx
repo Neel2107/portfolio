@@ -37,6 +37,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }) => {
         {sidebarData.map((data) => {
           return (
             <a
+              key={data.name}
               href={data.location}
               className="text-xl mb-5 text-[#76accb]"
             >

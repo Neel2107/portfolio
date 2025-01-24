@@ -22,7 +22,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="relative ">
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
       <Navbar handleSidbar={handleSidebar} />
       <BlobEffect />

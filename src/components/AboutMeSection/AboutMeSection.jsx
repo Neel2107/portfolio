@@ -4,14 +4,14 @@ import React from "react";
 const AboutMeSection = () => {
   return (
     <motion.div
-      className="flex items-center justify-center min-h-screen w-full px-[17%] py-[5%] z-20 md:mt-0 mt-[60%]"
+      className="flex items-center justify-center min-h-screen w-full  px-4 md:px-[15%] z-20 md:mt-0 mt-[60%]"
       id="about"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <div className="flex flex-col h-full md:p-0 px-[10%] py-[10%] w-full">
+      <div className="flex flex-col h-full md:p-0  py-[10%] w-full">
         <motion.div
           className="flex items-center pb-[30px] w-full md:pb-[30px]"
           initial={{ opacity: 0, y: 20 }}

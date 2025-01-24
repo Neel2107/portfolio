@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 const BlobEffect = React.memo(() => {
   const blobRef = useRef(null);
@@ -16,7 +16,7 @@ const BlobEffect = React.memo(() => {
     return () => window.removeEventListener("pointermove", handlePointerMove);
   }, [handlePointerMove]);
 
-  return <div id="blob" ref={blobRef} />;
+  return <div id="blob" className='hidden lg:block' ref={blobRef} />;
 });
 
 BlobEffect.displayName = 'BlobEffect';

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Menu } from "lucide-react";
 import React, { useCallback } from "react";
 
 const NAV_ITEMS = [
@@ -105,11 +106,9 @@ const Navbar = ({ handleSidbar }) => {
             delay: (NAV_ITEMS.length + 1) * 0.1
           }}
         >
-          <img
-            loading="lazy"
-            className="w-[30px] h-[30px] object-cover"
-            src="./pyramid.png"
-            alt="Menu"
+          <Menu
+            className="w-[30px] h-[30px]"
+            aria-label="Menu button"
           />
         </motion.button>
       </div>

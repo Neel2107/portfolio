@@ -47,7 +47,7 @@ const experience = [
 
 const Experience = () => {
   return (
-    <div className="py-[10%] px-[5%] md:px-[17%]" id="education">
+    <div className="py-[10%] px-4 md:px-[17%]" id="education">
       <motion.div
         className="flex flex-col w-full"
         initial={{ opacity: 0 }}

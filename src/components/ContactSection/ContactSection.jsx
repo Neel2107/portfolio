@@ -37,7 +37,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen w-full py-[5%] md:px-[15%] px-[3%] relative" id="contact">
+    <div className="flex items-center justify-center min-h-screen w-full py-4 md:px-[15%] px-[3%] relative" id="contact">
       <div className="flex w-full">
         <motion.div
           className="flex flex-col items-center w-full"

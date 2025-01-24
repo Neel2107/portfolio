@@ -3,7 +3,7 @@ import React from 'react';
 
 const MainContainer = () => {
   return (
-    <div className='flex items-center w-full px-[15%] py-[10%] my-0 z-100 md:flex-row flex-col md:justify-between justify-center' id='Home'>
+    <div className='flex items-center w-full px-4 md:px-[15%] py-[10%] my-0 z-100 md:flex-row flex-col md:justify-between justify-center' id='Home'>
       <motion.div
         className='flex flex-col w-full z-10 md:mt-0 mt-[50%]'
         initial={{ opacity: 0, y: 20 }}

@@ -2,7 +2,7 @@ import React, { Suspense, useState } from "react";
 import BlobEffect from "./components/BlobEffect/BlobEffect";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/SidebarSection/Sidebar";
-import "./index.scss";
+import "./index.css";
 
 // Lazy load components
 const AboutMeSection = React.lazy(() => import("./components/AboutMeSection/AboutMeSection"));

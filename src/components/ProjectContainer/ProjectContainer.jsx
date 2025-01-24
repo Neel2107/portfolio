@@ -60,7 +60,7 @@ const ProjectContainer = () => {
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.title + index}
-                            className="group relative overflow-hidden rounded-xl bg-[#0e1f34]/30 backdrop-blur-sm border border-[#89bbfe]/20"
+                            className="group relative overflow-hidden rounded-xl bg-[#0e1f34]/30 backdrop-blur-sm border border-[#89bbfe]/20 hover:border-[#89bbfe]/40 "
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -72,7 +72,7 @@ const ProjectContainer = () => {
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                                    className="w-full h-full object-contain p-4 transition-transform duration-500 \"
                                 />
                             </div>
 

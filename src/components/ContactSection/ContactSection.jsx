@@ -80,7 +80,7 @@ const ContactSection = () => {
               </div>
 
               {/* Social Links Grid */}
-              <div className="w-full md:w-[45%] pl-8 md:pr-16">
+              <div className="w-full md:w-[45%]  md:pr-16">
                 <div className="grid grid-cols-2 gap-4">
                   {socialLinks.map((social, index) => (
                     <motion.a

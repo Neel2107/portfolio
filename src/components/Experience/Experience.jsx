@@ -65,7 +65,7 @@ const Experience = () => {
                     {experience.map((exp, index) => (
                         <motion.div
                             key={index}
-                            className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-8 mb-16 last:mb-0`}
+                            className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-8 mb-16 last:mb-0 `}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -75,9 +75,9 @@ const Experience = () => {
                             <div className="absolute left-[-9px] md:left-[50%] md:ml-[-9px] w-5 h-5 rounded-full bg-[#89bbfe] z-10" />
 
                             {/* Content */}
-                            <div className={`w-full md:w-[45%] pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
+                            <div className={`w-full md:w-[45%] pl-8 md:pl-0  ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
                                 <motion.div
-                                    className="bg-[#0e1f34]/30 backdrop-blur-sm p-6 rounded-lg border border-[#89bbfe]/20"
+                                    className="bg-[#0e1f34]/30 backdrop-blur-sm p-6 rounded-lg border border-[#89bbfe]/20 hover:border-[#89bbfe]/40 "
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >

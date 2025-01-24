@@ -1,4 +1,3 @@
-import { s } from 'motion/react-client';
 
   /** @type {import('tailwindcss').Config} */
   export default {

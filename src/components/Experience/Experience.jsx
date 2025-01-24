@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import { Building2, Calendar } from "lucide-react";
 import React from "react";
-import { Calendar, Building2 } from "lucide-react";
 
 const experience = [
   {
@@ -47,74 +47,72 @@ const experience = [
 
 const Experience = () => {
   return (
-    <div className="tw-py-[10%] tw-px-[5%] md:tw-px-[17%]" id="education">
+    <div className="py-[10%] px-[5%] md:px-[17%]" id="education">
       <motion.div
-        className="tw-flex tw-flex-col tw-w-full"
+        className="flex flex-col w-full"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="tw-flex tw-items-center tw-pb-[30px] tw-w-full"
+          className="flex items-center pb-[30px] w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="tw-text-[#fed] md:tw-text-[1.875em] tw-text-[1.3rem] tw-font-semibold tw-tracking-[2px] tw-mr-[10px] tw-flex tw-items-center">
-            <span className="tw-text-[#89bbfe] md:tw-text-[1.438em] tw-text-[1.3rem] tw-mr-[10px]">04.</span>
+          <h2 className="text-[#fed] md:text-[1.875em] text-[1.3rem] font-semibold tracking-[2px] mr-[10px] flex items-center">
+            <span className="text-[#89bbfe] md:text-[1.438em] text-[1.3rem] mr-[10px]">04.</span>
             Experience
           </h2>
-          <div className="tw-h-[1px] tw-bg-[#003b5d] tw-w-[30%]" />
+          <div className="h-[1px] bg-[#003b5d] w-[30%]" />
         </motion.div>
 
-        <div className="tw-relative">
+        <div className="relative">
           {/* Timeline line */}
-          <div className="tw-absolute tw-left-0 md:tw-left-[50%] tw-h-full tw-w-[2px] tw-bg-[#89bbfe]/20" />
+          <div className="absolute left-0 md:left-[50%] h-full w-[2px] bg-[#89bbfe]/20" />
 
           {experience.map((exp, index) => (
             <motion.div
               key={index}
-              className={`tw-relative tw-flex tw-flex-col md:tw-flex-row ${
-                index % 2 === 0 ? 'md:tw-flex-row-reverse' : ''
-              } tw-gap-8 tw-mb-16`}
+              className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                } gap-8 mb-16`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
               {/* Timeline dot */}
-              <div className="tw-absolute tw-left-[-9px] md:tw-left-[50%] md:tw-ml-[-9px] tw-w-5 tw-h-5 tw-rounded-full tw-bg-[#89bbfe] tw-z-10" />
+              <div className="absolute left-[-9px] md:left-[50%] md:ml-[-9px] w-5 h-5 rounded-full bg-[#89bbfe] z-10" />
 
               {/* Content */}
-              <div className={`tw-w-full md:tw-w-[45%] tw-pl-8 md:tw-pl-0 ${
-                index % 2 === 0 ? 'md:tw-pr-16' : 'md:tw-pl-16'
-              }`}>
+              <div className={`w-full md:w-[45%] pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'
+                }`}>
                 <motion.div
-                  className="tw-bg-[#0e1f34]/30 tw-backdrop-blur-sm tw-p-6 tw-rounded-lg tw-border tw-border-[#89bbfe]/20"
+                  className="bg-[#0e1f34]/30 backdrop-blur-sm p-6 rounded-lg border border-[#89bbfe]/20"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <div className="tw-flex tw-items-center tw-gap-2 tw-mb-2">
-                    <Calendar className="tw-w-4 tw-h-4 tw-text-[#89bbfe]" />
-                    <span className="tw-text-[#fed] tw-text-sm">{exp.period}</span>
-                  </div>
-                  
-                  <h3 className="tw-text-[#89bbfe] tw-text-xl tw-font-medium tw-mb-2">
-                    {exp.title}
-                  </h3>
-                  
-                  <div className="tw-flex tw-items-center tw-gap-2 tw-mb-4">
-                    <Building2 className="tw-w-4 tw-h-4 tw-text-gray-400" />
-                    <span className="tw-text-gray-400 tw-text-sm">{exp.organization}</span>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Calendar className="w-4 h-4 text-[#89bbfe]" />
+                    <span className="text-[#fed] text-sm">{exp.period}</span>
                   </div>
 
-                  <ul className="tw-list-disc tw-pl-4 tw-space-y-2">
+                  <h3 className="text-[#89bbfe] text-xl font-medium mb-2">
+                    {exp.title}
+                  </h3>
+
+                  <div className="flex items-center gap-2 mb-4">
+                    <Building2 className="w-4 h-4 text-gray-400" />
+                    <span className="text-gray-400 text-sm">{exp.organization}</span>
+                  </div>
+
+                  <ul className="list-disc pl-4 space-y-2">
                     {exp.responsibilities.map((responsibility, i) => (
                       <motion.li
                         key={i}
-                        className="tw-text-[hsla(0,0%,78%,0.68)] tw-text-sm"
+                        className="text-[hsla(0,0%,78%,0.68)] text-sm"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}

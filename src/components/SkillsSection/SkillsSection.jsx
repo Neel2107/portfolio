@@ -19,24 +19,24 @@ const SkillsSection = () => {
   };
 
   return (
-    <div className="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-w-full tw-py-[5%] tw-px-[17%] md:tw-px-[17%] " id="skills">
-      <div className="tw-w-full">
+    <div className="flex items-center justify-center min-h-screen w-full py-[5%] px-[17%] md:px-[17%] " id="skills">
+      <div className="w-full">
         <motion.div
-          className="tw-flex tw-items-center tw-pb-[30px] tw-w-full"
+          className="flex items-center pb-[30px] w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="tw-text-[#fed] md:tw-text-[1.875em] tw-text-base tw-font-semibold tw-tracking-[2px] tw-mr-[10px] tw-flex tw-items-center">
-            <span className="tw-text-[#89bbfe] md:tw-text-[1.438em] tw-text-lg tw-mr-[10px]">03.</span>
+          <h2 className="text-[#fed] md:text-[1.875em] text-base font-semibold tracking-[2px] mr-[10px] flex items-center">
+            <span className="text-[#89bbfe] md:text-[1.438em] text-lg mr-[10px]">03.</span>
             Technologies I've worked with
           </h2>
-          <div className="tw-h-[1px] tw-bg-[#003b5d] tw-w-[30%]" />
+          <div className="h-[1px] bg-[#003b5d] w-[30%]" />
         </motion.div>
 
         <motion.div
-          className="tw-grid tw-grid-cols-2 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-8 tw-items-center tw-justify-center"
+          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-center"
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -49,7 +49,7 @@ const SkillsSection = () => {
               <motion.div
                 key={index}
                 variants={item}
-                className="tw-flex tw-flex-col tw-gap-4 tw-justify-between tw-items-center tw-h-[120px] tw-p-4 tw-transition-all tw-duration-500"
+                className="flex flex-col gap-4 justify-between items-center h-[120px] p-4 transition-all duration-500"
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.img
@@ -58,7 +58,7 @@ const SkillsSection = () => {
                   height={75}
                   width={75}
                   alt={`${item.name} icon`}
-                  className="tw-aspect-square"
+                  className="aspect-square"
                   {...(isReactLogo && {
                     whileHover: {
                       rotate: 1080,
@@ -66,7 +66,7 @@ const SkillsSection = () => {
                     }
                   })}
                 />
-                <p className="tw-text-gray-300 tw-text-sm md:tw-text-base">
+                <p className="text-gray-300 text-sm md:text-base">
                   {item.name}
                 </p>
               </motion.div>

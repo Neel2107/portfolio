@@ -26,9 +26,9 @@ function App() {
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
       <Navbar handleSidbar={handleSidebar} />
       <BlobEffect />
-      <div className="tw-backdrop-blur-[200px]">
+      <div className="backdrop-blur-[200px]">
         <Suspense fallback={
-          <div className="tw-flex tw-items-center tw-justify-center tw-min-h-screen">
+          <div className="flex items-center justify-center min-h-screen">
             <Loader />
           </div>
         }>

@@ -30,27 +30,26 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }) => {
   ];
   return (
     <div
-      className={` ${
-        isSidebarOpen ? "tw-block" : "tw-hidden"
-      } lg:tw-hidden   animate__animated animate__slideInUp tw-fixed tw-w-full tw-h-screen tw-z-[999] tw-flex tw-flex-col tw-items-center tw-justify-end`}
+      className={` ${isSidebarOpen ? "block" : "hidden"
+        } lg:hidden   animate__animated animate__slideInUp fixed w-full h-screen z-[999] flex flex-col items-center justify-end`}
     >
-      <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-bg-[#111928]/60 tw-w-full tw-p-7 tw-backdrop-blur-[5px] tw-rounded-t-2xl tw-relative">
+      <div className="flex flex-col items-center justify-center bg-[#111928]/60 w-full p-7 backdrop-blur-[5px] rounded-t-2xl relative">
         {sidebarData.map((data) => {
           return (
             <a
               href={data.location}
-              className="tw-text-xl tw-mb-5 tw-text-[#76accb]"
+              className="text-xl mb-5 text-[#76accb]"
             >
               {data.name}
             </a>
           );
         })}
-        <div onClick={handleSidbar} className="tw-absolute tw-right-4 tw-top-4">
+        <div onClick={handleSidbar} className="absolute right-4 top-4">
           <img
-          loading="lazy"
+            loading="lazy"
             src="/sidebar/close-icon.svg"
             alt="close-btn"
-            className="tw-w-5 tw-h-5 tw-cursor-pointer"
+            className="w-5 h-5 cursor-pointer"
           />
         </div>
       </div>

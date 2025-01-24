@@ -24,28 +24,28 @@ const Navbar = ({ handleSidbar }) => {
 
   return (
     <motion.nav
-      className="tw-flex tw-justify-between tw-items-center tw-w-full tw-sticky tw-top-0 tw-left-0  tw-bg-[#0d0d10b2]/70 tw-z-[1000] tw-backdrop-blur-[200px]"
+      className="flex justify-between items-center w-full sticky top-0 left-0  bg-[#0d0d10b2]/70 z-[1000] backdrop-blur-[200px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <motion.div
-        className="tw-text-white tw-my-2 tw-mx-6 tw-cursor-pointer tw-w-max tw-text-[32px]"
+        className="text-white my-2 mx-6 cursor-pointer w-max text-[32px]"
         id="logo"
         onClick={handleLogoClick}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 0.8 }}
       >
-        <a href="#top" className="tw-no-underline tw-text-white tw-font-satisfy ">Nova</a>
+        <a href="#top" className="no-underline text-white font-satisfy ">Nova</a>
       </motion.div>
 
-      <div className="tw-m-4 tw-hidden tw-flex-row tw-items-center md:tw-flex ">
-        <ul className="tw-m-0 tw-p-0 tw-flex tw-flex-row tw-list-none">
+      <div className="m-4 hidden flex-row items-center md:flex ">
+        <ul className="m-0 p-0 flex flex-row list-none">
           {NAV_ITEMS.map((item, index) => (
             <motion.li
               key={item.id}
-              className="tw-mx-4"
+              className="mx-4"
               initial={{ y: -100 }}
               animate={{ y: 0 }}
               transition={{
@@ -57,17 +57,17 @@ const Navbar = ({ handleSidbar }) => {
               <a
                 href={`#${item.id}`}
                 onClick={() => handleScroll(item.id)}
-                className="tw-text-white tw-no-underline tw-text-sm"
+                className="text-white no-underline text-sm"
               >
-                <span className="tw-text-[#89bbfe]">{item.num}.</span>
-                <span className="hover:tw-text-[#89bbfe] tw-transition-colors tw-duration-200">
+                <span className="text-[#89bbfe]">{item.num}.</span>
+                <span className="hover:text-[#89bbfe] transition-colors duration-200">
                   {item.text}
                 </span>
               </a>
             </motion.li>
           ))}
           <motion.li
-            className="tw-mx-4"
+            className="mx-4"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{
@@ -78,12 +78,12 @@ const Navbar = ({ handleSidbar }) => {
           >
             <a
               href="https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link"
-              className="tw-text-white tw-no-underline tw-text-sm"
+              className="text-white no-underline text-sm"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="tw-text-[#89bbfe]">06.</span>
-              <span className="hover:tw-text-[#89bbfe] tw-transition-colors tw-duration-200">
+              <span className="text-[#89bbfe]">06.</span>
+              <span className="hover:text-[#89bbfe] transition-colors duration-200">
                 Resume
               </span>
             </a>
@@ -91,12 +91,12 @@ const Navbar = ({ handleSidbar }) => {
         </ul>
       </div>
 
-      <div className=" tw-flex md:tw-hidden">
+      <div className=" flex md:hidden">
 
 
         <motion.button
           onClick={handleSidbar}
-          className="md:tw-block tw-bg-transparent tw-border-0 tw-mr-4"
+          className="md:block bg-transparent border-0 mr-4"
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{
@@ -107,7 +107,7 @@ const Navbar = ({ handleSidbar }) => {
         >
           <img
             loading="lazy"
-            className="tw-w-[30px] tw-h-[30px] tw-object-cover"
+            className="w-[30px] h-[30px] object-cover"
             src="./pyramid.png"
             alt="Menu"
           />

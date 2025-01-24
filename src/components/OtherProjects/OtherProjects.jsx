@@ -63,9 +63,9 @@ const OtherProjects = () => {
   };
 
   return (
-    <div className="tw-flex tw-flex-col tw-mt-[10%] tw-text-center tw-w-full tw-items-center">
+    <div className="flex flex-col mt-[10%] text-center w-full items-center">
       <motion.h1
-        className="tw-text-[1.875em] tw-mb-8"
+        className="text-[1.875em] mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -75,7 +75,7 @@ const OtherProjects = () => {
       </motion.h1>
 
       <motion.div
-        className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-8 tw-w-[90%] lg:tw-w-[60%] tw-mt-[6%]"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] lg:w-[60%] mt-[6%]"
         variants={container}
         initial="hidden"
         whileInView="show"
@@ -85,25 +85,25 @@ const OtherProjects = () => {
           <motion.div
             key={index}
             variants={item}
-            className="tw-h-[300px] tw-backdrop-blur-xl tw-bg-[rgba(17,25,40,0.75)] tw-rounded-xl tw-border tw-border-white/[0.125] tw-p-4 tw-transition-all tw-duration-500 hover:-tw-translate-y-2 hover:tw-shadow-[0_12px_30px_0_rgba(74,150,194,0.23)]"
+            className="h-[300px] backdrop-blur-xl bg-[rgba(17,25,40,0.75)] rounded-xl border border-white/[0.125] p-4 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_12px_30px_0_rgba(74,150,194,0.23)]"
           >
-            <div className="tw-flex tw-flex-col tw-h-full">
-              <div className="tw-flex tw-justify-between tw-items-center">
+            <div className="flex flex-col h-full">
+              <div className="flex justify-between items-center">
                 <a href={project.link}>
                   <img
                     loading="lazy"
-                    className="tw-w-[34px] tw-h-auto"
+                    className="w-[34px] h-auto"
                     src={project.image}
                     alt={project.title}
                   />
                 </a>
                 <a
                   href={project.link}
-                  className="tw-group"
+                  className="group"
                 >
                   <motion.img
                     loading="lazy"
-                    className="tw-w-6 tw-h-6 tw-invert tw-transition-all group-hover:tw-drop-shadow-[0_0_10px_#FFD700]"
+                    className="w-6 h-6 invert transition-all group-hover:drop-shadow-[0_0_10px_#FFD700]"
                     src="newGithub.png"
                     alt="GitHub"
                     whileHover={{ scale: 1.1 }}
@@ -111,21 +111,21 @@ const OtherProjects = () => {
                 </a>
               </div>
 
-              <div className="tw-flex tw-flex-col tw-h-full tw-pt-4">
+              <div className="flex flex-col h-full pt-4">
                 <a
                   href={project.link}
-                  className="tw-text-white tw-text-xl tw-font-semibold tw-tracking-wide tw-my-2.5 tw-no-underline hover:tw-text-[#89bbfe] tw-transition-colors tw-text-start"
+                  className="text-white text-xl font-semibold tracking-wide my-2.5 no-underline hover:text-[#89bbfe] transition-colors text-start"
                 >
                   {project.title}
                 </a>
-                <p className="tw-text-white/[0.545] tw-text-base tw-font-medium tw-min-h-[120px] tw-overflow-y-auto tw-text-left">
+                <p className="text-white/[0.545] text-base font-medium min-h-[120px] overflow-y-auto text-left">
                   {project.description}
                 </p>
-                <div className="tw-flex tw-flex-wrap tw-gap-2 tw-mt-auto">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="tw-text-white/[0.345] tw-text-sm tw-font-medium tw-p-1"
+                      className="text-white/[0.345] text-sm font-medium p-1"
                     >
                       {tech}
                     </span>

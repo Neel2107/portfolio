@@ -3,24 +3,24 @@ import React from 'react';
 
 const MainContainer = () => {
   return (
-    <div className='tw-flex tw-items-center tw-w-full tw-px-[15%] tw-py-[10%] tw-my-0 tw-z-100 md:tw-flex-row tw-flex-col md:tw-justify-between tw-justify-center' id='Home'>
+    <div className='flex items-center w-full px-[15%] py-[10%] my-0 z-100 md:flex-row flex-col md:justify-between justify-center' id='Home'>
       <motion.div
-        className='tw-flex tw-flex-col tw-w-full tw-z-10 md:tw-mt-0 tw-mt-[50%]'
+        className='flex flex-col w-full z-10 md:mt-0 mt-[50%]'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <motion.span
-          className='tw-text-[#89bbfe] tw-text-base tw-tracking-[2px]'
+          className='text-[#89bbfe] text-base tracking-[2px]'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1 }}
         >
-          <span className='md:tw-text-[20px] tw-text-base'>Hello, </span>
+          <span className='md:text-[20px] text-base'>Hello, </span>
           My name is
         </motion.span>
 
         <motion.span
-          className='tw-text-[#fed] tw-text-[2.75rem] md:tw-text-[70px] tw-font-semibold tw-tracking-[2px] tw-my-[10px] md:tw-my-[15px] tw-w-full'
+          className='text-[#fed] text-[2.75rem] md:text-[70px] font-semibold tracking-[2px] my-[10px] md:my-[15px] w-full'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
@@ -29,7 +29,7 @@ const MainContainer = () => {
         </motion.span>
 
         <motion.span
-          className='tw-text-[#bae6ff] tw-text-[1.35rem] md:tw-text-[54px] tw-tracking-wider tw-font-semibold'
+          className='text-[#bae6ff] text-[1.35rem] md:text-[54px] tracking-wider font-semibold'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3 }}
@@ -38,7 +38,7 @@ const MainContainer = () => {
         </motion.span>
 
         <motion.p
-          className='tw-text-gray-500 tw-text-base md:tw-text-lg tw-leading-[25px] tw-mt-[30px] tw-max-w-[550px] tw-text-left'
+          className='text-gray-500 text-base md:text-lg leading-[25px] mt-[30px] max-w-[550px] text-left'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4 }}
@@ -48,7 +48,7 @@ const MainContainer = () => {
 
         <motion.a
           href="#project"
-          className='tw-bg-transparent tw-border tw-border-[#89bbfe] tw-rounded-lg tw-text-[#89bbfe] tw-cursor-pointer tw-flex tw-flex-row tw-justify-around tw-mt-[30px] md:tw-mt-[50px] tw-px-3 md:tw-px-[30px] tw-py-3 md:tw-py-[15px] tw-text-xs md:tw-text-lg tw-w-max hover:tw-bg-[#89bbfe]/10 hover:tw-text-white tw-transition-all tw-duration-300'
+          className='bg-transparent border border-[#89bbfe] rounded-lg text-[#89bbfe] cursor-pointer flex flex-row justify-around mt-[30px] md:mt-[50px] px-3 md:px-[30px] py-3 md:py-[15px] text-xs md:text-lg w-max hover:bg-[#89bbfe]/10 hover:text-white transition-all duration-300'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
@@ -60,14 +60,14 @@ const MainContainer = () => {
       </motion.div>
 
       <motion.div
-        className='tw-z-10 md:tw-block tw-hidden'
+        className='z-10 md:block hidden'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.7 }}
       >
         <img
           loading='lazy'
-          className='tw-w-[27rem] tw-h-[27rem] tw-object-cover tw-cursor-none'
+          className='w-[27rem] h-[27rem] object-cover cursor-none'
           src="./education.gif"
           alt="Education illustration"
         />

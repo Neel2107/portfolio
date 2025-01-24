@@ -1,17 +1,17 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
+import React from 'react';
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
   return (
-    <motion.div 
-      className="tw-hidden md:tw-hidden sm:tw-block tw-fixed tw-bottom-0 tw-w-full tw-bg-[#02020277] tw-flex-row-reverse tw-h-screen tw-z-50"
+    <motion.div
+      className="hidden md:hidden sm:block fixed bottom-0 w-full bg-[#02020277] flex-row-reverse h-screen z-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: isOpen ? 1 : 0 }}
       transition={{ duration: 0.3 }}
     >
-      <motion.div 
-        className="tw-fixed tw-bottom-0 tw-w-full tw-backdrop-blur-sm tw-bg-[#13131ad1] tw-rounded-t-[20px] tw-flex tw-flex-col tw-px-5 tw-pt-8 tw-pb-5"
+      <motion.div
+        className="fixed bottom-0 w-full backdrop-blur-sm bg-[#13131ad1] rounded-t-[20px] flex flex-col px-5 pt-8 pb-5"
         initial={{ y: "100%" }}
         animate={{ y: isOpen ? 0 : "100%" }}
         transition={{
@@ -21,50 +21,50 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
         }}
       >
         <motion.button
-          className="tw-bg-transparent tw-border-0 tw-absolute tw-right-6 tw-top-3 tw-w-max tw-z-10"
+          className="bg-transparent border-0 absolute right-6 top-3 w-max z-10"
           onClick={() => setIsOpen(false)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-          <X className="tw-text-white tw-w-6 tw-h-6" />
+          <X className="text-white w-6 h-6" />
         </motion.button>
 
-        <nav className="tw-flex tw-flex-col tw-gap-6 tw-items-center tw-mt-4">
-          <motion.a 
+        <nav className="flex flex-col gap-6 items-center mt-4">
+          <motion.a
             href="#about"
-            className="tw-text-white tw-no-underline hover:tw-text-[#89bbfe] tw-transition-colors"
+            className="text-white no-underline hover:text-[#89bbfe] transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             About
           </motion.a>
-          <motion.a 
+          <motion.a
             href="#skills"
-            className="tw-text-white tw-no-underline hover:tw-text-[#89bbfe] tw-transition-colors"
+            className="text-white no-underline hover:text-[#89bbfe] transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             Skills
           </motion.a>
-          <motion.a 
+          <motion.a
             href="#project"
-            className="tw-text-white tw-no-underline hover:tw-text-[#89bbfe] tw-transition-colors"
+            className="text-white no-underline hover:text-[#89bbfe] transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             Projects
           </motion.a>
-          <motion.a 
+          <motion.a
             href="#education"
-            className="tw-text-white tw-no-underline hover:tw-text-[#89bbfe] tw-transition-colors"
+            className="text-white no-underline hover:text-[#89bbfe] transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             Experience
           </motion.a>
-          <motion.a 
+          <motion.a
             href="#contact"
-            className="tw-text-white tw-no-underline hover:tw-text-[#89bbfe] tw-transition-colors"
+            className="text-white no-underline hover:text-[#89bbfe] transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >

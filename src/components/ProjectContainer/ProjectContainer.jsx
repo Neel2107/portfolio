@@ -50,49 +50,49 @@ const ProjectContainer = () => {
     ];
 
     return (
-        <div className="tw-min-h-screen tw-py-20 tw-px-4 md:tw-px-16 lg:tw-px-24" id="project">
-            <div className="tw-max-w-7xl tw-mx-auto">
+        <div className="min-h-screen py-20 px-4 md:px-16 lg:px-24" id="project">
+            <div className="max-w-7xl mx-auto">
                 <motion.div
-                    className="tw-flex tw-items-center tw-gap-4 tw-mb-16"
+                    className="flex items-center gap-4 mb-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="tw-text-[#fed] tw-text-2xl md:tw-text-3xl tw-font-bold tw-whitespace-nowrap">
-                        <span className="tw-text-[#89bbfe]">02.</span> Some things I've Built
+                    <h2 className="text-[#fed] text-2xl md:text-3xl font-bold whitespace-nowrap">
+                        <span className="text-[#89bbfe]">02.</span> Some things I've Built
                     </h2>
-                    <div className="tw-h-[1px] tw-bg-[#003b5d] tw-flex-grow" />
+                    <div className="h-[1px] bg-[#003b5d] flex-grow" />
                 </motion.div>
 
-                <div className="tw-space-y-32">
+                <div className="space-y-32">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.title}
-                            className={`tw-flex tw-flex-col ${project.isReversed ? 'md:tw-flex-row-reverse' : 'md:tw-flex-row'} tw-items-center tw-gap-8`}
+                            className={`flex flex-col ${project.isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8`}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
                             <motion.div
-                                className="tw-w-full md:tw-w-7/12"
+                                className="w-full md:w-7/12"
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <div className="tw-relative tw-group">
-                                    <div className="tw-absolute tw-inset-0 tw-bg-[#89bbfe] tw-opacity-20 tw-rounded-lg tw-transition-opacity group-hover:tw-opacity-0" />
+                                <div className="relative group">
+                                    <div className="absolute inset-0 bg-[#89bbfe] opacity-20 rounded-lg transition-opacity group-hover:opacity-0" />
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="tw-rounded-lg tw-w-full tw-h-auto tw-shadow-xl"
+                                        className="rounded-lg w-full h-auto shadow-xl"
                                     />
                                 </div>
                             </motion.div>
 
-                            <div className={`tw-w-full md:tw-w-5/12 ${project.isReversed ? 'tw-text-left' : 'tw-text-right'}`}>
+                            <div className={`w-full md:w-5/12 ${project.isReversed ? 'text-left' : 'text-right'}`}>
                                 <motion.span
-                                    className="tw-text-[#89bbfe] tw-text-sm tw-font-mono"
+                                    className="text-[#89bbfe] text-sm font-mono"
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
@@ -102,7 +102,7 @@ const ProjectContainer = () => {
                                 </motion.span>
 
                                 <motion.h3
-                                    className="tw-text-[#fed] tw-text-2xl md:tw-text-3xl tw-font-bold tw-my-2"
+                                    className="text-[#fed] text-2xl md:text-3xl font-bold my-2"
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
@@ -112,29 +112,29 @@ const ProjectContainer = () => {
                                 </motion.h3>
 
                                 <motion.div
-                                    className="tw-bg-[#112240] tw-p-6 tw-rounded-lg tw-shadow-xl tw-my-4"
+                                    className="bg-[#112240] p-6 rounded-lg shadow-xl my-4"
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.5 }}
                                 >
-                                    <p className="tw-text-gray-300">{project.description}</p>
+                                    <p className="text-gray-300">{project.description}</p>
                                 </motion.div>
 
                                 <motion.div
-                                    className={`tw-flex tw-flex-wrap ${project.isReversed ? 'tw-justify-start' : 'tw-justify-end'} tw-gap-4 tw-my-4 tw-text-sm tw-font-mono tw-text-gray-400`}
+                                    className={`flex flex-wrap ${project.isReversed ? 'justify-start' : 'justify-end'} gap-4 my-4 text-sm font-mono text-gray-400`}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: 0.6 }}
                                 >
                                     {project.tech.map((tech) => (
-                                        <span key={tech} className="hover:tw-text-[#89bbfe] tw-transition-colors">{tech}</span>
+                                        <span key={tech} className="hover:text-[#89bbfe] transition-colors">{tech}</span>
                                     ))}
                                 </motion.div>
 
                                 <motion.div
-                                    className={`tw-flex tw-gap-4 ${project.isReversed ? 'tw-justify-start' : 'tw-justify-end'}`}
+                                    className={`flex gap-4 ${project.isReversed ? 'justify-start' : 'justify-end'}`}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
@@ -145,12 +145,12 @@ const ProjectContainer = () => {
                                             href={project.github}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="tw-group"
+                                            className="group"
                                         >
                                             <motion.img
                                                 src="./github.png"
                                                 alt="GitHub"
-                                                className="tw-w-6 tw-h-6"
+                                                className="w-6 h-6"
                                                 whileHover={{ scale: 1.1, rotate: 360 }}
                                                 transition={{ duration: 0.3 }}
                                             />
@@ -161,12 +161,12 @@ const ProjectContainer = () => {
                                             href={project.live}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="tw-group"
+                                            className="group"
                                         >
                                             <motion.img
                                                 src="/link.png"
                                                 alt="Live Demo"
-                                                className="tw-w-6 tw-h-6"
+                                                className="w-6 h-6"
                                                 whileHover={{ scale: 1.1, rotate: 360 }}
                                                 transition={{ duration: 0.3 }}
                                             />

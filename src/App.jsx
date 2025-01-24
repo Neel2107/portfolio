@@ -10,7 +10,7 @@ const AboutMeSection = React.lazy(() => import("./components/AboutMeSection/Abou
 const MainContainer = React.lazy(() => import("./components/MainContainer/MainContainer"));
 const OtherProjects = React.lazy(() => import("./components/OtherProjects/OtherProjects"));
 const SkillsSection = React.lazy(() => import("./components/SkillsSection/SkillsSection"));
-const EducationSection = React.lazy(() => import("./components/EducationSection/EducationSection"));
+const Experience = React.lazy(() => import("./components/Experience/Experience"));
 const ContactSection = React.lazy(() => import("./components/ContactSection/ContactSection"));
 const ProjectContainer = React.lazy(() => import("./components/ProjectContainer/ProjectContainer"));
 
@@ -46,7 +46,7 @@ function App() {
           <ProjectContainer />
           <OtherProjects />
           <SkillsSection />
-          <EducationSection />
+          <Experience />
           <ContactSection />
         </Suspense>
       </div>

@@ -58,7 +58,7 @@ const ContactSection = () => {
 
               <div className="w-full md:w-[45%]  md:pl-16">
                 <motion.div
-                  className="bg-[#0e1f34]/30 backdrop-blur-sm p-8 rounded-lg border border-[#89bbfe]/20"
+                  className="bg-[#0e1f34]/30 backdrop-blur-sm p-8 rounded-lg border border-[#89bbfe]/20 hover:border-[#89bbfe]/40"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >

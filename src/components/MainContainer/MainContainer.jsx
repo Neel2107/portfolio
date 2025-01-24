@@ -20,7 +20,7 @@ const MainContainer = () => {
         </motion.span>
 
         <motion.span
-          className='text-[#fed] text-[2.75rem] md:text-[70px] font-semibold tracking-[2px] my-[10px] md:my-[15px] w-full'
+          className='text-white text-[2.75rem] md:text-[70px] font-semibold tracking-[2px] my-[10px] md:my-[15px] w-full'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}

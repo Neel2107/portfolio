@@ -15,7 +15,7 @@ const MainContainer = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1 }}
         >
-          <span className='tw-text-xl md:tw-text-[20px] tw-text-base'>Hello, </span>
+          <span className='md:tw-text-[20px] tw-text-base'>Hello, </span>
           My name is
         </motion.span>
 

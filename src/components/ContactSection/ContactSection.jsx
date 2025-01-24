@@ -39,7 +39,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-w-full tw-py-[5%] tw-px-[15%] md:tw-px-[15%] tw-px-[3%] tw-relative" id="contact">
+    <div className="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-w-full tw-py-[5%] md:tw-px-[15%] tw-px-[3%] tw-relative" id="contact">
       <div className="tw-flex tw-w-full">
         <motion.div
           className="tw-flex tw-flex-col tw-items-center tw-w-full"

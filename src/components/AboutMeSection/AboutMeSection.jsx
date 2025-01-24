@@ -45,7 +45,7 @@ const AboutMeSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            I am a web developer who aims to find an exciting, challenging entry-level position in the industry alongside a company that will continuously motivate and drive me to do my best and improve my skills and abilities in order to be able to assist the company in achieving its missions and goals.
+            I'm a Software Development Engineer specializing in React Native and Next.js development. At Faebikes, I lead the development of high-impact applications handling 60L+ monthly transactions. With a focus on scalable solutions and performance optimization, I've consistently delivered features that enhance user experience and drive business growth.
           </motion.p>
         </div>
       </div>

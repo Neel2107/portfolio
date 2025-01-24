@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
 import React from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
@@ -7,7 +8,7 @@ const ProjectContainer = () => {
         {
             title: "Swiggy UI",
             description: "This project aims to replicate the user interface of the Swiggy app. Firebase authentication is implemented for phone number OTP verification, ensuring secure access to the app.",
-            image: "./project/swiggy-ui.png",
+            image: "./project/swiggy-clone.png",
             tech: ["React Native", "Nativewind", "Expo", "Reanimated"],
             github: "https://github.com/Neel2107/swiggy-clone",
             isReversed: false
@@ -15,7 +16,7 @@ const ProjectContainer = () => {
         {
             title: "Quick Bites",
             description: "Quick Bites is a web application built with React.js and Swiggy's API.",
-            image: "./Quickbites.png",
+            image: "./project/quickbites.png",
             tech: ["React + Vite", "Tailwind CSS", "Swiggy API"],
             github: "https://github.com/Neel2107/QuickBites",
             live: "https://quick-bites-nova.vercel.app/",
@@ -24,7 +25,7 @@ const ProjectContainer = () => {
         {
             title: "Nike Shoe Store",
             description: "Created and deployed a fully functional shoe store website on Vercel, enabling users to explore and purchase a wide range of products.",
-            image: "./1.png",
+            image: "./project/shoe-store.png",
             tech: ["Next JS", "Node JS", "Tailwind CSS", "Strapi"],
             github: "https://github.com/Neel2107/Shoe-Store",
             live: "https://shoe-store1.vercel.app/",
@@ -33,7 +34,7 @@ const ProjectContainer = () => {
         {
             title: "Admin Dashboard",
             description: "Developed a fully functional React JS admin dashboard application with CRUD functionality and interactive charts using Recharts.",
-            image: "./4.png",
+            image: "./project/admin-dashboard.png",
             tech: ["React", "Node JS", "SCSS", "MUI"],
             github: "https://github.com/Neel2107/Admin-Dashboard",
             live: "https://admin-dashboard-neel2107.vercel.app/",
@@ -42,7 +43,7 @@ const ProjectContainer = () => {
         {
             title: "Hoo bank",
             description: "I built and deployed a fully responsive bank website with modern UI/UX in ReactJS with Tailwind.",
-            image: "./2.png",
+            image: "./project/bank-app.png",
             tech: ["React", "JavaScript", "Tailwind CSS"],
             github: "https://github.com/Neel2107/bank-app",
             live: "https://bank-app-coral.vercel.app/",
@@ -53,116 +54,78 @@ const ProjectContainer = () => {
     return (
         <div className="min-h-screen py-20 px-4 md:px-16 lg:px-24" id="project">
             <div className="max-w-7xl mx-auto">
-            <SectionTitle number="02" title="Some Things I've Built" />
+                <SectionTitle number="02" title="Featured Projects" />
 
-                <div className="space-y-32">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {projects.map((project, index) => (
                         <motion.div
-                            key={project.title}
-                            className={`flex flex-col ${project.isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8`}
-                            initial={{ opacity: 0, y: 50 }}
+                            key={project.title + index}
+                            className="group relative overflow-hidden rounded-xl bg-[#0e1f34]/30 backdrop-blur-sm border border-[#89bbfe]/20"
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
-                            <motion.div
-                                className="w-full md:w-7/12"
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <div className="relative group">
-                                    <div className="absolute inset-0 bg-[#89bbfe] opacity-20 rounded-lg transition-opacity group-hover:opacity-0 hidden md:block" />
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="rounded-lg w-full h-auto shadow-xl"
-                                    />
-                                </div>
-                            </motion.div>
+                            {/* Image Container */}
+                            <div className="relative h-[300px] md:h-[350px] overflow-hidden bg-[#0a192f]">
+                                <div className="absolute inset-0 bg-[#89bbfe]/20 transition-opacity group-hover:opacity-0 z-10 " />
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                                />
+                            </div>
 
-                            <div className={`w-full md:w-5/12 ${project.isReversed ? 'text-left' : 'text-right'}`}>
-                                <motion.span
-                                    className="text-[#89bbfe] text-sm font-mono"
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.3 }}
-                                >
-                                    Featured Project
-                                </motion.span>
+                            {/* Content Container */}
+                            <div className="p-6">
+                                <div className="flex items-center justify-between mb-4">
+                                    <span className="text-[#89bbfe] text-sm font-mono">Featured Project</span>
+                                    <div className="flex gap-4">
+                                        {project.github && (
+                                            <motion.a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                whileHover={{ scale: 1.1 }}
+                                                className="text-[#89bbfe]/70 hover:text-[#89bbfe] transition-colors"
+                                            >
+                                                <Github size={20} />
+                                            </motion.a>
+                                        )}
+                                        {project.live && (
+                                            <motion.a
+                                                href={project.live}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                whileHover={{ scale: 1.1 }}
+                                                className="text-[#89bbfe]/70 hover:text-[#89bbfe] transition-colors"
+                                            >
+                                                <ExternalLink size={20} />
+                                            </motion.a>
+                                        )}
+                                    </div>
+                                </div>
 
                                 <motion.h3
-                                    className="text-[#fed] text-2xl md:text-3xl font-bold my-2"
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.4 }}
+                                    className="text-[#fed] text-2xl font-bold mb-3 group-hover:text-[#89bbfe] transition-colors"
+                                // whileHover={{ x: 10 }}
+                                // transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
                                     {project.title}
                                 </motion.h3>
 
-                                <motion.div
-                                    className="bg-[#112240] p-6 rounded-lg shadow-xl my-4"
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.5 }}
-                                >
-                                    <p className="text-gray-300">{project.description}</p>
-                                </motion.div>
+                                <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
 
-                                <motion.div
-                                    className={`flex flex-wrap ${project.isReversed ? 'justify-start' : 'justify-end'} gap-4 my-4 text-sm font-mono text-gray-400`}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.6 }}
-                                >
+                                <div className="flex flex-wrap gap-2">
                                     {project.tech.map((tech) => (
-                                        <span key={tech} className="hover:text-[#89bbfe] transition-colors">{tech}</span>
+                                        <span
+                                            key={tech}
+                                            className="px-3 py-1 text-xs font-mono rounded-full bg-[#89bbfe]/10 text-[#89bbfe]/70 hover:text-[#89bbfe] transition-colors border border-[#89bbfe]/20"
+                                        >
+                                            {tech}
+                                        </span>
                                     ))}
-                                </motion.div>
-
-                                <motion.div
-                                    className={`flex gap-4 ${project.isReversed ? 'justify-start' : 'justify-end'}`}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.7 }}
-                                >
-                                    {project.github && (
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group"
-                                        >
-                                            <motion.img
-                                                src="./github.png"
-                                                alt="GitHub"
-                                                className="w-6 h-6"
-                                                whileHover={{ scale: 1.1, rotate: 360 }}
-                                                transition={{ duration: 0.3 }}
-                                            />
-                                        </a>
-                                    )}
-                                    {project.live && (
-                                        <a
-                                            href={project.live}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group"
-                                        >
-                                            <motion.img
-                                                src="/link.png"
-                                                alt="Live Demo"
-                                                className="w-6 h-6"
-                                                whileHover={{ scale: 1.1, rotate: 360 }}
-                                                transition={{ duration: 0.3 }}
-                                            />
-                                        </a>
-                                    )}
-                                </motion.div>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

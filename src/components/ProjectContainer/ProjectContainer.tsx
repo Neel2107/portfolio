@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-import React from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const ProjectContainer = () => {

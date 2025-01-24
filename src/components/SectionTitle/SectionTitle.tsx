@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
-import React from "react";
 
-const SectionTitle = ({ number, title }) => {
+interface SectionTitleProps {
+  number: string;
+  title: string;
+}
+
+const SectionTitle = ({ number, title }: SectionTitleProps) => {
   return (
     <motion.div
       className="flex items-center gap-4 mb-16 w-full"

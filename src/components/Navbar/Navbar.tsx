@@ -10,8 +10,12 @@ const NAV_ITEMS = [
   { id: "contact", num: "05", text: "Contact" },
 ];
 
-const Navbar = ({ handleSidbar }) => {
-  const handleScroll = useCallback((id) => {
+interface NavbarProps {
+  handleSidbar: () => void;
+}
+
+const Navbar = ({ handleSidbar }: NavbarProps) => {
+  const handleScroll = useCallback((id: string) => {
     const section = document.getElementById(id);
     if (section) {
       const offsetTop = section.offsetTop;

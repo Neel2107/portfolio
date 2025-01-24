@@ -1,7 +1,11 @@
-import { ChevronDown, X } from "lucide-react";
-import React from "react";
+import { X } from "lucide-react";
 
-const Sidebar = ({ isSidebarOpen, handleSidbar }) => {
+interface SidebarProps {
+  isSidebarOpen: boolean;
+  handleSidbar: () => void;
+}
+
+const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
   const sidebarData = [
     {
       name: "About",
@@ -47,7 +51,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }) => {
           );
         })}
         <div onClick={handleSidbar} className="absolute right-4 top-4">
-        <X className="w-6 h-6 text-[#89bbfe]" />
+          <X className="w-6 h-6 text-[#89bbfe]" />
         </div>
       </div>
     </div>

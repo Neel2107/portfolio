@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from "react";
 import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
-import Sidebar from "./components/SidebarSection/Sidebar";
+import Sidebar from "./components/SidebarSection/Sidebar.tsx";
 import "./index.css";
 
 // Lazy load components
@@ -24,8 +24,7 @@ function App() {
     <div className="relative ">
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
       <Navbar handleSidbar={handleSidebar} />
-      {/* <BlobEffect /> */}
-      {/* <div className="backdrop-blur-[200px]"> */}
+
       <Suspense fallback={
         <div className="flex items-center justify-center min-h-screen">
           <Loader />
@@ -40,7 +39,7 @@ function App() {
         <ContactSection />
       </Suspense>
     </div>
-    // </div>
+
   );
 }
 

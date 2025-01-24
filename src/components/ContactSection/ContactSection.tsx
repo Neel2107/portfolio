@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
-import React from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const ContactSection = () => {

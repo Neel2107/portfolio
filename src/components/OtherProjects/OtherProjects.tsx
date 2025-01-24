@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
-import { default as React, } from "react";
 
 const OtherProjects = () => {
   const projectData = [

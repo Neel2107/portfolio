@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
-import { skillsCardsData } from "../../../public/skillsLogos/skillsCardsData";
+import { skillsCardsData } from "../../utils/skillsCardsData";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const SkillsSection = () => {
@@ -37,7 +36,10 @@ const SkillsSection = () => {
             return (
               <motion.div
                 key={index}
-                variants={item}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0 }
+                }}
                 className="flex flex-col gap-4 justify-between items-center h-[120px] p-4 transition-all duration-500"
                 transition={{ type: "spring", stiffness: 300 }}
               >

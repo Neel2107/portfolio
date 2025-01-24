@@ -3,11 +3,12 @@ import React, { useCallback, useEffect, useRef } from 'react';
 const BlobEffect = React.memo(() => {
   const blobRef = useRef(null);
 
-  const handlePointerMove = useCallback((event) => {
+  const handlePointerMove = useCallback((event:any) => {
     const { clientX, clientY } = event;
     if (blobRef.current) {
-      blobRef.current.style.left = `${clientX}px`;
-      blobRef.current.style.top = `${clientY + window.pageYOffset}px`;
+      const blob = blobRef.current as HTMLDivElement;
+      blob.style.left = `${clientX}px`;
+      blob.style.top = `${clientY + window.pageYOffset}px`;
     }
   }, []);
 

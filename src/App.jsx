@@ -23,16 +23,9 @@ function App() {
   return (
     <div className="App">
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
-
-     
-
-      <div className="firstBlur" id="blur">
-        <Navbar handleSidbar={handleSidebar} />
-      </div>
-
+      <Navbar handleSidbar={handleSidebar} />
       <BlobEffect />
-
-      <div id="blur">
+      <div className="tw-backdrop-blur-[200px]">
         <Suspense fallback={<div>Loading...</div>}>
           <MainContainer />
           <AboutMeSection />

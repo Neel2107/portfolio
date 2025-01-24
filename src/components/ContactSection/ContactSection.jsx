@@ -139,34 +139,7 @@ const ContactSection = () => {
         </motion.div>
       </div>
 
-      <motion.button
-        onClick={handleButtonClick}
-        className="tw-w-[140px] tw-h-[56px] tw-overflow-hidden tw-border-none tw-text-white tw-bg-transparent tw-absolute tw-bottom-[5%] tw-right-[10%] tw-cursor-pointer md:tw-block tw-hidden hover:before:tw-scale-x-100 before:tw-content-[''] before:tw-absolute before:tw-h-[2px] before:tw-bottom-0 before:tw-left-0 before:tw-w-full before:tw-scale-x-0 before:tw-origin-bottom-right before:tw-bg-current before:tw-transition-transform before:tw-duration-300 before:tw-ease-out before:hover:tw-origin-bottom-left"
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-      >
-        <div className="tw-absolute tw-w-full tw-h-full tw-flex group">
-          <span className="tw-opacity-100 tw-text-xl tw-ml-1 tw-transition-all tw-duration-200 group-hover:tw-transform group-hover:-tw-translate-y-[60px]">Back</span>
-          <span className="tw-opacity-100 tw-text-xl tw-ml-1 tw-transition-all tw-duration-200 group-hover:tw-transform group-hover:-tw-translate-y-[60px]">to</span>
-          <span className="tw-opacity-100 tw-text-xl tw-ml-1 tw-transition-all tw-duration-200 group-hover:tw-transform group-hover:-tw-translate-y-[60px]">top</span>
-        </div>
-        <div className="tw-absolute tw-w-full tw-h-full tw-flex">
-          <span className="tw-opacity-100 tw-text-xl tw-ml-1 tw-translate-y-[60px] group-hover:tw-translate-y-0 tw-transition-all tw-duration-200">Back</span>
-          <span className="tw-opacity-100 tw-text-xl tw-ml-1 tw-translate-y-[60px] group-hover:tw-translate-y-0 tw-transition-all tw-duration-200">to</span>
-          <span className="tw-opacity-100 tw-text-xl tw-ml-1 tw-translate-y-[60px] group-hover:tw-translate-y-0 tw-transition-all tw-duration-200">top</span>
-        </div>
-        <motion.svg
-          width="20px"
-          xmlns="http://www.w3.org/2000/svg"
-          className="tw-h-6 tw-w-6 tw-absolute tw-right-0 tw-top-1/2 -tw-translate-y-1/2 -tw-rotate-50 tw-transition-transform tw-duration-200 group-hover:-tw-rotate-90 group-hover:tw-translate-y-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <path strokeLinecap="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </motion.svg>
-      </motion.button>
+
     </div>
   );
 };

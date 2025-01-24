@@ -24,7 +24,7 @@ const Navbar = ({ handleSidbar }) => {
 
   return (
     <motion.nav
-      className="tw-flex tw-justify-between tw-items-center tw-w-full tw-sticky tw-top-0 tw-left-0 tw-backdrop-blur-md tw-bg-[#0d0d10b2]/70 tw-z-[1000]"
+      className="tw-flex tw-justify-between tw-items-center tw-w-full tw-sticky tw-top-0 tw-left-0  tw-bg-[#0d0d10b2]/70 tw-z-[1000] tw-backdrop-blur-[200px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

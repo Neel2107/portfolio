@@ -2,7 +2,6 @@ import React, { Suspense, useState } from "react";
 import BlobEffect from "./components/BlobEffect/BlobEffect";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/SidebarSection/Sidebar";
-import SocialLinks from "./components/SocialLinks/SocialLinks";
 import "./index.scss";
 
 // Lazy load components
@@ -24,14 +23,8 @@ function App() {
   return (
     <div className="App">
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
-      <SocialLinks />
 
-      <div className="rightLink animate__animated animate__fadeIn animate__delay-2s">
-        <a className="myEmail" href="mailto:neelpatel805804@gmail.com">
-          <span className="email">neelpatel805804@gmail.com</span>
-        </a>
-        <div className="verticalLink" />
-      </div>
+     
 
       <div className="firstBlur" id="blur">
         <Navbar handleSidbar={handleSidebar} />

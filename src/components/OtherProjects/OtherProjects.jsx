@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Github } from "lucide-react";
 import { default as React, } from "react";
 
 const OtherProjects = () => {
@@ -101,13 +102,12 @@ const OtherProjects = () => {
                   href={project.link}
                   className="group"
                 >
-                  <motion.img
-                    loading="lazy"
-                    className="w-6 h-6 invert transition-all group-hover:drop-shadow-[0_0_10px_#FFD700]"
-                    src="newGithub.png"
-                    alt="GitHub"
+                  <motion.div
                     whileHover={{ scale: 1.1 }}
-                  />
+                    className="text-white/70 hover:text-[#89bbfe] transition-colors"
+                  >
+                    <Github size={24} />
+                  </motion.div>
                 </a>
               </div>
 

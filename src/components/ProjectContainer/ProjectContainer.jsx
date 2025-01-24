@@ -81,7 +81,7 @@ const ProjectContainer = () => {
                                 transition={{ duration: 0.3 }}
                             >
                                 <div className="relative group">
-                                    <div className="absolute inset-0 bg-[#89bbfe] opacity-20 rounded-lg transition-opacity group-hover:opacity-0" />
+                                    <div className="absolute inset-0 bg-[#89bbfe] opacity-20 rounded-lg transition-opacity group-hover:opacity-0 hidden md:block" />
                                     <img
                                         src={project.image}
                                         alt={project.title}

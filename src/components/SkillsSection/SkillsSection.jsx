@@ -30,7 +30,7 @@ const SkillsSection = () => {
         >
           <h2 className="text-[#fed] md:text-[1.875em] text-base font-semibold tracking-[2px] mr-[10px] flex items-center">
             <span className="text-[#89bbfe] md:text-[1.438em] text-lg mr-[10px]">03.</span>
-           My Stack
+            My Stack
           </h2>
           <div className="h-[1px] bg-[#003b5d] w-[30%]" />
         </motion.div>

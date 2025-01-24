@@ -63,9 +63,9 @@ const OtherProjects = () => {
   };
 
   return (
-    <div className="flex flex-col mt-[10%] text-center w-full items-center">
+    <div className="py-32 px-4 md:px-[17%]">
       <motion.h1
-        className="text-[1.875em] mb-8"
+        className="text-[#fed] text-2xl md:text-3xl font-bold mb-16 text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -75,7 +75,7 @@ const OtherProjects = () => {
       </motion.h1>
 
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] lg:w-[60%] mt-[6%]"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         variants={container}
         initial="hidden"
         whileInView="show"
@@ -85,46 +85,47 @@ const OtherProjects = () => {
           <motion.div
             key={index}
             variants={item}
-            className="h-[300px] backdrop-blur-xl bg-[rgba(17,25,40,0.75)] rounded-xl border border-white/[0.125] p-4 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_12px_30px_0_rgba(74,150,194,0.23)]"
+            className="bg-[#0e1f34]/30 backdrop-blur-sm border border-[#89bbfe]/20 rounded-lg p-6 transition-all duration-300 hover:border-[#89bbfe]/40 hover:scale-105 "
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <div className="flex flex-col h-full">
-              <div className="flex justify-between items-center">
-                <a href={project.link}>
-                  <img
-                    loading="lazy"
-                    className="w-[34px] h-auto"
-                    src={project.image}
-                    alt={project.title}
-                  />
-                </a>
+              <div className="flex justify-between items-center mb-4">
+                <img
+                  loading="lazy"
+                  className="w-[34px] h-auto text-[#89bbfe]"
+                  src={project.image}
+                  alt={project.title}
+                />
                 <a
                   href={project.link}
-                  className="group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#89bbfe]/70 hover:text-[#89bbfe] transition-colors"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="text-white/70 hover:text-[#89bbfe] transition-colors"
-                  >
-                    <Github size={24} />
+                  <motion.div whileHover={{ scale: 1.1 }}>
+                    <Github size={20} />
                   </motion.div>
                 </a>
               </div>
 
-              <div className="flex flex-col h-full pt-4">
+              <div className="flex flex-col flex-grow">
                 <a
                   href={project.link}
-                  className="text-white text-xl font-semibold tracking-wide my-2.5 no-underline hover:text-[#89bbfe] transition-colors text-start"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#fed] text-xl font-bold mb-3 hover:text-[#89bbfe] transition-colors"
                 >
                   {project.title}
                 </a>
-                <p className="text-white/[0.545] text-base font-medium min-h-[120px] overflow-y-auto text-left">
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-white/[0.345] text-sm font-medium p-1"
+                      className="text-[#89bbfe]/70 text-sm font-mono hover:text-[#89bbfe] transition-colors"
                     >
                       {tech}
                     </span>

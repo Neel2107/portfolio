@@ -3,141 +3,137 @@ import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import React from "react";
 
 const ContactSection = () => {
-
-
   const socialLinks = [
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/neelpatel2107/",
-      borderColor: "rgb(46, 166, 86)",
-      shadowColor: "rgb(46, 166, 86)",
-      icon: Linkedin
+      icon: Linkedin,
+      color: "#0A66C2",
+      description: "Connect with me professionally"
     },
     {
       name: "GitHub",
       href: "https://github.com/Neel2107",
-      borderColor: "rgba(255, 180, 0, 0.51)",
-      shadowColor: "rgba(255, 180, 0, 0.51)",
-      icon: Github
+      icon: Github,
+      color: "#f0b400",
+      description: "Check out my code repositories"
     },
     {
       name: "Instagram",
       href: "https://www.instagram.com/21_neeel/",
-      borderColor: "rgba(219, 54, 205, 0.882)",
-      shadowColor: "rgba(219, 54, 205, 0.882)",
-      icon: Instagram
+      icon: Instagram,
+      color: "#E4405F",
+      description: "Follow my creative journey"
     },
     {
       name: "Twitter",
       href: "https://twitter.com/notneeel",
-      borderColor: "rgba(0, 128, 255, 0.51)",
-      shadowColor: "rgba(0, 128, 255, 0.51)",
-      icon: Twitter
+      icon: Twitter,
+      color: "#1DA1F2",
+      description: "Stay updated with my thoughts"
     }
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen w-full py-4 md:px-[15%] px-[3%] relative" id="contact">
-      <div className="flex w-full">
+    <div className="min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 py-20" id="contact">
+      <div className="w-full max-w-7xl mx-auto">
         <motion.div
-          className="flex flex-col items-center w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="flex flex-col w-full"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
-          <motion.span
-            className="text-[#89bbfe] text-lg"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            05. What's Next?
-          </motion.span>
-
-          <motion.span
-            className="text-[#89bbfe] md:text-5xl text-2xl font-semibold mt-4"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Get In Touch
-          </motion.span>
-
-          <motion.p
-            className="text-[hsla(0,0%,78%,.68)] md:text-lg text-sm my-[3%] md:max-w-[50%] max-w-[75%] py-[2%] text-center"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            With my extensive experience in mobile and web development, including React Native and NestJS, I am excited to bring my skills to new challenges and contribute to impactful projects as a developer for the company.
-          </motion.p>
-
+          {/* Section Header */}
           <motion.div
-            className="flex justify-between md:w-[50%] w-[75%] py-[2%]"
-            initial={{ opacity: 0, y: 10 }}
+            className="flex items-center pb-12 w-full"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
           >
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={social.name}
-                href={social.href}
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <div
-                  className="bg-[#0e1f34] rounded-lg cursor-pointer mix-blend-overlay md:p-6 p-2"
-                  style={{
-                    border: `2px solid ${social.borderColor}`,
-                    boxShadow: `${social.shadowColor} 1px 5px 40px`
-                  }}
-                >
-                  {React.createElement(social.icon, {
-                    className: "md:w-10 md:h-10 w-4 h-4",
-                    strokeWidth: 1
-                  })}
-                </div>
-              </motion.a>
-            ))}
+            <h2 className="text-[#fed] text-2xl md:text-[1.875em] font-semibold tracking-[2px] mr-[10px] flex items-center">
+              <span className="text-[#89bbfe] text-2xl md:text-[1.438em] mr-[10px]">05.</span>
+              What's Next?
+            </h2>
+            <div className="h-[1px] bg-[#003b5d] flex-grow" />
           </motion.div>
 
-          <motion.a
-            href="https://mail.google.com/mail/u/0/#inbox?compose=new"
-            className="border border-[#89bbfe] rounded-lg text-[hsla(0,0%,78%,.68)] text-sm mt-5 py-4 px-12 text-center no-underline w-max hover:bg-[rgba(0,255,255,0.1)] hover:shadow-[0_5px_20px_3px_#89bcfe43] hover:text-white transition-all duration-500 flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            Say Hello! <Mail className="w-4 h-4" />
-          </motion.a>
+          <div className="relative">
+            {/* Main content line */}
+            {/* <div className="absolute left-0 md:left-[50%] h-full w-[2px] bg-[#89bbfe]/20" /> */}
 
-          <motion.span
-            className="self-end text-[#fed] text-sm tracking-wider mt-[7%] mx-auto"
+            {/* Contact Info Section */}
+            <motion.div
+              className="relative flex flex-col md:flex-row gap-8 mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              {/* <div className="absolute left-[-9px] md:left-[50%] md:ml-[-9px] w-5 h-5 rounded-full bg-[#89bbfe] z-10" /> */}
+
+              <div className="w-full md:w-[45%] pl-8 md:pl-16">
+                <motion.div
+                  className="bg-[#0e1f34]/30 backdrop-blur-sm p-8 rounded-lg border border-[#89bbfe]/20"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <h3 className="text-[#89bbfe] text-3xl md:text-4xl font-bold mb-6">
+                    Let's Connect
+                  </h3>
+                  <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                    With my extensive experience in mobile and web development, I'm ready to contribute to your next big project.
+                  </p>
+                  <motion.a
+                    href="mailto:neelpatel805804@gmail.com"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#0e1f34] border border-[#89bbfe]/20 text-[#89bbfe] font-medium rounded-lg hover:bg-[#89bbfe]/10 transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Say Hello! <Mail className="w-4 h-4" />
+                  </motion.a>
+                </motion.div>
+              </div>
+
+              {/* Social Links Grid */}
+              <div className="w-full md:w-[45%] pl-8 md:pr-16">
+                <div className="grid grid-cols-2 gap-4">
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group bg-[#0e1f34]/30 backdrop-blur-sm p-4 rounded-lg border border-[#89bbfe]/20 hover:border-[#89bbfe]/40 transition-all duration-300"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ y: -5 }}
+                    >
+                      <social.icon className="w-6 h-6 text-[#89bbfe] mb-3" />
+                      <h4 className="text-white font-medium mb-1">{social.name}</h4>
+                      <p className="text-gray-400 text-sm">{social.description}</p>
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Footer */}
+          <motion.div
+            className="text-center mt-20"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ delay: 0.4 }}
           >
-            Made with <span>❤️</span> by
-          </motion.span>
-
-          <motion.span
-            className="font-['Satisfy'] text-3xl mt-2"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            Nova
-          </motion.span>
+            <p className="text-gray-400 text-sm">
+              Made with <span className="text-red-500">❤️</span> by
+            </p>
+            <p className="font-['Satisfy'] text-2xl text-[#89bbfe] mt-1">Nova</p>
+          </motion.div>
         </motion.div>
       </div>
-
-
     </div>
   );
 };

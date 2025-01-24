@@ -38,7 +38,7 @@ const MainContainer = () => {
         </motion.span>
 
         <motion.p
-          className='text-gray-500 text-base md:text-lg leading-[25px] mt-[30px] max-w-[550px] text-left'
+          className='text-gray-400 text-base md:text-lg leading-[25px] mt-[30px] max-w-[550px] text-left'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4 }}

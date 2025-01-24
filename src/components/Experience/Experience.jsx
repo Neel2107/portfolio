@@ -1,7 +1,28 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { Calendar, Building2 } from "lucide-react";
 
 const experience = [
+  {
+    title: "Software Development Engineer 1",
+    period: "AUG 2024 - Present",
+    organization: "Faebikes, Bangalore",
+    responsibilities: [
+      "Enhanced and launched the Retail App on Play Store with improved UI/UX, deep linking, supporting 60 lakh+ monthly transactions and 1000+ daily active users.",
+      "Designed and built Internal Operations App flows in React Native, supporting 20+ daily deployments and 55+ services with features like in-app media capture and PDF generation.",
+      "Led development of Leads Management System, boosting customer acquisition by 40%, handled REST API integrations, and implemented role-based access control."
+    ]
+  },
+  {
+    title: "Software Development Engineer Intern",
+    period: "MAY 2024 - AUG 2024",
+    organization: "Faebikes, Bangalore",
+    responsibilities: [
+      "Developed MVP of Retail App using React Native and Expo, integrating OTP-based login and Razorpay for secure transactions.",
+      "Created MVP of Internal Operations App with features like in-app image capture, JWT authorization, and AWS S3 integration.",
+      "Initiated Dashboard development with 10+ modules using Next.js for asset management and analytics."
+    ]
+  },
   {
     title: "Software Engineer Intern",
     period: "NOV 2023 - APR 2024",
@@ -9,7 +30,7 @@ const experience = [
     responsibilities: [
       "Built User Interface and REST APIs for various web and mobile apps single-handedly, from scratch.",
       "Created APIs to authorize various social media platforms, resulting in automated social media posts for users.",
-      "Transitioned the Firebase backend of the mobile application to Supabase PostgreSQL, leading to a significant decrease of 70% in bandwidth utilization."
+      "Transitioned the Firebase backend to Supabase PostgreSQL, reducing bandwidth utilization by 70%."
     ]
   },
   {
@@ -17,16 +38,16 @@ const experience = [
     period: "FEB 2023 - MAY 2023",
     organization: "The Tecniq Solutions",
     responsibilities: [
-      "Created and contributed to a shoe store project, showcasing proficiency in building modern web applications with React and Tailwind CSS.",
-      "Improved the page loading speed by 20% by implementing techniques like code splitting, lazy loading, and image optimization by refactoring the codebase.",
-      "Developed reusable UI components using ReactJS, ensuring consistency and maintainability across the application."
+      "Created and contributed to a shoe store project using React and Tailwind CSS.",
+      "Improved page loading speed by 20% through code splitting and optimization.",
+      "Developed reusable UI components ensuring consistency and maintainability."
     ]
   }
 ];
 
 const Experience = () => {
   return (
-    <div className="tw-flex tw-flex-row tw-relative tw-py-[10%] tw-px-[17%] md:tw-px-[17%] " id="education">
+    <div className="tw-py-[10%] tw-px-[5%] md:tw-px-[17%]" id="education">
       <motion.div
         className="tw-flex tw-flex-col tw-w-full"
         initial={{ opacity: 0 }}
@@ -48,87 +69,66 @@ const Experience = () => {
           <div className="tw-h-[1px] tw-bg-[#003b5d] tw-w-[30%]" />
         </motion.div>
 
-        {experience.map((education, index) => (
-          <motion.div
-            key={index}
-            className="tw-text-xl tw-mt-5 tw-pl-5 tw-text-left tw-w-full"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-          >
-            <motion.p
-              className="tw-py-2 tw-text-[#89bbfe] tw-text-2xl"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-            >
-              {education.title}
-            </motion.p>
+        <div className="tw-relative">
+          {/* Timeline line */}
+          <div className="tw-absolute tw-left-0 md:tw-left-[50%] tw-h-full tw-w-[2px] tw-bg-[#89bbfe]/20" />
 
-            <div className="tw-flex tw-w-full tw-flex-row tw-mb-[10px] tw-items-baseline">
-              <h4 className="tw-text-[#fed] tw-m-0 tw-pr-[10px] tw-w-max tw-text-sm md:tw-text-base tw-border-r-2 tw-border-[#9c9c9c]">
-                {education.period}
-              </h4>
-              <p className="tw-text-sm md:tw-text-base tw-pl-[10px] tw-w-max tw-text-gray-300">
-                {education.organization}
-              </p>
-            </div>
-
-            <div className="tw-h-[1px] tw-w-full tw-bg-gradient-to-r tw-from-[#cacaca71] tw-to-transparent" />
-
+          {experience.map((exp, index) => (
             <motion.div
-              className="tw-flex tw-flex-col tw-text-base tw-leading-10 tw-p-4 tw-w-full"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              key={index}
+              className={`tw-relative tw-flex tw-flex-col md:tw-flex-row ${
+                index % 2 === 0 ? 'md:tw-flex-row-reverse' : ''
+              } tw-gap-8 tw-mb-16`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <ul className="tw-list-disc tw-pl-4">
-                {education.responsibilities.map((responsibility, i) => (
-                  <motion.li
-                    key={i}
-                    className="tw-text-[hsla(0,0%,78%,0.68)] tw-text-sm md:tw-text-base tw-w-full md:tw-w-[80%] tw-leading-[30px]"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.6 + i * 0.1 }}
-                  >
-                    {responsibility}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        ))}
-      </motion.div>
+              {/* Timeline dot */}
+              <div className="tw-absolute tw-left-[-9px] md:tw-left-[50%] md:tw-ml-[-9px] tw-w-5 tw-h-5 tw-rounded-full tw-bg-[#89bbfe] tw-z-10" />
 
-      <motion.div
-        className="tw-w-[40%] tw-hidden md:tw-flex tw-flex-col"
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.img
-          className="tw-hidden md:tw-block lg:tw-h-[60%] tw-object-contain tw-transform tw-scale-x-[-1] tw-mt-20 tw-max-w-[clamp(400px,45%,500px)]"
-          src="./Logo.webp"
-          alt="Company Logo"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        />
-        <motion.img
-          className="tw-hidden md:tw-block lg:tw-h-[60%] tw-object-contain tw-transform tw-scale-x-[-1] tw-max-w-[clamp(400px,45%,500px)]"
-          src="./experience/user-2.png"
-          alt="user-img-2"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        />
+              {/* Content */}
+              <div className={`tw-w-full md:tw-w-[45%] tw-pl-8 md:tw-pl-0 ${
+                index % 2 === 0 ? 'md:tw-pr-16' : 'md:tw-pl-16'
+              }`}>
+                <motion.div
+                  className="tw-bg-[#0e1f34]/30 tw-backdrop-blur-sm tw-p-6 tw-rounded-lg tw-border tw-border-[#89bbfe]/20"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div className="tw-flex tw-items-center tw-gap-2 tw-mb-2">
+                    <Calendar className="tw-w-4 tw-h-4 tw-text-[#89bbfe]" />
+                    <span className="tw-text-[#fed] tw-text-sm">{exp.period}</span>
+                  </div>
+                  
+                  <h3 className="tw-text-[#89bbfe] tw-text-xl tw-font-medium tw-mb-2">
+                    {exp.title}
+                  </h3>
+                  
+                  <div className="tw-flex tw-items-center tw-gap-2 tw-mb-4">
+                    <Building2 className="tw-w-4 tw-h-4 tw-text-gray-400" />
+                    <span className="tw-text-gray-400 tw-text-sm">{exp.organization}</span>
+                  </div>
+
+                  <ul className="tw-list-disc tw-pl-4 tw-space-y-2">
+                    {exp.responsibilities.map((responsibility, i) => (
+                      <motion.li
+                        key={i}
+                        className="tw-text-[hsla(0,0%,78%,0.68)] tw-text-sm"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 + i * 0.1 }}
+                      >
+                        {responsibility}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </div>
   );

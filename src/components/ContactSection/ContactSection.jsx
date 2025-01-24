@@ -3,9 +3,7 @@ import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import React from "react";
 
 const ContactSection = () => {
-  const handleButtonClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+
 
   const socialLinks = [
     {

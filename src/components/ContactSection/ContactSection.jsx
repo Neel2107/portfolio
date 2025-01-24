@@ -36,7 +36,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 py-20" id="contact">
+    <div className="min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 py-32" id="contact">
       <div className="w-full max-w-7xl mx-auto">
         <motion.div
           className="flex flex-col w-full"
@@ -56,7 +56,7 @@ const ContactSection = () => {
             >
 
 
-              <div className="w-full md:w-[45%] pl-8 md:pl-16">
+              <div className="w-full md:w-[45%]  md:pl-16">
                 <motion.div
                   className="bg-[#0e1f34]/30 backdrop-blur-sm p-8 rounded-lg border border-[#89bbfe]/20"
                   whileHover={{ scale: 1.02 }}

@@ -20,7 +20,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen w-full py-[5%]  px-4 md:px-[17%]  " id="skills">
+    <div className="flex items-center justify-center min-h-screen w-full py-32 px-4 md:px-[17%]" id="skills">
       <div className="w-full">
         <SectionTitle number="03" title="My Stack" />
 

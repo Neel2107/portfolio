@@ -38,9 +38,9 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
         className="text-white my-2 mx-6 cursor-pointer w-max text-[32px]"
         id="logo"
         onClick={handleLogoClick}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 0.8 }}
+        initial={{ opacity: 0, filter: "blur(4px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.5 }}
       >
         <a href="#top" className="no-underline text-white font-satisfy ">Neel</a>
       </motion.div>
@@ -51,11 +51,10 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
             <motion.li
               key={item.id}
               className="mx-4"
-              initial={{ y: -100 }}
-              animate={{ y: 0 }}
+              initial={{ opacity: 0, filter: "blur(4px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{
-                type: "spring",
-                duration: 0.8,
+                duration: 0.5,
                 delay: index * 0.1
               }}
             >
@@ -73,11 +72,10 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
           ))}
           <motion.li
             className="mx-4"
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{
-              type: "spring",
-              duration: 0.8,
+              duration: 0.5,
               delay: NAV_ITEMS.length * 0.1
             }}
           >
@@ -102,11 +100,10 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
         <motion.button
           onClick={handleSidbar}
           className="md:block bg-transparent border-0 mr-4"
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
+          initial={{ opacity: 0, filter: "blur(4px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{
-            type: "spring",
-            duration: 0.8,
+            duration: 0.5,
             delay: (NAV_ITEMS.length + 1) * 0.1
           }}
         >

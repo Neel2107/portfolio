@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/SidebarSection/Sidebar.tsx";
 import "./index.css";
 
-// Lazy load components
 const AboutMeSection = React.lazy(() => import("./components/AboutMeSection/AboutMeSection"));
 const MainContainer = React.lazy(() => import("./components/MainContainer/MainContainer"));
 const OtherProjects = React.lazy(() => import("./components/OtherProjects/OtherProjects"));
@@ -20,18 +19,17 @@ function App() {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative bg-[#0d0d10]">
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
       <Navbar handleSidbar={handleSidebar} />
       <MainContainer />
       <AboutMeSection />
       <ProjectContainer />
-      <OtherProjects />
       <SkillsSection />
       <Experience />
+      <OtherProjects />
       <ContactSection />
     </div>
-
   );
 }
 

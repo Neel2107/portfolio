@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Building2, Calendar } from "lucide-react";
+import { ANIMATION, CONTAINER_STYLES, COLORS } from "../../utils/constants";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const experience = [
@@ -48,16 +49,13 @@ const experience = [
 const Experience = () => {
   return (
     <motion.div
-      className="flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32"
+      className={CONTAINER_STYLES.section}
       id="experience"
-      initial={{ opacity: 0, filter: "blur(4px)" }}
-      whileInView={{ opacity: 1, filter: "blur(0px)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      {...ANIMATION}
     >
-      <div className="flex flex-col h-full w-full max-w-6xl">
+      <div className={CONTAINER_STYLES.wrapper}>
         <SectionTitle number="05" title="Experience" />
-
+        
         <div className="mt-12 space-y-12">
           <div className="relative">
             <div className="absolute left-0 md:left-[50%] h-full w-[2px] bg-[#89bbfe]/20" />

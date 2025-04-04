@@ -5,7 +5,7 @@ import { Code2, Rocket, Server, Star, Users, Zap } from "lucide-react";
 const AboutMeSection = () => {
     const stats = [
         { icon: <Users className="w-5 h-5" />, value: "1000+", label: "Daily Users" },
-        // { icon: <Zap className="w-5 h-5" />, value: "100%", label: "Solo Development" },
+        
         { icon: <Star className="w-5 h-5" />, value: "40%", label: "Growth" }
     ];
 

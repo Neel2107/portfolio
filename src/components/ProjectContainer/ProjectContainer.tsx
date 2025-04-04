@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ANIMATION, CONTAINER_STYLES, COLORS } from "../../utils/constants";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { ExternalLink, Github } from "lucide-react";
 
 const ProjectContainer = () => {
     const projects = [
@@ -31,30 +32,23 @@ const ProjectContainer = () => {
 
     return (
         <motion.div
-            className="flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32"
+            className={CONTAINER_STYLES.section}
             id="project"
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            {...ANIMATION}
         >
-            <div className="flex flex-col h-full w-full max-w-6xl">
+            <div className={CONTAINER_STYLES.wrapper}>
                 <SectionTitle number="02" title="Featured Projects" />
 
                 <div className="mt-12 space-y-12">
-                   
-
                     <motion.div
                         className="grid md:grid-cols-3 gap-6"
-                        initial={{ opacity: 0, filter: "blur(4px)" }}
-                        whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                        viewport={{ once: true }}
+                        {...ANIMATION}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
                         {projects.map((project, index) => (
                             <motion.div
                                 key={project.title + index}
-                                className="bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all overflow-hidden"
+                                className={CONTAINER_STYLES.card}
                                 whileHover={{ scale: 1.02 }}
                             >
                                 <div className="relative h-[200px] overflow-hidden bg-[#0a192f]">

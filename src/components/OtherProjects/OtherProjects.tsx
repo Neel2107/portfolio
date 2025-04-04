@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { ANIMATION, CONTAINER_STYLES, COLORS } from "../../utils/constants";
 
 const OtherProjects = () => {
   const projectData = [
@@ -51,28 +52,23 @@ const OtherProjects = () => {
 
   return (
     <motion.div
-      className="flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32"
+      className={CONTAINER_STYLES.section}
       id="other-projects"
-      initial={{ opacity: 0, filter: "blur(4px)" }}
-      whileInView={{ opacity: 1, filter: "blur(0px)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      {...ANIMATION}
     >
-      <div className="flex flex-col h-full w-full max-w-6xl">
-        <SectionTitle number="03" title="Other Projects" />
+      <div className={CONTAINER_STYLES.wrapper}>
+        <SectionTitle number="04" title="Other Projects" />
 
-        <div className=" ">
+        <div className="mt-12">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true }}
+            {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             {projectData.map((project, index) => (
               <motion.div
                 key={index}
-                className="bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-6"
+                className={CONTAINER_STYLES.card}
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="flex flex-col h-full">

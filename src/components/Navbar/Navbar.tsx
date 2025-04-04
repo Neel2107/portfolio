@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
+import { COLORS } from "../../utils/constants";
 import React, { useCallback } from "react";
 
 const NAV_ITEMS = [
@@ -29,11 +30,11 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
 
   return (
     <motion.nav
-      className="flex justify-between items-center w-full sticky top-0 left-0  bg-[#0d0d10b2]/70 z-[1000] backdrop-blur-[200px]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    className={`flex justify-between items-center w-full sticky top-0 left-0 bg-[${COLORS.background}b2]/70 z-[1000] backdrop-blur-[200px]`}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+>
       <motion.div
         className="text-white my-2 mx-6 cursor-pointer w-max text-[32px]"
         id="logo"

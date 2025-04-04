@@ -1,28 +1,22 @@
 import { motion } from "framer-motion";
+import { ANIMATION, CONTAINER_STYLES, COLORS } from "../../utils/constants";
 import { skillsCardsData } from "../../utils/skillsCardsData";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const SkillsSection = () => {
   return (
     <motion.div
-      className="flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32"
+      className={CONTAINER_STYLES.section}
       id="skills"
-      initial={{ opacity: 0, filter: "blur(4px)" }}
-      whileInView={{ opacity: 1, filter: "blur(0px)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      {...ANIMATION}
     >
-      <div className="flex flex-col h-full w-full max-w-6xl">
-        <SectionTitle number="04" title="My Stack" />
-
-        <div className="">
+      <div className={CONTAINER_STYLES.wrapper}>
+        <SectionTitle number="03" title="My Stack" />
         
-
+        <div className="mt-12">
           <motion.div
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true }}
+            {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             {skillsCardsData.map((skill, index) => {

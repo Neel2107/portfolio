@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import { ANIMATION, CONTAINER_STYLES } from "../../utils/constants";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const ContactSection = () => {
@@ -36,23 +37,17 @@ const ContactSection = () => {
 
   return (
     <motion.div
-      className="flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32"
+      className={CONTAINER_STYLES.section}
       id="contact"
-      initial={{ opacity: 0, filter: "blur(4px)" }}
-      whileInView={{ opacity: 1, filter: "blur(0px)" }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      {...ANIMATION}
     >
-      <div className="flex flex-col h-full w-full max-w-6xl">
-        <SectionTitle number="05" title="What's Next?" />
+      <div className={CONTAINER_STYLES.wrapper}>
+        <SectionTitle number="06" title="What's Next?" />
 
-        <div className="">
-
+        <div className="mt-12">
           <motion.div
             className="flex flex-col md:flex-row gap-8"
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true }}
+            {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="w-full md:w-1/2">
@@ -69,7 +64,7 @@ const ContactSection = () => {
                 <motion.a
                   href="mailto:neelpatel805804@gmail.com"
                   className="inline-flex items-center gap-3 px-6 py-3 bg-[#1a1a1a] text-white font-medium rounded-full hover:bg-[#2a2a2a] transition-colors duration-300 group"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.03,
                     boxShadow: "0 4px 12px rgba(26, 26, 26, 0.3)"
                   }}
@@ -103,19 +98,6 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
-
-          <motion.div
-            className="text-center mt-20"
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            <p className="text-gray-400 text-sm">
-              Made with <span className="text-red-500">❤️</span> by
-            </p>
-            <p className="font-['Satisfy'] text-2xl text-[#89bbfe] mt-1">Neel</p>
           </motion.div>
         </div>
       </div>

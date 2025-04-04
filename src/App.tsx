@@ -1,5 +1,4 @@
-import React, { Suspense, useState } from "react";
-import Loader from "./components/Loader/Loader";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/SidebarSection/Sidebar.tsx";
 import "./index.css";
@@ -24,13 +23,13 @@ function App() {
     <div className="relative ">
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
       <Navbar handleSidbar={handleSidebar} />
-        <MainContainer />
-        <AboutMeSection />
-        <ProjectContainer />
-        <OtherProjects />
-        <SkillsSection />
-        <Experience />
-        <ContactSection />
+      <MainContainer />
+      <AboutMeSection />
+      <ProjectContainer />
+      <OtherProjects />
+      <SkillsSection />
+      <Experience />
+      <ContactSection />
     </div>
 
   );

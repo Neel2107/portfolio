@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import React, { Suspense, useState } from "react";
+import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
+import PageTransition from "./components/PageTransition/PageTransition";
+import ParallaxBackground from "./components/ParallaxBackground/ParallaxBackground";
 import Sidebar from "./components/SidebarSection/Sidebar.tsx";
 import "./index.css";
 
@@ -20,15 +24,43 @@ function App() {
 
   return (
     <div className="relative bg-[#0d0d10]">
+      <ParallaxBackground />
+      {/* <LoadingBar /> */}
+      {/* <CustomCursor /> */}
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
       <Navbar handleSidbar={handleSidebar} />
-      <MainContainer />
-      <AboutMeSection />
-      <ProjectContainer />
-      <SkillsSection />
-      <Experience />
-      <OtherProjects />
-      <ContactSection />
+
+      <Suspense fallback={<Loader />}>
+        <AnimatePresence mode="wait">
+          <PageTransition id="home">
+            <MainContainer />
+          </PageTransition>
+
+          <PageTransition id="about">
+            <AboutMeSection />
+          </PageTransition>
+
+          <PageTransition id="projects">
+            <ProjectContainer />
+          </PageTransition>
+
+          <PageTransition id="skills">
+            <SkillsSection />
+          </PageTransition>
+
+          <PageTransition id="experience">
+            <Experience />
+          </PageTransition>
+
+          <PageTransition id="other-projects">
+            <OtherProjects />
+          </PageTransition>
+
+          <PageTransition id="contact">
+            <ContactSection />
+          </PageTransition>
+        </AnimatePresence>
+      </Suspense>
     </div>
   );
 }

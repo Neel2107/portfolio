@@ -25,3 +25,45 @@ export const CONTAINER_STYLES = {
   wrapper: "flex flex-col h-full w-full max-w-6xl",
   card: "bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-6",
 };
+
+// Add these animation variants
+export const SCROLL_ANIMATIONS = {
+  fadeUp: {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  },
+  fadeIn: {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        duration: 0.6
+      }
+    }
+  },
+  stagger: {
+    container: {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.1
+        }
+      }
+    },
+    item: {
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0
+      }
+    }
+  }
+};

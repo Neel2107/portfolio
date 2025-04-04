@@ -42,7 +42,7 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 0.8 }}
       >
-        <a href="#top" className="no-underline text-white font-satisfy ">Nova</a>
+        <a href="#top" className="no-underline text-white font-satisfy ">Neel</a>
       </motion.div>
 
       <div className="m-4 hidden flex-row items-center md:flex ">

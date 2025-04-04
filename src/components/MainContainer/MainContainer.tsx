@@ -66,7 +66,7 @@ const MainContainer = () => {
       >
         <img
           loading='lazy'
-          className='w-[27rem] h-[27rem] object-cover cursor-none'
+          className='w-[27rem] h-[27rem] object-cover'
           src="./education.gif"
           alt="Education illustration"
         />

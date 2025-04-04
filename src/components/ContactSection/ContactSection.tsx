@@ -115,7 +115,7 @@ const ContactSection = () => {
             <p className="text-gray-400 text-sm">
               Made with <span className="text-red-500">❤️</span> by
             </p>
-            <p className="font-['Satisfy'] text-2xl text-[#89bbfe] mt-1">Nova</p>
+            <p className="font-['Satisfy'] text-2xl text-[#89bbfe] mt-1">Neel</p>
           </motion.div>
         </motion.div>
       </div>

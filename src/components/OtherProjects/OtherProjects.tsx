@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const OtherProjects = () => {
   const projectData = [
@@ -47,96 +48,83 @@ const OtherProjects = () => {
     },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
 
   return (
-    <div className="py-32 px-4 md:px-[17%]">
-      <motion.h1
-        className="text-[#fed] text-2xl md:text-3xl font-bold mb-16 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        Other Noteworthy Projects
-      </motion.h1>
+    <motion.div
+      className="flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32"
+      id="other-projects"
+      initial={{ opacity: 0, filter: "blur(4px)" }}
+      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="flex flex-col h-full w-full max-w-6xl">
+        <SectionTitle number="03" title="Other Projects" />
 
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
-        {projectData.map((project, index) => (
+        <div className=" ">
           <motion.div
-            key={index}
-            variants={item}
-            className="bg-[#0e1f34]/30 backdrop-blur-sm border border-[#89bbfe]/20 rounded-lg p-6 transition-all duration-300 hover:border-[#89bbfe]/40 hover:scale-105 "
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <div className="flex flex-col h-full">
-              <div className="flex justify-between items-center mb-4">
-                <img
-                  loading="lazy"
-                  className="w-[34px] h-auto text-[#89bbfe]"
-                  src={project.image}
-                  alt={project.title}
-                />
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#89bbfe]/70 hover:text-[#89bbfe] transition-colors"
-                >
-                  <motion.div whileHover={{ scale: 1.1 }}>
-                    <Github size={20} />
-                  </motion.div>
-                </a>
-              </div>
-
-              <div className="flex flex-col flex-grow">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#fed] text-xl font-bold mb-3 hover:text-[#89bbfe] transition-colors"
-                >
-                  {project.title}
-                </a>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-[#89bbfe]/70 text-sm font-mono hover:text-[#89bbfe] transition-colors"
+            {projectData.map((project, index) => (
+              <motion.div
+                key={index}
+                className="bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-6"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex flex-col h-full">
+                  <div className="flex justify-between items-center mb-4">
+                    <img
+                      loading="lazy"
+                      className="w-[34px] h-auto text-[#89bbfe]"
+                      src={project.image}
+                      alt={project.title}
+                    />
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#89bbfe]/70 hover:text-[#89bbfe] transition-colors"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <motion.div whileHover={{ scale: 1.1 }}>
+                        <Github size={20} />
+                      </motion.div>
+                    </a>
+                  </div>
+
+                  <div className="flex flex-col flex-grow">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white text-xl font-semibold mb-3 hover:text-[#89bbfe] transition-colors"
+                    >
+                      {project.title}
+                    </a>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 text-xs font-mono rounded-full bg-[#89bbfe]/10 text-[#89bbfe]/70 border border-[#89bbfe]/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </motion.div>
-        ))}
-      </motion.div>
-    </div>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 

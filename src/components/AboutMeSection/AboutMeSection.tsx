@@ -5,7 +5,7 @@ import { Code2, Rocket, Server, Star, Users, Zap } from "lucide-react";
 const AboutMeSection = () => {
     const stats = [
         { icon: <Users className="w-5 h-5" />, value: "1000+", label: "Daily Users" },
-        { icon: <Zap className="w-5 h-5" />, value: "60L+", label: "Transactions" },
+        // { icon: <Zap className="w-5 h-5" />, value: "100%", label: "Solo Development" },
         { icon: <Star className="w-5 h-5" />, value: "40%", label: "Growth" }
     ];
 
@@ -18,12 +18,12 @@ const AboutMeSection = () => {
         {
             icon: <Server className="w-6 h-6 text-[#89bbfe]" />,
             title: "High-Impact Solutions",
-            description: "Building applications that handle $870K+ yearly transactions"
+            description: "Leading development of mission-critical applications handling $870K+ yearly transactions"
         },
         {
             icon: <Rocket className="w-6 h-6 text-[#89bbfe]" />,
             title: "Performance Focused",
-            description: "Optimizing for scalability and exceptional user experience"
+            description: "Single-handedly built and optimized for scalability and exceptional user experience"
         }
     ];
 
@@ -39,7 +39,7 @@ const AboutMeSection = () => {
             <div className="flex flex-col h-full w-full max-w-6xl">
                 <SectionTitle number="01" title="About Me" />
 
-                <div className="mt-12 space-y-12">
+                <div className="mt- space-y-12">
                     <motion.div
                         className="text-center space-y-6"
                         initial={{ opacity: 0, filter: "blur(4px)" }}
@@ -47,10 +47,10 @@ const AboutMeSection = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold">
+                        {/* <h2 className="text-4xl md:text-5xl font-bold">
                             <span className="text-[#89bbfe]">Bonjour! </span>
                             I'm Neel Patel
-                        </h2>
+                        </h2> */}
                         <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
                             A Software Development Engineer passionate about creating impactful digital experiences. At FAE Bikes, I lead the development of mission-critical applications, combining technical expertise with a keen eye for user experience.
                         </p>

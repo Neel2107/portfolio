@@ -14,7 +14,7 @@ const SectionTitle = ({ number, title }: SectionTitleProps) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-[#fed] text-2xl md:text-3xl font-bold whitespace-nowrap">
+      <h2 className=" text-2xl md:text-3xl font-bold whitespace-nowrap">
         <span className="text-[#89bbfe]">{number}.</span> {title}
       </h2>
       <div className="h-[1px] bg-[#003b5d] flex-grow" />

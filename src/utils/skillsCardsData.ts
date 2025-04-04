@@ -44,6 +44,10 @@ export  const skillsCardsData = [
         icon:"/skillsLogos/postgresql.svg"
     },
     {
+      name:"Supabse",
+      icon:"/skillsLogos/supabase.svg"
+  },
+    {
         name:"Prisma",
         icon:"/skillsLogos/prisma.svg"
     },

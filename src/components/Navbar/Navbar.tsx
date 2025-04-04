@@ -3,11 +3,11 @@ import { Menu } from "lucide-react";
 import React, { useCallback } from "react";
 
 const NAV_ITEMS = [
-  { id: "about", num: "01", text: "About" },
-  { id: "project", num: "02", text: "Projects" },
-  { id: "skills", num: "03", text: "Skills" },
-  { id: "education", num: "04", text: "Experience" },
-  { id: "contact", num: "05", text: "Contact" },
+  { id: "about",  text: "About" },
+  { id: "project",  text: "Projects" },
+  { id: "skills",  text: "Skills" },
+  { id: "experience",  text: "Experience" },
+  { id: "contact",  text: "Contact" },
 ];
 
 interface NavbarProps {
@@ -63,7 +63,6 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
                 onClick={() => handleScroll(item.id)}
                 className="text-white no-underline text-sm"
               >
-                <span className="text-[#89bbfe]">{item.num}.</span>
                 <span className="hover:text-[#89bbfe] transition-colors duration-200">
                   {item.text}
                 </span>
@@ -85,7 +84,6 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="text-[#89bbfe]">06.</span>
               <span className="hover:text-[#89bbfe] transition-colors duration-200">
                 Resume
               </span>

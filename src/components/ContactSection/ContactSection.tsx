@@ -35,91 +35,91 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 py-32" id="contact">
-      <div className="w-full max-w-7xl mx-auto">
-        <motion.div
-          className="flex flex-col w-full"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <SectionTitle number="05" title="What's Next?" />
+    <motion.div
+      className="flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32"
+      id="contact"
+      initial={{ opacity: 0, filter: "blur(4px)" }}
+      whileInView={{ opacity: 1, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="flex flex-col h-full w-full max-w-6xl">
+        <SectionTitle number="05" title="What's Next?" />
 
-          <div className="relative">
+        <div className="">
 
-            <motion.div
-              className="relative flex flex-col md:flex-row gap-8 mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-
-
-              <div className="w-full md:w-[45%]  md:pl-16">
-                <motion.div
-                  className="bg-[#0e1f34]/30 backdrop-blur-sm p-8 rounded-lg border border-[#89bbfe]/20 hover:border-[#89bbfe]/40"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          <motion.div
+            className="flex flex-col md:flex-row gap-8"
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className="w-full md:w-1/2">
+              <motion.div
+                className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all h-full shadow-lg"
+                whileHover={{ scale: 1.02, boxShadow: "0 8px 16px rgba(137, 187, 254, 0.1)" }}
+              >
+                <h3 className="text-[#89bbfe] text-3xl md:text-4xl font-bold mb-6 tracking-tight">
+                  Let's Connect
+                </h3>
+                <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                  With my extensive experience in mobile and web development, I'm ready to contribute to your next big project.
+                </p>
+                <motion.a
+                  href="mailto:neelpatel805804@gmail.com"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-[#1a1a1a] text-white font-medium rounded-full hover:bg-[#2a2a2a] transition-colors duration-300 group"
+                  whileHover={{ 
+                    scale: 1.03,
+                    boxShadow: "0 4px 12px rgba(26, 26, 26, 0.3)"
+                  }}
+                  whileTap={{ scale: 0.97 }}
                 >
-                  <h3 className="text-[#89bbfe] text-3xl md:text-4xl font-bold mb-6">
-                    Let's Connect
-                  </h3>
-                  <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                    With my extensive experience in mobile and web development, I'm ready to contribute to your next big project.
-                  </p>
+                  <span className="relative">Say Hello!</span>
+                  <Mail className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </motion.a>
+              </motion.div>
+            </div>
+
+            <div className="w-full md:w-1/2">
+              <div className="grid grid-cols-2 gap-4 h-full">
+                {socialLinks.map((social, index) => (
                   <motion.a
-                    href="mailto:neelpatel805804@gmail.com"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#0e1f34] border border-[#89bbfe]/20 text-[#89bbfe] font-medium rounded-lg hover:bg-[#89bbfe]/10 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
+                    initial={{ opacity: 0, filter: "blur(4px)" }}
+                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                    whileHover={{ scale: 1.02 }}
                   >
-                    Say Hello! <Mail className="w-4 h-4" />
+                    <social.icon className="w-6 h-6 text-[#89bbfe] mb-3" />
+                    <h4 className="text-white font-medium mb-1">{social.name}</h4>
+                    <p className="text-gray-400 text-sm">{social.description}</p>
                   </motion.a>
-                </motion.div>
+                ))}
               </div>
+            </div>
+          </motion.div>
 
-              {/* Social Links Grid */}
-              <div className="w-full md:w-[45%]  md:pr-16">
-                <div className="grid grid-cols-2 gap-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group bg-[#0e1f34]/30 backdrop-blur-sm p-4 rounded-lg border border-[#89bbfe]/20 hover:border-[#89bbfe]/40 transition-all duration-300"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ y: -5 }}
-                    >
-                      <social.icon className="w-6 h-6 text-[#89bbfe] mb-3" />
-                      <h4 className="text-white font-medium mb-1">{social.name}</h4>
-                      <p className="text-gray-400 text-sm">{social.description}</p>
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Footer */}
           <motion.div
             className="text-center mt-20"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
           >
             <p className="text-gray-400 text-sm">
               Made with <span className="text-red-500">❤️</span> by
             </p>
             <p className="font-['Satisfy'] text-2xl text-[#89bbfe] mt-1">Neel</p>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

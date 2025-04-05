@@ -9,7 +9,6 @@ import "./index.css";
 
 const AboutMeSection = React.lazy(() => import("./components/AboutMeSection/AboutMeSection"));
 const MainContainer = React.lazy(() => import("./components/MainContainer/MainContainer"));
-const OtherProjects = React.lazy(() => import("./components/OtherProjects/OtherProjects"));
 const SkillsSection = React.lazy(() => import("./components/SkillsSection/SkillsSection"));
 const Experience = React.lazy(() => import("./components/Experience/Experience"));
 const ContactSection = React.lazy(() => import("./components/ContactSection/ContactSection"));
@@ -50,10 +49,6 @@ function App() {
 
           <PageTransition id="experience">
             <Experience />
-          </PageTransition>
-
-          <PageTransition id="other-projects">
-            <OtherProjects />
           </PageTransition>
 
           <PageTransition id="contact">

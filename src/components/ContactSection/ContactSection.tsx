@@ -42,7 +42,7 @@ const ContactSection = () => {
       {...ANIMATION}
     >
       <div className={CONTAINER_STYLES.wrapper}>
-        <SectionTitle number="06" title="What's Next?" />
+        <SectionTitle number="05" title="What's Next?" />
 
         <div className="mt-12">
           <motion.div

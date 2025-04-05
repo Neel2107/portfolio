@@ -54,7 +54,7 @@ const Experience = () => {
       {...ANIMATION}
     >
       <div className={CONTAINER_STYLES.wrapper}>
-        <SectionTitle number="05" title="Experience" />
+        <SectionTitle number="04" title="Experience" />
         
         <div className="mt-12 space-y-12">
           <div className="relative">

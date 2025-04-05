@@ -1,6 +1,5 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { COLORS } from "../../utils/constants";
 
 interface SidebarProps {
     isSidebarOpen: boolean;
@@ -38,6 +37,24 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
             location: "https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link",
         },
     ];
+
+    // Implement the handleSidebarItemClick function inside the component
+    const handleSidebarItemClick = (location: string) => {
+        if (location.startsWith('#')) {
+            const sectionId = location.substring(1);
+            const section = document.getElementById(sectionId);
+
+            if (section && window.lenis) {
+                handleSidbar(); // Close sidebar
+                window.lenis.scrollTo(section, {
+                    offset: 0,
+                    duration: 1.2,
+                    easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
+            }
+        }
+    };
+
     return (
         <AnimatePresence>
             {isSidebarOpen && (
@@ -48,7 +65,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <motion.div 
+                    <motion.div
                         className="flex flex-col items-center justify-center bg-[#0d0d10]/60 w-full p-7 backdrop-blur-[5px] rounded-t-2xl relative"
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
@@ -60,7 +77,15 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
                                 key={data.name}
                                 href={data.location}
                                 className="text-xl mb-5 text-[#76accb]"
-                                onClick={handleSidbar}
+                                onClick={(e) => {
+                                    if (data.location.startsWith('#')) {
+                                        e.preventDefault();
+                                        handleSidebarItemClick(data.location);
+                                    } else {
+                                        // For external links like Resume, just close the sidebar
+                                        handleSidbar();
+                                    }
+                                }}
                             >
                                 {data.name}
                             </a>

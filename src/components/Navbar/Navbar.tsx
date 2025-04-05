@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
-import { COLORS } from "../../utils/constants";
 import React, { useCallback } from "react";
+import { COLORS } from "../../utils/constants";
 
 const NAV_ITEMS = [
-  { id: "about",  text: "About" },
-  { id: "project",  text: "Projects" },
-  { id: "skills",  text: "Skills" },
-  { id: "experience",  text: "Experience" },
-  { id: "contact",  text: "Contact" },
+  { id: "about", text: "About" },
+  { id: "project", text: "Projects" },
+  { id: "skills", text: "Skills" },
+  { id: "experience", text: "Experience" },
+  { id: "contact", text: "Contact" },
 ];
 
 interface NavbarProps {
@@ -16,25 +16,35 @@ interface NavbarProps {
 }
 
 const Navbar = ({ handleSidbar }: NavbarProps) => {
-  const handleScroll = useCallback((id: string) => {
+  // Add this function to your Navbar component
+  const handleScroll = (id: string) => {
     const section = document.getElementById(id);
-    if (section) {
+    if (section && window.lenis) {
+      const offset = 0;
+      window.lenis.scrollTo(section, {
+        offset,
+        duration: 1.2,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+      });
+    } else if (section) {
+      // Fallback to native scrolling
       const offsetTop = section.offsetTop;
       window.scrollTo({ top: offsetTop, behavior: "smooth" });
     }
-  }, []);
+  };
 
+  // Then update your onClick handlers in the navigation items to use this function
   const handleLogoClick = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
     <motion.nav
-    className={`flex justify-between items-center w-full sticky top-0 left-0 bg-[${COLORS.background}b2]/70 z-[1000] backdrop-blur-[200px]`}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 0.5 }}
->
+      className={`flex justify-between items-center w-full sticky top-0 left-0 bg-[${COLORS.background}b2]/70 z-[1000] backdrop-blur-[200px]`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <motion.div
         className="text-white my-2 mx-6 cursor-pointer w-max text-[32px]"
         id="logo"

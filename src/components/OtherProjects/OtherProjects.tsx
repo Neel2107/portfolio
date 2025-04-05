@@ -1,7 +1,6 @@
-import { motion } from "framer-motion";
 import { Github } from "lucide-react";
+import { CONTAINER_STYLES } from "../../utils/constants";
 import SectionTitle from "../SectionTitle/SectionTitle";
-import { ANIMATION, CONTAINER_STYLES, COLORS } from "../../utils/constants";
 
 const OtherProjects = () => {
   const projectData = [
@@ -49,78 +48,56 @@ const OtherProjects = () => {
     },
   ];
 
-
   return (
-    <motion.div
+    <div
       className={CONTAINER_STYLES.section}
       id="other-projects"
-      {...ANIMATION}
     >
       <div className={CONTAINER_STYLES.wrapper}>
         <SectionTitle number="04" title="Other Projects" />
 
         <div className="mt-12">
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            {...ANIMATION}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projectData.map((project, index) => (
-              <motion.div
+              <div
                 key={index}
-                className={CONTAINER_STYLES.card}
-                whileHover={{ scale: 1.02 }}
+                className="bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-6 flex flex-col h-full"
               >
-                <div className="flex flex-col h-full">
-                  <div className="flex justify-between items-center mb-4">
-                    <img
-                      loading="lazy"
-                      className="w-[34px] h-auto text-[#89bbfe]"
-                      src={project.image}
-                      alt={project.title}
-                    />
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#89bbfe]/70 hover:text-[#89bbfe] transition-colors"
-                    >
-                      <motion.div whileHover={{ scale: 1.1 }}>
-                        <Github size={20} />
-                      </motion.div>
-                    </a>
-                  </div>
-
-                  <div className="flex flex-col flex-grow">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white text-xl font-semibold mb-3 hover:text-[#89bbfe] transition-colors"
-                    >
-                      {project.title}
-                    </a>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tech.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1 text-xs font-mono rounded-full bg-[#89bbfe]/10 text-[#89bbfe]/70 border border-[#89bbfe]/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                <div className="flex justify-between items-start mb-4">
+                  <img
+                    src={project.image}
+                    alt="Folder icon"
+                    className="w-12 h-12 text-[#89bbfe]"
+                  />
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-[#89bbfe] transition-colors"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
                 </div>
-              </motion.div>
+
+                <h3 className="text-white text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="text-xs text-[#89bbfe] bg-[#89bbfe]/10 px-2 py-1 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -18,10 +18,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  // Removed isLoading state - we'll always show content immediately
   const lenisRef = useLenis();
   
-  // Initialize ScrollTrigger in the App component
+  // Initialize ScrollTrigger in the App component with improved fast-scroll handling
   useEffect(() => {
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +31,7 @@ function App() {
     // Create scroll-based animations for sections
     const sections = document.querySelectorAll('section, [id]');
     
-    // Basic fade-in animation for all sections - only blur effect, no staggering
+    // Basic fade-in animation for all sections - improved for fast scrolling
     sections.forEach((section) => {
       gsap.fromTo(
         section,
@@ -40,18 +39,20 @@ function App() {
         {
           opacity: 1,
           filter: "blur(0px)",
-          duration: 1,
+          duration: 0.5, // Faster animation duration
           scrollTrigger: {
             trigger: section,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse',
+            start: 'top 95%', // Trigger earlier
+            end: 'bottom 5%', // End later
+            toggleActions: 'play none none none', // Changed from 'play none none reverse'
+            once: false, // Allow re-triggering
+            fastScrollEnd: true, // Ensure animations complete even during fast scrolling
           },
         }
       );
     });
     
-    // Add blur fade-in for text elements
+    // Add blur fade-in for text elements with improved fast-scroll handling
     const textElements = document.querySelectorAll('h1, h2, h3, p, a:not(nav a)');
     textElements.forEach((element) => {
       gsap.fromTo(
@@ -60,11 +61,13 @@ function App() {
         {
           filter: "blur(0px)",
           opacity: 1,
-          duration: 0.8,
+          duration: 0.4, // Faster animation
           scrollTrigger: {
             trigger: element,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse',
+            start: 'top 95%', // Trigger earlier
+            toggleActions: 'play none none none', // Changed from 'play none none reverse'
+            once: false, // Allow re-triggering
+            fastScrollEnd: true, // Ensure animations complete even during fast scrolling
           },
         }
       );
@@ -74,7 +77,7 @@ function App() {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []); // No longer depends on isLoading
+  }, []);
 
   useEffect(() => {
     if (lenisRef.current && !isSidebarOpen) {
@@ -90,15 +93,12 @@ function App() {
 
   return (
     <div className="relative bg-[#0d0d10] min-h-screen">
-      {/* Removed conditional rendering with isLoading */}
       <>
         <LoadingBar />
         <Navbar handleSidbar={handleSidebar} />
         <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
         <ParallaxBackground />
-        {/* <CustomCursor /> */}
         
-        {/* Main content with initial blur fade-in effect */}
         <div className="content-wrapper" style={{ 
           filter: 'blur(0px)',
           opacity: 1,

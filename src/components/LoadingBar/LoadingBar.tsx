@@ -2,7 +2,6 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const LoadingBar = () => {
   const { scrollYProgress } = useScroll();
-  // Transform scrollYProgress to max out at 0.99 (99%)
   const transformedProgress = useTransform(scrollYProgress, [0, 1], [0, 0.99]);
   const scaleX = useSpring(transformedProgress, {
     stiffness: 100,

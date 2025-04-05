@@ -14,42 +14,15 @@ import { useLenis } from "./hooks/useLenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import CustomCursor from "./components/CustomCursor/CustomCursor";
-import Loader from "./components/Loader/Loader";
+// import Loader from "./components/Loader/Loader"; // No longer needed
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  // Removed isLoading state - we'll always show content immediately
   const lenisRef = useLenis();
-  const hasInitializedRef = useRef(false);
   
-  // Handle initial loading state - completely revised approach
+  // Initialize ScrollTrigger in the App component
   useEffect(() => {
-    // Check if this is the first render of the component
-    if (!hasInitializedRef.current) {
-      hasInitializedRef.current = true;
-      
-      // Check localStorage only once per session
-      const hasVisited = localStorage.getItem('hasVisitedPortfolio');
-      
-      if (!hasVisited) {
-        // First visit - show loading animation
-        const timer = setTimeout(() => {
-          setIsLoading(false);
-          localStorage.setItem('hasVisitedPortfolio', 'true');
-        }, 1500);
-        
-        return () => clearTimeout(timer);
-      } else {
-        // Already visited - skip loading animation
-        setIsLoading(false);
-      }
-    }
-  }, []);
-  
-  // Initialize ScrollTrigger in the App component - separated from loading logic
-  useEffect(() => {
-    if (isLoading) return; // Don't initialize until loading is complete
-    
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
     
@@ -101,7 +74,7 @@ function App() {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [isLoading]);
+  }, []); // No longer depends on isLoading
 
   useEffect(() => {
     if (lenisRef.current && !isSidebarOpen) {
@@ -117,32 +90,29 @@ function App() {
 
   return (
     <div className="relative bg-[#0d0d10] min-h-screen">
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          <LoadingBar />
-          <Navbar handleSidbar={handleSidebar} />
-          <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
-          <ParallaxBackground />
-          {/* <CustomCursor /> */}
-          
-          {/* Main content with initial blur fade-in effect */}
-          <div className="content-wrapper" style={{ 
-            filter: 'blur(0px)',
-            opacity: 1,
-            transition: 'filter 0.8s ease-out, opacity 0.8s ease-out'
-          }}>
-            <MainContainer />
-            <AboutMeSection />
-            <ProjectContainer />
-            <SkillsSection />
-            <Experience />
-            <OtherProjects />
-            <ContactSection />
-          </div>
-        </>
-      )}
+      {/* Removed conditional rendering with isLoading */}
+      <>
+        <LoadingBar />
+        <Navbar handleSidbar={handleSidebar} />
+        <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
+        <ParallaxBackground />
+        {/* <CustomCursor /> */}
+        
+        {/* Main content with initial blur fade-in effect */}
+        <div className="content-wrapper" style={{ 
+          filter: 'blur(0px)',
+          opacity: 1,
+          transition: 'filter 0.8s ease-out, opacity 0.8s ease-out'
+        }}>
+          <MainContainer />
+          <AboutMeSection />
+          <ProjectContainer />
+          <SkillsSection />
+          <Experience />
+          <OtherProjects />
+          <ContactSection />
+        </div>
+      </>
     </div>
   );
 }

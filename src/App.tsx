@@ -15,6 +15,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import CustomCursor from "./components/CustomCursor/CustomCursor";
 // import Loader from "./components/Loader/Loader"; // No longer needed
+import { Analytics } from '@vercel/analytics/next';
+
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -94,6 +96,7 @@ function App() {
   return (
     <div className="relative bg-[#0d0d10] min-h-screen">
       <>
+      <Analytics />
         <LoadingBar />
         <Navbar handleSidbar={handleSidebar} />
         <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />

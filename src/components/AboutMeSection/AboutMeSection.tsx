@@ -12,7 +12,7 @@ const AboutMeSection = () => {
     const highlights = [
         {
             icon: <Code2 className="w-6 h-6 text-[#89bbfe]" />,
-            title: "Frontend Specialist",
+            title: "Frontend Engineer",
             description: "Crafting responsive and intuitive user interfaces with React Native and Next.js"
         },
         {

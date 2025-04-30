@@ -13,6 +13,7 @@ import ProjectContainer from "./components/ProjectContainer/ProjectContainer";
 import Sidebar from "./components/SidebarSection/Sidebar";
 import SkillsSection from "./components/SkillsSection/SkillsSection";
 import { useLenis } from "./hooks/useLenis";
+import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {
@@ -92,6 +93,7 @@ function App() {
 
   return (
     <div className="relative bg-[#0d0d10] min-h-screen">
+       <Analytics />
       <>
         <LoadingBar />
         <Navbar handleSidbar={handleSidebar} />

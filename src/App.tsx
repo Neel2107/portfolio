@@ -110,7 +110,7 @@ function App() {
           <ProjectContainer />
           <SkillsSection />
           <Experience />
-          <OtherProjects />
+          {/* <OtherProjects /> */}
           <ContactSection />
         </div>
       </>

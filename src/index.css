@@ -8,34 +8,12 @@
     color: #fff;
     margin: 0;
     padding: 0;
-
 }
 
 body {
     background-color: black;
     overflow-x: hidden;
-
 }
-
-
-#blob {
-    background-color: white;
-    height: 25vmax;
-    aspect-ratio: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    border-radius: 70%;
-    background: linear-gradient(to right, #f08dff, #088cd9);
-    animation: rotate 5s linear infinite;
-    opacity: 0.8;
-    z-index: -1;
-    backdrop-filter: blur(12vmax);
-}
-
-
-
 
 /* Track */
 ::-webkit-scrollbar-track {
@@ -65,12 +43,5 @@ body {
     height: 50px;
 }
 
-
-
-.firstBlur {
-    position: fixed;
-    backdrop-filter: blur(5px) !important;
-
-}
 
 

@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
@@ -7,13 +8,11 @@ import Experience from "./components/Experience/Experience";
 import LoadingBar from "./components/LoadingBar/LoadingBar";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Navbar from "./components/Navbar/Navbar";
-import OtherProjects from "./components/OtherProjects/OtherProjects";
 import ParallaxBackground from "./components/ParallaxBackground/ParallaxBackground";
 import ProjectContainer from "./components/ProjectContainer/ProjectContainer";
 import Sidebar from "./components/SidebarSection/Sidebar";
 import SkillsSection from "./components/SkillsSection/SkillsSection";
 import { useLenis } from "./hooks/useLenis";
-import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {
@@ -93,7 +92,7 @@ function App() {
 
   return (
     <div className="relative bg-[#0d0d10] min-h-screen">
-       <Analytics />
+      <Analytics />
       <>
         <LoadingBar />
         <Navbar handleSidbar={handleSidebar} />

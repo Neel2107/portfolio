@@ -45,82 +45,82 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.div
-        className="text-white my-2 mx-6 cursor-pointer w-max text-[32px]"
-        id="logo"
-        onClick={handleLogoClick}
-        initial={{ opacity: 0, filter: "blur(4px)" }}
-        animate={{ opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 0.5 }}
-      >
-        <a href="#top" className="no-underline text-white font-satisfy ">Neel</a>
-      </motion.div>
+      <div className="max-w-laptop mx-auto w-full flex justify-between items-center px-4 md:px-0">
+        <motion.div
+          className="text-white my-2 cursor-pointer w-max text-[32px]"
+          id="logo"
+          onClick={handleLogoClick}
+          initial={{ opacity: 0, filter: "blur(4px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.5 }}
+        >
+          <a href="#top" className="no-underline text-white font-satisfy ">Neel</a>
+        </motion.div>
 
-      <div className="m-4 hidden flex-row items-center md:flex ">
-        <ul className="m-0 p-0 flex flex-row list-none">
-          {NAV_ITEMS.map((item, index) => (
+        <div className="hidden flex-row items-center md:flex ">
+          <ul className="m-0 p-0 flex flex-row list-none">
+            {NAV_ITEMS.map((item, index) => (
+              <motion.li
+                key={item.id}
+                className="mx-4"
+                initial={{ opacity: 0, filter: "blur(4px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1
+                }}
+              >
+                <a
+                  href={`#${item.id}`}
+                  onClick={() => handleScroll(item.id)}
+                  className="text-white no-underline text-sm"
+                >
+                  <span className="hover:text-[#89bbfe] transition-colors duration-200">
+                    {item.text}
+                  </span>
+                </a>
+              </motion.li>
+            ))}
             <motion.li
-              key={item.id}
               className="mx-4"
               initial={{ opacity: 0, filter: "blur(4px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.1
+                delay: NAV_ITEMS.length * 0.1
               }}
             >
               <a
-                href={`#${item.id}`}
-                onClick={() => handleScroll(item.id)}
+                href="https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link"
                 className="text-white no-underline text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="hover:text-[#89bbfe] transition-colors duration-200">
-                  {item.text}
+                  Resume
                 </span>
               </a>
             </motion.li>
-          ))}
-          <motion.li
-            className="mx-4"
+          </ul>
+        </div>
+
+        <div className=" flex md:hidden">
+          <motion.button
+            onClick={handleSidbar}
+            className="md:block bg-transparent border-0"
             initial={{ opacity: 0, filter: "blur(4px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{
               duration: 0.5,
-              delay: NAV_ITEMS.length * 0.1
+              delay: (NAV_ITEMS.length + 1) * 0.1
             }}
           >
-            <a
-              href="https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link"
-              className="text-white no-underline text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="hover:text-[#89bbfe] transition-colors duration-200">
-                Resume
-              </span>
-            </a>
-          </motion.li>
-        </ul>
-      </div>
-
-      <div className=" flex md:hidden">
-
-
-        <motion.button
-          onClick={handleSidbar}
-          className="md:block bg-transparent border-0 mr-4"
-          initial={{ opacity: 0, filter: "blur(4px)" }}
-          animate={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{
-            duration: 0.5,
-            delay: (NAV_ITEMS.length + 1) * 0.1
-          }}
-        >
-          <Menu
-            className="w-[30px] h-[30px]"
-            aria-label="Menu button"
-          />
-        </motion.button>
+            <Menu
+              className="w-[30px] h-[30px]"
+              aria-label="Menu button"
+            />
+          </motion.button>
+        </div>
       </div>
     </motion.nav>
   );

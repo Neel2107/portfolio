@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,6 +8,12 @@ export default {
       extend: {
         fontFamily:{
           satisfy:['Satisfy', 'cursive'],
+        },
+        maxWidth: {
+          'laptop': '1200px',
+        },
+        screens: {
+          'laptop': '1024px',
         }
       },
   },

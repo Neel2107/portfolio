@@ -22,7 +22,7 @@ export const ANIMATION = {
 
 export const CONTAINER_STYLES = {
   section: "flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32",
-  wrapper: "flex flex-col h-full w-full max-w-6xl",
+  wrapper: "flex flex-col h-full w-full max-w-laptop mx-auto",
   card: "bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-4",
 };
 
@@ -30,8 +30,8 @@ export const CONTAINER_STYLES = {
 export const SCROLL_ANIMATIONS = {
   fadeUp: {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
@@ -41,7 +41,7 @@ export const SCROLL_ANIMATIONS = {
   },
   fadeIn: {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
       transition: {
         duration: 0.6

@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import { Code2, Rocket, Server, Star, Users } from "lucide-react";
+import { CONTAINER_STYLES } from "../../utils/constants";
 import SectionTitle from "../SectionTitle/SectionTitle";
-import { Code2, Rocket, Server, Star, Users, Zap } from "lucide-react";
 
 const AboutMeSection = () => {
     const stats = [
         { icon: <Users className="w-5 h-5" />, value: "1000+", label: "Daily Users" },
-        
+
         { icon: <Star className="w-5 h-5" />, value: "40%", label: "Growth" }
     ];
 
@@ -29,14 +30,14 @@ const AboutMeSection = () => {
 
     return (
         <motion.div
-            className="flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-32"
+            className={CONTAINER_STYLES.section}
             id="about"
             initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
         >
-            <div className="flex flex-col h-full w-full max-w-6xl">
+            <div className={CONTAINER_STYLES.wrapper}>
                 <SectionTitle number="01" title="About Me" />
 
                 <div className="mt- space-y-12">
@@ -54,7 +55,7 @@ const AboutMeSection = () => {
                         <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
                             A Software Development Engineer passionate about creating impactful digital experiences. At FAE Bikes, I lead the development of mission-critical applications, combining technical expertise with a keen eye for user experience.
                         </p>
-                        
+
                         <div className="flex flex-wrap justify-center gap-8 mt-8">
                             {stats.map((stat, index) => (
                                 <motion.div

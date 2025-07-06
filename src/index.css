@@ -15,33 +15,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #13131a7a;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #89bbfe;
-    width: 24px;
-
-    border: 5px solid #89bbfe;
-    border-radius: 15px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #89bbfe;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-    height: 50%;
-}
-
-::-webkit-scrollbar-thumb:vertical {
-    height: 50px;
-}
 
 
 

@@ -105,8 +105,8 @@ const ProjectContainer = () => {
                                     />
                                 </div>
 
-                                <div className="p-6 space-y-4">
-                                    <div className="flex items-center justify-between">
+                                <div className="pt-4 md:p-6 md:px-0 md:pb-0 space-y-4">
+                                    <div className="flex items-center justify-between  md:px-0">
                                         <h3 className="text-xl font-semibold text-white">{project.title}</h3>
                                         <div className="flex gap-3">
                                             {project.github && (

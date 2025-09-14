@@ -98,7 +98,7 @@ function App() {
     };
 
     return (
-        <div className="relative bg-gradient-main min-h-screen overflow-hidden">
+        <div className="relative bg-gradient-main min-h-screen ">
             <Analytics />
 
             {/* Animated background elements */}
@@ -107,22 +107,16 @@ function App() {
                 <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#bae6ff]/5 rounded-full blur-3xl animate-float-reverse" />
             </div>
 
+            <Sidebar isSidebarOpen={isSidebarOpen} handleSidebar={handleSidebar} />
+
             <div className=" flex flex-col max-w-2xl mx-auto">
                 <Navbar handleSidebar={handleSidebar} />
-                <Sidebar isSidebarOpen={isSidebarOpen} handleSidebar={handleSidebar} />
-                <div
-                    style={{
-                        filter: 'blur(0px)',
-                        opacity: 1,
-                        transition: 'filter 0.8s ease-out, opacity 0.8s ease-out'
-                    }}>
-                    <MainContainer />
-                    <AboutMeSection />
-                    <ProjectContainer />
-                    <SkillsSection />
-                    <Experience />
-                    <ContactSection />
-                </div>
+                <MainContainer />
+                <AboutMeSection />
+                <ProjectContainer />
+                <SkillsSection />
+                <Experience />
+                <ContactSection />
             </div>
         </div>
     );

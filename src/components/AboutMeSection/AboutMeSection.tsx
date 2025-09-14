@@ -4,11 +4,7 @@ import { CONTAINER_STYLES } from "../../utils/constants";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const AboutMeSection = () => {
-    const stats = [
-        { icon: <Users className="w-5 h-5" />, value: "1000+", label: "Daily Users" },
-
-        { icon: <Star className="w-5 h-5" />, value: "40%", label: "Growth" }
-    ];
+  
 
     const highlights = [
         {
@@ -53,23 +49,7 @@ const AboutMeSection = () => {
                             A Software Development Engineer passionate about creating impactful digital experiences. At FAE Bikes, I lead the development of mission-critical applications, combining technical expertise with a keen eye for user experience.
                         </p>
 
-                        <div className="flex flex-wrap justify-center gap-8 mt-8">
-                            {stats.map((stat, index) => (
-                                <motion.div
-                                    key={index}
-                                    className="flex items-center gap-3 bg-zinc-900/50 px-6 py-3 rounded-full border border-gray-800"
-                                    whileHover={{ scale: 1.05 }}
-                                >
-                                    <div className="p-2 bg-[#89bbfe]/10 rounded-full text-[#89bbfe]">
-                                        {stat.icon}
-                                    </div>
-                                    <div className="flex items-baseline gap-2">
-                                        <span className="text-2xl font-bold text-white">{stat.value}</span>
-                                        <span className="text-gray-400">{stat.label}</span>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                        
                     </motion.div>
 
                     <motion.div

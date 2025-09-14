@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ANIMATION, CONTAINER_STYLES, COLORS } from "../../utils/constants";
+import { ANIMATION, CONTAINER_STYLES } from "../../utils/constants";
 import { skillsCardsData } from "../../utils/skillsCardsData";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
@@ -12,27 +12,32 @@ const SkillsSection = () => {
     >
       <div className={CONTAINER_STYLES.wrapper}>
         <SectionTitle number="03" title="My Stack" />
-        
-        <div className="mt-12">
+
+        <div className="">
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+            className="flex flex-wrap gap-4"
             {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             {skillsCardsData.map((skill, index) => {
               const isReactLogo = skill.name === "React" || skill.name === "React Native";
 
+              const handleClick = () => {
+                window.open(skill.url, '_blank', 'noopener,noreferrer');
+              };
+
               return (
                 <motion.div
                   key={index}
-                  className="bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-6 flex flex-col items-center gap-4"
+                  className="bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-3 flex items-center gap-3 w-fit cursor-pointer"
                   whileHover={{ scale: 1.02 }}
+                  onClick={handleClick}
                 >
                   <motion.img
                     loading="lazy"
                     src={skill.icon}
-                    height={75}
-                    width={75}
+                    height={20}
+                    width={20}
                     alt={`${skill.name} icon`}
                     className="aspect-square"
                     {...(isReactLogo && {
@@ -42,7 +47,7 @@ const SkillsSection = () => {
                       }
                     })}
                   />
-                  <p className="text-gray-300 font-medium">
+                  <p className="text-gray-300 font-medium text-sm whitespace-nowrap">
                     {skill.name}
                   </p>
                 </motion.div>

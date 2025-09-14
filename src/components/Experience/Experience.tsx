@@ -1,12 +1,23 @@
 import { motion } from "framer-motion";
 import { Building2, Calendar } from "lucide-react";
-import { ANIMATION, CONTAINER_STYLES, COLORS } from "../../utils/constants";
+import { ANIMATION, CONTAINER_STYLES } from "../../utils/constants";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const experience = [
   {
+    title: "Software Development Engineer",
+    period: "JUN 2025 - Present",
+    organization: "Sarvam AI, Bangalore",
+    responsibilities: [
+      "Working with Arya team on enterprise software, revamped main product with better UX leading to multiple client offer acquisitions.",
+      "Revamped chat application architecture resulting in 30% performance improvement and enhanced user experience.",
+      "Led mobile app transformation from vibe-coded demo to production-ready application with robust architecture and scalability.",
+      "Created Authoring UI for internal and FDSE teams to orchestrate task graphs - complex networks of interconnected agent nodes for workflow automation."
+    ]
+  },
+  {
     title: "Software Development Engineer 1",
-    period: "AUG 2024 - Present",
+    period: "AUG 2024 - JUN 2025",
     organization: "FAE Bikes, Bangalore",
     responsibilities: [
       "Enhanced and launched the Retail App on Play Store with improved UI/UX, deep linking, supporting $870,000 yearly transactions and 1000+ daily active users.",
@@ -55,7 +66,7 @@ const Experience = () => {
     >
       <div className={CONTAINER_STYLES.wrapper}>
         <SectionTitle number="04" title="Experience" />
-        
+
         <div className="mt-12 space-y-12">
           <div className="relative">
             <div className="absolute left-0 md:left-[50%] h-full w-[2px] bg-[#89bbfe]/20" />

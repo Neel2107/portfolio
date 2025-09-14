@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base colors */
+  --background: #0d0d10;
+  --foreground: #ffffff;
+  
+  /* Brand colors */
+  --primary: #89bbfe;
+  --primary-light: #bae6ff;
+  --secondary: #1a1a2e;
+  
+  /* Gradient definitions */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  --gradient-background: linear-gradient(135deg, var(--background) 0%, var(--secondary) 50%, var(--background) 100%);
+  --gradient-text: linear-gradient(135deg, var(--foreground) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  
+  /* Background effects */
+  --bg-blur-primary: radial-gradient(circle at 25% 25%, rgba(137, 187, 254, 0.1) 0%, transparent 50%);
+  --bg-blur-secondary: radial-gradient(circle at 75% 75%, rgba(186, 230, 255, 0.05) 0%, transparent 50%);
 }
 
 @theme inline {
@@ -12,10 +27,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #0d0d10;
   }
 }
 
@@ -28,5 +43,48 @@ body {
 @layer components {
   .container {
     @apply max-w-2xl
+  }
+  
+  /* Background gradient classes */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-main {
+    background: var(--gradient-background);
+  }
+  
+  .bg-gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Background blur effects */
+  .bg-blur-orb {
+    background: var(--bg-blur-primary), var(--bg-blur-secondary);
+    background-size: 100% 100%;
+  }
+  
+  /* Floating animations */
+  @keyframes float-gentle {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -20px) rotate(60deg); }
+    66% { transform: translate(-20px, -30px) rotate(120deg); }
+  }
+  
+  @keyframes float-reverse {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-25px, 15px) rotate(-60deg); }
+    66% { transform: translate(25px, -25px) rotate(-120deg); }
+  }
+  
+  .animate-float-gentle {
+    animation: float-gentle 20s ease-in-out infinite;
+  }
+  
+  .animate-float-reverse {
+    animation: float-reverse 25s ease-in-out infinite;
   }
 }

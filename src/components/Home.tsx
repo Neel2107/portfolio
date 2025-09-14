@@ -14,7 +14,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 
-
 function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const lenisRef = useLenis();
@@ -91,9 +90,16 @@ function App() {
     };
 
     return (
-        <div className="relative bg-[#0d0d10] min-h-screen ">
+        <div className="relative bg-gradient-main min-h-screen overflow-hidden">
             <Analytics />
-            <div className=" flex flex-col max-w-5xl mx-auto  ">
+
+            {/* Animated background elements */}
+            <div className="fixed inset-0 overflow-hidden z-0">
+                <div className="absolute top-1/4 -left-20 w-72 h-72 bg-[#89bbfe]/10 rounded-full blur-3xl animate-float-gentle" />
+                <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#bae6ff]/5 rounded-full blur-3xl animate-float-reverse" />
+            </div>
+
+            <div className="relative z-10 flex flex-col max-w-5xl mx-auto">
                 <Navbar handleSidbar={handleSidebar} />
                 <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
                 <ParallaxBackground />

@@ -1,15 +1,17 @@
 export const COLORS = {
-  primary: '#89bbfe',
-  background: '#0d0d10',
-  card: '#18181b',
+  primary: 'var(--primary)',
+  primaryLight: 'var(--primary-light)',
+  background: 'var(--background)',
+  secondary: 'var(--secondary)',
+  foreground: 'var(--foreground)',
   text: {
-    primary: '#ffffff',
-    secondary: '#gray-400',
-    accent: '#89bbfe',
+    primary: 'var(--foreground)',
+    secondary: 'rgba(255, 255, 255, 0.7)',
+    accent: 'var(--primary)',
   },
   border: {
-    default: 'gray-800',
-    hover: '#89bbfe50',
+    default: 'rgba(255, 255, 255, 0.1)',
+    hover: 'rgba(137, 187, 254, 0.5)',
   }
 };
 

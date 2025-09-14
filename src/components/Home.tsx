@@ -112,7 +112,6 @@ function App() {
             <div className=" flex flex-col max-w-2xl mx-auto">
                 <Navbar handleSidebar={handleSidebar} />
                 <MainContainer />
-                <AboutMeSection />
                 <ProjectContainer />
                 <SkillsSection />
                 <Experience />

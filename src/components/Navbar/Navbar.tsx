@@ -11,11 +11,11 @@ const NAV_ITEMS = [
 ];
 
 interface NavbarProps {
-  handleSidbar: () => void;
+  handleSidebar: () => void;
 }
 
-const Navbar = ({ handleSidbar }: NavbarProps) => {
-  // Add this function to your Navbar component
+const Navbar = ({ handleSidebar }: NavbarProps) => {
+
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section && window.lenis) {
@@ -34,16 +34,31 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
 
 
   return (
-    <motion.nav
-      className={`flex justify-between items-center w-fit mx-auto rounded-lg md:border-[1px] border-gray-800 sticky md:top-2 left-0  z-[1000] backdrop-blur-[200px]`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.7 }}
+    <nav
+      className={`sticky top-2 md:border md:border-white/10 rounded-2xl`}
     >
-      <div className="container mx-auto w-full flex justify-center items-center p-3 md:px-0">
+      <div className="w-full flex  justify-between md:justify-center p-3">
+        {/* Mobile Menu Button - Left Side */}
+        <div className="md:hidden">
+          <motion.button
+            onClick={handleSidebar}
+            className="flex items-center justify-center"
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1
+            }}
+          >
+            <Menu
+              className="size-5 text-white"
+              aria-label="Menu button"
+            />
+          </motion.button>
+        </div>
 
-
-        <div className="hidden flex-row items-center md:flex ">
+        {/* Desktop Navigation - Center */}
+        <div className="hidden md:flex flex-row items-center">
           <ul className="m-0 p-0 flex flex-row list-none">
             {NAV_ITEMS.map((item, index) => (
               <motion.li
@@ -90,25 +105,10 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
           </ul>
         </div>
 
-        <div className=" flex md:hidden">
-          <motion.button
-            onClick={handleSidbar}
-            className="md:block bg-transparent border-0"
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{
-              duration: 0.5,
-              delay: (NAV_ITEMS.length + 1) * 0.1
-            }}
-          >
-            <Menu
-              className="w-[30px] h-[30px]"
-              aria-label="Menu button"
-            />
-          </motion.button>
-        </div>
+        {/* Spacer for mobile to keep menu button on left */}
+        <div className="md:hidden w-5"></div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

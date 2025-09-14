@@ -41,7 +41,7 @@ const ContactSection = () => {
       id="contact"
       {...ANIMATION}
     >
-      <div className={CONTAINER_STYLES.wrapper}>
+      <div >
         <SectionTitle number="05" title="What's Next?" />
 
         <div className="mt-12">

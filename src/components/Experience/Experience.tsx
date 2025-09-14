@@ -64,28 +64,29 @@ const Experience = () => {
       id="experience"
       {...ANIMATION}
     >
-      <div className={CONTAINER_STYLES.wrapper}>
+      <div >
         <SectionTitle number="04" title="Experience" />
 
-        <div className="mt-12 space-y-12">
+        <div className="mt-12">
           <div className="relative">
-            <div className="absolute left-0 md:left-[50%] h-full w-[2px] bg-[#89bbfe]/20" />
+            {/* Timeline line */}
+            <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-[#89bbfe]/20" />
 
             {experience.map((exp, index) => (
               <motion.div
                 key={index}
-                className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-8 mb-16 last:mb-0`}
+                className="relative flex gap-8 mb-12 last:mb-0"
                 initial={{ opacity: 0, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               >
-                <div className="absolute left-[-9px] md:left-[50%] md:ml-[-9px] w-5 h-5 rounded-full bg-[#89bbfe] z-10" />
+                {/* Timeline dot */}
+                <div className="absolute left-[15px] w-5 h-5 rounded-full bg-[#89bbfe] z-10 flex-shrink-0" />
 
-                <div className={`w-full md:w-[45%] pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
+                {/* Content */}
+                <div className="w-full pl-16">
                   <motion.div
-                    className="bg-zinc-900 p-6 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
-                    whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Calendar className="w-4 h-4 text-[#89bbfe]" />
@@ -103,12 +104,19 @@ const Experience = () => {
 
                     <ul className="list-disc pl-4 space-y-2">
                       {exp.responsibilities.map((responsibility, i) => (
-                        <li
+                        <motion.li
                           key={i}
                           className="text-gray-400 text-sm"
+                          initial={{ opacity: 0, filter: "blur(4px)" }}
+                          whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.4,
+                            delay: 0.1 + i * 0.1
+                          }}
                         >
                           {responsibility}
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </motion.div>

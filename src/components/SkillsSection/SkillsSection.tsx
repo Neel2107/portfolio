@@ -10,7 +10,7 @@ const SkillsSection = () => {
       id="skills"
       {...ANIMATION}
     >
-      <div className={CONTAINER_STYLES.wrapper}>
+      <div >
         <SectionTitle number="03" title="My Stack" />
 
         <div className="">

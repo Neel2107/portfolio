@@ -3,10 +3,10 @@ import { Drawer } from "vaul";
 
 interface SidebarProps {
     isSidebarOpen: boolean;
-    handleSidbar: () => void;
+    handleSidebar: () => void;
 }
 
-const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
+const Sidebar = ({ isSidebarOpen, handleSidebar }: SidebarProps) => {
     const sidebarData = [
         {
             name: "About",
@@ -25,10 +25,6 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
             location: "#experience",
         },
         {
-            name: "Other Projects",
-            location: "#other-projects",
-        },
-        {
             name: "Contact",
             location: "#contact",
         },
@@ -45,7 +41,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
         // Handle external links
         if (!location.startsWith('#')) {
             window.open(location, '_blank');
-            handleSidbar(); // Close sidebar
+            handleSidebar(); // Close sidebar
             return;
         }
 
@@ -55,7 +51,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
 
         if (section) {
             // Close sidebar first
-            handleSidbar();
+            handleSidebar();
 
             // Small delay to allow sidebar animation to complete
             setTimeout(() => {
@@ -75,7 +71,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
     };
 
     return (
-        <Drawer.Root open={isSidebarOpen} onOpenChange={handleSidbar}>
+        <Drawer.Root open={isSidebarOpen} onOpenChange={handleSidebar}>
             <Drawer.Portal>
                 <Drawer.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998]" />
                 <Drawer.Content className="bg-[#0d0d10]/90 backdrop-blur-md flex flex-col rounded-t-2xl h-[70vh] mt-24 fixed bottom-0 left-0 right-0 z-[999] lg:hidden">
@@ -83,12 +79,12 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
                     <Drawer.Title className="sr-only">
                         Navigation Menu
                     </Drawer.Title>
-                    
+
                     {/* Add Description for accessibility */}
                     <Drawer.Description className="sr-only">
                         Site navigation links including About, Projects, Skills, Experience, Other Projects, Contact, and Resume
                     </Drawer.Description>
-                    
+
                     <div className="p-7 pb-10 flex-1 overflow-auto">
                         <div className="flex flex-col items-center space-y-6 pt-2">
                             {sidebarData.map((data) => (
@@ -104,7 +100,7 @@ const Sidebar = ({ isSidebarOpen, handleSidbar }: SidebarProps) => {
                         </div>
                         <button
                             className="absolute top-4 right-4 text-white p-1"
-                            onClick={handleSidbar}
+                            onClick={handleSidebar}
                             aria-label="Close navigation menu"
                         >
                             <X size={24} />

@@ -4,7 +4,6 @@ import ContactSection from "@/components/ContactSection/ContactSection";
 import Experience from "@/components/Experience/Experience";
 import MainContainer from "@/components/MainContainer/MainContainer";
 import Navbar from "@/components/Navbar/Navbar";
-import ParallaxBackground from "@/components/ParallaxBackground/ParallaxBackground";
 import ProjectContainer from "@/components/ProjectContainer/ProjectContainer";
 import Sidebar from "@/components/SidebarSection/Sidebar";
 import SkillsSection from "@/components/SkillsSection/SkillsSection";
@@ -18,62 +17,71 @@ function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const lenisRef = useLenis();
 
-    // Initialize ScrollTrigger in the App component with improved fast-scroll handling
+    // Initialize ScrollTrigger with optimized performance
     useEffect(() => {
         // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
 
-        // Clear any existing ScrollTrigger instances first
+        // Clear any existing ScrollTrigger instances
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-        // Create scroll-based animations for sections
-        const sections = document.querySelectorAll('section, [id]');
+        // Cache DOM elements to avoid repeated queries
+        const sectionsToAnimate = [
+            '#about', '#project', '#skills', '#experience', '#contact'
+        ].map(selector => document.querySelector(selector)).filter(Boolean);
 
-        // Basic fade-in animation for all sections - improved for fast scrolling
-        sections.forEach((section) => {
-            gsap.fromTo(
-                section,
-                { opacity: 0, filter: "blur(4px)" },
-                {
-                    opacity: 1,
-                    filter: "blur(0px)",
-                    duration: 0.5, // Faster animation duration
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top 95%', // Trigger earlier
-                        end: 'bottom 5%', // End later
-                        toggleActions: 'play none none none', // Changed from 'play none none reverse'
-                        once: false, // Allow re-triggering
-                        fastScrollEnd: true, // Ensure animations complete even during fast scrolling
+        // Only animate specific sections, not all elements
+        if (sectionsToAnimate.length > 0) {
+            sectionsToAnimate.forEach((section, index) => {
+                gsap.fromTo(
+                    section,
+                    {
+                        y: 30,
+                        opacity: 0,
                     },
-                }
-            );
-        });
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.6,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 85%',
+                            end: 'bottom 15%',
+                            toggleActions: 'play none none reverse',
+                            once: true, // Better performance - animate once
+                            fastScrollEnd: true,
+                            // Add performance optimizations
+                            invalidateOnRefresh: true,
+                            refreshPriority: index, // Prioritize earlier sections
+                        },
+                    }
+                );
+            });
+        }
 
-        // Add blur fade-in for text elements with improved fast-scroll handling
-        const textElements = document.querySelectorAll('h1, h2, h3, p, a:not(nav a)');
-        textElements.forEach((element) => {
-            gsap.fromTo(
-                element,
-                { filter: "blur(2px)", opacity: 0 },
-                {
-                    filter: "blur(0px)",
+        // Performance optimization: batch ScrollTrigger refresh
+        ScrollTrigger.batch('.scroll-reveal', {
+            onEnter: (elements) => {
+                gsap.fromTo(elements, {
+                    y: 20,
+                    opacity: 0
+                }, {
+                    y: 0,
                     opacity: 1,
-                    duration: 0.4, // Faster animation
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 95%', // Trigger earlier
-                        toggleActions: 'play none none none', // Changed from 'play none none reverse'
-                        once: false, // Allow re-triggering
-                        fastScrollEnd: true, // Ensure animations complete even during fast scrolling
-                    },
-                }
-            );
+                    duration: 0.4,
+                    stagger: 0.1,
+                    ease: "power2.out"
+                });
+            },
+            start: "top 90%",
+            once: true
         });
 
         // Clean up function
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            ScrollTrigger.clearScrollMemory();
         };
     }, []);
 
@@ -99,16 +107,15 @@ function App() {
                 <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#bae6ff]/5 rounded-full blur-3xl animate-float-reverse" />
             </div>
 
-            <div className="relative z-10 flex flex-col max-w-5xl mx-auto">
-                <Navbar handleSidbar={handleSidebar} />
-                <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
-                <ParallaxBackground />
-
-                <div className="content-wrapper" style={{
-                    filter: 'blur(0px)',
-                    opacity: 1,
-                    transition: 'filter 0.8s ease-out, opacity 0.8s ease-out'
-                }}>
+            <div className=" flex flex-col max-w-2xl mx-auto">
+                <Navbar handleSidebar={handleSidebar} />
+                <Sidebar isSidebarOpen={isSidebarOpen} handleSidebar={handleSidebar} />
+                <div
+                    style={{
+                        filter: 'blur(0px)',
+                        opacity: 1,
+                        transition: 'filter 0.8s ease-out, opacity 0.8s ease-out'
+                    }}>
                     <MainContainer />
                     <AboutMeSection />
                     <ProjectContainer />

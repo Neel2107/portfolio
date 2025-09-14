@@ -4,7 +4,7 @@ const MainContainer = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       <motion.div
-        className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12"
+        className="relative z-10 max-w-6xl mx-auto "
         id='Home'
         initial={{ opacity: 0, filter: "blur(4px)" }}
         animate={{ opacity: 1, filter: "blur(0px)" }}

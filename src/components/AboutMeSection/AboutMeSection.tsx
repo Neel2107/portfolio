@@ -37,7 +37,7 @@ const AboutMeSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
         >
-            <div className={CONTAINER_STYLES.wrapper}>
+            <div >
                 <SectionTitle number="01" title="About Me" />
 
                 <div className="space-y-12">

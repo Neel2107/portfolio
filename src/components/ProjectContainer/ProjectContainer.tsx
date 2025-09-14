@@ -82,7 +82,7 @@ const ProjectContainer = () => {
             id="project"
             {...ANIMATION}
         >
-            <div className={CONTAINER_STYLES.wrapper}>
+            <div >
                 <SectionTitle number="02" title="Featured Projects" />
 
                 <div className="mt-12 space-y-12">

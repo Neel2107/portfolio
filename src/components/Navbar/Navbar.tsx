@@ -1,7 +1,6 @@
 import { Menu } from "lucide-react";
 import { motion } from "motion/react";
-import React, { useCallback } from "react";
-import { COLORS } from "../../utils/constants";
+import React from "react";
 
 const NAV_ITEMS = [
   { id: "about", text: "About" },
@@ -27,35 +26,22 @@ const Navbar = ({ handleSidbar }: NavbarProps) => {
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
       });
     } else if (section) {
-      // Fallback to native scrolling
       const offsetTop = section.offsetTop;
       window.scrollTo({ top: offsetTop, behavior: "smooth" });
     }
   };
 
-  // Then update your onClick handlers in the navigation items to use this function
-  const handleLogoClick = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+
 
   return (
     <motion.nav
-      className={`flex justify-between items-center max-w-laptop mx-auto px-4 rounded-xl md:border-[1px] border-gray-800 sticky md:top-2 left-0 bg-[${COLORS.background}b2]/70 z-[1000] backdrop-blur-[200px]`}
+      className={`flex justify-between items-center w-fit mx-auto rounded-lg md:border-[1px] border-gray-800 sticky md:top-2 left-0  z-[1000] backdrop-blur-[200px]`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="max-w-laptop mx-auto w-full flex justify-between items-center px-4 md:px-0">
-        <motion.div
-          className="text-white my-2 cursor-pointer w-max text-[32px]"
-          id="logo"
-          onClick={handleLogoClick}
-          initial={{ opacity: 0, filter: "blur(4px)" }}
-          animate={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 0.5 }}
-        >
-          <a href="#top" className="no-underline text-white font-satisfy ">Neel</a>
-        </motion.div>
+      <div className="container mx-auto w-full flex justify-center items-center p-3 md:px-0">
+
 
         <div className="hidden flex-row items-center md:flex ">
           <ul className="m-0 p-0 flex flex-row list-none">

@@ -40,7 +40,7 @@ const AboutMeSection = () => {
             <div className={CONTAINER_STYLES.wrapper}>
                 <SectionTitle number="01" title="About Me" />
 
-                <div className="mt- space-y-12">
+                <div className="space-y-12">
                     <motion.div
                         className="text-center space-y-6"
                         initial={{ opacity: 0, filter: "blur(4px)" }}
@@ -48,10 +48,7 @@ const AboutMeSection = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        {/* <h2 className="text-4xl md:text-5xl font-bold">
-                            <span className="text-[#89bbfe]">Bonjour! </span>
-                            I'm Neel Patel
-                        </h2> */}
+
                         <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
                             A Software Development Engineer passionate about creating impactful digital experiences. At FAE Bikes, I lead the development of mission-critical applications, combining technical expertise with a keen eye for user experience.
                         </p>

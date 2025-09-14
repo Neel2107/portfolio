@@ -1,9 +1,4 @@
 "use client"
-import { Analytics } from "@vercel/analytics/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useState } from "react";
-import { useLenis } from "@/hooks/useLenis";
 import AboutMeSection from "@/components/AboutMeSection/AboutMeSection";
 import ContactSection from "@/components/ContactSection/ContactSection";
 import Experience from "@/components/Experience/Experience";
@@ -13,6 +8,11 @@ import ParallaxBackground from "@/components/ParallaxBackground/ParallaxBackgrou
 import ProjectContainer from "@/components/ProjectContainer/ProjectContainer";
 import Sidebar from "@/components/SidebarSection/Sidebar";
 import SkillsSection from "@/components/SkillsSection/SkillsSection";
+import { useLenis } from "@/hooks/useLenis";
+import { Analytics } from "@vercel/analytics/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useState } from "react";
 
 
 function App() {
@@ -91,9 +91,9 @@ function App() {
     };
 
     return (
-        <div className="relative bg-[#0d0d10] min-h-screen">
+        <div className="relative bg-[#0d0d10] min-h-screen ">
             <Analytics />
-            <>
+            <div className=" flex flex-col max-w-5xl mx-auto  ">
                 <Navbar handleSidbar={handleSidebar} />
                 <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
                 <ParallaxBackground />
@@ -110,7 +110,7 @@ function App() {
                     <Experience />
                     <ContactSection />
                 </div>
-            </>
+            </div>
         </div>
     );
 }

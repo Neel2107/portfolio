@@ -4,17 +4,15 @@ import { ANIMATION, CONTAINER_STYLES } from "../../utils/constants";
 const MainContainer = () => {
   return (
     <div className="flex">
-
-
       <motion.div
         className={CONTAINER_STYLES.section}
         id='Home'
         {...ANIMATION}
-        animate={{ opacity: 1, filter: "blur(0px)" }} // Override whileInView with animate
+        animate={{ opacity: 1, filter: "blur(0px)" }}
       >
         <div className={CONTAINER_STYLES.wrapper}>
           <motion.div
-            className='flex flex-col w-full z-10 md:mt-0 mt-[20%]'
+            className='flex flex-col w-full z-10 '
             initial={{ opacity: 0, filter: "blur(4px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.5 }}
@@ -25,12 +23,11 @@ const MainContainer = () => {
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <span className=' '>Hello, </span>
-              My name is
+              Hello, My name is
             </motion.span>
 
             <motion.span
-              className='text-white text-[2.75rem] md:text-[70px] font-semibold tracking-[2px] my-[10px] md:my-[15px] w-full'
+              className='text-white text-xl md:text-2xl font-semibold tracking-[2px] w-full'
               initial={{ opacity: 0, filter: "blur(4px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -39,7 +36,7 @@ const MainContainer = () => {
             </motion.span>
 
             <motion.span
-              className='text-[#bae6ff] text-[1.35rem] md:text-[54px] tracking-wider font-semibold'
+              className='text-[#bae6ff] text-3xl tracking-wider font-semibold'
               initial={{ opacity: 0, filter: "blur(4px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -48,7 +45,7 @@ const MainContainer = () => {
             </motion.span>
 
             <motion.p
-              className='text-gray-400 text-base md:text-lg leading-[25px] mt-[30px] max-w-[550px] text-left'
+              className='text-gray-400 text-base md:text-base leading-[25px] max-w-[550px] text-left'
               initial={{ opacity: 0, filter: "blur(4px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.5, delay: 0.5 }}
@@ -58,7 +55,7 @@ const MainContainer = () => {
 
             <motion.a
               href="#project"
-              className='bg-transparent border border-[#89bbfe] rounded-lg text-[#89bbfe] cursor-pointer flex flex-row justify-around mt-[30px] md:mt-[50px] px-3 md:px-[30px] py-3 md:py-[15px] text-xs md:text-lg w-max hover:bg-[#89bbfe]/10 hover:text-white transition-all duration-300'
+              className='bg-transparent border border-gray-500 rounded-2xl text-[#89bbfe] cursor-pointer text-xs md:text-lg w-max hover:bg-[#89bbfe]/10 hover:text-white transition-all duration-300'
               initial={{ opacity: 0, filter: "blur(4px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 0.5, delay: 0.6 }}

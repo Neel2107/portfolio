@@ -29,7 +29,7 @@ const SkillsSection = () => {
               return (
                 <motion.div
                   key={index}
-                  className="bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-3 flex items-center gap-3 w-fit cursor-pointer"
+                  className="bg-zinc-900 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-3 flex items-center gap-3 w-fit cursor-pointer"
                   whileHover={{ scale: 1.02 }}
                   onClick={handleClick}
                 >

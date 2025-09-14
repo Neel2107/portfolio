@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import AboutMeSection from "./components/AboutMeSection/AboutMeSection";
 import ContactSection from "./components/ContactSection/ContactSection";
 import Experience from "./components/Experience/Experience";
-import LoadingBar from "./components/LoadingBar/LoadingBar";
 import MainContainer from "./components/MainContainer/MainContainer";
 import Navbar from "./components/Navbar/Navbar";
 import ParallaxBackground from "./components/ParallaxBackground/ParallaxBackground";
@@ -94,7 +93,6 @@ function App() {
     <div className="relative bg-[#0d0d10] min-h-screen">
       <Analytics />
       <>
-        <LoadingBar />
         <Navbar handleSidbar={handleSidebar} />
         <Sidebar isSidebarOpen={isSidebarOpen} handleSidbar={handleSidebar} />
         <ParallaxBackground />
@@ -109,7 +107,6 @@ function App() {
           <ProjectContainer />
           <SkillsSection />
           <Experience />
-          {/* <OtherProjects /> */}
           <ContactSection />
         </div>
       </>

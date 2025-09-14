@@ -60,7 +60,7 @@ const AboutMeSection = () => {
                             {stats.map((stat, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex items-center gap-3 bg-[#1a1a1a]/50 px-6 py-3 rounded-full border border-gray-800"
+                                    className="flex items-center gap-3 bg-zinc-900/50 px-6 py-3 rounded-full border border-gray-800"
                                     whileHover={{ scale: 1.05 }}
                                 >
                                     <div className="p-2 bg-[#89bbfe]/10 rounded-full text-[#89bbfe]">
@@ -85,7 +85,7 @@ const AboutMeSection = () => {
                         {highlights.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
+                                className="bg-zinc-900 p-6 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
                                 whileHover={{ scale: 1.02 }}
                             >
                                 <div className="space-y-4">

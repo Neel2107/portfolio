@@ -52,7 +52,7 @@ const ContactSection = () => {
           >
             <div className="w-full md:w-1/2">
               <motion.div
-                className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all h-full shadow-lg"
+                className="bg-zinc-900 p-8 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all h-full shadow-lg"
                 whileHover={{ scale: 1.02, boxShadow: "0 8px 16px rgba(137, 187, 254, 0.1)" }}
               >
                 <h3 className="text-[#89bbfe] text-3xl md:text-4xl font-bold mb-6 tracking-tight">
@@ -63,7 +63,7 @@ const ContactSection = () => {
                 </p>
                 <motion.a
                   href="mailto:neelpatel805804@gmail.com"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-[#1a1a1a] text-white font-medium rounded-full hover:bg-[#2a2a2a] transition-colors duration-300 group"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-zinc-900 text-white font-medium rounded-full hover:bg-zinc-800 transition-colors duration-300 group"
                   whileHover={{
                     scale: 1.03,
                     boxShadow: "0 4px 12px rgba(26, 26, 26, 0.3)"
@@ -84,7 +84,7 @@ const ContactSection = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
+                    className="bg-zinc-900 p-6 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
                     initial={{ opacity: 0, filter: "blur(4px)" }}
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}
                     viewport={{ once: true }}

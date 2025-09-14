@@ -1,7 +1,7 @@
 export const COLORS = {
   primary: '#89bbfe',
   background: '#0d0d10',
-  card: '#1a1a1a',
+  card: '#18181b',
   text: {
     primary: '#ffffff',
     secondary: '#gray-400',
@@ -23,7 +23,7 @@ export const ANIMATION = {
 export const CONTAINER_STYLES = {
   section: "flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-10",
   wrapper: "flex flex-col h-full w-full max-w-laptop mx-auto",
-  card: "bg-[#1a1a1a] rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-4",
+  card: "bg-zinc-900 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-4",
 };
 
 // Add these animation variants

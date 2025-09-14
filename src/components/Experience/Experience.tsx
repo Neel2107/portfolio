@@ -84,7 +84,7 @@ const Experience = () => {
 
                 <div className={`w-full md:w-[45%] pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
                   <motion.div
-                    className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
+                    className="bg-zinc-900 p-6 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex items-center gap-2 mb-2">

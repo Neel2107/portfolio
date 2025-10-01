@@ -24,10 +24,10 @@ export const ANIMATION = {
 
 export const CONTAINER_STYLES = {
   // Standard section container with consistent spacing
-  section: "min-h-screen flex items-center justify-center py-10",
+  section: "flex items-center justify-center py-16 md:py-24 lg:py-32",
   
   // Section content wrapper with consistent padding
-  sectionContent: "w-full max-w-4xl mx-auto",
+  sectionContent: "w-full max-w-4xl mx-auto px-4 md:px-0",
   
   // Standard card styling
   card: "bg-zinc-900 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-4",

@@ -2,7 +2,7 @@ import SectionTitle from "@/components/SectionTitle";
 import Badge from "@/components/ui/badge";
 import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
 import { skillsCardsData } from "@/utils/skillsCardsData";
-import { easeInOut, motion } from "motion/react";
+import { motion } from "motion/react";
 import { useState } from "react";
 
 const SkillsSection = () => {
@@ -28,9 +28,7 @@ const SkillsSection = () => {
               return (
                 <motion.div
                   key={index}
-                  initial="rest"
-                  animate="rest"
-                  whileHover="hover"
+                  
                   onHoverStart={() => setHoveredCard(index)}
                   onHoverEnd={() => setHoveredCard(null)}
                   onClick={() => handleClick(skill.url)}
@@ -48,9 +46,7 @@ const SkillsSection = () => {
                           rotate:
                             hoveredCard === index && isReactLogo ? 360 : 0,
                         }}
-                        transition={
-                          isReactLogo ? { duration: 1, ease: easeInOut } : {}
-                        }
+                        transition={{ duration: 1, ease: "easeInOut" }}
                       />
                     }
                     text={skill.name}

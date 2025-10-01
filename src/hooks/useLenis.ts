@@ -1,5 +1,5 @@
+import Lenis from 'lenis';
 import { useEffect, useRef } from 'react';
-import Lenis from '@studio-freight/lenis';
 
 export const useLenis = () => {
   const lenisRef = useRef<Lenis | null>(null);
@@ -24,14 +24,9 @@ export const useLenis = () => {
       requestAnimationFrame(raf);
     }
     
-    requestAnimationFrame(raf);
-
-    // Make Lenis instance globally available
-    window.lenis = lenis;
-
+    requestAnimationFrame(raf); 
     return () => {
       lenis.destroy();
-      window.lenis = null;
     };
   }, []);
 

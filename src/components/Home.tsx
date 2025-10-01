@@ -7,91 +7,21 @@ import ProjectContainer from "@/components/ProjectContainer";
 import Sidebar from "@/components/Sidebar";
 import SkillsSection from "@/components/SkillsSection";
 
-import { useLenis } from "@/hooks/useLenis";
+import { useLenis } from "@/contexts/AnimationContext";
 import { Analytics } from "@vercel/analytics/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 
 function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const lenisRef = useLenis();
-
-    // Initialize ScrollTrigger with optimized performance
-    useEffect(() => {
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Clear any existing ScrollTrigger instances
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
-        // Cache DOM elements to avoid repeated queries
-        const sectionsToAnimate = [
-            '#about', '#project', '#skills', '#experience', '#contact'
-        ].map(selector => document.querySelector(selector)).filter(Boolean);
-
-        // Only animate specific sections, not all elements
-        if (sectionsToAnimate.length > 0) {
-            sectionsToAnimate.forEach((section, index) => {
-                gsap.fromTo(
-                    section,
-                    {
-                        y: 30,
-                        opacity: 0,
-                    },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 0.6,
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top 85%',
-                            end: 'bottom 15%',
-                            toggleActions: 'play none none reverse',
-                            once: true, // Better performance - animate once
-                            fastScrollEnd: true,
-                            // Add performance optimizations
-                            invalidateOnRefresh: true,
-                            refreshPriority: index, // Prioritize earlier sections
-                        },
-                    }
-                );
-            });
-        }
-
-        // Performance optimization: batch ScrollTrigger refresh
-        ScrollTrigger.batch('.scroll-reveal', {
-            onEnter: (elements) => {
-                gsap.fromTo(elements, {
-                    y: 20,
-                    opacity: 0
-                }, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.4,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                });
-            },
-            start: "top 90%",
-            once: true
-        });
-
-        // Clean up function
-        return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-            ScrollTrigger.clearScrollMemory();
-        };
-    }, []);
+    const lenis = useLenis();
 
     useEffect(() => {
-        if (lenisRef.current && !isSidebarOpen) {
-            lenisRef.current.start();
-        } else if (lenisRef.current && isSidebarOpen) {
-            lenisRef.current.stop();
+        if (lenis && !isSidebarOpen) {
+            lenis.start();
+        } else if (lenis && isSidebarOpen) {
+            lenis.stop();
         }
-    }, [isSidebarOpen, lenisRef]);
+    }, [isSidebarOpen, lenis]);
 
     const handleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);

@@ -1,7 +1,7 @@
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import { motion } from "motion/react";
-import { ANIMATION, CONTAINER_STYLES } from "../../utils/constants";
-import SectionTitle from "../SectionTitle/SectionTitle";
+import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
+import SectionTitle from "@/components/SectionTitle";
 
 const ContactSection = () => {
   const socialLinks = [

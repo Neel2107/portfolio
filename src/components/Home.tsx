@@ -1,12 +1,12 @@
 "use client"
-import AboutMeSection from "@/components/AboutMeSection/AboutMeSection";
-import ContactSection from "@/components/ContactSection/ContactSection";
-import Experience from "@/components/Experience/Experience";
-import MainContainer from "@/components/MainContainer/MainContainer";
-import Navbar from "@/components/Navbar/Navbar";
-import ProjectContainer from "@/components/ProjectContainer/ProjectContainer";
-import Sidebar from "@/components/SidebarSection/Sidebar";
-import SkillsSection from "@/components/SkillsSection/SkillsSection";
+import ContactSection from "@/components/ContactSection";
+import Experience from "@/components/Experience";
+import MainContainer from "@/components/MainContainer";
+import Navbar from "@/components/Navbar";
+import ProjectContainer from "@/components/ProjectContainer";
+import Sidebar from "@/components/Sidebar";
+import SkillsSection from "@/components/SkillsSection";
+
 import { useLenis } from "@/hooks/useLenis";
 import { Analytics } from "@vercel/analytics/react";
 import gsap from "gsap";

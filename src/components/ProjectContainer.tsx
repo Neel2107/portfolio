@@ -1,8 +1,8 @@
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { ANIMATION, CONTAINER_STYLES } from "../../utils/constants";
-import SectionTitle from "../SectionTitle/SectionTitle";
+import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
+import SectionTitle from "@/components/SectionTitle";
 
 const ProjectContainer = () => {
     const featuredProjects = [

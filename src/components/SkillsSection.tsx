@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
-import { ANIMATION, CONTAINER_STYLES } from "../../utils/constants";
-import { skillsCardsData } from "../../utils/skillsCardsData";
-import SectionTitle from "../SectionTitle/SectionTitle";
+import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
+import { skillsCardsData } from "@/utils/skillsCardsData";
+import SectionTitle from "@/components/SectionTitle";
 
 const SkillsSection = () => {
   return (

@@ -11,11 +11,6 @@ const SkillsSection = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
-  const cardVariants = {
-    rest: { scale: 1 },
-    hover: { scale: 1.02 },
-  };
-
   return (
     <motion.div className={CONTAINER_STYLES.section} id="skills" {...ANIMATION}>
       <div className={CONTAINER_STYLES.sectionContent}>
@@ -33,7 +28,6 @@ const SkillsSection = () => {
               return (
                 <motion.div
                   key={index}
-                  variants={cardVariants}
                   initial="rest"
                   animate="rest"
                   whileHover="hover"

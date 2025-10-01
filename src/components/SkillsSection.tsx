@@ -1,7 +1,7 @@
-import { motion } from "motion/react";
+import SectionTitle from "@/components/SectionTitle";
 import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
 import { skillsCardsData } from "@/utils/skillsCardsData";
-import SectionTitle from "@/components/SectionTitle";
+import { motion } from "motion/react";
 
 const SkillsSection = () => {
   return (
@@ -10,10 +10,10 @@ const SkillsSection = () => {
       id="skills"
       {...ANIMATION}
     >
-      <div >
+      <div className={CONTAINER_STYLES.sectionContent}>
         <SectionTitle number="03" title="My Stack" />
 
-        <div className="">
+        <div className={CONTAINER_STYLES.spacing.contentTop}>
           <motion.div
             className="flex flex-wrap gap-4"
             {...ANIMATION}

@@ -1,7 +1,7 @@
+import SectionTitle from "@/components/SectionTitle";
+import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import { motion } from "motion/react";
-import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
-import SectionTitle from "@/components/SectionTitle";
 
 const ContactSection = () => {
   const socialLinks = [
@@ -41,10 +41,10 @@ const ContactSection = () => {
       id="contact"
       {...ANIMATION}
     >
-      <div >
+      <div className={CONTAINER_STYLES.sectionContent}>
         <SectionTitle number="05" title="What's Next?" />
 
-        <div className="mt-12">
+        <div className={CONTAINER_STYLES.spacing.contentTop}>
           <motion.div
             className="flex flex-col md:flex-row gap-8"
             {...ANIMATION}

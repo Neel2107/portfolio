@@ -1,7 +1,7 @@
+import SectionTitle from "@/components/SectionTitle";
+import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
 import { Building2, Calendar } from "lucide-react";
 import { motion } from "motion/react";
-import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
-import SectionTitle from "@/components/SectionTitle";
 
 const experience = [
   {
@@ -64,10 +64,10 @@ const Experience = () => {
       id="experience"
       {...ANIMATION}
     >
-      <div >
+      <div className={CONTAINER_STYLES.sectionContent}>
         <SectionTitle number="04" title="Experience" />
 
-        <div className="mt-12">
+        <div className={CONTAINER_STYLES.spacing.contentTop}>
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-[#89bbfe]/20" />

@@ -1,8 +1,8 @@
+import SectionTitle from "@/components/SectionTitle";
+import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
-import SectionTitle from "@/components/SectionTitle";
 
 const ProjectContainer = () => {
     const featuredProjects = [
@@ -82,10 +82,10 @@ const ProjectContainer = () => {
             id="project"
             {...ANIMATION}
         >
-            <div className="px-4 md:px-0" >
+            <div className={CONTAINER_STYLES.sectionContent}>
                 <SectionTitle number="02" title="Featured Projects" />
 
-                <div className="mt-12 space-y-10">
+                <div className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGapLarge}`}>
                     {featuredProjects.map((project, index) => (
                         <motion.div
                             key={project.title + index}

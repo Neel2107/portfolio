@@ -70,7 +70,7 @@ const Experience = () => {
         <div className={CONTAINER_STYLES.spacing.contentTop}>
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-[#89bbfe]/20" />
+            <div className="absolute left-0 sm:left-4 top-0 bottom-0 w-[2px] bg-[#89bbfe]/20" />
 
             {experience.map((exp, index) => (
               <motion.div
@@ -82,10 +82,10 @@ const Experience = () => {
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-[15px] w-5 h-5 rounded-full bg-[#89bbfe] z-10 flex-shrink-0" />
+                <div className="absolute -left-[9px] sm:left-1.5 w-5 h-5 rounded-full bg-[#89bbfe] z-10 flex-shrink-0" />
 
                 {/* Content */}
-                <div className="w-full pl-16">
+                <div className="w-full  pl-7 sm:pl-12">
                   <motion.div
                   >
                     <div className="flex items-center gap-2 mb-2">

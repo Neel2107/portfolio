@@ -5,7 +5,7 @@ const MainContainer = () => {
   return (
     <section id='about' className={`${CONTAINER_STYLES.section} flex-col text-left min-h-screen`}>
       <div className={CONTAINER_STYLES.sectionContent}>
-        <div className={CONTAINER_STYLES.spacing.elementGap}>
+        <div className={` space-y-7 `}>
           {/* Greeting */}
           <motion.div
             className="inline-flex items-center"
@@ -29,7 +29,6 @@ const MainContainer = () => {
 
           {/* Title */}
           <motion.div
-            className="space-y-2"
             initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.4, delay: 0.4 }}

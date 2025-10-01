@@ -17,7 +17,6 @@ const SectionTitle = ({ number, title }: SectionTitleProps) => {
       <h2 className=" text-2xl md:text-3xl font-bold whitespace-nowrap">
         <span className="text-[#89bbfe]">{number}.</span> {title}
       </h2>
-      <div className="h-[1px] bg-[#003b5d] flex-grow" />
     </motion.div>
   );
 };

@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 const MainContainer = () => {
   return (
-    <section id='home' className={`${CONTAINER_STYLES.section} flex-col text-left`}>
+    <section id='about' className={`${CONTAINER_STYLES.section} flex-col text-left min-h-screen`}>
       <div className={CONTAINER_STYLES.sectionContent}>
         <div className={CONTAINER_STYLES.spacing.elementGap}>
           {/* Greeting */}

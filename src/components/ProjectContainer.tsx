@@ -127,7 +127,7 @@ const ProjectContainer = () => {
 
                   <div className="flex flex-wrap gap-3">
                     {project.tech.map((tech, techIndex) => (
-                      <Badge text={tech} />
+                      <Badge text={tech} key={techIndex} />
                     ))}
                   </div>
                 </div>

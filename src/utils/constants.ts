@@ -1,17 +1,4 @@
-export const COLORS = {
-  primary: '#89bbfe',
-  background: '#0d0d10',
-  card: '#18181b',
-  text: {
-    primary: '#ffffff',
-    secondary: '#gray-400',
-    accent: '#89bbfe',
-  },
-  border: {
-    default: 'gray-800',
-    hover: '#89bbfe50',
-  }
-};
+
 
 export const ANIMATION = {
   initial: { opacity: 0, filter: "blur(4px)" },
@@ -21,49 +8,29 @@ export const ANIMATION = {
 };
 
 export const CONTAINER_STYLES = {
-  section: "flex items-center justify-center min-h-screen w-full px-4 md:px-[15%] z-20 py-10",
-  wrapper: "flex flex-col h-full w-full max-w-laptop mx-auto",
+  // Standard section container with consistent spacing
+  section: "flex items-center justify-center py-16 md:py-24 lg:py-32",
+  
+  // Section content wrapper with consistent padding
+  sectionContent: "w-full max-w-4xl mx-auto px-4 md:px-0",
+  
+  // Standard card styling
   card: "bg-zinc-900 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-4",
-};
-
-// Add these animation variants
-export const SCROLL_ANIMATIONS = {
-  fadeUp: {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  },
-  fadeIn: {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  },
-  stagger: {
-    container: {
-      hidden: { opacity: 0 },
-      visible: {
-        opacity: 1,
-        transition: {
-          staggerChildren: 0.1
-        }
-      }
-    },
-    item: {
-      hidden: { opacity: 0, y: 20 },
-      visible: {
-        opacity: 1,
-        y: 0
-      }
-    }
+  
+  // Spacing utilities for consistent vertical rhythm
+  spacing: {
+    // Section spacing
+    sectionTop: "pt-16 md:pt-24 lg:pt-32",
+    sectionBottom: "pb-16 md:pb-24 lg:pb-32",
+    
+    // Content spacing
+    contentTop: "mt-8 md:mt-12 lg:mt-16",
+    contentBottom: "mb-8 md:mb-12 lg:mb-16",
+    
+    // Element spacing
+    elementGap: "space-y-6 md:space-y-8 lg:space-y-10",
+    elementGapSmall: "space-y-4 md:space-y-6",
+    elementGapLarge: "space-y-8 md:space-y-12 lg:space-y-16",
   }
 };
+

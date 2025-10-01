@@ -47,6 +47,11 @@ export const skillsCardsData: SkillCard[] = [
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
+    name: "Node.JS",
+    icon: "/skillsLogos/nodejs.svg",
+    url: "https://nodejs.org",
+  },
+  {
     name: "Expo",
     icon: "/skillsLogos/expo.svg",
     url: "https://expo.dev",

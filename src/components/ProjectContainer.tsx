@@ -1,7 +1,7 @@
 import SectionTitle from "@/components/SectionTitle";
+import Skill from "@/components/common/Skill";
 import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
 import { ExternalLink, Github } from "lucide-react";
-import Badge from "@/components/ui/badge";
 import { motion } from "motion/react";
 import Image from "next/image";
 
@@ -127,7 +127,10 @@ const ProjectContainer = () => {
 
                   <div className="flex flex-wrap gap-3">
                     {project.tech.map((tech, techIndex) => (
-                      <Badge text={tech} key={techIndex} />
+                      <Skill name={tech} href="#" key={techIndex}>
+                        <div className="size-0"></div>
+                      </Skill>
+                      
                     ))}
                   </div>
                 </div>

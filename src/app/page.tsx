@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative bg-gradient-main min-h-screen ">
+    <div className="relative min-h-screen ">
       <Analytics />
 
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidebar={handleSidebar} />

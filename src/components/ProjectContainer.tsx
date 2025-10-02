@@ -34,30 +34,19 @@ const ProjectContainer = () => {
               >
                 {/* Image Section - Left Side */}
                 <div className="w-full md:w-1/2">
-                  {redirectLink ? (
-                    <motion.a
-                      href={redirectLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative block h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800"
-                    >
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </motion.a>
-                  ) : (
-                    <motion.div className="relative h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </motion.div>
-                  )}
+                  <motion.a
+                    href={redirectLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block h-[200px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800"
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.a>
                 </div>
 
                 {/* Content Section - Right Side */}

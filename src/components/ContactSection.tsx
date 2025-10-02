@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 const ContactSection = () => {
   return (
     <motion.div
-      className={cn(CONTAINER_STYLES.section, "mb-26")}
+      className={cn(CONTAINER_STYLES.section, "md:mb-26")}
       id="contact"
       {...ANIMATION}
     >

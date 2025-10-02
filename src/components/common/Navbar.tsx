@@ -62,7 +62,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
     <nav
       className={`sticky top-4 z-50 md:border md:border-primary/10 rounded-2xl backdrop-blur-3xl mx-4 sm:mx-0 `}
     >
-      <div className="w-full flex justify-between  p-3 ">
+      <div className="w-full flex justify-between items-center  p-3 ">
         {/* Mobile Menu Button - Left Side */}
         <div className="md:hidden">
           <motion.button
@@ -135,13 +135,9 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
             duration: 0.5,
             delay: NAV_ITEMS.length * 0.1,
           }}
-          className="ml-2"
         >
           <ThemeToggleButton variant="circle" start="top-right" blur />
         </motion.div>
-
-        {/* Spacer for mobile to keep menu button on left */}
-        <div className="md:hidden w-5"></div>
       </div>
     </nav>
   );

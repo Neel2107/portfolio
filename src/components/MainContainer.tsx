@@ -52,7 +52,7 @@ const MainContainer = () => {
               onClick={handleImageClick}
             />
           </motion.div>
-          <div className="flex flex-row gap-2 text-3xl font-bold ">
+          <div className="flex flex-row gap-2 text-xl sm:text-4xl font-bold ">
             {/* Greeting */}
             <motion.span
               className="inline-flex items-center"
@@ -77,7 +77,7 @@ const MainContainer = () => {
           </div>
           {/* Description */}
           <motion.p
-            className="text-lg sm:text-xl text-neutral-500 max-w-2xl leading-relaxed"
+            className="text-base sm:text-xl text-neutral-500 max-w-2xl leading-relaxed"
             initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}

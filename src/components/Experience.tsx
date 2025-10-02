@@ -27,7 +27,7 @@ const Experience = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               >
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between">
                   {/* Left Side */}
                   <div className="flex flex-row  gap-5">
                     <div className="flex items-center justify-center size-16 bg-accent/80 dark:bg-white rounded-lg p-2">
@@ -58,7 +58,7 @@ const Experience = () => {
                       </h3>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-1 text-right">
+                  <div className="flex flex-col gap-1 md:text-right">
                     <span className="text-accent-foreground text-base font-light">
                       {exp.period}
                     </span>

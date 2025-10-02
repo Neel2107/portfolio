@@ -20,17 +20,17 @@ export const CONTAINER_STYLES = {
   // Spacing utilities for consistent vertical rhythm
   spacing: {
     // Section spacing
-    sectionTop: "pt-16 md:pt-24 lg:pt-32",
+    sectionTop: "pt-16 md:pt-20 lg:pt-24",
     sectionBottom: "pb-16 md:pb-24 lg:pb-32",
 
     // Content spacing
-    contentTop: "mt-8 md:mt-12 lg:mt-16",
-    contentBottom: "mb-8 md:mb-12 lg:mb-16",
+    contentTop: "mt-8 md:mt-10 lg:mt-12",
+    contentBottom: "mb-8 md:mb-12 lg:mb-12",
 
     // Element spacing
     elementGap: "space-y-6 md:space-y-8 lg:space-y-10",
     elementGapSmall: "space-y-4 md:space-y-6",
-    elementGapLarge: "space-y-8 md:space-y-12 lg:space-y-16",
+    elementGapLarge: "space-y-8 md:space-y-12 lg:space-y-12",
   },
 };
 

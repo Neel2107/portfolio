@@ -46,7 +46,7 @@ const MainContainer = () => {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <span className="">Hello, I&apos;m Neel Patel —</span>
+              <span className="">Hi, I&apos;m Neel Patel —</span>
             </motion.div>
 
             {/* Title */}

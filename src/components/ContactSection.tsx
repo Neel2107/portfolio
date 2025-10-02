@@ -11,7 +11,7 @@ const ContactSection = () => {
       {...ANIMATION}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
-        <SectionTitle number="05" title="What's Next?" />
+        <SectionTitle title="What's Next?" />
 
         <div
           className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGap}`}
@@ -45,7 +45,7 @@ const ContactSection = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mx-auto"
             {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.3 }}
           >

@@ -23,7 +23,7 @@ export default function Home() {
 
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidebar={handleSidebar} />
 
-      <div className="flex flex-col max-w-3xl mx-auto">
+      <div className="flex flex-col max-w-2xl mx-auto">
         <Navbar handleSidebar={handleSidebar} />
         <MainContainer />
         <ProjectContainer />

@@ -3,7 +3,7 @@ import { resumeURL } from "@/utils/constants";
 import { useLenis } from "lenis/react";
 import { Menu } from "lucide-react";
 import { motion } from "motion/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
   { id: "about", text: "About" },
@@ -19,18 +19,42 @@ interface NavbarProps {
 
 const Navbar = ({ handleSidebar }: NavbarProps) => {
   const lenis = useLenis();
+  const [activeSection, setActiveSection] = useState("about");
+
+  // Track active section using Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "-20% 0px -20% 0px",
+      }
+    );
+
+    NAV_ITEMS.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section && lenis) {
-      const offset = 0;
       lenis.scrollTo(section, {
-        offset,
+        offset: 0,
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       });
     } else if (section) {
-      const offsetTop = section.offsetTop;
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -69,15 +93,17 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                   delay: index * 0.1,
                 }}
               >
-                <a
-                  href={`#${item.id}`}
-                  onClick={() => handleScroll(item.id)}
-                  className="text-primary no-underline text-sm"
+                <motion.button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleScroll(item.id);
+                  }}
+                  className={`text-primary no-underline text-sm transition-colors duration-200 hover:cursor-pointer ${
+                    activeSection === item.id ? "font-medium" : "text-secondary"
+                  }`}
                 >
-                  <span className=" transition-colors duration-200">
-                    {item.text}
-                  </span>
-                </a>
+                  <span className="relative">{item.text}</span>
+                </motion.button>
               </motion.li>
             ))}
             <motion.li
@@ -89,16 +115,16 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                 delay: NAV_ITEMS.length * 0.1,
               }}
             >
-              <a
+              <motion.a
                 href={resumeURL}
                 className="text-primary no-underline text-sm"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="hover:text-primary transition-colors duration-200">
+                <span className="text-secondary hover:texpr transition-colors duration-200">
                   Resume
                 </span>
-              </a>
+              </motion.a>
             </motion.li>
           </ul>
         </div>

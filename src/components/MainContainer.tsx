@@ -1,10 +1,10 @@
+import { Button } from "@/components/ui/button";
+import CV from "@/components/ui/CV";
 import { cn } from "@/lib/utils";
 import { CONTAINER_STYLES, linkedinUrl, resumeURL } from "@/utils/constants";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import CV from "@/components/ui/CV";
 
 const MainContainer = () => {
   const handleImageClick = () => {
@@ -12,9 +12,16 @@ const MainContainer = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="about"
       className={`${CONTAINER_STYLES.section} flex-col text-left min-h-screen`}
+      initial={{ opacity: 0, filter: "blur(4px)" }}
+      whileInView={{
+        opacity: 1,
+        filter: "blur(0px)",
+      }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
     >
       <div
         className={cn(
@@ -22,12 +29,19 @@ const MainContainer = () => {
           "flex flex-col gap-4 items-start"
         )}
       >
-        <div className={"space-y-7"}>
+        <motion.div
+          className={"space-y-7"}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-full border border-gray-700/20 w-28 h-28"
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Image
               src="/neel-profile.webp"
@@ -40,41 +54,46 @@ const MainContainer = () => {
           </motion.div>
           <div className="flex flex-row gap-2 text-3xl font-bold ">
             {/* Greeting */}
-            <motion.div
+            <motion.span
               className="inline-flex items-center"
               initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <span className="">Hi, I&apos;m Neel Patel —</span>
-            </motion.div>
+              Hi, I&apos;m Neel Patel —
+            </motion.span>
 
             {/* Title */}
-            <motion.div
+            <motion.h2
+              className="text-secondary"
               initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <h2 className="text-secondary"> Software Engineer</h2>
-            </motion.div>
+              Software Engineer
+            </motion.h2>
           </div>
           {/* Description */}
           <motion.p
             className="text-lg sm:text-xl text-neutral-500 max-w-2xl leading-relaxed"
             initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
           >
             I&apos;m a design-minded, detail-oriented software engineer
             passionate about combining beautiful code with beautiful design to
             create exceptional digital experiences.
           </motion.p>
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.7 }}
         >
           <Button variant={"outline"} className={"inset-shadow-indigo-500"}>
             <CV />
@@ -84,7 +103,7 @@ const MainContainer = () => {
           </Button>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

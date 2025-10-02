@@ -1,4 +1,5 @@
 import SectionTitle from "@/components/SectionTitle";
+import { cn } from "@/lib/utils";
 import { ANIMATION, CONTAINER_STYLES, socialLinks } from "@/utils/constants";
 import { Mail } from "lucide-react";
 import { motion } from "motion/react";
@@ -6,7 +7,7 @@ import { motion } from "motion/react";
 const ContactSection = () => {
   return (
     <motion.div
-      className={CONTAINER_STYLES.section}
+      className={cn(CONTAINER_STYLES.section, "mb-26")}
       id="contact"
       {...ANIMATION}
     >

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Lenis from 'lenis';
-import React, { createContext, ReactNode, useContext, useEffect, useRef } from 'react';
+import Lenis from "lenis";
+import React, { createContext, ReactNode, useEffect, useRef } from "react";
 
 const LenisContext = createContext<Lenis | null>(null);
 
@@ -17,8 +17,8 @@ export const LenisProvider: React.FC<LenisProviderProps> = ({ children }) => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
+      orientation: "vertical",
+      gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
@@ -33,17 +33,17 @@ export const LenisProvider: React.FC<LenisProviderProps> = ({ children }) => {
     }
     requestAnimationFrame(raf);
 
-    // Make Lenis globally available
-    if (typeof window !== 'undefined') {
-      window.lenis = lenis;
-    }
+    // // Make Lenis globally available
+    // if (typeof window !== "undefined") {
+    //   window.lenis = lenis;
+    // }
 
-    return () => {
-      lenis.destroy();
-      if (typeof window !== 'undefined') {
-        window.lenis = null;
-      }
-    };
+    // return () => {
+    //   lenis.destroy();
+    //   if (typeof window !== "undefined") {
+    //     window.lenis = null;
+    //   }
+    // };
   }, []);
 
   return (
@@ -52,14 +52,3 @@ export const LenisProvider: React.FC<LenisProviderProps> = ({ children }) => {
     </LenisContext.Provider>
   );
 };
-
-export const useLenis = (): Lenis | null => {
-  return useContext(LenisContext);
-};
-
-// Extend Window interface for Lenis
-declare global {
-  interface Window {
-    lenis: Lenis | null;
-  }
-}

@@ -1,62 +1,49 @@
 import SectionTitle from "@/components/SectionTitle";
-import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { ANIMATION, CONTAINER_STYLES, socialLinks } from "@/utils/constants";
+import { Mail } from "lucide-react";
 import { motion } from "motion/react";
 
 const ContactSection = () => {
-  const socialLinks = [
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/in/neelpatel2107/",
-      icon: Linkedin,
-      color: "#0A66C2",
-      description: "Connect with me professionally"
-    },
-    {
-      name: "GitHub",
-      href: "https://github.com/Neel2107",
-      icon: Github,
-      color: "#f0b400",
-      description: "Check out my code repositories"
-    },
-  ];
-
   return (
     <motion.div
-      className={CONTAINER_STYLES.section}
+      className={cn(CONTAINER_STYLES.section, "md:mb-26")}
       id="contact"
       {...ANIMATION}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
-        <SectionTitle number="05" title="What's Next?" />
+        <SectionTitle title="What's Next?" />
 
-        <div className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGap}`}>
+        <div
+          className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGap}`}
+        >
           <motion.div
-            className="bg-zinc-900 p-8 sm:p-10 rounded-2xl border border-gray-800 hover:border-[#89bbfe]/50 transition-all shadow-xl max-w-3xl mx-auto"
+            className="bg-background dark:bg-zinc-900/20 p-6 sm:p-10 rounded-2xl border border-primary/10 hover:border-primary/20 transition-all"
             {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-[#89bbfe] text-2xl sm:text-3xl font-bold mb-6 tracking-tight">
+            <h3 className="text-primary text-2xl sm:text-3xl font-bold mb-6 tracking-tight">
               Let&apos;s Connect
             </h3>
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-gray-400 text-base sm:text-lg leading-relaxed sm:max-w-xl">
-                With my extensive experience in mobile and web development, I&apos;m ready to contribute to your next big project.
+              <p className="text-secondary text-base leading-relaxed sm:max-w-xl">
+                With my extensive experience in mobile and web development,
+                I&apos;m ready to contribute to your next big project.
               </p>
               <motion.a
                 href="mailto:neelpatel805804@gmail.com"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#89bbfe] to-[#bae6ff] px-6 py-3 font-semibold text-black shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05, boxShadow: "0 12px 24px rgba(137, 187, 254, 0.3)" }}
-                whileTap={{ scale: 0.97 }}
+                className="group inline-flex items-center gap-2 rounded-full  px-6 py-3 font-semibold text-primary border border-primary/10 hover:border-primary/40 transition-all duration-300 self-start"
               >
-                <span className="whitespace-nowrap">Say Hello!</span>
-                <Mail className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <span className="whitespace-nowrap text-primary">
+                  Say Hello!
+                </span>
+                <Mail className="h-5 w-5 transition-transform group-hover:translate-x-1 text-secondary" />
               </motion.a>
             </div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mx-auto"
             {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
@@ -66,16 +53,19 @@ const ContactSection = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-zinc-900 p-6 rounded-xl border border-gray-800 hover:border-[#89bbfe]/50 transition-all"
+                className="bg-background dark:bg-zinc-900/20 p-6 rounded-xl border border-primary/10 hover:border-primary/20 transition-all"
                 initial={{ opacity: 0, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
               >
-                <social.icon className="w-6 h-6 text-[#89bbfe] mb-3" />
-                <h4 className="text-white font-semibold mb-1">{social.name}</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">{social.description}</p>
+                <social.icon className="w-6 h-6 text-primary mb-3" />
+                <h4 className="text-primary font-semibold mb-1">
+                  {social.name}
+                </h4>
+                <p className="text-secondary text-sm leading-relaxed">
+                  {social.description}
+                </p>
               </motion.a>
             ))}
           </motion.div>

@@ -40,7 +40,6 @@ const ProjectContainer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="relative block h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800"
-                      whileHover={{ scale: 1.02 }}
                     >
                       <Image
                         src={project.image}
@@ -50,10 +49,7 @@ const ProjectContainer = () => {
                       />
                     </motion.a>
                   ) : (
-                    <motion.div
-                      className="relative h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800"
-                      whileHover={{ scale: 1.02 }}
-                    >
+                    <motion.div className="relative h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -76,7 +72,6 @@ const ProjectContainer = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          whileHover={{ scale: 1.1 }}
                           className="text-primary/70 hover:text-primary"
                         >
                           <Github size={20} />
@@ -87,7 +82,6 @@ const ProjectContainer = () => {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          whileHover={{ scale: 1.1 }}
                           className="text-primary/70 hover:text-primary"
                         >
                           <ExternalLink size={20} />

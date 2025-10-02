@@ -1,8 +1,8 @@
 "use client";
+import Navbar from "@/components/common/Navbar";
 import ContactSection from "@/components/ContactSection";
 import Experience from "@/components/Experience";
 import MainContainer from "@/components/MainContainer";
-import Navbar from "@/components/common/Navbar";
 import ProjectContainer from "@/components/ProjectContainer";
 import Sidebar from "@/components/Sidebar";
 import SkillsSection from "@/components/SkillsSection";
@@ -32,10 +32,10 @@ export default function Home() {
       <Analytics />
 
       {/* Animated background elements */}
-      <div className="fixed inset-0 overflow-hidden z-0">
+      {/* <div className="fixed inset-0 overflow-hidden z-0">
         <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float-gentle" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-float-reverse" />
-      </div>
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/25 rounded-full blur-3xl animate-float-reverse" />
+      </div> */}
 
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidebar={handleSidebar} />
 

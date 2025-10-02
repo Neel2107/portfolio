@@ -1,7 +1,7 @@
 import SectionTitle from "@/components/SectionTitle";
 import Skill from "@/components/common/Skill";
 import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
-import { skillsCardsData } from "@/utils/skillsCardsData";
+import { skillsCardsData } from "@/utils/constants";
 import { motion } from "motion/react";
 import { useState } from "react";
 

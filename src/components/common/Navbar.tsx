@@ -71,7 +71,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                   onClick={() => handleScroll(item.id)}
                   className="text-white no-underline text-sm"
                 >
-                  <span className="hover:text-[#89bbfe] transition-colors duration-200">
+                  <span className="hover:text-primary transition-colors duration-200">
                     {item.text}
                   </span>
                 </a>
@@ -92,7 +92,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="hover:text-[#89bbfe] transition-colors duration-200">
+                <span className="hover:text-primary transition-colors duration-200">
                   Resume
                 </span>
               </a>

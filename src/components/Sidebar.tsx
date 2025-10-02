@@ -74,7 +74,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar }: SidebarProps) => {
         <Drawer.Root open={isSidebarOpen} onOpenChange={handleSidebar}>
             <Drawer.Portal>
                 <Drawer.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998]" />
-                <Drawer.Content className="bg-[#0d0d10]/90 backdrop-blur-md flex flex-col rounded-t-2xl h-[70vh] mt-24 fixed bottom-0 left-0 right-0 z-[999] lg:hidden">
+                <Drawer.Content className="bg-background/90 backdrop-blur-md flex flex-col rounded-t-2xl h-[70vh] mt-24 fixed bottom-0 left-0 right-0 z-[999] lg:hidden">
                     {/* Add Title for accessibility */}
                     <Drawer.Title className="sr-only">
                         Navigation Menu
@@ -91,7 +91,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar }: SidebarProps) => {
                                 <a
                                     key={data.name}
                                     href={data.location}
-                                    className="text-xl text-[#76accb] hover:text-white transition-colors"
+                                    className="text-xl text-primary hover:text-white transition-colors"
                                     onClick={(e) => handleSidebarItemClick(e, data.location)}
                                 >
                                     {data.name}

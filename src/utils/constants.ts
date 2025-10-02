@@ -15,7 +15,7 @@ export const CONTAINER_STYLES = {
   sectionContent: "w-full max-w-4xl mx-auto px-4 md:px-0",
   
   // Standard card styling
-  card: "bg-zinc-900 rounded-lg border border-gray-800 hover:border-[#89bbfe]/50 transition-all p-4",
+  card: "bg-zinc-900 rounded-lg border border-gray-800 hover:border-primary/50 transition-all p-4",
   
   // Spacing utilities for consistent vertical rhythm
   spacing: {

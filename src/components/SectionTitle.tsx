@@ -15,7 +15,7 @@ const SectionTitle = ({ number, title }: SectionTitleProps) => {
       transition={{ duration: 0.5 }}
     >
       <h2 className=" text-2xl md:text-3xl font-bold whitespace-nowrap">
-        <span className="text-[#89bbfe]">{number}.</span> {title}
+        <span className="text-primary">{number}.</span> {title}
       </h2>
     </motion.div>
   );

@@ -38,7 +38,7 @@ const MainContainer = () => {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.4, delay: 0.4 }}
             >
-              <h2 className="text-[#bae6ff]"> A Software Engineer</h2>
+              <h2 className="text-secondary"> A Software Engineer</h2>
             </motion.div>
           </div>
           {/* Description */}

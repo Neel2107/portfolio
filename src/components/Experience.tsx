@@ -3,6 +3,8 @@ import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
 import { experience } from "@/utils/constants/experience";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
+import Website from "./common/Website";
 
 const Experience = () => {
   return (
@@ -27,7 +29,7 @@ const Experience = () => {
               >
                 <div className="flex flex-row justify-between">
                   {/* Left Side */}
-                  <div className="flex flex-row gap-5">
+                  <div className="flex flex-row  gap-5">
                     <div className="flex items-center justify-center size-16 bg-accent/80 dark:bg-white rounded-lg p-2">
                       <Image
                         src={exp.logo}
@@ -38,11 +40,20 @@ const Experience = () => {
                       />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-primary font-semibold text-xl">
-                        {exp.organization}
-                      </span>
+                      <div className="flex flex-row gap-2 items-center">
+                        <span className="text-primary font-semibold text-lg">
+                          {exp.organization}
+                        </span>
+                        <Link
+                          href={exp.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Website className="size-4 text-secondary" />
+                        </Link>
+                      </div>
 
-                      <h3 className="text-primary text-lg font-normal">
+                      <h3 className="text-primary text-base font-normal">
                         {exp.title}
                       </h3>
                     </div>

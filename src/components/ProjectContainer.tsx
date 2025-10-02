@@ -39,7 +39,7 @@ const ProjectContainer = () => {
                       href={redirectLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative block h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer"
+                      className="relative block h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800"
                       whileHover={{ scale: 1.02 }}
                     >
                       <Image
@@ -51,7 +51,7 @@ const ProjectContainer = () => {
                     </motion.a>
                   ) : (
                     <motion.div
-                      className="relative h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer"
+                      className="relative h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800"
                       whileHover={{ scale: 1.02 }}
                     >
                       <Image

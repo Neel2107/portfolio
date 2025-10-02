@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import React from "react";
+import { ThemeToggleButton } from "./ThemeSwitch";
 
 const NAV_ITEMS = [
   { id: "about", text: "About" },
@@ -15,7 +16,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({ handleSidebar }: NavbarProps) => {
-
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section && window.lenis) {
@@ -23,15 +23,13 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
       window.lenis.scrollTo(section, {
         offset,
         duration: 1.2,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       });
     } else if (section) {
       const offsetTop = section.offsetTop;
       window.scrollTo({ top: offsetTop, behavior: "smooth" });
     }
   };
-
-
 
   return (
     <nav
@@ -47,13 +45,10 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
             animate={{ opacity: 1, filter: "blur(0px)" }}
             transition={{
               duration: 0.5,
-              delay: 0.1
+              delay: 0.1,
             }}
           >
-            <Menu
-              className="size-5 text-white"
-              aria-label="Menu button"
-            />
+            <Menu className="size-5 text-white" aria-label="Menu button" />
           </motion.button>
         </div>
 
@@ -68,7 +63,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{
                   duration: 0.5,
-                  delay: index * 0.1
+                  delay: index * 0.1,
                 }}
               >
                 <a
@@ -88,7 +83,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{
                 duration: 0.5,
-                delay: NAV_ITEMS.length * 0.1
+                delay: NAV_ITEMS.length * 0.1,
               }}
             >
               <a
@@ -103,6 +98,9 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
               </a>
             </motion.li>
           </ul>
+          <motion.div>
+            <ThemeToggleButton variant="circle" start="top-right" blur />
+          </motion.div>
         </div>
 
         {/* Spacer for mobile to keep menu button on left */}

@@ -4,7 +4,7 @@ import { experience } from "@/utils/constants/experience";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import Website from "./common/Website";
+import Website from "@/components/common/Website";
 
 const Experience = () => {
   return (

@@ -20,7 +20,7 @@ const ProjectContainer = () => {
         <SectionTitle title="Featured Projects" />
 
         <div
-          className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGapLarge}`}
+          className={`${CONTAINER_STYLES.spacing.contentTop} space-y-8 md:space-y-12 lg:space-y-12`}
         >
           {featuredProjects.map((project, index) => {
             const redirectLink = project.live ?? project.github;

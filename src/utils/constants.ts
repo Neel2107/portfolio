@@ -8,36 +8,20 @@ export const ANIMATION = {
 };
 
 export const CONTAINER_STYLES = {
-  // Standard section container with consistent spacing
   section: "flex items-center justify-center  py-16 md:py-24 ",
 
-  // Section content wrapper with consistent padding
   sectionContent: "w-full max-w-4xl mx-auto px-4 md:px-0",
 
-  // Standard card styling
-  card: "bg-zinc-900 rounded-lg border border-gray-800 hover:border-primary/50 transition-all p-4",
-
-  // Spacing utilities for consistent vertical rhythm
   spacing: {
-    // Section spacing
-    sectionTop: "pt-16 md:pt-20 lg:pt-24",
-    sectionBottom: "pb-16 md:pb-24 lg:pb-32",
-
-    // Content spacing
-    contentTop: "mt-8 md:mt-10 lg:mt-12",
-    contentBottom: "mb-8 md:mb-12 lg:mb-12",
-
-    // Element spacing
+    contentTop: "mt-4 md:mt-6 lg:mt-8",
     elementGap: "space-y-6 md:space-y-8 lg:space-y-10",
-    elementGapSmall: "space-y-4 md:space-y-6",
-    elementGapLarge: "space-y-8 md:space-y-12 lg:space-y-12",
   },
 };
 
 export const linkedinUrl = "https://www.linkedin.com/in/neelpatel2107/";
 
 // Centralized URL constants to avoid duplication
-export const URLS = {
+const URLS = {
   // Core Web Technologies
   TYPESCRIPT: "https://www.typescriptlang.org",
   JAVASCRIPT: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
@@ -74,7 +58,7 @@ export const URLS = {
 } as const;
 
 // Tech stack URL mappings using centralized constants
-export const techUrls: Record<string, string> = {
+const techUrls: Record<string, string> = {
   "React Native": URLS.REACT_NATIVE,
   "Nativewind": URLS.NATIVEWIND,
   "Expo": URLS.EXPO,
@@ -87,7 +71,7 @@ export const techUrls: Record<string, string> = {
 };
 
 // Helper function to create tech stack items with URLs
-export const createTechStack = (techNames: string[]) =>
+const createTechStack = (techNames: string[]) =>
   techNames.map(name => ({ name, url: techUrls[name] }));
 
 export const socialLinks = [

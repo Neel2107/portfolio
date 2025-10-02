@@ -6,7 +6,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import Moon from '@/components/svgs/Moon';
 import Sun from '@/components/svgs/Sun';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 
 export const useThemeToggle = ({
   variant = 'circle',

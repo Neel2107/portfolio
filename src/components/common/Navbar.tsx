@@ -35,7 +35,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
     <nav
       className={`sticky top-4 z-50 md:border md:border-primary/10 rounded-2xl backdrop-blur-3xl mx-4 sm:mx-0 `}
     >
-      <div className="w-full flex justify-between md:justify-center p-3 ">
+      <div className="w-full flex justify-between  p-3 ">
         {/* Mobile Menu Button - Left Side */}
         <div className="md:hidden">
           <motion.button
@@ -54,7 +54,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
 
         {/* Desktop Navigation - Center */}
         <div className="hidden md:flex flex-row items-center justify-between">
-          <ul className="m-0 p-0 flex flex-row  items-center list-none">
+          <ul className="m-0 p-0 flex flex-row  items-center   list-none">
             {NAV_ITEMS.map((item, index) => (
               <motion.li
                 key={item.id}
@@ -98,6 +98,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
               </a>
             </motion.li>
           </ul>
+        </div>
           <motion.div
             initial={{ opacity: 0, filter: "blur(4px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
@@ -109,7 +110,6 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
           >
             <ThemeToggleButton variant="circle" start="top-right" blur />
           </motion.div>
-        </div>
 
         {/* Spacer for mobile to keep menu button on left */}
         <div className="md:hidden w-5"></div>

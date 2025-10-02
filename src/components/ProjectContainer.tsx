@@ -51,7 +51,7 @@ const ProjectContainer = () => {
                     </motion.a>
                   ) : (
                     <motion.div
-                      className="relative h-[300px] md:h-56 overflow-hidden bg-background rounded-lg"
+                      className="relative h-[300px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer"
                       whileHover={{ scale: 1.02 }}
                     >
                       <Image

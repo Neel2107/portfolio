@@ -17,7 +17,7 @@ const MainContainer = () => {
           <motion.div
             initial={{ opacity: 0, filter: "blur(4px)" }}
             animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-full border border-gray-700/20 w-28 h-28"
           >
             <Image
@@ -35,7 +35,7 @@ const MainContainer = () => {
               className="inline-flex items-center"
               initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.3, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <span className="">Hello, I&apos;m Neel Patel —</span>
             </motion.div>
@@ -44,9 +44,9 @@ const MainContainer = () => {
             <motion.div
               initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.4, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h2 className="text-secondary"> A Software Engineer</h2>
+              <h2 className="text-secondary"> Software Engineer</h2>
             </motion.div>
           </div>
           {/* Description */}
@@ -54,7 +54,7 @@ const MainContainer = () => {
             className="text-lg sm:text-xl text-neutral-500 max-w-2xl leading-relaxed"
             initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.4, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
             I&apos;m a design-minded, detail-oriented software engineer
             passionate about combining beautiful code with beautiful design to

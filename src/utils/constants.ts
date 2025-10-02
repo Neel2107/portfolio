@@ -9,7 +9,7 @@ export const ANIMATION = {
 
 export const CONTAINER_STYLES = {
   // Standard section container with consistent spacing
-  section: "flex items-center justify-center py-16 md:py-24 lg:py",
+  section: "flex items-center justify-center  py-16 md:py-24 ",
 
   // Section content wrapper with consistent padding
   sectionContent: "w-full max-w-4xl mx-auto px-4 md:px-0",

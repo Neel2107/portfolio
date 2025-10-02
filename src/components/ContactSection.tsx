@@ -17,7 +17,7 @@ const ContactSection = () => {
           className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGap}`}
         >
           <motion.div
-            className="bg-zinc-900 p-8 sm:p-10 rounded-2xl border border-gray-800 hover:border-primary/50 transition-all shadow-xl max-w-3xl mx-auto"
+            className="bg-zinc-900 p-8 sm:p-10 rounded-2xl border border-gray-800 hover:border-primary/50 transition-all shadow-xl  mx-auto"
             {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.2 }}
           >

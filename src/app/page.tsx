@@ -31,15 +31,9 @@ export default function Home() {
     <div className="relative bg-gradient-main min-h-screen ">
       <Analytics />
 
-      {/* Animated background elements */}
-      {/* <div className="fixed inset-0 overflow-hidden z-0">
-        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float-gentle" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/25 rounded-full blur-3xl animate-float-reverse" />
-      </div> */}
-
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidebar={handleSidebar} />
 
-      <div className=" flex flex-col max-w-2xl mx-auto">
+      <div className=" flex flex-col max-w-3xl mx-auto">
         <Navbar handleSidebar={handleSidebar} />
         <MainContainer />
         <ProjectContainer />

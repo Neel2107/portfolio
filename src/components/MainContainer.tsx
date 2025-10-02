@@ -77,7 +77,7 @@ const MainContainer = () => {
           </div>
           {/* Description */}
           <motion.p
-            className="text-base sm:text-xl text-neutral-500 max-w-2xl leading-relaxed"
+            className="text-base sm:text-xl text-secondary max-w-2xl leading-relaxed"
             initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}

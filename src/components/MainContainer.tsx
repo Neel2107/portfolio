@@ -1,43 +1,46 @@
-import { CONTAINER_STYLES } from '@/utils/constants';
-import { motion } from 'motion/react';
+import { CONTAINER_STYLES } from "@/utils/constants";
+import { motion } from "motion/react";
+import Image from "next/image";
 
 const MainContainer = () => {
   return (
-    <section id='about' className={`${CONTAINER_STYLES.section} flex-col text-left min-h-screen`}>
+    <section
+      id="about"
+      className={`${CONTAINER_STYLES.section} flex-col text-left min-h-screen`}
+    >
       <div className={CONTAINER_STYLES.sectionContent}>
-        <div className={` space-y-7 `}>
-          {/* Greeting */}
-          <motion.div
-            className="inline-flex items-center"
-            initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-          >
-            <span className="mr-2">👋</span>
-            <span className="text-base text-gray-300">Hello, I&apos;m</span>
-          </motion.div>
+        <div className={`space-y-7`}>
+          <div className="rounded-full border border-gray-700/20 w-28 h-28">
+            <Image
+              src="/neel-profile.webp"
+              alt="Neel Patel"
+              width={200}
+              height={200}
+              className="rounded-full cursor-pointer"
+            />
+          </div>
+          <div className="flex flex-row gap-2 text-3xl font-bold ">
+            {/* Greeting */}
+            <motion.div
+              className="inline-flex items-center"
+              initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+            >
+              <span className=" text-gray-300">
+                Hello, I&apos;m Neel Patel —
+              </span>
+            </motion.div>
 
-          {/* Name */}
-          <motion.h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-text leading-tight"
-            initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-          >
-            Neel Patel
-          </motion.h1>
-
-          {/* Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-          >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#bae6ff]">
-              Software Engineer
-            </h2>
-          </motion.div>
-
+            {/* Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+            >
+              <h2 className="text-[#bae6ff]"> A Software Engineer</h2>
+            </motion.div>
+          </div>
           {/* Description */}
           <motion.p
             className="text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed"
@@ -45,9 +48,9 @@ const MainContainer = () => {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.4, delay: 0.5 }}
           >
-            I&apos;m a design-minded, detail-oriented software engineer passionate about
-            combining beautiful code with beautiful design to create exceptional
-            digital experiences.
+            I&apos;m a design-minded, detail-oriented software engineer
+            passionate about combining beautiful code with beautiful design to
+            create exceptional digital experiences.
           </motion.p>
         </div>
       </div>

@@ -240,3 +240,5 @@ export const skillsCardsData: SkillCard[] = [
     url: URLS.AWS,
   }
 ];
+
+export const resumeURL= "https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link"

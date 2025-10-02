@@ -1,7 +1,9 @@
+import { ThemeToggleButton } from "@/components/common/ThemeSwitch";
+import { resumeURL } from "@/utils/constants";
+import { useLenis } from "lenis/react";
 import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import React from "react";
-import { ThemeToggleButton } from "./ThemeSwitch";
 
 const NAV_ITEMS = [
   { id: "about", text: "About" },
@@ -16,11 +18,12 @@ interface NavbarProps {
 }
 
 const Navbar = ({ handleSidebar }: NavbarProps) => {
+  const lenis = useLenis();
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
-    if (section && window.lenis) {
+    if (section && lenis) {
       const offset = 0;
-      window.lenis.scrollTo(section, {
+      lenis.scrollTo(section, {
         offset,
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -87,7 +90,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
               }}
             >
               <a
-                href="https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link"
+                href={resumeURL}
                 className="text-primary no-underline text-sm"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -99,17 +102,17 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
             </motion.li>
           </ul>
         </div>
-          <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{
-              duration: 0.5,
-              delay: NAV_ITEMS.length * 0.1,
-            }}
-            className="ml-2"
-          >
-            <ThemeToggleButton variant="circle" start="top-right" blur />
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(4px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{
+            duration: 0.5,
+            delay: NAV_ITEMS.length * 0.1,
+          }}
+          className="ml-2"
+        >
+          <ThemeToggleButton variant="circle" start="top-right" blur />
+        </motion.div>
 
         {/* Spacer for mobile to keep menu button on left */}
         <div className="md:hidden w-5"></div>

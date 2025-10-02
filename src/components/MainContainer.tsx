@@ -1,6 +1,10 @@
-import { CONTAINER_STYLES, linkedinUrl } from "@/utils/constants";
+import { cn } from "@/lib/utils";
+import { CONTAINER_STYLES, linkedinUrl, resumeURL } from "@/utils/constants";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import CV from "@/components/ui/CV";
 
 const MainContainer = () => {
   const handleImageClick = () => {
@@ -12,7 +16,12 @@ const MainContainer = () => {
       id="about"
       className={`${CONTAINER_STYLES.section} flex-col text-left min-h-screen`}
     >
-      <div className={CONTAINER_STYLES.sectionContent}>
+      <div
+        className={cn(
+          CONTAINER_STYLES.sectionContent,
+          "flex flex-col gap-4 items-start"
+        )}
+      >
         <div className={"space-y-7"}>
           <motion.div
             initial={{ opacity: 0, filter: "blur(4px)" }}
@@ -61,6 +70,19 @@ const MainContainer = () => {
             create exceptional digital experiences.
           </motion.p>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <Button variant={"outline"} className={"inset-shadow-indigo-500"}>
+            <CV />
+            <Link target="_blank" rel="noopener noreferrer" href={resumeURL}>
+              Resume
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

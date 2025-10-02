@@ -1,3 +1,4 @@
+import { Github, Linkedin } from "lucide-react";
 
 
 export const ANIMATION = {
@@ -34,3 +35,21 @@ export const CONTAINER_STYLES = {
   }
 };
 
+export   const socialLinks = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/neelpatel2107/",
+    icon: Linkedin,
+    color: "#0A66C2",
+    description: "Connect with me professionally"
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/Neel2107",
+    icon: Github,
+    color: "#f0b400",
+    description: "Check out my code repositories"
+  },
+];
+
+export const linkedinUrl = "https://www.linkedin.com/in/neelpatel2107/";

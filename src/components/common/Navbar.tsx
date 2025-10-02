@@ -33,9 +33,9 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
 
   return (
     <nav
-      className={`sticky top-4 z-50 md:border md:border-white/10 rounded-2xl backdrop-blur-3xl mx-4 sm:mx-0 `}
+      className={`sticky top-4 z-50 md:border md:border-primary/10 rounded-2xl backdrop-blur-3xl mx-4 sm:mx-0 `}
     >
-      <div className="w-full flex  justify-between md:justify-center p-3 ">
+      <div className="w-full flex justify-between md:justify-center p-3 ">
         {/* Mobile Menu Button - Left Side */}
         <div className="md:hidden">
           <motion.button
@@ -48,13 +48,13 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
               delay: 0.1,
             }}
           >
-            <Menu className="size-5 text-white" aria-label="Menu button" />
+            <Menu className="size-5 text-primary" aria-label="Menu button" />
           </motion.button>
         </div>
 
         {/* Desktop Navigation - Center */}
-        <div className="hidden md:flex flex-row items-center">
-          <ul className="m-0 p-0 flex flex-row list-none">
+        <div className="hidden md:flex flex-row items-center justify-between">
+          <ul className="m-0 p-0 flex flex-row  items-center list-none">
             {NAV_ITEMS.map((item, index) => (
               <motion.li
                 key={item.id}
@@ -69,9 +69,9 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                 <a
                   href={`#${item.id}`}
                   onClick={() => handleScroll(item.id)}
-                  className="text-white no-underline text-sm"
+                  className="text-primary no-underline text-sm"
                 >
-                  <span className="hover:text-primary transition-colors duration-200">
+                  <span className=" transition-colors duration-200">
                     {item.text}
                   </span>
                 </a>
@@ -88,7 +88,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
             >
               <a
                 href="https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link"
-                className="text-white no-underline text-sm"
+                className="text-primary no-underline text-sm"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -98,7 +98,15 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
               </a>
             </motion.li>
           </ul>
-          <motion.div>
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{
+              duration: 0.5,
+              delay: NAV_ITEMS.length * 0.1,
+            }}
+            className="ml-2"
+          >
             <ThemeToggleButton variant="circle" start="top-right" blur />
           </motion.div>
         </div>

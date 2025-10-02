@@ -1,24 +1,34 @@
-import { CONTAINER_STYLES } from "@/utils/constants";
+import { CONTAINER_STYLES, linkedinUrl } from "@/utils/constants";
 import { motion } from "motion/react";
 import Image from "next/image";
 
 const MainContainer = () => {
+  const handleImageClick = () => {
+    window.open(linkedinUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section
       id="about"
       className={`${CONTAINER_STYLES.section} flex-col text-left min-h-screen`}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
-        <div className={`space-y-7`}>
-          <div className="rounded-full border border-gray-700/20 w-28 h-28">
+        <div className={"space-y-7"}>
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="rounded-full border border-gray-700/20 w-28 h-28"
+          >
             <Image
               src="/neel-profile.webp"
               alt="Neel Patel"
               width={200}
               height={200}
               className="rounded-full cursor-pointer"
+              onClick={handleImageClick}
             />
-          </div>
+          </motion.div>
           <div className="flex flex-row gap-2 text-3xl font-bold ">
             {/* Greeting */}
             <motion.div
@@ -27,9 +37,7 @@ const MainContainer = () => {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.3, delay: 0.2 }}
             >
-              <span className=" text-gray-300">
-                Hello, I&apos;m Neel Patel —
-              </span>
+              <span className="">Hello, I&apos;m Neel Patel —</span>
             </motion.div>
 
             {/* Title */}
@@ -43,7 +51,7 @@ const MainContainer = () => {
           </div>
           {/* Description */}
           <motion.p
-            className="text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed"
+            className="text-lg sm:text-xl text-neutral-500 max-w-2xl leading-relaxed"
             initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.4, delay: 0.5 }}

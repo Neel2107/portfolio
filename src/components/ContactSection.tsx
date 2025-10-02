@@ -1,26 +1,9 @@
 import SectionTitle from "@/components/SectionTitle";
-import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { ANIMATION, CONTAINER_STYLES, socialLinks } from "@/utils/constants";
+import { Mail } from "lucide-react";
 import { motion } from "motion/react";
 
 const ContactSection = () => {
-  const socialLinks = [
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/in/neelpatel2107/",
-      icon: Linkedin,
-      color: "#0A66C2",
-      description: "Connect with me professionally"
-    },
-    {
-      name: "GitHub",
-      href: "https://github.com/Neel2107",
-      icon: Github,
-      color: "#f0b400",
-      description: "Check out my code repositories"
-    },
-  ];
-
   return (
     <motion.div
       className={CONTAINER_STYLES.section}
@@ -30,7 +13,9 @@ const ContactSection = () => {
       <div className={CONTAINER_STYLES.sectionContent}>
         <SectionTitle number="05" title="What's Next?" />
 
-        <div className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGap}`}>
+        <div
+          className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGap}`}
+        >
           <motion.div
             className="bg-zinc-900 p-8 sm:p-10 rounded-2xl border border-gray-800 hover:border-primary/50 transition-all shadow-xl max-w-3xl mx-auto"
             {...ANIMATION}
@@ -41,12 +26,16 @@ const ContactSection = () => {
             </h3>
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-gray-400 text-base sm:text-lg leading-relaxed sm:max-w-xl">
-                With my extensive experience in mobile and web development, I&apos;m ready to contribute to your next big project.
+                With my extensive experience in mobile and web development,
+                I&apos;m ready to contribute to your next big project.
               </p>
               <motion.a
                 href="mailto:neelpatel805804@gmail.com"
                 className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary/50 px-6 py-3 font-semibold text-black shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05, boxShadow: "0 12px 24px rgba(137, 187, 254, 0.3)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 12px 24px rgba(137, 187, 254, 0.3)",
+                }}
                 whileTap={{ scale: 0.97 }}
               >
                 <span className="whitespace-nowrap">Say Hello!</span>
@@ -75,7 +64,9 @@ const ContactSection = () => {
               >
                 <social.icon className="w-6 h-6 text-primary mb-3" />
                 <h4 className="text-white font-semibold mb-1">{social.name}</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">{social.description}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {social.description}
+                </p>
               </motion.a>
             ))}
           </motion.div>

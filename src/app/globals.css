@@ -172,6 +172,13 @@
     inset 0 2px 6px rgba(255, 255, 255, 0.06);
 }
 
+.font-hanken-grotesk {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.font-hanken-grotesk-italic {
+  font-family: 'Hanken Grotesk Italic', sans-serif;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;

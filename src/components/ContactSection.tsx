@@ -25,7 +25,7 @@ const ContactSection = () => {
               Let&apos;s Connect
             </h3>
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-secondary text-base sm:text-lg leading-relaxed sm:max-w-xl">
+              <p className="text-secondary text-base leading-relaxed sm:max-w-xl">
                 With my extensive experience in mobile and web development,
                 I&apos;m ready to contribute to your next big project.
               </p>

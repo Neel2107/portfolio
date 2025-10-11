@@ -36,7 +36,6 @@ const URLS = {
 
   // Styling & UI
   TAILWIND_CSS: "https://tailwindcss.com",
-  SASS: "https://sass-lang.com",
   NATIVEWIND: "https://www.nativewind.dev",
 
   // Backend & Database
@@ -203,11 +202,7 @@ export const skillsCardsData: SkillCard[] = [
     icon: "/skills/firebase.svg",
     url: URLS.FIREBASE,
   },
-  {
-    name: "Sass",
-    icon: "/skills/sass.svg",
-    url: URLS.SASS,
-  },
+
   {
     name: "Git",
     icon: "/skills/git.svg",

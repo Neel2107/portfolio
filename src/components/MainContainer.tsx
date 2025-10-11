@@ -52,7 +52,7 @@ const MainContainer = () => {
               onClick={handleImageClick}
             />
           </motion.div>
-          <div className="flex flex-row gap-2 text-xl sm:text-4xl font-bold ">
+          <div className="flex flex-row gap-2 text-xl sm:text-3xl font-bold mb-1">
             {/* Greeting */}
             <motion.span
               className="inline-flex items-center"
@@ -65,7 +65,7 @@ const MainContainer = () => {
             </motion.span>
 
             {/* Title */}
-            <motion.h2
+            <motion.h3  
               className="text-secondary"
               initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -73,7 +73,7 @@ const MainContainer = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               Software Engineer
-            </motion.h2>
+            </motion.h3>
           </div>
           {/* Description */}
           <motion.p
@@ -83,9 +83,7 @@ const MainContainer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            I&apos;m a design-minded, detail-oriented software engineer
-            passionate about combining beautiful code with beautiful design to
-            create exceptional digital experiences.
+            I create value at the intersection of technology and business.
           </motion.p>
         </motion.div>
 

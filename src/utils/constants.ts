@@ -93,21 +93,20 @@ export const socialLinks = [
 
 export const featuredProjects = [
   {
+    title: "Fluey AI",
+    description:
+      "A React Native chat application with modern AI chat features, including streaming responses, markdown rendering, and math support.",
+    tech: createTechStack(["React Native", "Nativewind", "Expo", "Reanimated"]),
+    image: "/project/fluey-ai.png",
+    github: "https://github.com/Neel2107/fluey-ai",
+  },
+  {
     title: "Swiggy UI",
     description:
       "This project aims to replicate the user interface of the Swiggy app. Firebase authentication is implemented for phone number OTP verification, ensuring secure access to the app.",
     image: "/project/swiggy-clone.png",
     tech: createTechStack(["React Native", "Nativewind", "Expo", "Reanimated"]),
     github: "https://github.com/Neel2107/swiggy-clone",
-  },
-  {
-    title: "Quick Bites",
-    description:
-      "Quick Bites is a web application built with React.js and Swiggy's API.",
-    image: "/project/quickbites.png",
-    tech: createTechStack(["React + Vite", "Tailwind CSS"]),
-    github: "https://github.com/Neel2107/QuickBites",
-    live: "https://quick-bites-nova.vercel.app/",
   },
   {
     title: "Nike Shoe Store",

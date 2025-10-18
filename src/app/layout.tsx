@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/common/ThemeProvider";
+import { ThemeProvider } from "@/contexts/ThemeProvider";
 import { LenisProvider } from "@/contexts/AnimationContext";
 import type { Metadata } from "next";
 import "./globals.css";

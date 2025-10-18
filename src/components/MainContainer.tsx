@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import CV from "@/components/ui/CV";
+import CV from "@/components/svgs/CV";
 import { cn } from "@/lib/utils";
 import { CONTAINER_STYLES, linkedinUrl, resumeURL } from "@/utils/constants";
 import { motion } from "motion/react";

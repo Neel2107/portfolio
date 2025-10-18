@@ -33,17 +33,6 @@ export const LenisProvider: React.FC<LenisProviderProps> = ({ children }) => {
     }
     requestAnimationFrame(raf);
 
-    // // Make Lenis globally available
-    // if (typeof window !== "undefined") {
-    //   window.lenis = lenis;
-    // }
-
-    // return () => {
-    //   lenis.destroy();
-    //   if (typeof window !== "undefined") {
-    //     window.lenis = null;
-    //   }
-    // };
   }, []);
 
   return (

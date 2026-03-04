@@ -136,7 +136,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
             delay: NAV_ITEMS.length * 0.1,
           }}
         >
-          <ThemeToggleButton variant="circle" start="top-right" blur />
+          <ThemeToggleButton blur />
         </motion.div>
       </div>
     </nav>

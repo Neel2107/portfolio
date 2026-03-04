@@ -1,24 +1,23 @@
 import SectionTitle from "@/components/SectionTitle";
-import { cn } from "@/lib/utils";
+import CopyEmailButton from "@/components/common/CopyEmailButton";
 import { ANIMATION, CONTAINER_STYLES, socialLinks } from "@/utils/constants";
-import { Mail } from "lucide-react";
 import { motion } from "motion/react";
 
 const ContactSection = () => {
   return (
     <motion.div
-      className={cn(CONTAINER_STYLES.section, "md:mb-26")}
+      className={CONTAINER_STYLES.section}
       id="contact"
       {...ANIMATION}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
-        <SectionTitle title="What's Next?" />
+        <SectionTitle title="Contact" />
 
         <div
           className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGap}`}
         >
           <motion.div
-            className="bg-background dark:bg-zinc-900/20 p-6 sm:p-10 rounded-2xl border border-primary/10 hover:border-primary/20 transition-all"
+            className="bg-background dark:bg-zinc-900/20 p-6 sm:p-8 rounded-2xl border border-primary/10 hover:border-primary/20 transition-all"
             {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
@@ -30,15 +29,7 @@ const ContactSection = () => {
                 With my extensive experience in mobile and web development,
                 I&apos;m ready to contribute to your next big project.
               </p>
-              <motion.a
-                href="mailto:neelpatel805804@gmail.com"
-                className="group inline-flex items-center gap-2 rounded-full  px-6 py-3 font-semibold text-primary border border-primary/10 hover:border-primary/40 transition-all duration-300 self-start"
-              >
-                <span className="whitespace-nowrap text-primary">
-                  Say Hello!
-                </span>
-                <Mail className="h-5 w-5 transition-transform group-hover:translate-x-1 text-secondary" />
-              </motion.a>
+              <CopyEmailButton email="neelx2107@gmail.com" />
             </div>
           </motion.div>
 
@@ -53,7 +44,7 @@ const ContactSection = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-background dark:bg-zinc-900/20 p-6 rounded-xl border border-primary/10 hover:border-primary/20 transition-all"
+                className="bg-background dark:bg-zinc-900/20 p-6 sm:p-8 rounded-xl border border-primary/10 hover:border-primary/20 transition-all"
                 initial={{ opacity: 0, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true }}

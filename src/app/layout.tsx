@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/contexts/ThemeProvider";
 import { LenisProvider } from "@/contexts/AnimationContext";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -22,7 +23,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <LenisProvider>{children}</LenisProvider>
+            <TooltipProvider>
+              <LenisProvider>{children}</LenisProvider>
+            </TooltipProvider>
           </ThemeProvider>
         </body>
       </html>

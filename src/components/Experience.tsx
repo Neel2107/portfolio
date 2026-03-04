@@ -2,6 +2,11 @@ import SectionTitle from "@/components/SectionTitle";
 import { cn } from "@/lib/utils";
 import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
 import { experience } from "@/utils/constants/experience";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,7 +56,7 @@ const Experience = () => {
                   const contentId = `experience-content-${index}`;
 
                   return (
-                    <div className="overflow-hidden rounded-2xl border border-primary/10 bg-background/40 dark:bg-zinc-900/10">
+                    <div className="rounded-2xl border border-primary/10 bg-background/40 dark:bg-zinc-900/10">
                       <div
                         id={triggerId}
                         role="button"
@@ -88,16 +93,23 @@ const Experience = () => {
                                 <span className="text-primary font-semibold text-lg">
                                   {exp.organization}
                                 </span>
-                                <Link
-                                  href={exp.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  aria-label={`Visit ${exp.organization} website`}
-                                  onClick={(event) => event.stopPropagation()}
-                                  className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-                                >
-                                  <Website className="size-4 text-secondary" />
-                                </Link>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <Link
+                                      href={exp.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      aria-label={`Visit ${exp.organization} website`}
+                                      onClick={(event) => event.stopPropagation()}
+                                      className="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                                    >
+                                      <Website className="size-4 text-secondary" />
+                                    </Link>
+                                  </TooltipTrigger>
+                                  <TooltipContent side="top">
+                                    Open website
+                                  </TooltipContent>
+                                </Tooltip>
                               </div>
 
                               <h3 className="text-primary text-base font-normal">

@@ -1,5 +1,6 @@
 import SectionTitle from "@/components/SectionTitle";
 import Skill from "@/components/common/Skill";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import {
   ANIMATION,
   CONTAINER_STYLES,
@@ -57,24 +58,36 @@ const ProjectContainer = () => {
                     </h3>
                     <div className="flex gap-3">
                       {project.github && (
-                        <motion.a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary/70 hover:text-primary"
-                        >
-                          <Github size={20} />
-                        </motion.a>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <motion.a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary/70 hover:text-primary"
+                              aria-label={`View source code for ${project.title}`}
+                            >
+                              <Github size={20} />
+                            </motion.a>
+                          </TooltipTrigger>
+                          <TooltipContent side="top">View source code</TooltipContent>
+                        </Tooltip>
                       )}
                       {project.live && (
-                        <motion.a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary/70 hover:text-primary"
-                        >
-                          <ExternalLink size={20} />
-                        </motion.a>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <motion.a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary/70 hover:text-primary"
+                              aria-label={`Open live demo for ${project.title}`}
+                            >
+                              <ExternalLink size={20} />
+                            </motion.a>
+                          </TooltipTrigger>
+                          <TooltipContent side="top">Open live demo</TooltipContent>
+                        </Tooltip>
                       )}
                     </div>
                   </div>

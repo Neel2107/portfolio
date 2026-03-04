@@ -17,7 +17,7 @@ const ProjectContainer = () => {
       {...ANIMATION}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
-        <SectionTitle title="Featured Projects" />
+        <SectionTitle title="Projects" />
 
         <div
           className={`${CONTAINER_STYLES.spacing.contentTop} space-y-8 md:space-y-12 lg:space-y-12`}

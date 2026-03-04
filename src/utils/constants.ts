@@ -216,7 +216,8 @@ export const skillsCardsData: SkillCard[] = [
     name: "AWS",
     icon: "/skills/aws.svg",
     url: URLS.AWS,
-  }
+  },
 ];
 
-export const resumeURL= "https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link"
+export const resumeURL =
+  "https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link";

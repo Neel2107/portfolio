@@ -14,7 +14,7 @@ const SkillsSection = () => {
   return (
     <motion.div className={CONTAINER_STYLES.section} id="skills" {...ANIMATION}>
       <div className={CONTAINER_STYLES.sectionContent}>
-        <SectionTitle title="My Stack" />
+        <SectionTitle title="Skills" />
 
         <div className={CONTAINER_STYLES.spacing.contentTop}>
           <motion.div

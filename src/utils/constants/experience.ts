@@ -1,7 +1,7 @@
 export const experience = [
     {
       title: "Software Development Engineer",
-      period: "June 2025 - Present",
+      period: "Jun 2025 - Present",
       organization: "Sarvam AI",
       location: "Bangalore, India (On-Site)",
       logo:"/orgs/sarvam-logo.webp",
@@ -15,13 +15,13 @@ export const experience = [
     },
     {
       title: "Software Development Engineer 1",
-      period: "Aug 2024 - June 2025",
+      period: "Aug 2024 - Jun 2025",
       organization: "FAE Bikes",
       location: "Bangalore, India (On-Site)",
       logo:"/orgs/faebikes-logo.webp",
       url:"https://www.faebikes.com/",
       responsibilities: [
-        "Enhanced and launched the Retail App on Play Store with improved UI/UX, deep linking, supporting $870,000 yearly transactions and 1000+ daily active users.",
+        "Enhanced and launched the Retail App on Play Store with improved UI/UX and deep linking, supporting $870,000 in yearly transactions and 1,000+ daily active users.",
         "Designed and built Internal Operations App flows in React Native, supporting 20+ daily deployments and 55+ services with features like in-app media capture and PDF generation.",
         "Led development of Leads Management System, boosting customer acquisition by 40%, handled REST API integrations, and implemented role-based access control.",
       ],
@@ -47,7 +47,7 @@ export const experience = [
       logo:"/orgs/marketifyall-logo.webp",
       url:"https://beta.marketifyall.com/",
       responsibilities: [
-        "Built User Interface and REST APIs for various web and mobile apps single-handedly, from scratch.",
+        "Built user interfaces and REST APIs for multiple web and mobile apps single-handedly from scratch.",
         "Created APIs to authorize various social media platforms, resulting in automated social media posts for users.",
         "Transitioned the Firebase backend to Supabase PostgreSQL, reducing bandwidth utilization by 70%.",
       ],

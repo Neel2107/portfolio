@@ -7,9 +7,9 @@ import React, { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
   { id: "about", text: "About" },
-  { id: "project", text: "Projects" },
   { id: "skills", text: "Skills" },
   { id: "experience", text: "Experience" },
+  { id: "project", text: "Projects" },
   { id: "contact", text: "Contact" },
 ];
 

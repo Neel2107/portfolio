@@ -17,16 +17,16 @@ const Sidebar = ({ isSidebarOpen, handleSidebar }: SidebarProps) => {
       id: "about",
     },
     {
-      name: "Projects",
-      id: "project",
-    },
-    {
       name: "Skills",
       id: "skills",
     },
     {
       name: "Experience",
       id: "experience",
+    },
+    {
+      name: "Projects",
+      id: "project",
     },
     {
       name: "Contact",
@@ -82,8 +82,8 @@ const Sidebar = ({ isSidebarOpen, handleSidebar }: SidebarProps) => {
 
           {/* Add Description for accessibility */}
           <Drawer.Description className="sr-only">
-            Site navigation links including About, Projects, Skills, Experience,
-            Other Projects, Contact, and Resume
+            Site navigation links including About, Skills, Experience, Projects,
+            Contact, and Resume
           </Drawer.Description>
 
           <div className="p-7 pb-10 flex-1 overflow-auto">

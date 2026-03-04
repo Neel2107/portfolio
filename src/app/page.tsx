@@ -26,9 +26,9 @@ export default function Home() {
       <div className="flex flex-col max-w-2xl mx-auto">
         <Navbar handleSidebar={handleSidebar} />
         <MainContainer />
-        <ProjectContainer />
         <SkillsSection />
         <Experience />
+        <ProjectContainer />
         <ContactSection />
       </div>
     </div>

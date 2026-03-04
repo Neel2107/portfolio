@@ -1,7 +1,7 @@
 export const experience = [
     {
       title: "Software Development Engineer",
-      period: "Jun 2025 - Present",
+      period: "Jun 2025 - Dec 2025",
       organization: "Sarvam AI",
       location: "Bangalore, India (On-Site)",
       logo:"/orgs/sarvam-logo.webp",

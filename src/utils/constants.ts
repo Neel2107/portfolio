@@ -64,8 +64,8 @@ const techUrls: Record<string, string> = {
   "Reanimated": URLS.ANIMATED,
   "React + Vite": URLS.VITE,
   "Tailwind CSS": URLS.TAILWIND_CSS,
-  "Next JS": URLS.NEXT_JS,
-  "Node JS": URLS.NODE_JS,
+  "Next.js": URLS.NEXT_JS,
+  "Node.js": URLS.NODE_JS,
   "Strapi": URLS.STRAPI,
 };
 
@@ -113,7 +113,7 @@ export const featuredProjects = [
     description:
       "Created and deployed a fully functional shoe store website on Vercel, enabling users to explore and purchase a wide range of products.",
     image: "/project/shoe-store.png",
-    tech: createTechStack(["Next JS", "Node JS", "Tailwind CSS", "Strapi"]),
+    tech: createTechStack(["Next.js", "Node.js", "Tailwind CSS", "Strapi"]),
     github: "https://github.com/Neel2107/Shoe-Store",
     live: "https://shoe-store1.vercel.app/",
   },
@@ -137,7 +137,7 @@ export const skillsCardsData: SkillCard[] = [
     url: URLS.JAVASCRIPT,
   },
   {
-    name: "Next.JS",
+    name: "Next.js",
     icon: "/skills/nextjs.svg",
     url: URLS.NEXT_JS,
   },
@@ -167,7 +167,7 @@ export const skillsCardsData: SkillCard[] = [
     url: URLS.CSS,
   },
   {
-    name: "Node.JS",
+    name: "Node.js",
     icon: "/skills/nodejs.svg",
     url: URLS.NODE_JS,
   },

@@ -121,7 +121,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-secondary hover:texpr transition-colors duration-200">
+                <span className="text-secondary hover:text-primary transition-colors duration-200">
                   Resume
                 </span>
               </motion.a>

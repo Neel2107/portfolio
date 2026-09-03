@@ -47,6 +47,11 @@ const URLS = {
   STRAPI: "https://strapi.io",
   FIREBASE: "https://firebase.google.com",
 
+  // Apple Platforms
+  SWIFT: "https://www.swift.org",
+  SWIFTUI: "https://developer.apple.com/xcode/swiftui/",
+  MACOS: "https://developer.apple.com/macos/",
+
   // Development Tools
   EXPO: "https://expo.dev",
   ANIMATED: "https://docs.swmansion.com/react-native-reanimated",
@@ -67,6 +72,9 @@ const techUrls: Record<string, string> = {
   "Next.js": URLS.NEXT_JS,
   "Node.js": URLS.NODE_JS,
   "Strapi": URLS.STRAPI,
+  "Swift": URLS.SWIFT,
+  "SwiftUI": URLS.SWIFTUI,
+  "macOS": URLS.MACOS,
 };
 
 // Helper function to create tech stack items with URLs
@@ -93,6 +101,15 @@ export const socialLinks = [
 
 export const featuredProjects = [
   {
+    title: "Mend",
+    description:
+      "A native macOS menu bar app that fixes selected text in any application with one shortcut. Works with OpenAI, Gemini, or any OpenAI-compatible endpoint, keeps API keys in Keychain, and replaces text in place with no window to open.",
+    tech: createTechStack(["Swift", "SwiftUI", "macOS"]),
+    image: "/project/mend.png",
+    github: "https://github.com/Neel2107/Mend",
+    live: "https://mend.itsneel.com",
+  },
+  {
     title: "Fluey AI",
     description:
       "A React Native chat application with modern AI chat features, including streaming responses, markdown rendering, and math support.",
@@ -107,15 +124,6 @@ export const featuredProjects = [
     image: "/project/swiggy-clone.png",
     tech: createTechStack(["React Native", "Nativewind", "Expo", "Reanimated"]),
     github: "https://github.com/Neel2107/swiggy-clone",
-  },
-  {
-    title: "Nike Shoe Store",
-    description:
-      "Created and deployed a fully functional shoe store website on Vercel, enabling users to explore and purchase a wide range of products.",
-    image: "/project/shoe-store.png",
-    tech: createTechStack(["Next.js", "Node.js", "Tailwind CSS", "Strapi"]),
-    github: "https://github.com/Neel2107/Shoe-Store",
-    live: "https://shoe-store1.vercel.app/",
   },
 ];
 

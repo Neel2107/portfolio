@@ -39,7 +39,7 @@ const ProjectContainer = () => {
                     href={redirectLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative block h-[200px] md:h-56 overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800"
+                    className="relative block aspect-video overflow-hidden bg-background rounded-lg cursor-pointer border border-zinc-100 dark:border-zinc-800"
                   >
                     <Image
                       src={project.image}

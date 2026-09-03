@@ -1,6 +1,5 @@
 import { ThemeToggleButton } from "@/components/common/ThemeSwitch";
 import { resumeURL } from "@/utils/constants";
-import { useLenis } from "lenis/react";
 import { Menu } from "lucide-react";
 import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
@@ -18,7 +17,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({ handleSidebar }: NavbarProps) => {
-  const lenis = useLenis();
   const [activeSection, setActiveSection] = useState("about");
 
   // Track active section using Intersection Observer
@@ -47,13 +45,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
-    if (section && lenis) {
-      lenis.scrollTo(section, {
-        offset: 0,
-        duration: 1.2,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      });
-    } else if (section) {
+    if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };

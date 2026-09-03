@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Moon from '@/components/svgs/Moon';
 import Sun from '@/components/svgs/Sun';
@@ -117,6 +117,11 @@ export const ThemeToggleButton = ({
   blur?: boolean;
 }) => {
   const { isDark, toggleTheme } = useThemeToggle({ blur });
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <Button
@@ -131,7 +136,13 @@ export const ThemeToggleButton = ({
       aria-label="Toggle theme"
     >
       <span className="sr-only">Toggle theme</span>
-      {isDark ? <Moon className="size-4" /> : <Sun className="size-4" />}
+      {!mounted ? (
+        <span className="size-4" aria-hidden="true" />
+      ) : isDark ? (
+        <Moon className="size-4" />
+      ) : (
+        <Sun className="size-4" />
+      )}
     </Button>
   );
 };

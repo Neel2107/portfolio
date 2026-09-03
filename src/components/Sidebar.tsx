@@ -1,4 +1,3 @@
-import { useLenis } from "lenis/react";
 import { X } from "lucide-react";
 import { motion } from "motion/react";
 import { Drawer } from "vaul";
@@ -9,8 +8,6 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isSidebarOpen, handleSidebar }: SidebarProps) => {
-  const lenis = useLenis();
-
   const sidebarData = [
     {
       name: "About",
@@ -57,16 +54,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar }: SidebarProps) => {
 
         // Small delay to allow sidebar animation to complete
         setTimeout(() => {
-          if (lenis) {
-            lenis.scrollTo(section, {
-              offset: 0,
-              duration: 1.2,
-              easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            });
-          } else {
-            // Fallback to native scrolling
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 300);
       }
     }

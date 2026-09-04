@@ -7,6 +7,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Moon from '@/components/svgs/Moon';
 import Sun from '@/components/svgs/Sun';
 import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 const styleId = 'theme-transition-styles';
 
@@ -82,7 +83,7 @@ const updateStyles = (css: string, name: string) => {
   styleElement.textContent = css;
 };
 
-const useThemeToggle = ({ blur = false }: { blur?: boolean } = {}) => {
+export const useThemeToggle = ({ blur = false }: { blur?: boolean } = {}) => {
   const { resolvedTheme, setTheme } = useTheme();
 
   const isDark = resolvedTheme === 'dark';
@@ -124,25 +125,36 @@ export const ThemeToggleButton = ({
   }, []);
 
   return (
-    <Button
-      type="button"
-      variant="ghost"
-      size="icon"
-      className={cn(
-        'size-10 cursor-pointer p-0 transition-all duration-300 active:scale-95',
-        className,
-      )}
-      onClick={toggleTheme}
-      aria-label="Toggle theme"
-    >
-      <span className="sr-only">Toggle theme</span>
-      {!mounted ? (
-        <span className="size-4" aria-hidden="true" />
-      ) : isDark ? (
-        <Moon className="size-4" />
-      ) : (
-        <Sun className="size-4" />
-      )}
-    </Button>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          className={cn(
+            'size-10 cursor-pointer p-0 transition-all duration-300 active:scale-95',
+            className,
+          )}
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          aria-keyshortcuts="d"
+        >
+          <span className="sr-only">Toggle theme</span>
+          {!mounted ? (
+            <span className="size-4" aria-hidden="true" />
+          ) : isDark ? (
+            <Moon className="size-4" />
+          ) : (
+            <Sun className="size-4" />
+          )}
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent side="bottom" className="flex items-center gap-1.5">
+        Toggle theme
+        <kbd className="rounded-sm bg-background/20 px-1 font-sans text-[10px] font-medium leading-4">
+          D
+        </kbd>
+      </TooltipContent>
+    </Tooltip>
   );
 };

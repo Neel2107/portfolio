@@ -96,7 +96,7 @@ const ProjectContainer = () => {
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
                       <Skill name={tech.name} href={tech.url} key={techIndex} />
                     ))}

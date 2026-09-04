@@ -27,12 +27,14 @@ const URLS = {
   JAVASCRIPT: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   HTML: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   CSS: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  PYTHON: "https://www.python.org",
 
   // React Ecosystem
   REACT: "https://react.dev",
   REACT_NATIVE: "https://reactnative.dev",
   NEXT_JS: "https://nextjs.org",
   VITE: "https://vitejs.dev",
+  TANSTACK: "https://tanstack.com",
 
   // Styling & UI
   TAILWIND_CSS: "https://tailwindcss.com",
@@ -40,12 +42,12 @@ const URLS = {
 
   // Backend & Database
   NODE_JS: "https://nodejs.org",
-  MONGODB: "https://www.mongodb.com",
   POSTGRESQL: "https://www.postgresql.org",
   SUPABASE: "https://supabase.com",
   PRISMA: "https://www.prisma.io",
+  FASTAPI: "https://fastapi.tiangolo.com",
+  POLARS: "https://pola.rs",
   STRAPI: "https://strapi.io",
-  FIREBASE: "https://firebase.google.com",
 
   // Apple Platforms
   SWIFT: "https://www.swift.org",
@@ -127,103 +129,64 @@ export const featuredProjects = [
   },
 ];
 
-interface SkillCard {
+export interface SkillCard {
   name: string;
   icon: string;
+  /** Variant swapped in under the dark theme, for marks that are black on light. */
+  iconDark?: string;
   url: string;
 }
 
-export const skillsCardsData: SkillCard[] = [
-  {
-    name: "TypeScript",
-    icon: "/skills/typescript.svg",
-    url: URLS.TYPESCRIPT,
-  },
-  {
-    name: "JavaScript",
-    icon: "/skills/javascript.svg",
-    url: URLS.JAVASCRIPT,
-  },
-  {
-    name: "Next.js",
-    icon: "/skills/nextjs.svg",
-    url: URLS.NEXT_JS,
-  },
-  {
-    name: "React",
-    icon: "/skills/react.svg",
-    url: URLS.REACT,
-  },
-  {
-    name: "React Native",
-    icon: "/skills/react.svg",
-    url: URLS.REACT_NATIVE,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "/skills/tailwindcss.svg",
-    url: URLS.TAILWIND_CSS,
-  },
-  {
-    name: "HTML",
-    icon: "/skills/html.svg",
-    url: URLS.HTML,
-  },
-  {
-    name: "CSS",
-    icon: "/skills/css.svg",
-    url: URLS.CSS,
-  },
-  {
-    name: "Node.js",
-    icon: "/skills/nodejs.svg",
-    url: URLS.NODE_JS,
-  },
-  {
-    name: "Expo",
-    icon: "/skills/expo.svg",
-    url: URLS.EXPO,
-  },
-  {
-    name: "MongoDB",
-    icon: "/skills/mongodb.svg",
-    url: URLS.MONGODB,
-  },
-  {
-    name: "PostgreSQL",
-    icon: "/skills/postgresql.svg",
-    url: URLS.POSTGRESQL,
-  },
-  {
-    name: "Supabase",
-    icon: "/skills/supabase.svg",
-    url: URLS.SUPABASE,
-  },
-  {
-    name: "Prisma",
-    icon: "/skills/prisma.svg",
-    url: URLS.PRISMA,
-  },
-  {
-    name: "Firebase",
-    icon: "/skills/firebase.svg",
-    url: URLS.FIREBASE,
-  },
+export interface SkillGroup {
+  title: string;
+  skills: SkillCard[];
+}
 
+export const skillGroups: SkillGroup[] = [
   {
-    name: "Git",
-    icon: "/skills/git.svg",
-    url: URLS.GIT,
+    title: "Languages",
+    skills: [
+      { name: "TypeScript", icon: "/skills/typescript.svg", url: URLS.TYPESCRIPT },
+      { name: "JavaScript", icon: "/skills/javascript.svg", url: URLS.JAVASCRIPT },
+      { name: "Python", icon: "/skills/python.svg", url: URLS.PYTHON },
+      { name: "HTML", icon: "/skills/html.svg", url: URLS.HTML },
+      { name: "CSS", icon: "/skills/css.svg", url: URLS.CSS },
+    ],
   },
   {
-    name: "GitHub",
-    icon: "/skills/github.svg",
-    url: URLS.GITHUB,
+    title: "Frontend",
+    skills: [
+      { name: "React", icon: "/skills/react.svg", iconDark: "/skills/react-dark.svg", url: URLS.REACT },
+      { name: "Next.js", icon: "/skills/nextjs.svg", url: URLS.NEXT_JS },
+      { name: "Tailwind CSS", icon: "/skills/tailwindcss.svg", url: URLS.TAILWIND_CSS },
+      { name: "TanStack", icon: "/skills/tanstack.svg", iconDark: "/skills/tanstack-dark.svg", url: URLS.TANSTACK },
+    ],
   },
   {
-    name: "AWS",
-    icon: "/skills/aws.svg",
-    url: URLS.AWS,
+    title: "Mobile",
+    skills: [
+      { name: "React Native", icon: "/skills/react.svg", iconDark: "/skills/react-dark.svg", url: URLS.REACT_NATIVE },
+      { name: "Expo", icon: "/skills/expo.svg", url: URLS.EXPO },
+    ],
+  },
+  {
+    title: "Backend & Data",
+    skills: [
+      { name: "Node.js", icon: "/skills/nodejs.svg", url: URLS.NODE_JS },
+      { name: "FastAPI", icon: "/skills/fastapi.svg", url: URLS.FASTAPI },
+      { name: "PostgreSQL", icon: "/skills/postgresql.svg", url: URLS.POSTGRESQL },
+      { name: "Supabase", icon: "/skills/supabase.svg", url: URLS.SUPABASE },
+      { name: "Prisma", icon: "/skills/prisma.svg", iconDark: "/skills/prisma-dark.svg", url: URLS.PRISMA },
+      { name: "Polars", icon: "/skills/polars.svg", url: URLS.POLARS },
+    ],
+  },
+  {
+    title: "Tools & Cloud",
+    skills: [
+      { name: "Git", icon: "/skills/git.svg", url: URLS.GIT },
+      { name: "GitHub", icon: "/skills/github.svg", iconDark: "/skills/github-dark.svg", url: URLS.GITHUB },
+      { name: "AWS", icon: "/skills/aws.svg", iconDark: "/skills/aws-dark.svg", url: URLS.AWS },
+    ],
   },
 ];
 

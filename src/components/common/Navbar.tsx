@@ -52,7 +52,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
 
   return (
     <nav
-      className={`sticky top-4 z-50 md:border md:border-primary/10 rounded-2xl backdrop-blur-3xl mx-4 sm:mx-0 `}
+      className="site-nav sticky top-4 z-50 rounded-2xl mx-4 sm:mx-0"
     >
       <div className="w-full flex justify-between items-center  p-3 ">
         {/* Mobile Menu Button - Left Side */}

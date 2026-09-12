@@ -8,6 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-text-faint: var(--text-faint);
   /* transitions.dev font stacks */
   --font-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -49,11 +53,11 @@
 }
 
 :root {
-  --primary: oklch(0.205 0 0);
+  --primary: #0d0d0d; /* --text */
   --secondary: oklch(0.97 0 0);
   --radius: 0.625rem;
   --background: #fdfdfd; /* transitions.dev --bg (light) */
-  --foreground: oklch(0.145 0 0);
+  --foreground: #0d0d0d; /* --text */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -61,9 +65,9 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: #767676; /* --text-subtle */
   --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent-foreground: #0d0d0d; /* --text */
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -82,6 +86,44 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
+  /* Text ramp (from transitions.dev, light) */
+  --text: #0d0d0d;
+  --text-muted: #6c6c6c;
+  --text-subtle: #767676;
+  --text-faint: #8f8f8f;
+
+  /* Chip / icon button fills (light) */
+  --chip-bg: #f4f4f4;
+  --chip-bg-hover: #f1f1f1;
+  --chip-bg-pressed: #eae9e9;
+
+  /* Motion tokens (from transitions.dev) */
+  --duration-stagger: 40ms;
+  --duration-micro: 80ms;
+  --duration-quick: 150ms;
+  --duration-fast: 250ms;
+  --duration-medium: 350ms;
+  --duration-slow: 400ms;
+  --duration-very-slow: 500ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: ease-in-out;
+  --ease-out: ease-out;
+  --ease-linear: linear;
+  --ease-bounce: cubic-bezier(0.34, 1.36, 0.64, 1);
+  --ease-bounce-strong: cubic-bezier(0.34, 3.85, 0.64, 1);
+  --distance-micro: 4px;
+  --distance-small: 6px;
+  --distance-base: 8px;
+  --distance-medium: 12px;
+  --distance-large: 30px;
+  --scale-large: 0.96;
+  --scale-medium: 0.97;
+  --scale-small: 0.98;
+  --scale-tiny: 0.99;
+  --blur-small: 2px;
+  --blur-medium: 3px;
+  --blur-large: 8px;
+
   /* Card tokens (from transitions.dev, light) */
   --card-bg: #ffffff;
   --card-border: rgba(0, 0, 0, 0.06);
@@ -98,19 +140,19 @@
 
 .dark {
   --background: #121212; /* transitions.dev --bg (dark) */
-  --foreground: oklch(0.985 0 0);
+  --foreground: #ffffff; /* --text */
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: #ffffff; /* --text */
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  --muted-foreground: #8f8f8f; /* --text-faint */
   --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent-foreground: #ffffff; /* --text */
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
@@ -129,6 +171,17 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 
+  /* Text ramp (from transitions.dev, dark) */
+  --text: #ffffff;
+  --text-muted: rgba(202, 202, 202, 0.7);
+  --text-subtle: #767676;
+  --text-faint: #8f8f8f;
+
+  /* Chip / icon button fills (dark) */
+  --chip-bg: rgba(255, 255, 255, 0.07);
+  --chip-bg-hover: rgba(255, 255, 255, 0.1);
+  --chip-bg-pressed: rgba(255, 255, 255, 0.08);
+
   /* Card tokens (from transitions.dev, dark) */
   --card-bg: #181818;
   --card-border: rgba(0, 0, 0, 0.06);
@@ -144,7 +197,7 @@
 }
 
 .text-secondary {
-  @apply text-[#909092] dark:text-[#909092];
+  color: var(--text-muted);
 }
 
 /* Page fade-in animation with blur */
@@ -203,7 +256,7 @@
       var(--card-shadow),
       inset 0 0 0 1px var(--card-border),
       inset 0 -1px 0 0 var(--card-border);
-    transition: box-shadow 0.15s ease, background-color 0.2s ease;
+    transition: box-shadow var(--duration-quick) ease, background-color 200ms ease;
   }
   .tcard:hover {
     background-color: color-mix(in srgb, var(--card-bg) 99%, #000 1%);
@@ -218,6 +271,158 @@
   }
   .dark .tcard:hover {
     background-color: color-mix(in srgb, #181818 99.5%, #fff 0.5%);
+  }
+
+  /* ─── Nav pills (transitions.dev .nav-pill) ────────────────── */
+  .nav-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 13px;
+    border: 0;
+    border-radius: 50px;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    color: var(--text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color var(--duration-quick) ease, color var(--duration-quick) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-pill:hover { color: var(--text); background: rgba(0, 0, 0, 0.03); }
+  .dark .nav-pill:hover { background: rgba(255, 255, 255, 0.06); }
+  .nav-pill--active { color: var(--text); background: rgba(0, 0, 0, 0.03); }
+  .dark .nav-pill--active { background: rgba(255, 255, 255, 0.06); }
+  .nav-pill:focus-visible {
+    outline: 2px solid var(--icon-color);
+    outline-offset: 2px;
+  }
+
+  /* ─── Icon button (transitions.dev .icon-btn) ──────────────── */
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50px;
+    padding: 0;
+    background: var(--chip-bg);
+    color: var(--icon-color);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color var(--duration-quick) ease, color var(--duration-quick) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .icon-btn:hover { background: var(--chip-bg-hover); }
+  .icon-btn:active { background: var(--chip-bg-pressed); }
+  .icon-btn:focus-visible {
+    outline: 2px solid var(--icon-color);
+    outline-offset: 2px;
+  }
+  .icon-btn svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+    color: var(--icon-color-muted);
+    transition: color var(--duration-quick) ease;
+  }
+  .icon-btn:hover svg { color: var(--icon-color); }
+
+  /* ─── Pill buttons (transitions.dev .skill-btn) ────────────── */
+  .btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 26px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      background-color 200ms var(--ease-smooth-out),
+      color 200ms var(--ease-smooth-out);
+  }
+  .btn-pill svg { width: 16px; height: 16px; flex: none; }
+  .btn-pill--primary {
+    background: #17181c;
+    color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+  .btn-pill--primary:hover { background: #2a2a2a; }
+  .btn-pill--primary:active { background: #000000; }
+  .dark .btn-pill--primary { background: #ffffff; color: #0d0d0d; }
+  .dark .btn-pill--primary:hover { background: #e8e8e8; }
+  .dark .btn-pill--primary:active { background: #d8d8d8; }
+  .btn-pill--secondary { background: #f5f5f5; color: #17181c; }
+  .btn-pill--secondary:hover { background: #ececec; }
+  .btn-pill--secondary:active { background: #e0e0e0; }
+  .dark .btn-pill--secondary { background: rgba(255, 255, 255, 0.08); color: #ededed; }
+  .dark .btn-pill--secondary:hover { background: rgba(255, 255, 255, 0.12); }
+  .dark .btn-pill--secondary:active { background: rgba(255, 255, 255, 0.14); }
+  .btn-pill:focus-visible {
+    outline: 2px solid var(--icon-color);
+    outline-offset: 2px;
+  }
+
+  /* ─── Chips (transitions.dev .cards-filter) ────────────────── */
+  /* Same fill, ring and type as the filter chips; 32px tall so the
+     skill and tech lists stay compact. */
+  .chip {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 48px;
+    background: #fff;
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.04),
+      inset 0 -1px 0 0 rgba(0, 0, 0, 0.08),
+      inset 0 0 0 1px rgba(196, 196, 196, 0.1),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(38, 38, 38, 0.8);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      background-color var(--duration-quick) var(--ease-smooth-out),
+      color var(--duration-quick) var(--ease-smooth-out),
+      transform var(--duration-quick) var(--ease-smooth-out);
+  }
+  .chip:hover { background: #f7f7f7; color: #080808; }
+  .chip:active { transform: scale(var(--scale-small)); }
+  .dark .chip {
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(251, 251, 251, 0.8);
+    box-shadow:
+      0 1px 1px 0 rgba(0, 0, 0, 0.24),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  }
+  .dark .chip:hover { background: rgba(255, 255, 255, 0.08); color: #fbfbfb; }
+  .chip:focus-visible {
+    outline: 2px solid var(--icon-color);
+    outline-offset: 2px;
   }
 
   /* ─── Sticky nav surface ───────────────────────────────────── */
@@ -264,7 +469,7 @@
       0 2px 8px 0 rgba(0, 0, 0, 0.04),
       0 0 0 1px rgba(0, 0, 0, 0.06),
       0 1px 1px 0 rgba(0, 0, 0, 0.04);
-    animation: tooltipPillIn 150ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: tooltipPillIn var(--duration-quick) var(--ease-smooth-out) both;
   }
   .dark .tooltip-pill {
     background: #181818;
@@ -277,7 +482,7 @@
       inset 0 0 0 1px rgba(196, 196, 196, 0.08);
   }
   .tooltip-pill[data-state="closed"] {
-    animation: tooltipPillOut 150ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: tooltipPillOut var(--duration-quick) var(--ease-smooth-out) both;
   }
   @keyframes tooltipPillIn {
     from { opacity: 0; }
@@ -315,7 +520,7 @@
     background-color: var(--copy-bg-tint);
     background-image: linear-gradient(90deg, var(--copy-bg) 0%, var(--copy-bg) 100%);
     color: var(--icon-color-muted);
-    transition: background-color 0.15s ease, color 0.15s ease;
+    transition: background-color var(--duration-quick) ease, color var(--duration-quick) ease;
     -webkit-tap-highlight-color: transparent;
   }
   .dark .copy-btn {
@@ -360,9 +565,9 @@
     transform-origin: center;
     will-change: opacity, transform, filter;
     transition:
-      opacity 300ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 300ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 300ms var(--ease-smooth-out),
+      transform 300ms var(--ease-smooth-out),
+      filter 300ms var(--ease-smooth-out);
   }
   .copy-btn-icon-copy {
     opacity: 1;
@@ -409,8 +614,8 @@
     opacity: 0;
     visibility: hidden;
     transition:
-      opacity 150ms cubic-bezier(0.22, 1, 0.36, 1),
-      visibility 0s linear 150ms;
+      opacity var(--duration-quick) var(--ease-smooth-out),
+      visibility 0s linear var(--duration-quick);
 
     background: #ffffff;
     color: #17181c;
@@ -441,12 +646,12 @@
       opacity: 1;
       visibility: visible;
       transition:
-        opacity 150ms cubic-bezier(0.22, 1, 0.36, 1) 50ms,
+        opacity var(--duration-quick) var(--ease-smooth-out) 50ms,
         visibility 0s linear 50ms;
     }
     .copy-btn[data-copied="true"] .copy-tooltip {
       transition:
-        opacity 150ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity var(--duration-quick) var(--ease-smooth-out),
         visibility 0s linear;
     }
   }
@@ -465,7 +670,7 @@
     vertical-align: baseline;
     line-height: 16px;
     width: var(--tt-w-a, auto);
-    transition: width 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: width 240ms var(--ease-smooth-out);
   }
   .copy-tooltip .tt-swap[data-state="copied"] {
     width: var(--tt-w-b, auto);
@@ -473,8 +678,8 @@
   .copy-tooltip .tt-label {
     white-space: pre;
     transition:
-      opacity 180ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 180ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 180ms var(--ease-smooth-out),
+      filter 180ms var(--ease-smooth-out);
     will-change: opacity, filter;
   }
   .copy-tooltip .tt-a {
@@ -504,7 +709,7 @@
       opacity: 1;
       visibility: visible;
       transition:
-        opacity 150ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity var(--duration-quick) var(--ease-smooth-out),
         visibility 0s linear;
     }
     .copy-tooltip .tt-swap {
@@ -530,7 +735,22 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* Kill the grey/blue tap flash mobile browsers paint over links
+       and buttons. Inherited, so it cascades everywhere. */
+    -webkit-tap-highlight-color: transparent;
+  }
   body {
     @apply bg-background text-foreground;
+    transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 }

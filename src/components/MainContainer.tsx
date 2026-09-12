@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import CV from "@/components/svgs/CV";
 import { cn } from "@/lib/utils";
 import { CONTAINER_STYLES, linkedinUrl, resumeURL } from "@/utils/constants";
@@ -93,14 +92,15 @@ const MainContainer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          {/* asChild makes the link the button itself, so the whole pill
-              (not just the text) is hoverable and clickable. */}
-          <Button asChild variant="outline" className="inset-shadow-indigo-500">
-            <Link target="_blank" rel="noopener noreferrer" href={resumeURL}>
-              <CV />
-              Resume
-            </Link>
-          </Button>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={resumeURL}
+            className="btn-pill btn-pill--secondary"
+          >
+            <CV />
+            Resume
+          </Link>
         </motion.div>
       </div>
     </motion.section>

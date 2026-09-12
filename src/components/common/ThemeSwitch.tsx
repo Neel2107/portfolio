@@ -6,7 +6,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import Moon from '@/components/svgs/Moon';
 import Sun from '@/components/svgs/Sun';
-import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 const styleId = 'theme-transition-styles';
@@ -127,14 +126,9 @@ export const ThemeToggleButton = ({
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button
+        <button
           type="button"
-          variant="ghost"
-          size="icon"
-          className={cn(
-            'size-10 cursor-pointer p-0 transition-all duration-300 active:scale-95',
-            className,
-          )}
+          className={cn('icon-btn active:scale-95', className)}
           onClick={toggleTheme}
           aria-label="Toggle theme"
           aria-keyshortcuts="d"
@@ -147,7 +141,7 @@ export const ThemeToggleButton = ({
           ) : (
             <Sun className="size-4" />
           )}
-        </Button>
+        </button>
       </TooltipTrigger>
       <TooltipContent side="bottom" className="flex items-center gap-1.5">
         Toggle theme

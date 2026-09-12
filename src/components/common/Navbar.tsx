@@ -1,4 +1,5 @@
 import { ThemeToggleButton } from "@/components/common/ThemeSwitch";
+import { cn } from "@/lib/utils";
 import { resumeURL } from "@/utils/constants";
 import { Menu } from "lucide-react";
 import { motion } from "motion/react";
@@ -54,7 +55,7 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
     <nav
       className="site-nav sticky top-4 z-50 rounded-2xl mx-4 sm:mx-0"
     >
-      <div className="w-full flex justify-between items-center  p-3 ">
+      <div className="w-full flex justify-between items-center p-2 pl-4 md:pl-2">
         {/* Mobile Menu Button - Left Side */}
         <div className="md:hidden">
           <motion.button
@@ -73,11 +74,10 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
 
         {/* Desktop Navigation - Center */}
         <div className="hidden md:flex flex-row items-center justify-between">
-          <ul className="m-0 p-0 flex flex-row  items-center   list-none">
+          <ul className="m-0 p-0 flex flex-row items-center gap-1 list-none">
             {NAV_ITEMS.map((item, index) => (
               <motion.li
                 key={item.id}
-                className="mx-4"
                 initial={{ opacity: 0, filter: "blur(4px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{
@@ -85,21 +85,23 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                   delay: index * 0.1,
                 }}
               >
-                <motion.button
+                <button
+                  type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     handleScroll(item.id);
                   }}
-                  className={`text-primary no-underline text-sm transition-colors duration-200 hover:cursor-pointer ${
-                    activeSection === item.id ? "font-medium" : "text-secondary"
-                  }`}
+                  aria-current={activeSection === item.id ? "true" : undefined}
+                  className={cn(
+                    "nav-pill",
+                    activeSection === item.id && "nav-pill--active",
+                  )}
                 >
-                  <span className="relative">{item.text}</span>
-                </motion.button>
+                  {item.text}
+                </button>
               </motion.li>
             ))}
             <motion.li
-              className="mx-4"
               initial={{ opacity: 0, filter: "blur(4px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{
@@ -107,16 +109,14 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                 delay: NAV_ITEMS.length * 0.1,
               }}
             >
-              <motion.a
+              <a
                 href={resumeURL}
-                className="text-primary no-underline text-sm"
+                className="nav-pill"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-secondary hover:text-primary transition-colors duration-200">
-                  Resume
-                </span>
-              </motion.a>
+                Resume
+              </a>
             </motion.li>
           </ul>
         </div>

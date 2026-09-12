@@ -93,9 +93,11 @@ const MainContainer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          <Button variant={"outline"} className={"inset-shadow-indigo-500"}>
-            <CV />
+          {/* asChild makes the link the button itself, so the whole pill
+              (not just the text) is hoverable and clickable. */}
+          <Button asChild variant="outline" className="inset-shadow-indigo-500">
             <Link target="_blank" rel="noopener noreferrer" href={resumeURL}>
+              <CV />
               Resume
             </Link>
           </Button>

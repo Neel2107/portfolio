@@ -56,7 +56,7 @@ const Experience = () => {
                   const contentId = `experience-content-${index}`;
 
                   return (
-                    <div className="rounded-2xl border border-primary/10 bg-background/40 dark:bg-zinc-900/10">
+                    <div className="tcard">
                       <div
                         id={triggerId}
                         role="button"

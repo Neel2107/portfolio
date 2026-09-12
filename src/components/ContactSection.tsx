@@ -1,7 +1,10 @@
 import SectionTitle from "@/components/SectionTitle";
-import CopyEmailButton from "@/components/common/CopyEmailButton";
+import CopyButton from "@/components/common/CopyButton";
 import { ANIMATION, CONTAINER_STYLES, socialLinks } from "@/utils/constants";
+import { Mail } from "lucide-react";
 import { motion } from "motion/react";
+
+const EMAIL = "neelx2107@gmail.com";
 
 const ContactSection = () => {
   return (
@@ -17,7 +20,7 @@ const ContactSection = () => {
           className={`${CONTAINER_STYLES.spacing.contentTop} ${CONTAINER_STYLES.spacing.elementGap}`}
         >
           <motion.div
-            className="bg-background dark:bg-zinc-900/20 p-6 sm:p-8 rounded-2xl border border-primary/10 hover:border-primary/20 transition-all"
+            className="tcard p-6 sm:p-8"
             {...ANIMATION}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
@@ -29,7 +32,15 @@ const ContactSection = () => {
                 With my extensive experience in mobile and web development,
                 I&apos;m ready to contribute to your next big project.
               </p>
-              <CopyEmailButton email="neelx2107@gmail.com" />
+              <CopyButton
+                text={EMAIL}
+                label="Say Hello!"
+                icon={Mail}
+                ariaLabel="Copy email address"
+                tooltipText="Copy email"
+                fallbackHref={`mailto:${EMAIL}`}
+                className="self-start"
+              />
             </div>
           </motion.div>
 
@@ -39,25 +50,35 @@ const ContactSection = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             {socialLinks.map((social, index) => (
-              <motion.a
+              <motion.div
                 key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-background dark:bg-zinc-900/20 p-6 sm:p-8 rounded-xl border border-primary/10 hover:border-primary/20 transition-all"
+                className="relative"
                 initial={{ opacity: 0, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
               >
-                <social.icon className="w-6 h-6 text-primary mb-3" />
-                <h4 className="text-primary font-semibold mb-1">
-                  {social.name}
-                </h4>
-                <p className="text-secondary text-sm leading-relaxed">
-                  {social.description}
-                </p>
-              </motion.a>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tcard block p-6 sm:p-8"
+                >
+                  <social.icon className="w-6 h-6 text-primary mb-3" />
+                  <h4 className="text-primary font-semibold mb-1">
+                    {social.name}
+                  </h4>
+                  <p className="text-secondary text-sm leading-relaxed">
+                    {social.description}
+                  </p>
+                </a>
+                {/* Sits outside the anchor so copying never navigates. */}
+                <CopyButton
+                  text={social.href}
+                  ariaLabel={`Copy ${social.name} link`}
+                  className="absolute right-4 top-4 sm:right-5 sm:top-5"
+                />
+              </motion.div>
             ))}
           </motion.div>
         </div>

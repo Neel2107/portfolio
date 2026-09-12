@@ -151,7 +151,7 @@ export const ThemeToggleButton = ({
       </TooltipTrigger>
       <TooltipContent side="bottom" className="flex items-center gap-1.5">
         Toggle theme
-        <kbd className="rounded-sm bg-background/20 px-1 font-sans text-[10px] font-medium leading-4">
+        <kbd className="rounded-sm bg-black/10 dark:bg-white/10 px-1 font-sans text-[10px] font-medium leading-4">
           D
         </kbd>
       </TooltipContent>

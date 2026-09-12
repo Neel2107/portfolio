@@ -3,23 +3,16 @@
 @plugin "@tailwindcss/typography";
 
 
-@font-face {
-  font-family: 'Hanken Grotesk';
-  src: url('/fonts/HankenGrotesk-Variable.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Hanken Grotesk Italic';
-  src: url('/fonts/HankenGrotesk-Italic-Variable.ttf') format('truetype');
-}
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* transitions.dev font stacks */
+  --font-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-roboto-mono), "Roboto Mono", ui-monospace,
+    SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -59,7 +52,7 @@
   --primary: oklch(0.205 0 0);
   --secondary: oklch(0.97 0 0);
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #fdfdfd; /* transitions.dev --bg (light) */
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -88,10 +81,23 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Card tokens (from transitions.dev, light) */
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.06);
+  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+
+  /* Copy button tokens (from transitions.dev, light) */
+  --copy-bg: rgba(255, 255, 255, 0.9);
+  --copy-bg-tint: #bfc0cb;
+  --copy-bg-hover: #f1f1f1;
+  --copy-bg-pressed: #eae9e9;
+  --icon-color: #0d0d0d;
+  --icon-color-muted: rgba(13, 13, 13, 0.6);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #121212; /* transitions.dev --bg (dark) */
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -122,6 +128,19 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Card tokens (from transitions.dev, dark) */
+  --card-bg: #181818;
+  --card-border: rgba(0, 0, 0, 0.06);
+  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+
+  /* Copy button tokens (from transitions.dev, dark) */
+  --copy-bg: rgba(255, 255, 255, 0.08);
+  --copy-bg-tint: transparent;
+  --copy-bg-hover: rgba(255, 255, 255, 0.10);
+  --copy-bg-pressed: rgba(255, 255, 255, 0.10);
+  --icon-color: #ededed;
+  --icon-color-muted: rgba(237, 237, 237, 0.6);
 }
 
 .text-secondary {
@@ -172,13 +191,313 @@
     inset 0 2px 6px rgba(255, 255, 255, 0.06);
 }
 
-.font-hanken-grotesk {
-  font-family: 'Hanken Grotesk', sans-serif;
+/* Custom component styles live in the components layer so Tailwind
+   utilities (e.g. `absolute`, `self-start`) can still override them. */
+@layer components {
+  /* ─── Card surface (transitions.dev .card) ─────────────────── */
+  .tcard {
+    position: relative;
+    border-radius: 24px;
+    background-color: var(--card-bg);
+    box-shadow:
+      var(--card-shadow),
+      inset 0 0 0 1px var(--card-border),
+      inset 0 -1px 0 0 var(--card-border);
+    transition: box-shadow 0.15s ease, background-color 0.2s ease;
+  }
+  .tcard:hover {
+    background-color: color-mix(in srgb, var(--card-bg) 99%, #000 1%);
+  }
+  .dark .tcard {
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+      inset 0 -1px 0 0 rgba(0, 0, 0, 0.06),
+      inset 0 0 0 1px rgba(196, 196, 196, 0.07);
+  }
+  .dark .tcard:hover {
+    background-color: color-mix(in srgb, #181818 99.5%, #fff 0.5%);
+  }
+
+  /* ─── Shared tooltip pill (Radix) ──────────────────────────── */
+  /* Same pill as the copy tooltip, for the Radix-driven tooltips on
+     links and the theme toggle. Radix flips data-state for open/close. */
+  .tooltip-pill {
+    box-sizing: border-box;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    background: #ffffff;
+    color: #17181c;
+    box-shadow:
+      0 2px 8px 0 rgba(0, 0, 0, 0.04),
+      0 0 0 1px rgba(0, 0, 0, 0.06),
+      0 1px 1px 0 rgba(0, 0, 0, 0.04);
+    animation: tooltipPillIn 150ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .dark .tooltip-pill {
+    background: #181818;
+    color: #e3e3e3;
+    box-shadow:
+      0 1px 16px 0 rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+      inset 0 -1px 0 0 rgba(0, 0, 0, 0.06),
+      inset 0 0 0 1px rgba(196, 196, 196, 0.08);
+  }
+  .tooltip-pill[data-state="closed"] {
+    animation: tooltipPillOut 150ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes tooltipPillIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes tooltipPillOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tooltip-pill { animation: none !important; }
+  }
+
+  /* ─── Copy button (transitions.dev .card-copy) ─────────────── */
+  .copy-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 36px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    background-color: var(--copy-bg-tint);
+    background-image: linear-gradient(90deg, var(--copy-bg) 0%, var(--copy-bg) 100%);
+    color: var(--icon-color-muted);
+    transition: background-color 0.15s ease, color 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .dark .copy-btn {
+    background-color: transparent;
+    background-image: none;
+    background: var(--copy-bg);
+  }
+  .copy-btn:hover {
+    background-color: var(--copy-bg-tint);
+    background-image: linear-gradient(90deg, var(--copy-bg-hover) 0%, var(--copy-bg-hover) 100%);
+    color: var(--icon-color);
+  }
+  .dark .copy-btn:hover {
+    background-image: none;
+    background: var(--copy-bg-hover);
+    color: var(--icon-color);
+  }
+  .copy-btn:active {
+    background-color: var(--copy-bg-tint);
+    background-image: linear-gradient(90deg, var(--copy-bg-pressed) 0%, var(--copy-bg-pressed) 100%);
+    color: var(--icon-color);
+  }
+  .dark .copy-btn:active {
+    background-image: none;
+    background: var(--copy-bg-pressed);
+    color: var(--icon-color);
+  }
+  .copy-btn:focus-visible {
+    outline: 2px solid var(--icon-color);
+    outline-offset: 2px;
+  }
+  /* 36x36 icon-only variant, as on the transitions.dev cards. */
+  .copy-btn-icon-only {
+    width: 36px;
+    padding: 0;
+    gap: 0;
+  }
+
+  /* ─── Copy button: icon swap ───────────────────────────────── */
+  .copy-btn-icon {
+    position: absolute;
+    transform-origin: center;
+    will-change: opacity, transform, filter;
+    transition:
+      opacity 300ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .copy-btn-icon-copy {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  .copy-btn-icon-check {
+    opacity: 0;
+    transform: scale(0.25);
+    filter: blur(4px);
+  }
+  .copy-btn[data-copied="true"] .copy-btn-icon-copy {
+    opacity: 0;
+    transform: scale(0.25);
+    filter: blur(4px);
+  }
+  .copy-btn[data-copied="true"] .copy-btn-icon-check {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  /* ─── Copy button: tooltip pill ────────────────────────────── */
+  /* Always in the DOM, centered above the button. Visibility is driven
+     by hover / focus on pointer devices and by [data-copied] everywhere. */
+  .copy-tooltip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(100% + 8px);
+    box-sizing: border-box;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 150ms cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s linear 150ms;
+
+    background: #ffffff;
+    color: #17181c;
+    box-shadow:
+      0 2px 8px 0 rgba(0, 0, 0, 0.04),
+      0 0 0 1px rgba(0, 0, 0, 0.06),
+      0 1px 1px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .dark .copy-tooltip {
+    background: #181818;
+    color: #e3e3e3;
+    box-shadow:
+      0 1px 16px 0 rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+      inset 0 -1px 0 0 rgba(0, 0, 0, 0.06),
+      inset 0 0 0 1px rgba(196, 196, 196, 0.08);
+  }
+
+  /* Hover reveal only on pointer devices so iOS sticky hover can't keep
+     the pill open after a tap. The 50ms delay stops quick flyovers from
+     flashing it; a click shows the "Copied" state with no delay. */
+  @media (hover: hover) {
+    .copy-btn:hover .copy-tooltip,
+    .copy-btn:focus-visible .copy-tooltip,
+    .copy-btn[data-copied="true"] .copy-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transition:
+        opacity 150ms cubic-bezier(0.22, 1, 0.36, 1) 50ms,
+        visibility 0s linear 50ms;
+    }
+    .copy-btn[data-copied="true"] .copy-tooltip {
+      transition:
+        opacity 150ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear;
+    }
+  }
+
+  .copy-tooltip .tt-text {
+    display: inline-flex;
+    align-items: baseline;
+    line-height: 16px;
+  }
+
+  /* The tail after the shared stem ("Cop") cross-blurs between "y email"
+     and "ied" while its width animates between the two measured widths. */
+  .copy-tooltip .tt-swap {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    line-height: 16px;
+    width: var(--tt-w-a, auto);
+    transition: width 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .copy-tooltip .tt-swap[data-state="copied"] {
+    width: var(--tt-w-b, auto);
+  }
+  .copy-tooltip .tt-label {
+    white-space: pre;
+    transition:
+      opacity 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 180ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, filter;
+  }
+  .copy-tooltip .tt-a {
+    display: inline-block;
+  }
+  .copy-tooltip .tt-b {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .copy-tooltip .tt-swap .tt-a { opacity: 1; filter: blur(0); }
+  .copy-tooltip .tt-swap .tt-b { opacity: 0; filter: blur(2px); }
+  .copy-tooltip .tt-swap[data-state="copied"] .tt-a {
+    opacity: 0;
+    filter: blur(2px);
+  }
+  .copy-tooltip .tt-swap[data-state="copied"] .tt-b {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  /* Touch devices: the pill only appears in the Copied state, already at
+     its final width and text, then fades out. Must come after the base
+     .tt-swap / .tt-label rules so source order lets it win. */
+  @media (hover: none) {
+    .copy-btn[data-copied="true"] .copy-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transition:
+        opacity 150ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear;
+    }
+    .copy-tooltip .tt-swap {
+      width: var(--tt-w-b, auto);
+      transition: none;
+    }
+    .copy-tooltip .tt-label {
+      transition: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .copy-btn-icon,
+    .copy-tooltip,
+    .copy-tooltip .tt-swap,
+    .copy-tooltip .tt-label {
+      transition: none !important;
+    }
+  }
 }
 
-.font-hanken-grotesk-italic {
-  font-family: 'Hanken Grotesk Italic', sans-serif;
-}
 @layer base {
   * {
     @apply border-border outline-ring/50;

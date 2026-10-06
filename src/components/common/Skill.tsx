@@ -15,7 +15,7 @@ export default function Skill({ name, href, children, className }: SkillProps) {
       href={href ?? ""}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn("chip", className)}
+      className={cn("group chip", className)}
     >
       {children && (
         <span className="flex size-4 shrink-0 items-center justify-center">

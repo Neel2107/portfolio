@@ -1,3 +1,4 @@
+import { resumeURL } from "@/utils/constants";
 import { X } from "lucide-react";
 import { motion } from "motion/react";
 import { Drawer } from "vaul";
@@ -33,7 +34,7 @@ const Sidebar = ({ isSidebarOpen, handleSidebar }: SidebarProps) => {
       name: "Resume",
       id: "resume",
       external: true,
-      url: "https://drive.google.com/drive/folders/1DQ4kkRG_uoiwEjbzq-Um6JYE4UI7zu6X?usp=drive_link",
+      url: resumeURL,
     },
   ];
 

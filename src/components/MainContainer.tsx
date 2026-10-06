@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import { CONTAINER_STYLES, linkedinUrl, resumeURL } from "@/utils/constants";
 import { motion } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 
 const MainContainer = () => {
   const handleImageClick = () => {
@@ -92,7 +91,7 @@ const MainContainer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          <Link
+          <a
             target="_blank"
             rel="noopener noreferrer"
             href={resumeURL}
@@ -100,7 +99,7 @@ const MainContainer = () => {
           >
             <CV />
             Resume
-          </Link>
+          </a>
         </motion.div>
       </div>
     </motion.section>

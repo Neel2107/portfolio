@@ -8,6 +8,7 @@ import Sidebar from "@/components/Sidebar";
 import SkillsSection from "@/components/SkillsSection";
 
 import { Analytics } from "@vercel/analytics/react";
+import { MotionConfig } from "motion/react";
 import { useState } from "react";
 
 export default function Home() {
@@ -23,14 +24,18 @@ export default function Home() {
 
       <Sidebar isSidebarOpen={isSidebarOpen} handleSidebar={handleSidebar} />
 
-      <div className="flex flex-col max-w-2xl mx-auto">
-        <Navbar handleSidebar={handleSidebar} />
-        <MainContainer />
-        <SkillsSection />
-        <Experience />
-        <ProjectContainer />
-        <ContactSection />
-      </div>
+      {/* Entrances keep their fade but drop the movement for visitors who
+          ask for reduced motion. */}
+      <MotionConfig reducedMotion="user">
+        <div className="flex flex-col max-w-2xl mx-auto">
+          <Navbar handleSidebar={handleSidebar} />
+          <MainContainer />
+          <SkillsSection />
+          <Experience />
+          <ProjectContainer />
+          <ContactSection />
+        </div>
+      </MotionConfig>
     </div>
   );
 }

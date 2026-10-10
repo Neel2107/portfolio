@@ -1,4 +1,4 @@
-import { ANIMATION } from "@/utils/constants";
+import { REVEAL_CHILD } from "@/utils/constants";
 import { motion } from "motion/react";
 
 interface SectionTitleProps {
@@ -7,7 +7,7 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ title }: SectionTitleProps) => {
   return (
-    <motion.div {...ANIMATION}>
+    <motion.div variants={REVEAL_CHILD}>
       <h2 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
         {title}
       </h2>

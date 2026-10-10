@@ -1,6 +1,12 @@
 import CV from "@/components/svgs/CV";
 import { cn } from "@/lib/utils";
-import { CONTAINER_STYLES, linkedinUrl, resumeURL } from "@/utils/constants";
+import {
+  CONTAINER_STYLES,
+  ENTER_CHILD,
+  ENTER_CONTAINER,
+  linkedinUrl,
+  resumeURL,
+} from "@/utils/constants";
 import { motion } from "motion/react";
 import Image from "next/image";
 
@@ -13,13 +19,9 @@ const MainContainer = () => {
     <motion.section
       id="about"
       className={`${CONTAINER_STYLES.section} flex-col text-left min-h-screen`}
-      initial={{ opacity: 0, filter: "blur(4px)" }}
-      whileInView={{
-        opacity: 1,
-        filter: "blur(0px)",
-      }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
+      variants={ENTER_CONTAINER}
+      initial="initial"
+      animate="visible"
     >
       <div
         className={cn(
@@ -27,19 +29,10 @@ const MainContainer = () => {
           "flex flex-col gap-4 items-start"
         )}
       >
-        <motion.div
-          className={"space-y-7"}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <div className="space-y-7">
           <motion.div
             className="rounded-full border border-gray-700/20 w-28 h-28"
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={ENTER_CHILD}
           >
             <Image
               src="/neel-profile.webp"
@@ -54,43 +47,26 @@ const MainContainer = () => {
             {/* Greeting */}
             <motion.span
               className="inline-flex items-center"
-              initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              variants={ENTER_CHILD}
             >
               Hi, I&apos;m Neel Patel —
             </motion.span>
 
             {/* Title */}
-            <motion.h3  
-              className="text-secondary"
-              initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
+            <motion.h3 className="text-secondary" variants={ENTER_CHILD}>
               Software Engineer
             </motion.h3>
           </div>
           {/* Description */}
           <motion.p
             className="text-base sm:text-xl text-secondary max-w-2xl leading-relaxed"
-            initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            variants={ENTER_CHILD}
           >
             I create value at the intersection of technology and business.
           </motion.p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-        >
+        <motion.div variants={ENTER_CHILD}>
           <a
             target="_blank"
             rel="noopener noreferrer"

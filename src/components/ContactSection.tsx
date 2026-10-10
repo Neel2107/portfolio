@@ -1,6 +1,11 @@
 import SectionTitle from "@/components/SectionTitle";
 import CopyButton from "@/components/common/CopyButton";
-import { ANIMATION, CONTAINER_STYLES, socialLinks } from "@/utils/constants";
+import {
+  CONTAINER_STYLES,
+  REVEAL,
+  REVEAL_CHILD,
+  socialLinks,
+} from "@/utils/constants";
 import { Mail } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -11,7 +16,7 @@ const ContactSection = () => {
     <motion.div
       className={CONTAINER_STYLES.section}
       id="contact"
-      {...ANIMATION}
+      {...REVEAL}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
         <SectionTitle title="Contact" />
@@ -21,8 +26,7 @@ const ContactSection = () => {
         >
           <motion.div
             className="tcard p-6 sm:p-8"
-            {...ANIMATION}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={REVEAL_CHILD}
           >
             <h3 className="text-primary text-2xl sm:text-3xl font-bold mb-6 tracking-tight">
               Let&apos;s Connect
@@ -44,19 +48,12 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mx-auto"
-            {...ANIMATION}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            {socialLinks.map((social, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mx-auto">
+            {socialLinks.map((social) => (
               <motion.div
                 key={social.name}
                 className="relative"
-                initial={{ opacity: 0, filter: "blur(4px)" }}
-                whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                variants={REVEAL_CHILD}
               >
                 <a
                   href={social.href}
@@ -80,7 +77,7 @@ const ContactSection = () => {
                 />
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </motion.div>

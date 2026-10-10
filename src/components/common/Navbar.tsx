@@ -1,8 +1,9 @@
+import { SoundToggleButton } from "@/components/common/SoundSwitch";
 import { ThemeToggleButton } from "@/components/common/ThemeSwitch";
 import { cn } from "@/lib/utils";
 import { resumeURL } from "@/utils/constants";
 import { Menu } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import React, { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
@@ -12,6 +13,22 @@ const NAV_ITEMS = [
   { id: "project", text: "Projects" },
   { id: "contact", text: "Contact" },
 ];
+
+// The bar enters as one piece, in step with the hero: it sharpens and
+// fades in while rising into place. Its items never move on their own.
+const NAV_ENTER: Variants = {
+  initial: { opacity: 0, y: 16, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      opacity: { duration: 0.7 },
+      filter: { duration: 0.7 },
+      y: { type: "spring", duration: 1.4, bounce: 0 },
+    },
+  },
+};
 
 interface NavbarProps {
   handleSidebar: () => void;
@@ -52,39 +69,29 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
   };
 
   return (
-    <nav
+    <motion.nav
       className="site-nav sticky top-4 z-50 rounded-2xl mx-4 sm:mx-0"
+      variants={NAV_ENTER}
+      initial="initial"
+      animate="visible"
     >
       <div className="w-full flex justify-between items-center p-2 pl-4 md:pl-2">
         {/* Mobile Menu Button - Left Side */}
         <div className="md:hidden">
-          <motion.button
+          <button
+            type="button"
             onClick={handleSidebar}
             className="flex items-center justify-center"
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{
-              duration: 0.5,
-              delay: 0.1,
-            }}
           >
             <Menu className="size-5 text-primary" aria-label="Menu button" />
-          </motion.button>
+          </button>
         </div>
 
         {/* Desktop Navigation - Center */}
         <div className="hidden md:flex flex-row items-center justify-between">
           <ul className="m-0 p-0 flex flex-row items-center gap-1 list-none">
-            {NAV_ITEMS.map((item, index) => (
-              <motion.li
-                key={item.id}
-                initial={{ opacity: 0, filter: "blur(4px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-              >
+            {NAV_ITEMS.map((item) => (
+              <li key={item.id}>
                 <button
                   type="button"
                   onClick={(e) => {
@@ -99,16 +106,9 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
                 >
                   {item.text}
                 </button>
-              </motion.li>
+              </li>
             ))}
-            <motion.li
-              initial={{ opacity: 0, filter: "blur(4px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{
-                duration: 0.5,
-                delay: NAV_ITEMS.length * 0.1,
-              }}
-            >
+            <li>
               <a
                 href={resumeURL}
                 className="nav-pill"
@@ -117,21 +117,15 @@ const Navbar = ({ handleSidebar }: NavbarProps) => {
               >
                 Resume
               </a>
-            </motion.li>
+            </li>
           </ul>
         </div>
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(4px)" }}
-          animate={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{
-            duration: 0.5,
-            delay: NAV_ITEMS.length * 0.1,
-          }}
-        >
+        <div className="flex items-center gap-1">
+          <SoundToggleButton />
           <ThemeToggleButton blur />
-        </motion.div>
+        </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

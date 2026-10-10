@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 
+import { isSoundEnabled } from '@/hooks/use-sound-enabled';
+
 const CLICKABLE = 'a[href], button, [role="button"]';
 
 type Blip = { frequency: number; gain: number; duration: number };
@@ -35,7 +37,7 @@ const UiSounds = () => {
     };
 
     const play = ({ frequency, gain, duration }: Blip) => {
-      if (!ctx || ctx.state !== 'running') return;
+      if (!ctx || ctx.state !== 'running' || !isSoundEnabled()) return;
       const now = ctx.currentTime;
       const osc = ctx.createOscillator();
       const gainNode = ctx.createGain();
@@ -58,7 +60,12 @@ const UiSounds = () => {
     };
 
     const onClick = (event: MouseEvent) => {
-      if (closestClickable(event.target)) play(CLICK);
+      // Walk the dispatch path rather than the target: a handler may have
+      // already re-rendered the clicked icon out of the document.
+      const hit = event
+        .composedPath()
+        .some((node) => node instanceof Element && node.matches(CLICKABLE));
+      if (hit) play(CLICK);
     };
 
     document.addEventListener('pointerdown', unlock, true);

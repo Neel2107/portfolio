@@ -1,10 +1,59 @@
 import { Github, Linkedin } from "lucide-react";
+import type { Variants } from "motion/react";
 
-export const ANIMATION = {
-  initial: { opacity: 0, filter: "blur(4px)" },
-  whileInView: { opacity: 1, filter: "blur(0px)" },
-  viewport: { once: true },
-  transition: { duration: 0.5 },
+/* Page-load entrance: the container de-blurs as one piece while its
+   children rise into place one after another on a slow, bounce-free spring. */
+export const ENTER_CONTAINER: Variants = {
+  initial: { opacity: 0, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      staggerChildren: 0.08,
+      opacity: { duration: 0.7 },
+      filter: { duration: 0.7 },
+    },
+  },
+};
+
+export const ENTER_CHILD: Variants = {
+  initial: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { y: { type: "spring", duration: 1.4, bounce: 0 } },
+  },
+};
+
+/* Scroll-in sections: the same motion, a touch quicker. Spread REVEAL on
+   the section and give each block inside it REVEAL_CHILD. */
+export const REVEAL_CONTAINER: Variants = {
+  initial: { opacity: 0, filter: "blur(6px)" },
+  visible: {
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: {
+      staggerChildren: 0.06,
+      opacity: { duration: 0.7 },
+      filter: { duration: 0.7 },
+    },
+  },
+};
+
+export const REVEAL_CHILD: Variants = {
+  initial: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { y: { type: "spring", duration: 0.8, bounce: 0 } },
+  },
+};
+
+export const REVEAL = {
+  variants: REVEAL_CONTAINER,
+  initial: "initial",
+  whileInView: "visible",
+  viewport: { once: true, margin: "-80px" },
 };
 
 export const CONTAINER_STYLES = {

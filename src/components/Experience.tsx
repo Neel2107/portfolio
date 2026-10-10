@@ -1,6 +1,6 @@
 import SectionTitle from "@/components/SectionTitle";
 import { cn } from "@/lib/utils";
-import { ANIMATION, CONTAINER_STYLES } from "@/utils/constants";
+import { CONTAINER_STYLES, REVEAL, REVEAL_CHILD } from "@/utils/constants";
 import { experience } from "@/utils/constants/experience";
 import {
   Tooltip,
@@ -34,7 +34,7 @@ const Experience = () => {
     <motion.div
       className={CONTAINER_STYLES.section}
       id="experience"
-      {...ANIMATION}
+      {...REVEAL}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
         <SectionTitle title="Experience" />
@@ -45,10 +45,7 @@ const Experience = () => {
               <motion.div
                 key={index}
                 className="relative mb-6 last:mb-0"
-                initial={{ opacity: 0, filter: "blur(4px)" }}
-                whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                variants={REVEAL_CHILD}
               >
                 {(() => {
                   const isOpen = openItems.has(index);

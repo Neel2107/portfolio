@@ -2,8 +2,9 @@ import SectionTitle from "@/components/SectionTitle";
 import Skill from "@/components/common/Skill";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import {
-  ANIMATION,
   CONTAINER_STYLES,
+  REVEAL,
+  REVEAL_CHILD,
   featuredProjects,
 } from "@/utils/constants";
 import { ExternalLink, Github } from "lucide-react";
@@ -15,7 +16,7 @@ const ProjectContainer = () => {
     <motion.div
       className={CONTAINER_STYLES.section}
       id="project"
-      {...ANIMATION}
+      {...REVEAL}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
         <SectionTitle title="Projects" />
@@ -30,8 +31,7 @@ const ProjectContainer = () => {
               <motion.div
                 key={project.title + index}
                 className="flex flex-col md:flex-row gap-8 items-start"
-                {...ANIMATION}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                variants={REVEAL_CHILD}
               >
                 {/* Image Section - Left Side */}
                 <div className="w-full md:w-1/2">

@@ -2,8 +2,9 @@ import SectionTitle from "@/components/SectionTitle";
 import Skill from "@/components/common/Skill";
 import { cn } from "@/lib/utils";
 import {
-  ANIMATION,
   CONTAINER_STYLES,
+  REVEAL,
+  REVEAL_CHILD,
   skillGroups,
   type SkillCard,
 } from "@/utils/constants";
@@ -53,42 +54,25 @@ const SkillsSection = () => {
     <motion.section
       className={CONTAINER_STYLES.section}
       id="skills"
-      {...ANIMATION}
+      {...REVEAL}
     >
       <div className={CONTAINER_STYLES.sectionContent}>
         <SectionTitle title="Skills" />
 
         <div className={cn(CONTAINER_STYLES.spacing.contentTop, "space-y-6")}>
-          {skillGroups.map((group, groupIndex) => (
+          {skillGroups.map((group) => (
             <motion.div
               key={group.title}
               className="grid gap-2 sm:grid-cols-[8.5rem_1fr] sm:gap-4"
-              initial={reduceMotion ? false : { opacity: 0, y: 8, filter: "blur(4px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.4,
-                delay: 0.1 + groupIndex * 0.08,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+              variants={REVEAL_CHILD}
             >
               <h3 className="pt-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 {group.title}
               </h3>
 
               <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
-                {group.skills.map((skill, skillIndex) => (
-                  <motion.li
-                    key={skill.name}
-                    initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{
-                      duration: 0.3,
-                      delay: 0.15 + groupIndex * 0.08 + skillIndex * 0.03,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                  >
+                {group.skills.map((skill) => (
+                  <li key={skill.name}>
                     <Skill name={skill.name} href={skill.url}>
                       <SkillIcon
                         skill={skill}
@@ -100,7 +84,7 @@ const SkillsSection = () => {
                         )}
                       />
                     </Skill>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
             </motion.div>

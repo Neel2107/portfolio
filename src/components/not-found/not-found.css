@@ -33,47 +33,6 @@
   color: var(--text);
 }
 
-/* ─── Echo ──────────────────────────────────────────────────── */
-/* Registered so the idle sweep can animate the direction of the trail. */
-@property --nf-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: -35deg;
-}
-.nf-echo {
-  /* Direction of the trail, each -1 to 1. The sweep drives them until the
-     pointer takes over and sets them inline. */
-  --nf-dx: cos(var(--nf-angle));
-  --nf-dy: sin(var(--nf-angle));
-  position: relative;
-  display: inline-block;
-  margin-block: 0.22em;
-  font-size: clamp(7rem, 32vw, 18rem);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.06em;
-  user-select: none;
-  animation: nf-sweep 16s linear infinite;
-}
-@keyframes nf-sweep {
-  to { --nf-angle: 325deg; }
-}
-.nf-echo-front {
-  position: relative;
-  color: var(--text);
-}
-.nf-echo-layer {
-  position: absolute;
-  inset: 0;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text);
-  opacity: calc(0.8 - var(--i) * 0.055);
-  transform: translate(
-    calc(var(--nf-dx) * var(--i) * 0.034em),
-    calc(var(--nf-dy) * var(--i) * 0.02em)
-  );
-}
-
 /* ─── ASCII ─────────────────────────────────────────────────── */
 .nf-ascii {
   display: block;
@@ -85,10 +44,21 @@
   touch-action: pan-y;
 }
 
+/* ─── Vantage ───────────────────────────────────────────────── */
+.nf-vantage {
+  display: block;
+  width: 100%;
+  height: clamp(200px, 42vw, 340px);
+  color: var(--text);
+  touch-action: pan-y;
+}
+
+.nf-vantage:focus-visible {
+  outline: 2px solid var(--icon-color);
+  outline-offset: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .nf-echo {
-    animation: none;
-  }
   .nf-moire-orbit {
     animation: none;
     transform: translate(40px, -18px);

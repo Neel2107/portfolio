@@ -33,8 +33,8 @@ export default function NotFound() {
 
       <main className="flex flex-1 flex-col">
         <NotFoundArt />
-        {/* The artwork is picked in the browser, so without scripts this
-            is the whole page. */}
+        {/* The artwork only fades in once scripts run, so without them
+            this is all a visitor sees. */}
         <noscript>
           <div className="flex flex-col items-center gap-3 px-4 pb-16 text-center">
             <h1 className="text-xl sm:text-3xl font-bold">Page not found</h1>
